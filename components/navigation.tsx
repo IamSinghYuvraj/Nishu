@@ -10,7 +10,7 @@ export function Navigation() {
   const [isProductsOpen, setIsProductsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-primary text-primary-foreground">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

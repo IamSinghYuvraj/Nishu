@@ -98,19 +98,18 @@ export function Footer() {
                 <MapPin className="w-4 h-4 mt-1 shrink-0" />
                 <span>
                   gala no.5 bld no.6,parsvanath ind estate bhutpada vasai east Vasai - 401208, Palghar, Maharashtra, India
-                  Call Us: 08048611863
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 shrink-0" />
                 <a href="tel:+918048611863" className="hover:text-secondary transition-all duration-300">
-                  08048611863
+                  8048611863
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 shrink-0" />
                 <a href="mailto:info@nishuenterprises.com" className="hover:text-secondary transition-all duration-300">
-                  info@nishuenterprises.com
+                  nishudbj@gmail.com
                 </a>
               </li>
             </ul>

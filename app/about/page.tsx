@@ -261,42 +261,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center hover:scale-105 transition-all duration-300">
-                <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">29+</h3>
-                <p className="text-muted-foreground">Years Since 1996</p>
-              </div>
-              <div className="text-center hover:scale-105 transition-all duration-300">
-                <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">45+</h3>
-                <p className="text-muted-foreground">Countries Served</p>
-              </div>
-              <div className="text-center hover:scale-105 transition-all duration-300">
-                <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">150+</h3>
-                <p className="text-muted-foreground">Team Members</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-secondary py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary-foreground">Partner With Us</h2>
-            <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied clients who trust Nishu Enterprises for their water treatment and industrial
-              needs
-            </p>
-            <a
-              href="/contact"
-              className="inline-block px-8 py-3 bg-secondary-foreground text-secondary rounded-lg hover:bg-secondary-foreground/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-            >
-              Get a Quote
-            </a>
-          </div>
-        </section>
+ 
       </main>
     </div>
   )
