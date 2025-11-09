@@ -1,34 +1,18 @@
 import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import { Navigation } from "@/components/navigation"
 import Link from "next/link"
-import { Droplet, Cog, Filter, ArrowRight } from "@/components/icons"
+import { ArrowRight } from "@/components/icons"
 
-export default function ProductsPage() {
+export default function ProductsIndex() {
   const products = [
-    {
-      id: "water-treatment",
-      title: "Water Treatment Plants",
-      description: "Advanced purification systems designed for municipal and industrial applications",
-      icon: Droplet,
-      features: ["Multi-stage filtration", "Capacity: 100-10,000 GPM", "Automated monitoring", "20+ year lifespan"],
-      link: "/products/water-treatment",
-    },
-    {
-      id: "machinery",
-      title: "Industrial Machinery",
-      description: "Robust equipment engineered for continuous operation in demanding environments",
-      icon: Cog,
-      features: ["Heavy-duty construction", "Minimal maintenance", "24/7 operation", "Energy efficient"],
-      link: "/products/machinery",
-    },
-    {
-      id: "filtration",
-      title: "Filtration Systems",
-      description: "Specialized filtration solutions for diverse industrial and commercial needs",
-      icon: Filter,
-      features: ["Sand filtration", "Carbon filtration", "Membrane technology", "Custom solutions"],
-      link: "/products/filtration",
-    },
+    { title: "Reverse Osmosis Plant (RO)", slug: "reverse-osmosis", desc: "High-performance RO systems for potable and industrial water." },
+    { title: "Demineralized Plant (DM)", slug: "demineralized", desc: "DM plants for ultra-pure water requirements." },
+    { title: "Water Softening Plant", slug: "water-softening", desc: "Softening units to remove hardness and extend equipment life." },
+    { title: "SS Pressure Tube", slug: "ss-pressure-tube", desc: "Stainless steel pressure tubing and assemblies." },
+    { title: "Fabricated SS & MS Vessel/Tanks", slug: "fabricated-vessels", desc: "Custom fabricated vessels and tanks in SS and MS." },
+    { title: "Complete Mineral Water Project", slug: "mineral-water-project", desc: "End-to-end mineral water bottling plant solutions." },
+    { title: "Dosing, Ozonation & UV Systems", slug: "dosing-ozonation-uv", desc: "Chemical dosing, ozonation and UV sterilization systems." },
+    { title: "Rinsing Filling Capping Machine (RFC)", slug: "rfc", desc: "Integrated RFC lines for high-speed bottling." },
   ]
 
   return (
@@ -36,23 +20,36 @@ export default function ProductsPage() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/5 to-secondary/5 border-b border-border py-16 md:py-24">
+        <section className="bg-gradient-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-              Our <span className="text-primary">Product Range</span>
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Our Products</h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Comprehensive water treatment and industrial machinery solutions tailored to your specific needs
+              Explore our range of water treatment and bottling solutions. Click any product to learn more.
             </p>
           </div>
         </section>
 
-        {/* Products Grid */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {products.map((product) => {
+              {products.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/products/${p.slug}`}
+                  className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">{p.title}</h3>
+                  <p className="text-muted-foreground mb-4">{p.desc}</p>
+                  <div className="flex items-center gap-2 text-secondary">Learn More <ArrowRight className="w-4 h-4" /></div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
                 const IconComponent = product.icon
                 return (
                   <Link
@@ -102,8 +99,6 @@ export default function ProductsPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Droplet, Cog, Shield } from "@/components/icons"
-import { ClientsCarousel } from "@/components/clients-carousel"
+import { ClientsCarousel } from "@/components/client-logos"
 
 export default function Home() {
   return (
@@ -324,8 +324,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

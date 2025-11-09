@@ -127,8 +127,6 @@ export default function FiltrationPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

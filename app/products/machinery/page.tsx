@@ -125,8 +125,6 @@ export default function MachineryPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

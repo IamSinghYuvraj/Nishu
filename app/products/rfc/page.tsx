@@ -1,47 +1,26 @@
 import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import Link from "next/link"
-import { Droplet, Check, Zap, Shield } from "@/components/icons"
+import { Check, Zap, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
-export default function WaterTreatmentPage() {
+export default function RFCPage() {
   const mediaItems: MediaItem[] = [
-    {
-      type: "image",
-      src: "/water-treatment-plant-industrial-equipment.jpg",
-      title: "WTP-5000 System Overview",
-    },
-    {
-      type: "image",
-      src: "/water-filtration-machinery-close-up.jpg",
-      title: "Multi-Stage Filtration System",
-    },
-    {
-      type: "video",
-      src: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      title: "Installation Process",
-    },
-    {
-      type: "image",
-      src: "/industrial-water-treatment-control-panel.jpg",
-      title: "Control & Monitoring System",
-    },
+    { type: "image", src: "/industrial-water-treatment-control-panel.jpg", title: "RFC Machine Overview" },
+    { type: "image", src: "/water-filtration-machinery-close-up.jpg", title: "Rinsing Station" },
   ]
 
   const specs = [
-    { label: "Capacity Range", value: "100 - 10,000 GPM" },
-    { label: "Filtration Stages", value: "Multi-stage (3-5 stages)" },
-    { label: "Automation", value: "Full automated control" },
-    { label: "Warranty", value: "5-10 years" },
+    { label: "Capacity", value: "Up to 6000 bottles/hour (model dependent)" },
+    { label: "Materials", value: "SS 304 / SS 316 construction options" },
+    { label: "Bottle Types", value: "PET, Glass (adapter sets available)" },
+    { label: "Controls", value: "PLC based with HMI" },
   ]
 
   const benefits = [
-    "Superior water quality meeting international standards",
-    "Reduced operating costs through efficiency",
-    "Minimal downtime with automated monitoring",
-    "Environmentally friendly waste management",
-    "Expert installation and training included",
-    "24/7 technical support available",
+    "High throughput with minimal downtime",
+    "Precision rinsing and filling to reduce product loss",
+    "Modular design for easy maintenance and upgrades",
+    "Customizable to your line and bottle specifications",
   ]
 
   return (
@@ -49,16 +28,16 @@ export default function WaterTreatmentPage() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="bg-gradient-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Water Treatment <span className="text-secondary">Plants</span>
+                  Rinsing Filling Capping <span className="text-secondary">Machine (RFC)</span>
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  State-of-the-art water purification systems designed for maximum efficiency and reliability
+                  Fully integrated rinsing, filling and capping line engineered for high-speed bottling applications.
                 </p>
                 <Link
                   href="/contact"
@@ -67,6 +46,7 @@ export default function WaterTreatmentPage() {
                   Get a Quote
                 </Link>
               </div>
+
               <div>
                 <MediaGallery items={mediaItems} />
               </div>
@@ -74,7 +54,7 @@ export default function WaterTreatmentPage() {
           </div>
         </section>
 
-        {/* Specifications */}
+        {/* Specs */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Technical Specifications</h2>
@@ -101,7 +81,7 @@ export default function WaterTreatmentPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((benefit, idx) => (
                 <div key={idx} className="flex gap-4 p-4 hover:bg-background rounded-lg transition-colors duration-300">
-                  <Check className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
                   <p className="text-muted-foreground">{benefit}</p>
                 </div>
               ))}
@@ -109,30 +89,26 @@ export default function WaterTreatmentPage() {
           </div>
         </section>
 
-        {/* Features Highlight */}
+        {/* Features */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                 <Zap className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-foreground">Energy Efficient</h3>
-                <p className="text-muted-foreground text-sm">
-                  Optimized designs reduce operational costs by 30-40% compared to conventional systems
-                </p>
+                <h3 className="font-semibold text-lg mb-2 text-foreground">High Throughput</h3>
+                <p className="text-muted-foreground text-sm">Optimized for continuous high-speed production.</p>
               </div>
+
               <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                 <Shield className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-foreground">Reliable & Durable</h3>
-                <p className="text-muted-foreground text-sm">
-                  Built with premium materials and tested for 20+ years of continuous operation
-                </p>
+                <h3 className="font-semibold text-lg mb-2 text-foreground">Robust Construction</h3>
+                <p className="text-muted-foreground text-sm">Durable SS construction built for long life and easy cleaning.</p>
               </div>
+
               <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <Droplet className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-foreground">Superior Quality</h3>
-                <p className="text-muted-foreground text-sm">
-                  Meets and exceeds international water quality standards and regulations
-                </p>
+                <Check className="w-8 h-8 text-secondary mb-4" />
+                <h3 className="font-semibold text-lg mb-2 text-foreground">Easy Integration</h3>
+                <p className="text-muted-foreground text-sm">Designed to integrate with existing filling lines and automation systems.</p>
               </div>
             </div>
           </div>
@@ -141,12 +117,8 @@ export default function WaterTreatmentPage() {
         {/* CTA */}
         <section className="bg-secondary/5 py-16 md:py-24 border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Ready to Upgrade Your Water Treatment?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Contact our team for a personalized consultation and quote
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Ready to Automate Your Line?</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Contact our engineers for a customized RFC solution.</p>
             <Link
               href="/contact"
               className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
@@ -156,6 +128,7 @@ export default function WaterTreatmentPage() {
           </div>
         </section>
       </main>
+
     </div>
   )
 }
