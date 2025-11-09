@@ -5,8 +5,9 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function RFCPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/industrial-water-treatment-control-panel.jpg", title: "RFC Machine Overview" },
-    { type: "image", src: "/water-filtration-machinery-close-up.jpg", title: "Rinsing Station" },
+    { type: "image", src: "/rfc(1).webp", title: "RFC Machine 1" },
+    { type: "image", src: "/rfc(2).webp", title: "RFC Machine 2" },
+    { type: "image", src: "/rfc(3).webp", title: "RFC Machine 3" },
   ]
 
   const specs = [
@@ -75,12 +76,7 @@ export default function RFCPage() {
                   Automatic Rinsing, Filling, and Capping (RFC) machines designed for packaged drinking water and beverages. Ensures hygienic, high-speed bottling operations.
                 </p>
                 <div className="flex gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                  >
-                    Get a Quote
-                  </Link>
+                  
                   <Link
                     href="/brochure.pdf"
                     className="inline-block px-8 py-3 bg-background text-foreground rounded-lg border border-border hover:border-secondary transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
@@ -197,12 +193,7 @@ export default function RFCPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Ready to Automate Your Line?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Contact our engineers for a customized RFC solution.</p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-            >
-              Get a Quote
-            </Link>
+            
           </div>
         </section>
       </main>

@@ -5,7 +5,10 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function MineralWaterProjectPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/mineral-water-project.jpg", title: "Mineral Water Project" },
+    { type: "image", src: "/Complete-Mineral-Water-Project(5).webp", title: "Complete Mineral Water Project" },
+    { type: "image", src: "/COMPLETE-PROJECT-FLOW-DIAGRAM(3)).webp", title: "Project Flow Diagram" },
+    { type: "image", src: "/Mineral-Drinking-Water-Plant(1).webp", title: "Mineral Drinking Water Plant" },
+    { type: "image", src: "/Mineral-Water-Plant(2).webp", title: "Mineral Water Plant" },
   ]
 
   const specs = [
@@ -70,12 +73,7 @@ export default function MineralWaterProjectPage() {
                 <p className="text-lg text-muted-foreground mb-8">
                   We offer complete, end-to-end turnkey solutions for setting up Packaged Drinking Water Plants. Our projects cover every stage, from initial raw water treatment to final bottling and packaging, ensuring compliance with BIS, WHO, and FSSAI standards.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                >
-                  Get a Quote
-                </Link>
+                
               </div>
 
               <div>

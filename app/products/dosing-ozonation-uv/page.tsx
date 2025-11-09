@@ -5,7 +5,9 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function DosingOzonationUVPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/dosing-ozonation-uv.jpg", title: "Dosing Ozonation UV Systems" },
+    { type: "image", src: "/Ozone_system(3).jpg", title: "Ozone System 1" },
+    { type: "image", src: "/Ozone-System(1).jpg", title: "Ozone System 2" },
+    { type: "image", src: "/Ozone-system(2).jpg", title: "Ozone System 3" },
   ]
 
   const specs = [
@@ -61,12 +63,7 @@ export default function DosingOzonationUVPage() {
                 <p className="text-lg text-muted-foreground mb-8">
                   These systems are an integral part of advanced water treatment, providing powerful disinfection, oxidation, and precise chemical control for the highest water quality.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                >
-                  Get a Quote
-                </Link>
+                
               </div>
 
               <div>

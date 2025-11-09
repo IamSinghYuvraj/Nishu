@@ -5,7 +5,8 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function WaterSofteningPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/water-filtration-machinery-close-up.jpg", title: "Water Softening System" },
+    { type: "image", src: "/Water-Softening-Plant.jpg", title: "Water Softening Plant" },
+    {type: "image", src: "/water-softeners.webp", title: "Water Softeners"}
   ]
 
   const specs = [
@@ -45,7 +46,7 @@ export default function WaterSofteningPage() {
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Water Softening Plant</h1>
                 <p className="text-lg text-muted-foreground mb-8">We provide top-quality Water Softening Plants designed to remove hardness-causing minerals from water, ensuring efficient operation for industrial and civil water systems.</p>
-                <Link href="/contact" className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg">Get a Quote</Link>
+                
               </div>
               <div>
                 <MediaGallery items={mediaItems} />

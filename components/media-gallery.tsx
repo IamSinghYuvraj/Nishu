@@ -51,15 +51,8 @@ export function MediaGallery({ items }: MediaGalleryProps) {
                 src={currentItem.src || "/placeholder.svg"}
                 alt={currentItem.title || "Product image"}
                 fill
-                className={`object-cover transition-transform duration-300 ${isZoomed ? "scale-150 cursor-zoom-out" : "scale-100 cursor-zoom-in"}`}
-                onClick={() => setIsZoomed(!isZoomed)}
+                className={`object-contain transition-transform duration-300`}
               />
-              <button
-                onClick={() => setIsZoomed(!isZoomed)}
-                className="absolute top-4 right-4 bg-secondary text-secondary-foreground p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                {isZoomed ? <X className="w-5 h-5" /> : <ZoomIn className="w-5 h-5" />}
-              </button>
             </>
           ) : (
             <iframe

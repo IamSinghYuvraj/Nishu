@@ -5,7 +5,9 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function FabricatedVesselsPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/fabricated-vessels.jpg", title: "Fabricated Vessels" },
+    { type: "image", src: "/ss-storage-tank(2).webp", title: "SS Storage Tank 1" },
+    { type: "image", src: "/ss-storage-tanks(1).webp", title: "SS Storage Tank 2" },
+    { type: "image", src: "/ss-storage-tanks(3).webp", title: "SS Storage Tank 3" },
   ]
 
   const specs = [
@@ -46,12 +48,7 @@ export default function FabricatedVesselsPage() {
                 <p className="text-lg text-muted-foreground mb-8">
                   We manufacture and supply robust Stainless Steel (SS) and Mild Steel (MS) Vessel Tanks designed for secure, high-capacity storage across various industries.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                >
-                  Get a Quote
-                </Link>
+                
               </div>
 
               <div>

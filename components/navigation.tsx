@@ -186,14 +186,9 @@ export function Navigation() {
                   href="/products/rfc"
                   className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
                 >
-                  Industrial Machinery
+                  Rinsing Filling Capping Machine (RFC)
                 </Link>
-                <Link
-                  href="/products/filtration"
-                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
-                >
-                  Filtration Systems
-                </Link>
+                
               </div>
             )}
             <Link

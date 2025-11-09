@@ -71,12 +71,7 @@ export default function ROPage() {
                 <p className="text-lg text-muted-foreground mb-8">
                   We are a prominent supplier of Reverse Osmosis (RO) Systems, providing the perfect solution for removing impurities and unwanted elements from water. RO technology purifies brackish or saline water by reducing Total Dissolved Solids (TDS) for various commercial and industrial needs.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                >
-                  Get a Quote
-                </Link>
+                
               </div>
 
               <div>
