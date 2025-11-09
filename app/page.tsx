@@ -1,8 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
-import { ArrowRight, Droplet, Cog, Shield } from "@/components/icons"
+import { ArrowRight, Droplet, Cog, Shield, CheckCircle, Globe, Users, Award } from "@/components/icons"
 import { ClientsCarousel } from "@/components/client-logos"
+import { Industries } from "@/components/industries"
 
 export default function Home() {
   return (
@@ -44,6 +45,35 @@ export default function Home() {
                 Read More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-12 bg-linear-to-r from-primary/5 to-secondary/5 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center p-6 rounded-lg bg-background border border-border hover:shadow-lg transition-all duration-300">
+                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-secondary" />
+                </div>
+                <h3 className="text-4xl font-bold text-foreground mb-2">200+</h3>
+                <p className="text-muted-foreground">Projects Completed</p>
+              </div>
+              <div className="text-center p-6 rounded-lg bg-background border border-border hover:shadow-lg transition-all duration-300">
+                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-8 h-8 text-secondary" />
+                </div>
+                <h3 className="text-4xl font-bold text-foreground mb-2">15+</h3>
+                <p className="text-muted-foreground">Countries Served</p>
+              </div>
+              <div className="text-center p-6 rounded-lg bg-background border border-border hover:shadow-lg transition-all duration-300">
+                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-secondary" />
+                </div>
+                <h3 className="text-4xl font-bold text-foreground mb-2">500+</h3>
+                <p className="text-muted-foreground">Happy Clients</p>
+              </div>
             </div>
           </div>
         </section>
@@ -146,8 +176,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Industries We Serve Section */}
+        <Industries />
+
         {/* Client Satisfaction Section */}
-        <section className="py-16 md:py-24 bg-primary/5 border-y border-border">
+        <section className="py-16 md:py-24 bg-linear-to-b from-secondary/5 to-primary/5 border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             <div className="order-2 md:order-1 bg-linear-to-bl from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-pulse-glow-reverse">
