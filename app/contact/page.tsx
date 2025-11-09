@@ -53,13 +53,13 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: "Email",
-      value: "info@nishuenterprises.com",
-      link: "mailto:info@nishuenterprises.com",
+      value: "nishudbj@gmail.com",
+      link: "mailto:nishudbj@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "08048611863",
+      value: "8048611863",
       link: "tel:+918048611863",
     },
     {
@@ -72,7 +72,7 @@ export default function ContactPage() {
     {
       icon: Clock,
       label: "Business Hours",
-      value: "Mon - Fri: 9:00 AM - 6:00 PM EST",
+      value: "Mon - Sat: 9:00 AM - 6:00 PM IST",
       link: "#",
     },
   ]
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/5 to-secondary/5 border-b border-border py-16 md:py-24">
+        <section className="bg-linear-to-br from-primary/5 to-secondary/5 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
               Get in <span className="text-primary">Touch</span>

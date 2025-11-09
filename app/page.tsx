@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/5 to-secondary/10 border-b border-border py-20 md:py-32">
+        <section className="relative bg-linear-to-br from-primary/5 to-secondary/10 border-b border-border py-20 md:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6 text-foreground">
@@ -122,22 +122,22 @@ export default function Home() {
                   using quality material and advanced technology.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-pulse-glow">
+              <div className="bg-linear-to-br from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-pulse-glow">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Rigorous Testing Standards</p>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">State-of-the-Art Laboratory</p>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Expert Quality Controllers</p>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Premium Material & Advanced Technology</p>
                   </div>
                 </div>
@@ -150,22 +150,22 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-primary/5 border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 bg-gradient-to-bl from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg">
+                            <div className="order-2 md:order-1 bg-linear-to-bl from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-pulse-glow-reverse">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Faultless Product Delivery</p>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Client-Centric Approach</p>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Timely Deliveries</p>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
                     <p className="text-foreground font-medium">Cost-Effective Solutions</p>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export default function Home() {
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-all">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-secondary to-secondary/60" />
+                    <div className="w-6 h-6 rounded-full bg-linear-to-br from-secondary to-secondary/60" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
@@ -264,7 +264,7 @@ export default function Home() {
                 >
                   {/* Connector line between steps */}
                   {idx < 3 && (
-                    <div className="hidden md:block absolute -right-3 top-1/2 w-6 h-0.5 bg-gradient-to-r from-secondary to-secondary/30" />
+                    <div className="hidden md:block absolute -right-3 top-1/2 w-6 h-0.5 bg-linear-to-r from-secondary to-secondary/30" />
                   )}
                   <div className="text-4xl font-bold text-secondary/30 mb-4 group-hover:text-secondary/50 transition-all">
                     {item.step}
@@ -306,23 +306,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Ready to Transform Your Water Treatment Needs?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let our expert team help you find the perfect solution for your industrial requirements.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-            >
-              Get a Quote
-            </Link>
-          </div>
-        </section>
+        {/* CTA removed — ContactUs is rendered globally in layout.tsx */}
       </main>
     </div>
   )

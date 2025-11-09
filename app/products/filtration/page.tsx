@@ -26,7 +26,7 @@ export default function FiltrationPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-accent/5 to-primary/5 border-b border-border py-16 md:py-24">
+        <section className="bg-linear-to-br from-accent/5 to-primary/5 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
@@ -72,7 +72,7 @@ export default function FiltrationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {technologies.map((tech, idx) => (
                 <div key={idx} className="flex gap-4 p-4">
-                  <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                  <Check className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <p className="text-muted-foreground">{tech}</p>
                 </div>
               ))}

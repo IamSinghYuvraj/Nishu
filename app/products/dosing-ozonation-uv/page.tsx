@@ -1,23 +1,23 @@
 import { Navigation } from "@/components/navigation"
+import { Check } from "@/components/icons"
 import Link from "next/link"
-import { Check, Zap, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
-export default function ROPage() {
+export default function DosingOzonationUVPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/water-treatment-plant-industrial-equipment.jpg", title: "RO System Overview" },
+    { type: "image", src: "/dosing-ozonation-uv.jpg", title: "Dosing Ozonation UV Systems" },
   ]
 
   const specs = [
-    { label: "Recovery", value: "60% - 85% (depending on feed)" },
-    { label: "Membrane Type", value: "Thin-film composite (TFC)" },
-    { label: "Capacity", value: "Up to 10,000 LPH and beyond" },
+    { label: "Dosing Flow Range", value: "0.1 to 1000 LPH" },
+    { label: "Ozone Capacity", value: "1 to 100 g/hr" },
+    { label: "UV Flow Range", value: "0.5 to 100 m³/hr" },
   ]
 
   const benefits = [
-    "Removes dissolved salts and contaminants",
-    "Improved water taste and safety",
-    "Low maintenance with high uptime",
+    "Precise chemical control",
+    "Effective disinfection without chemicals",
+    "Compact & modular systems",
   ]
 
   return (
@@ -29,11 +29,9 @@ export default function ROPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
-                </h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Dosing, Ozonation & UV Systems</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  High-performance RO systems designed for potable, industrial and process water treatment.
+                  Comprehensive water treatment solutions including chemical dosing systems, ozone generators, and UV sterilization units for various applications.
                 </p>
                 <Link
                   href="/contact"

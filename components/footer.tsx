@@ -9,9 +9,14 @@ export function Footer() {
   const [productsOpen, setProductsOpen] = useState(false)
 
   const products = [
-    { title: "Water Treatment Plants", link: "/products/water-treatment" },
-    { title: "Industrial Machinery", link: "/products/machinery" },
-    { title: "Filtration Systems", link: "/products/filtration" },
+    { title: "Reverse Osmosis Plant (RO)", link: "/products/reverse-osmosis" },
+    { title: "Demineralized Plant (DM)", link: "/products/demineralized" },
+    { title: "Water Softening Plant", link: "/products/water-softening" },
+    { title: "SS Pressure Tube", link: "/products/ss-pressure-tube" },
+    { title: "Specially Fabricated SS & MS Vessel/Tanks", link: "/products/fabricated-vessels" },
+    { title: "Complete Mineral Water Project", link: "/products/mineral-water-project" },
+    { title: "Dosing, Ozonation & UV Systems", link: "/products/dosing-ozonation-uv" },
+    { title: "Rinsing Filling Capping Machine (RFC)", link: "/products/rfc" },
   ]
 
   return (
@@ -52,7 +57,7 @@ export function Footer() {
                 </button>
                 {/* Products Dropdown */}
                 {productsOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-primary/90 rounded-lg border border-secondary/30 py-2 z-50">
+                  <div className="absolute left-0 mt-2 w-72 bg-primary/90 rounded-lg border border-secondary/30 py-2 z-50">
                     {products.map((product, idx) => (
                       <Link
                         key={idx}
@@ -129,20 +134,20 @@ export function Footer() {
             <h4 className="font-semibold text-sm mb-4">Contact Info</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                <MapPin className="w-4 h-4 mt-1 shrink-0" />
                 <span>
                   gala no.5 bld no.6,parsvanath ind estate bhutpada vasai east Vasai - 401208, Palghar, Maharashtra, India
                   Call Us: 08048611863
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
+                <Phone className="w-4 h-4 mt-1 shrink-0" />
                 <a href="tel:+918048611863" className="hover:text-secondary transition-all duration-300">
                   08048611863
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-1 flex-shrink-0" />
+                <Mail className="w-4 h-4 mt-1 shrink-0" />
                 <a href="mailto:info@nishuenterprises.com" className="hover:text-secondary transition-all duration-300">
                   info@nishuenterprises.com
                 </a>

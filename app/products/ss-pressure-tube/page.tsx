@@ -1,23 +1,23 @@
 import { Navigation } from "@/components/navigation"
+import { Check } from "@/components/icons"
 import Link from "next/link"
-import { Check, Zap, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
-export default function ROPage() {
+export default function SSPressureTubePage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/water-treatment-plant-industrial-equipment.jpg", title: "RO System Overview" },
+    { type: "image", src: "/ss-pressure-tube.jpg", title: "SS Pressure Tube" },
   ]
 
   const specs = [
-    { label: "Recovery", value: "60% - 85% (depending on feed)" },
-    { label: "Membrane Type", value: "Thin-film composite (TFC)" },
-    { label: "Capacity", value: "Up to 10,000 LPH and beyond" },
+    { label: "Material", value: "316L Stainless Steel" },
+    { label: "Diameter Range", value: "2.5\" to 8\"" },
+    { label: "Max Pressure", value: "300 PSI" },
   ]
 
   const benefits = [
-    "Removes dissolved salts and contaminants",
-    "Improved water taste and safety",
-    "Low maintenance with high uptime",
+    "High corrosion resistance",
+    "Precision manufacturing",
+    "Custom end fittings",
   ]
 
   return (
@@ -30,10 +30,10 @@ export default function ROPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
+                  SS Pressure Tube
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  High-performance RO systems designed for potable, industrial and process water treatment.
+                  High-quality stainless steel pressure tubes and assemblies designed for superior performance and durability in water treatment systems.
                 </p>
                 <Link
                   href="/contact"

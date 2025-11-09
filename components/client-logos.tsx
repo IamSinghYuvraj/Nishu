@@ -33,7 +33,7 @@ export function ClientsCarousel() {
             {clients.map((client, idx) => (
               <div
                 key={`client-1-${idx}`}
-                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-6 bg-card rounded-lg border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="shrink-0 w-full sm:w-1/2 md:w-1/3 p-6 bg-card rounded-lg border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-lg font-semibold text-foreground mb-1">{client.name}</h3>
                 <p className="text-sm text-muted-foreground">{client.location}</p>
@@ -43,7 +43,7 @@ export function ClientsCarousel() {
             {clients.map((client, idx) => (
               <div
                 key={`client-2-${idx}`}
-                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 p-6 bg-card rounded-lg border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="shrink-0 w-full sm:w-1/2 md:w-1/3 p-6 bg-card rounded-lg border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-lg font-semibold text-foreground mb-1">{client.name}</h3>
                 <p className="text-sm text-muted-foreground">{client.location}</p>
@@ -52,8 +52,8 @@ export function ClientsCarousel() {
           </div>
 
           {/* Gradient masks for smooth edges */}
-          <div className="absolute left-0 top-0 w-12 h-full bg-gradient-to-r from-primary/5 to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-0 w-12 h-full bg-linear-to-r from-primary/5 to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 w-12 h-full bg-linear-to-l from-primary/5 to-transparent pointer-events-none" />
         </div>
       </div>
     </section>

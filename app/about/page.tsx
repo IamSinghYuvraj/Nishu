@@ -11,7 +11,7 @@ export default function AboutPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/5 to-secondary/10 border-b border-border py-16 md:py-24">
+        <section className="bg-linear-to-br from-primary/5 to-secondary/10 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
               About <span className="text-secondary">Nishu Enterprises</span>
@@ -47,7 +47,7 @@ export default function AboutPage() {
                   to cater to clients spread across worldwide.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-secondary/10 to-accent/10 rounded-lg p-8 h-96 flex items-center justify-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <div className="bg-linear-to-br from-secondary/10 to-accent/10 rounded-lg p-8 h-96 flex items-center justify-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                 <div className="text-center">
                   <div className="text-5xl font-bold text-secondary mb-4">29+</div>
                   <p className="text-lg text-muted-foreground">Years of Excellence Since 1996</p>
@@ -120,7 +120,7 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="group p-8 rounded-lg border border-border bg-background hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+                <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
                 <div className="relative">
                   <h3 className="text-2xl font-bold text-secondary mb-4 group-hover:text-secondary/80 transition-colors">
                     DM Plants
@@ -132,7 +132,7 @@ export default function AboutPage() {
               </div>
 
               <div className="group p-8 rounded-lg border border-border bg-background hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+                <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
                 <div className="relative">
                   <h3 className="text-2xl font-bold text-secondary mb-4 group-hover:text-secondary/80 transition-colors">
                     Reverse Osmosis Systems
@@ -144,7 +144,7 @@ export default function AboutPage() {
               </div>
 
               <div className="group p-8 rounded-lg border border-border bg-background hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+                <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
                 <div className="relative">
                   <h3 className="text-2xl font-bold text-secondary mb-4 group-hover:text-secondary/80 transition-colors">
                     UV & Ozonation
@@ -156,7 +156,7 @@ export default function AboutPage() {
               </div>
 
               <div className="group p-8 rounded-lg border border-border bg-background hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+                <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
                 <div className="relative">
                   <h3 className="text-2xl font-bold text-secondary mb-4 group-hover:text-secondary/80 transition-colors">
                     Specialty Filtration

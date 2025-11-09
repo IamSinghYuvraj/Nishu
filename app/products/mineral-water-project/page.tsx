@@ -1,23 +1,23 @@
 import { Navigation } from "@/components/navigation"
+import { Check } from "@/components/icons"
 import Link from "next/link"
-import { Check, Zap, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
-export default function ROPage() {
+export default function MineralWaterProjectPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/water-treatment-plant-industrial-equipment.jpg", title: "RO System Overview" },
+    { type: "image", src: "/mineral-water-project.jpg", title: "Mineral Water Project" },
   ]
 
   const specs = [
-    { label: "Recovery", value: "60% - 85% (depending on feed)" },
-    { label: "Membrane Type", value: "Thin-film composite (TFC)" },
-    { label: "Capacity", value: "Up to 10,000 LPH and beyond" },
+    { label: "Plant Capacity Range", value: "2,000 to 50,000 LPH" },
+    { label: "Production Speed", value: "2,000 to 24,000 BPH" },
+    { label: "Bottle Sizes", value: "200ml to 20L" },
   ]
 
   const benefits = [
-    "Removes dissolved salts and contaminants",
-    "Improved water taste and safety",
-    "Low maintenance with high uptime",
+    "Turn-key project delivery",
+    "Automated filling & packaging",
+    "Regulatory compliance support",
   ]
 
   return (
@@ -29,11 +29,9 @@ export default function ROPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
-                </h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Complete Mineral Water Project</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  High-performance RO systems designed for potable, industrial and process water treatment.
+                  Turn-key solutions for mineral water bottling plants, from water treatment to bottling and packaging systems.
                 </p>
                 <Link
                   href="/contact"
@@ -52,7 +50,7 @@ export default function ROPage() {
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Technical Specifications</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Project Details</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {specs.map((spec, idx) => (
                 <div key={idx} className="p-6 rounded-lg border border-border bg-card">

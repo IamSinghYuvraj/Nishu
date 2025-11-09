@@ -1,23 +1,23 @@
 import { Navigation } from "@/components/navigation"
+import { Check } from "@/components/icons"
 import Link from "next/link"
-import { Check, Zap, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
-export default function ROPage() {
+export default function FabricatedVesselsPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/water-treatment-plant-industrial-equipment.jpg", title: "RO System Overview" },
+    { type: "image", src: "/fabricated-vessels.jpg", title: "Fabricated Vessels" },
   ]
 
   const specs = [
-    { label: "Recovery", value: "60% - 85% (depending on feed)" },
-    { label: "Membrane Type", value: "Thin-film composite (TFC)" },
-    { label: "Capacity", value: "Up to 10,000 LPH and beyond" },
+    { label: "Materials", value: "SS304, SS316, MS" },
+    { label: "Capacity", value: "100L to 100,000L" },
+    { label: "Thickness", value: "2mm to 12mm" },
   ]
 
   const benefits = [
-    "Removes dissolved salts and contaminants",
-    "Improved water taste and safety",
-    "Low maintenance with high uptime",
+    "Custom engineered designs",
+    "International quality standards",
+    "Advanced welding & finishing",
   ]
 
   return (
@@ -30,10 +30,10 @@ export default function ROPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
+                  Specially Fabricated SS & MS Vessel/Tanks
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  High-performance RO systems designed for potable, industrial and process water treatment.
+                  Custom-engineered stainless steel and mild steel vessels and tanks, designed and fabricated to meet your specific industrial requirements.
                 </p>
                 <Link
                   href="/contact"

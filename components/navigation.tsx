@@ -41,24 +41,54 @@ export function Navigation() {
                 Products
                 <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-all duration-300" />
               </button>
-              <div className="absolute left-0 mt-0 w-48 bg-card border border-border rounded-lg shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              <div className="absolute left-0 mt-0 w-72 bg-card border border-border rounded-lg shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                 <Link
-                  href="/products/water-treatment"
+                  href="/products/reverse-osmosis"
                   className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground first:rounded-t-lg transition-all duration-300"
                 >
-                  Water Treatment Plants
+                  Reverse Osmosis Plant (RO)
                 </Link>
                 <Link
-                  href="/products/machinery"
+                  href="/products/demineralized"
                   className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
                 >
-                  Industrial Machinery
+                  Demineralized Plant (DM)
                 </Link>
                 <Link
-                  href="/products/filtration"
+                  href="/products/water-softening"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  Water Softening Plant
+                </Link>
+                <Link
+                  href="/products/ss-pressure-tube"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  SS Pressure Tube
+                </Link>
+                <Link
+                  href="/products/fabricated-vessels"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  Specially Fabricated SS & MS Vessel/Tanks
+                </Link>
+                <Link
+                  href="/products/mineral-water-project"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  Complete Mineral Water Project
+                </Link>
+                <Link
+                  href="/products/dosing-ozonation-uv"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  Dosing, Ozonation & UV Systems
+                </Link>
+                <Link
+                  href="/products/rfc"
                   className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground last:rounded-b-lg transition-all duration-300"
                 >
-                  Filtration Systems
+                  Rinsing Filling Capping Machine (RFC)
                 </Link>
               </div>
             </div>
@@ -111,13 +141,49 @@ export function Navigation() {
             {isProductsOpen && (
               <div className="pl-4">
                 <Link
-                  href="/products/water-treatment"
+                  href="/products/reverse-osmosis"
                   className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
                 >
-                  Water Treatment Plants
+                  Reverse Osmosis Plant (RO)
                 </Link>
                 <Link
-                  href="/products/machinery"
+                  href="/products/demineralized"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  Demineralized Plant (DM)
+                </Link>
+                <Link
+                  href="/products/water-softening"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  Water Softening Plant
+                </Link>
+                <Link
+                  href="/products/ss-pressure-tube"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  SS Pressure Tube
+                </Link>
+                <Link
+                  href="/products/fabricated-vessels"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  Specially Fabricated SS & MS Vessel/Tanks
+                </Link>
+                <Link
+                  href="/products/mineral-water-project"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  Complete Mineral Water Project
+                </Link>
+                <Link
+                  href="/products/dosing-ozonation-uv"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  Dosing, Ozonation & UV Systems
+                </Link>
+                <Link
+                  href="/products/rfc"
                   className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
                 >
                   Industrial Machinery

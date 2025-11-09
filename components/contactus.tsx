@@ -7,7 +7,7 @@ const ContactUs: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <AnimatedSection>
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-800 rounded-2xl p-12 text-center shadow-xl">
+          <div className="bg-linear-to-r from-blue-600 to-indigo-800 rounded-2xl p-12 text-center shadow-xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
