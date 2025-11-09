@@ -124,7 +124,7 @@ export function MediaGallery({ items }: MediaGalleryProps) {
         <p className="text-muted-foreground text-sm">
           {currentIndex + 1} of {items.length}
         </p>
-        {currentItem.title && <p className="font-medium text-foreground">{currentItem.title}</p>}
+        
       </div>
     </div>
   )
