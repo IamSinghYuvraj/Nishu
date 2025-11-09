@@ -90,45 +90,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-semibold text-sm mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Consultation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Installation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Maintenance
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Support
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
             <h4 className="font-semibold text-sm mb-4">Contact Info</h4>

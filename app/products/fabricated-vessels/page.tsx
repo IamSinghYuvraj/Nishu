@@ -14,10 +14,21 @@ export default function FabricatedVesselsPage() {
     { label: "Thickness", value: "2mm to 12mm" },
   ]
 
+  const products = [
+    {
+      name: "SS Storage Tanks",
+      description: "High-capacity, secure storage for various liquids, including chemicals and oils.",
+      features: "Constructed from high-grade Stainless Steel (SS 304/316L), offering a corrosion-resistant solution especially suited for the Pharmaceutical Industry. Can be custom-designed for pressure, full vacuum, and heating/cooling requirements."
+    }
+  ]
+
   const benefits = [
     "Custom engineered designs",
     "International quality standards",
     "Advanced welding & finishing",
+    "Corrosion resistance",
+    "Pressure and vacuum capability",
+    "Heating/cooling customization"
   ]
 
   return (
@@ -30,10 +41,10 @@ export default function FabricatedVesselsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Specially Fabricated SS & MS Vessel/Tanks
+                  SS & MS Vessel Tanks
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Custom-engineered stainless steel and mild steel vessels and tanks, designed and fabricated to meet your specific industrial requirements.
+                  We manufacture and supply robust Stainless Steel (SS) and Mild Steel (MS) Vessel Tanks designed for secure, high-capacity storage across various industries.
                 </p>
                 <Link
                   href="/contact"
@@ -46,6 +57,31 @@ export default function FabricatedVesselsPage() {
               <div>
                 <MediaGallery items={mediaItems} />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Product Range</h2>
+            <p className="text-lg text-muted-foreground mb-12">Our storage solutions are engineered for durability and reliability across various industrial applications:</p>
+            
+            <div className="grid gap-8">
+              {products.map((product, idx) => (
+                <div key={idx} className="border border-border rounded-lg p-6 bg-card">
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{product.name}</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-muted-foreground mb-2">Primary Function</h4>
+                      <p className="text-foreground">{product.description}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-muted-foreground mb-2">Core Benefits & Features</h4>
+                      <p className="text-foreground">{product.features}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

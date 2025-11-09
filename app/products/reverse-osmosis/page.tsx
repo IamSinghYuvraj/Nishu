@@ -14,10 +14,41 @@ export default function ROPage() {
     { label: "Capacity", value: "Up to 10,000 LPH and beyond" },
   ]
 
+  const products = [
+    {
+      name: "Commercial Reverse Osmosis Units (Eco Series)",
+      description: "High-capacity purification for commercial and industrial scale water needs.",
+      features: "Provides reliably treated water suitable for various applications using quality pre-filtration components."
+    },
+    {
+      name: "Industrial Reverse Osmosis Unit",
+      description: "High-efficiency RO for demanding industrial processes.",
+      features: "Offers high water recovery (up to 85%) and robust pre-treatment to ensure consistent, pure water."
+    },
+    {
+      name: "Industrial RO Plant",
+      description: "Economical and efficient membrane desalination for brackish water.",
+      features: "Produces water that is clear, pleasant to taste, and removes up to 95% of TDS/salinity. Ideal for reducing regeneration chemicals in DM plants."
+    },
+    {
+      name: "Commercial Reverse Osmosis System (Premium Series)",
+      description: "Complete, state-of-the-art packaged RO systems for low-TDS brackish water treatment.",
+      features: "Yields very low TDS water free from particulate and colloidal matter, with optional UV sterilization for drinking water use."
+    },
+    {
+      name: "Industrial RO System",
+      description: "Robust, modular purification to remove virtually all TDS content.",
+      features: "Provides high performance with a modular design, requiring simple operation and minimal daily chemical maintenance."
+    }
+  ]
+
   const benefits = [
     "Removes dissolved salts and contaminants",
     "Improved water taste and safety",
     "Low maintenance with high uptime",
+    "High water recovery rates",
+    "Efficient TDS reduction",
+    "Modular and scalable solutions"
   ]
 
   return (
@@ -33,7 +64,7 @@ export default function ROPage() {
                   Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  High-performance RO systems designed for potable, industrial and process water treatment.
+                  We are a prominent supplier of Reverse Osmosis (RO) Systems, providing the perfect solution for removing impurities and unwanted elements from water. RO technology purifies brackish or saline water by reducing Total Dissolved Solids (TDS) for various commercial and industrial needs.
                 </p>
                 <Link
                   href="/contact"
@@ -46,6 +77,31 @@ export default function ROPage() {
               <div>
                 <MediaGallery items={mediaItems} />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Product Range</h2>
+            <p className="text-lg text-muted-foreground mb-12">Our comprehensive range of Reverse Osmosis systems is designed to meet various industrial and commercial requirements:</p>
+            
+            <div className="grid gap-8">
+              {products.map((product, idx) => (
+                <div key={idx} className="border border-border rounded-lg p-6 bg-card">
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{product.name}</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-muted-foreground mb-2">Primary Function</h4>
+                      <p className="text-foreground">{product.description}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-muted-foreground mb-2">Core Benefits & Output</h4>
+                      <p className="text-foreground">{product.features}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

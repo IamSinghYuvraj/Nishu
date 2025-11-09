@@ -14,10 +14,21 @@ export default function SSPressureTubePage() {
     { label: "Max Pressure", value: "300 PSI" },
   ]
 
+  const products = [
+    {
+      name: "High Pressure Pump",
+      description: "Drives the system by providing the necessary high pressure for efficient purification processes (like Reverse Osmosis).",
+      features: "Maximizes system efficiency and minimizes ownership cost by using the best available technology (e.g., Grundfoss) known for superior longevity and lower electrical consumption"
+    }
+  ]
+
   const benefits = [
     "High corrosion resistance",
     "Precision manufacturing",
     "Custom end fittings",
+    "Superior longevity",
+    "Lower electrical consumption",
+    "Optimal system efficiency"
   ]
 
   return (
@@ -30,10 +41,10 @@ export default function SSPressureTubePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  SS Pressure Tube
+                  High Pressure Pump
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  High-quality stainless steel pressure tubes and assemblies designed for superior performance and durability in water treatment systems.
+                  As a leading manufacturer of water treatment components, we offer advanced High Pressure Pumps designed to ensure the optimal and cost-effective operation of your systems.
                 </p>
                 <Link
                   href="/contact"
@@ -46,6 +57,31 @@ export default function SSPressureTubePage() {
               <div>
                 <MediaGallery items={mediaItems} />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Product Details</h2>
+            <p className="text-lg text-muted-foreground mb-12">Our high-performance pressure pump solutions are engineered for reliability and efficiency:</p>
+            
+            <div className="grid gap-8">
+              {products.map((product, idx) => (
+                <div key={idx} className="border border-border rounded-lg p-6 bg-card">
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{product.name}</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-muted-foreground mb-2">Primary Function</h4>
+                      <p className="text-foreground">{product.description}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-muted-foreground mb-2">Core Benefits & Performance</h4>
+                      <p className="text-foreground">{product.features}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
