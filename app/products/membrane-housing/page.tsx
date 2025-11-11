@@ -3,9 +3,9 @@ import { Check } from "@/components/icons"
 import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
-export default function SSPressureTubePage() {
+export default function MembraneHousingPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/Stainless-Steel-Pumps.jpg", title: "Stainless Steel Pump" },
+    { type: "image", src: "/membrane-Housing(1).jpg", title: "Stainless Steel Pump" },
   ]
 
   const specs = [
@@ -16,7 +16,7 @@ export default function SSPressureTubePage() {
 
   const products = [
     {
-      name: "SS Pressure Tubes",
+      name: "Membrane Housing",
       description: "Drives the system by providing the necessary high pressure for efficient purification processes (like Reverse Osmosis).",
       features: "Maximizes system efficiency and minimizes ownership cost by using the best available technology (e.g., Grundfoss) known for superior longevity and lower electrical consumption"
     }
@@ -41,7 +41,7 @@ export default function SSPressureTubePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  SS Pressure Tubes
+                  Membrane Housing
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
                   As a leading manufacturer of water treatment components, we offer advanced High Pressure Pumps designed to ensure the optimal and cost-effective operation of your systems.

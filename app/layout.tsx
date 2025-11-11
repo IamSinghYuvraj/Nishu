@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   },
 }
 
+import WhatsAppChat from "@/components/whatsapp-chat";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +43,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <ContactUs />
+        <WhatsAppChat />
         <Footer />
       </body>
     </html>

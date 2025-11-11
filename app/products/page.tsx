@@ -7,7 +7,7 @@ export default function ProductsIndex() {
     { title: "Reverse Osmosis Plant (RO)", slug: "reverse-osmosis", desc: "High-performance RO systems for potable and industrial water." },
     { title: "Demineralized Plant (DM)", slug: "demineralized", desc: "DM plants for ultra-pure water requirements." },
     { title: "Water Softening Plant", slug: "water-softening", desc: "Softening units to remove hardness and extend equipment life." },
-    { title: "SS Pressure Tube", slug: "ss-pressure-tube", desc: "Stainless steel pressure tubing and assemblies." },
+    { title: "Membrane Housing", slug: "membrane-housing", desc: "Stainless steel pressure tubing and assemblies." },
     { title: "Fabricated SS & MS Vessel/Tanks", slug: "fabricated-vessels", desc: "Custom fabricated vessels and tanks in SS and MS." },
     { title: "Complete Mineral Water Project", slug: "mineral-water-project", desc: "End-to-end mineral water bottling plant solutions." },
     { title: "Dosing, Ozonation & UV Systems", slug: "dosing-ozonation-uv", desc: "Chemical dosing, ozonation and UV sterilization systems." },

@@ -12,7 +12,7 @@ export function Footer() {
     { title: "Reverse Osmosis Plant (RO)", link: "/products/reverse-osmosis" },
     { title: "Demineralized Plant (DM)", link: "/products/demineralized" },
     { title: "Water Softening Plant", link: "/products/water-softening" },
-    { title: "SS Pressure Tube", link: "/products/ss-pressure-tube" },
+    { title: "Membrane Housing", link: "/products/membrane-housing" },
     { title: "Specially Fabricated SS & MS Vessel/Tanks", link: "/products/fabricated-vessels" },
     { title: "Complete Mineral Water Project", link: "/products/mineral-water-project" },
     { title: "Dosing, Ozonation & UV Systems", link: "/products/dosing-ozonation-uv" },
@@ -22,11 +22,11 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div>
+          <div className="md:col-span-1">
             <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-              <Image src="/nishu_logo.png" alt="Nishu Enterprises" width={200} height={200} className="rounded-md" />
+              <Image src="/nishu-logo.png" alt="Nishu Enterprises" width={250} height={250} className="rounded-md" />
             </h3>
             <p className="text-sm opacity-75 leading-relaxed">
               Established in 1996, manufacturing water treatment plants and spare parts with innovation and reliability.
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:col-span-1">
             <h4 className="font-semibold text-sm mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="md:col-span-1">
             <h4 className="font-semibold text-sm mb-4">Contact Info</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
@@ -103,7 +103,7 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 shrink-0" />
                 <a href="tel:+918048611863" className="hover:text-secondary transition-all duration-300">
-                  8048611863
+                  9820142424
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -115,7 +115,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="md:col-span-1">
             <h4 className="font-semibold text-sm mb-4">Location</h4>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8948818652284!2d72.8611239!3d19.4169473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9811b5a8405%3A0x8d1f9ec7ec39b6c6!2sNISHU%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1762612705634!5m2!1sen!2sin"

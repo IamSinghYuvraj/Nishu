@@ -1,8 +1,8 @@
 import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+
 import Link from "next/link"
 import { ArrowRight, Droplet, Cog, Shield, CheckCircle, Globe, Users, Award } from "@/components/icons"
-import { ClientsCarousel } from "@/components/client-logos"
+import { ClientLogos } from "@/components/client-logos"
 import { Industries } from "@/components/industries"
 
 export default function Home() {
@@ -129,8 +129,54 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Clients Carousel Section */}
-        <ClientsCarousel />
+        {/* Welcome Section */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Welcome to Nishu Enterprises
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nishu Enterprises, established in 1996, is a professionally managed company engaged in manufacturing,
+                supplying, exporting, and servicing a wide range of water treatment solutions.
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="p-8 rounded-lg border border-border bg-card">
+                <h3 className="text-xl font-semibold mb-2 text-foreground">Our Offerings</h3>
+                <p className="text-muted-foreground">
+                  Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water
+                  Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water
+                  Projects.
+                </p>
+              </div>
+              <div className="p-8 rounded-lg border border-border bg-card">
+                <h3 className="text-xl font-semibold mb-2 text-foreground">Comprehensive Spares</h3>
+                <p className="text-muted-foreground">
+                  We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types
+                  of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon),
+                  pressure gauges and switches, SS fittings, and essential water treatment chemicals including
+                  antiscalants, Gramacid, and citric acid.
+                </p>
+              </div>
+              <div className="p-8 rounded-lg border border-border bg-card md:col-span-2 lg:col-span-1">
+                <h3 className="text-xl font-semibold mb-2 text-foreground">Our Expertise</h3>
+                <p className="text-muted-foreground">
+                  Over the years, we have strengthened our expertise by adopting cutting-edge technology and building a
+                  skilled team of professionals. Today, our solutions serve a wide customer base across diverse
+                  industries, including the Pharmaceutical and Food & Beverage Industry.
+                </p>
+              </div>
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                The company is driven by a philosophy of innovation and excellence, with a strong focus on turnkey
+                project execution and a total system approach, ensuring reliability, efficiency, and customer
+                satisfaction.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Quality Assurance Section */}
         <section className="py-16 md:py-24">
@@ -178,6 +224,9 @@ export default function Home() {
 
         {/* Industries We Serve Section */}
         <Industries />
+
+        {/* Client Logos Section */}
+        <ClientLogos />
 
         {/* Client Satisfaction Section */}
         <section className="py-16 md:py-24 bg-linear-to-b from-secondary/5 to-primary/5 border-y border-border">
@@ -303,6 +352,7 @@ export default function Home() {
                     {item.step}
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+.
                   <p className="text-muted-foreground text-sm">{item.desc}</p>
                 </div>
               ))}

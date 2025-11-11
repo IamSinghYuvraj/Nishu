@@ -59,8 +59,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       label: "Phone",
-      value: "8048611863",
-      link: "tel:+918048611863",
+      value: "9820142424",
+      link: "tel:+919820142424",
     },
     {
       icon: MapPin,

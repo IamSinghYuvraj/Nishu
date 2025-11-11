@@ -19,10 +19,10 @@ export function Navigation() {
             className="flex items-center gap-2 font-bold text-xl text-primary hover:scale-105 transition-all duration-300"
           >
             <Image
-              src="/nishu_logo.png"
+              src="/nishu-logo.png"
               alt="Nishu Enterprises"
-              width={200}
-              height={200}
+              width={250}
+              height={250}
               className="rounded-md"
             />
           </Link>
@@ -61,10 +61,10 @@ export function Navigation() {
                   Water Softening Plant
                 </Link>
                 <Link
-                  href="/products/ss-pressure-tube"
+                  href="/products/membrane-housing"
                   className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
                 >
-                  SS Pressure Tube
+                  Membrane Housing
                 </Link>
                 <Link
                   href="/products/fabricated-vessels"
@@ -159,10 +159,10 @@ export function Navigation() {
                   Water Softening Plant
                 </Link>
                 <Link
-                  href="/products/ss-pressure-tube"
+                  href="/products/membrane-housing"
                   className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
                 >
-                  SS Pressure Tube
+                  Membrane Housing
                 </Link>
                 <Link
                   href="/products/fabricated-vessels"
