@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-import ContactUs from "@/components/contactus"
 import { Footer } from "@/components/footer"
 import Icon from "@/public/nishu-icon.png"
 
@@ -30,7 +29,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans antialiased`}>
         {children}
-        <ContactUs />
         <WhatsAppChat />
         <Footer />
       </body>

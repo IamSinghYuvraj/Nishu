@@ -2,11 +2,14 @@ import { Navigation } from "@/components/navigation"
 import Link from "next/link"
 import { Check } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
+import ContactUs  from "@/components/contactus";
+
 
 export default function WaterSofteningPage() {
   const mediaItems: MediaItem[] = [
     { type: "image", src: "/Water-Softening-Plant.jpg", title: "Water Softening Plant" },
-    {type: "image", src: "/water-softeners.webp", title: "Water Softeners"}
+    {type: "image", src: "/water-softeners.webp", title: "Water Softeners"},
+    {type: "image", src: "/water-softner(3).png", title: "Water Softeners"}
   ]
 
   const specs = [
@@ -80,8 +83,19 @@ export default function WaterSofteningPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
+        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 py-16 md:py-24 border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">The Science of Softening</h2>
+              <p className="text-lg text-muted-foreground">
+                The principle behind a water softener is straightforward. Hardness in water is primarily caused by positively-charged minerals like Calcium and Magnesium. These minerals can lead to issues such as scale buildup in pipes and appliances, and can also reduce the effectiveness of soaps and detergents. To resolve this, our systems use a process called Cation Exchange to effectively remove these minerals, resulting in soft water.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:pmb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Technical Specifications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {specs.map((s, i) => (
@@ -108,6 +122,7 @@ export default function WaterSofteningPage() {
           </div>
         </section>
       </main>
+      <ContactUs />
     </div>
   )
 }

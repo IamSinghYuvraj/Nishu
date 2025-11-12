@@ -36,6 +36,13 @@ export function Navigation() {
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
             </Link>
+            <Link
+              href="/about"
+              className="text-sm font-medium text-foreground hover:text-secondary transition-all duration-300 relative group"
+            >
+              About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+            </Link>
             <div className="relative group">
               <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-secondary transition-all duration-300 relative group">
                 Products
@@ -93,13 +100,6 @@ export function Navigation() {
               </div>
             </div>
             <Link
-              href="/about"
-              className="text-sm font-medium text-foreground hover:text-secondary transition-all duration-300 relative group"
-            >
-              About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link
               href="/contact"
               className="text-sm font-medium text-foreground hover:text-secondary transition-all duration-300 relative group"
             >
@@ -130,6 +130,12 @@ export function Navigation() {
               className="block px-4 py-2 text-sm font-medium hover:text-secondary transition-all duration-300"
             >
               Home
+            </Link>
+            <Link
+              href="/about"
+              className="block px-4 py-2 text-sm font-medium hover:text-secondary transition-all duration-300"
+            >
+              About
             </Link>
             <button
               onClick={() => setIsProductsOpen(!isProductsOpen)}
@@ -191,12 +197,6 @@ export function Navigation() {
                 
               </div>
             )}
-            <Link
-              href="/about"
-              className="block px-4 py-2 text-sm font-medium hover:text-secondary transition-all duration-300"
-            >
-              About
-            </Link>
             <Link
               href="/contact"
               className="block px-4 py-2 text-sm font-medium hover:text-secondary transition-all duration-300"
