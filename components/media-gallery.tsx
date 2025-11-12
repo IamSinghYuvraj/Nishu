@@ -54,13 +54,19 @@ export function MediaGallery({ items }: MediaGalleryProps) {
                 className={`object-contain transition-transform duration-300`}
               />
             </>
-          ) : (
+          ) : currentItem.src.includes("youtube.com") || currentItem.src.includes("youtu.be") ? (
             <iframe
               src={getYouTubeEmbedUrl(currentItem.src)}
               className="w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+          ) : (
+            <video
+              src={currentItem.src}
+              className="w-full h-full"
+              controls
+            />
           )}
         </div>
 

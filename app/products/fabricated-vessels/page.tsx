@@ -4,10 +4,14 @@ import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function FabricatedVesselsPage() {
-  const mediaItems: MediaItem[] = [
-    { type: "image", src: "/ss-storage-tank(2).webp", title: "SS Storage Tank 1" },
-    { type: "image", src: "/ss-storage-tanks(1).webp", title: "SS Storage Tank 2" },
-    { type: "image", src: "/ss-storage-tanks(3).webp", title: "SS Storage Tank 3" },
+const mediaItems: MediaItem[] = [
+    { type: "image", src: "/ss-storage-tank(5).png", title: "SS Storage Tank 5" },
+    { type: "image", src: "/ss-storage-tank(6).png", title: "SS Storage Tank 6" },
+    { type: "image", src: "/ss-storage-tanks(10).jpeg", title: "SS Storage Tanks 10" },
+    { type: "image", src: "/ss-storage-tanks(7).jpg", title: "SS Storage Tanks 7" },
+    { type: "image", src: "/ss-storage-tanks(8).jpg", title: "SS Storage Tanks 8" },
+    { type: "video", src: "/ss-storage-tank(1)video.mp4", title: "SS Storage Tank Video 1" },
+    { type: "video", src: "/ss-storage-tanks(1)video.mp4", title: "SS Storage Tanks Video 2" },
   ]
 
   const specs = [

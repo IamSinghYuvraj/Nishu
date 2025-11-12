@@ -5,7 +5,8 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function MembraneHousingPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/membrane-Housing(1).jpg", title: "Stainless Steel Pump" },
+    { type: "image", src: "/membrane-Housing(1).jpg", title: "Membrane Housing 1" },
+    { type: "image", src: "/membrane-Housing(2).jpeg", title: "Membrane Housing 3" },
   ]
 
   const specs = [

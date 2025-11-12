@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import ContactUs from "@/components/contactus"
 import { Footer } from "@/components/footer"
+import Icon from "@/public/nishu-icon.png"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -11,23 +12,10 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Nishu Enterprises - Water Treatment & Machinery Solutions",
   description: "Leading water treatment plant and machinery manufacturer serving industrial clients worldwide",
-  generator: "v0.app",
+  generator: "Nishu website",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: Icon.src,
+    apple: Icon.src
   },
 }
 

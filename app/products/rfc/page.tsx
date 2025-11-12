@@ -8,6 +8,8 @@ export default function RFCPage() {
     { type: "image", src: "/rfc(1).webp", title: "RFC Machine 1" },
     { type: "image", src: "/rfc(2).webp", title: "RFC Machine 2" },
     { type: "image", src: "/rfc(3).webp", title: "RFC Machine 3" },
+    { type: "video", src: "/rfc(1) video.mp4", title: "RFC Machine Video 1" },
+    { type: "video", src: "/rfc(2)video.mp4", title: "RFC Machine Video 2" },
   ]
 
   const specs = [

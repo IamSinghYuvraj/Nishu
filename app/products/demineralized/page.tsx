@@ -6,13 +6,8 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 export default function DMPage() {
   const mediaItems: MediaItem[] = [
     { type: "image", src: "/DM image 1.jpg", title: "DM Plant Image 1" },
-    { type: "image", src: "/DM plant image 2.jpg", title: "DM Plant Image 2" },
-    { type: "image", src: "/frp-DM-plant.webp", title: "FRP DM Plant" },
-    { type: "image", src: "/mild-steel-mixed-bed-dm-plants-250x250.webp", title: "Mild Steel Mixed Bed DM Plant" },
-    { type: "image", src: "/mixed-bed-dm-plants-250x250.webp", title: "Mixed Bed DM Plant" },
-    { type: "image", src: "/mixed-bed-dm-plants-frp-250x250.webp", title: "Mixed Bed FRP DM Plant" },
-    { type: "image", src: "/rapid-flow-two-bed-dm-plants-250x250.webp", title: "Rapid Flow Two Bed DM Plant" },
-    { type: "image", src: "/two-bed-DM-water-plants-auto-frp.webp", title: "Two Bed Auto FRP DM Water Plant" },
+    { type: "image", src: "/DM image 2.jpg", title: "DM Plant Image 2" },
+    { type: "image", src: "/DM image 3.jpeg", title: "DM Plant Image 3" },
   ]
 
   const specs = [

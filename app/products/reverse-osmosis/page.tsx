@@ -5,12 +5,10 @@ import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
 export default function ROPage() {
   const mediaItems: MediaItem[] = [
-    { type: "image", src: "/Commercial-Reverse-Osmosis-Plant.jpg", title: "Commercial Reverse Osmosis Plant" },
-    { type: "image", src: "/commercial-reverse-osmosis-units.jpg", title: "Commercial Reverse Osmosis Units" },
-    { type: "image", src: "/FRP-RO-Plant.jpg", title: "FRP RO Plant" },
-    { type: "image", src: "/Ro-img1.jpg", title: "RO Plant Image 1" },
+    { type: "image", src: "/ro-img11.jpeg", title: "RO Plant Image 11" },
     { type: "image", src: "/Ro-img2.jpg", title: "RO Plant Image 2" },
-    { type: "image", src: "/Ro-img5.jpg", title: "RO Plant Image 5" },
+    { type: "image", src: "/Ro-image4.jpg", title: "RO Plant Image 4" },
+    { type: "image", src: "/Ro-img6.jpg", title: "RO Plant Image 6" },
   ]
 
   const specs = [
