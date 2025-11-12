@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/navigation"
-import { Check } from "@/components/icons"
+import { Check, Shield, Zap } from "@/components/icons"
 import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
@@ -71,9 +71,8 @@ export default function MineralWaterProjectPage() {
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Turnkey Mineral Water Project</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  We offer complete, end-to-end turnkey solutions for setting up Packaged Drinking Water Plants. Our projects cover every stage, from initial raw water treatment to final bottling and packaging, ensuring compliance with BIS, WHO, and FSSAI standards.
+                  Complete end-to-end solutions for packaged drinking water plants with BIS, WHO, and FSSAI compliance
                 </p>
-                
               </div>
 
               <div>
@@ -83,41 +82,14 @@ export default function MineralWaterProjectPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Project Components</h2>
-            <p className="text-lg text-muted-foreground mb-12">From Water Source to Shelf - Our comprehensive project scope includes:</p>
-            
-            <div className="grid gap-8">
-              {components.map((component, idx) => (
-                <div key={idx} className="border border-border rounded-lg p-6 bg-card">
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{component.name}</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-medium text-muted-foreground mb-2">Primary Function</h4>
-                      <p className="text-foreground">{component.description}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-muted-foreground mb-2">Core Benefits</h4>
-                      <p className="text-foreground">{component.benefits}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Complete Setup Package</h2>
-            <p className="text-lg text-muted-foreground mb-12">Our turnkey solution includes comprehensive deliverables:</p>
-            
-            <div className="grid gap-6">
-              {deliverables.map((deliverable, idx) => (
-                <div key={idx} className="flex gap-4 p-4 bg-background rounded-lg">
-                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-foreground">{deliverable}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Project Specifications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {specs.map((spec, idx) => (
+                <div key={idx} className="p-8 rounded-lg border border-border bg-background hover:border-secondary/50 hover:shadow-lg transition-all duration-300">
+                  <h3 className="font-semibold text-muted-foreground mb-3 text-sm uppercase tracking-wide">{spec.label}</h3>
+                  <p className="text-3xl font-bold text-secondary">{spec.value}</p>
                 </div>
               ))}
             </div>
@@ -126,12 +98,13 @@ export default function MineralWaterProjectPage() {
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Project Specifications</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {specs.map((spec, idx) => (
-                <div key={idx} className="p-6 rounded-lg border border-border bg-card">
-                  <h3 className="font-semibold text-muted-foreground mb-2 text-sm">{spec.label}</h3>
-                  <p className="text-2xl font-bold text-foreground">{spec.value}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Project Components</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {components.map((component, idx) => (
+                <div key={idx} className="p-6 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <Zap className="w-6 h-6 text-secondary mb-3" />
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">{component.name}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">{component.description}</p>
                 </div>
               ))}
             </div>
@@ -140,12 +113,26 @@ export default function MineralWaterProjectPage() {
 
         <section className="bg-card py-16 md:py-24 border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Key Benefits</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Setup Package Includes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {deliverables.map((deliverable, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center p-6 bg-background rounded-lg border border-border hover:border-secondary/50 transition-colors">
+                  <Check className="w-6 h-6 text-secondary mb-3" />
+                  <p className="text-sm font-medium text-foreground">{deliverable}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Key Benefits</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {benefits.map((b, idx) => (
-                <div key={idx} className="flex gap-4 p-4 hover:bg-background rounded-lg">
-                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-muted-foreground">{b}</p>
+                <div key={idx} className="flex flex-col items-center text-center p-6 rounded-lg border border-border bg-card hover:border-secondary/50 transition-colors">
+                  <Shield className="w-6 h-6 text-secondary mb-3" />
+                  <p className="text-sm font-medium text-foreground">{b}</p>
                 </div>
               ))}
             </div>

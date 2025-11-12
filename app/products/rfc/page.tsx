@@ -75,10 +75,9 @@ export default function RFCPage() {
                   RFC Machine <span className="text-secondary">(Rinsing Filling Capping)</span>
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Automatic Rinsing, Filling, and Capping (RFC) machines designed for packaged drinking water and beverages. Ensures hygienic, high-speed bottling operations.
+                  Automatic 3-in-1 bottling solution for packaged drinking water and beverages
                 </p>
                 <div className="flex gap-4">
-                  
                   <Link
                     href="/brochure.pdf"
                     className="inline-block px-8 py-3 bg-background text-foreground rounded-lg border border-border hover:border-secondary transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
@@ -95,97 +94,67 @@ export default function RFCPage() {
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-16 md:py-24">
+        {/* Specs Infographic */}
+        <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Advanced RFC Technology</h2>
-            <p className="text-lg text-muted-foreground mb-12">Engineered for precision, speed, and reliability in beverage production</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {features.map((feature, idx) => (
-                <div key={idx} className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                  <Zap className="w-8 h-8 text-secondary mb-4" />
-                  <h3 className="font-semibold text-lg mb-2 text-foreground">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Applications */}
-        <section className="bg-card py-16 md:py-24 border-y border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Applications</h2>
-            <p className="text-lg text-muted-foreground mb-12">Versatile solution for various bottling needs:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {applications.map((app, idx) => (
-                <div key={idx} className="flex gap-4 p-4 bg-background rounded-lg">
-                  <Shield className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-foreground">{app}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Specs */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Technical Specifications</h2>
-            <p className="text-lg text-muted-foreground mb-12">Built for high-volume production with precision engineering and food-grade materials for optimal performance.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Key Specifications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {specs.map((spec, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg transition-all duration-300 group"
+                  className="p-8 rounded-lg border border-border bg-background hover:border-secondary/50 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <h3 className="font-semibold text-muted-foreground mb-2 text-sm group-hover:text-secondary transition-colors">
+                  <h3 className="font-semibold text-muted-foreground mb-3 text-sm group-hover:text-secondary transition-colors uppercase tracking-wide">
                     {spec.label}
                   </h3>
-                  <p className="text-2xl font-bold text-foreground">{spec.value}</p>
+                  <p className="text-3xl font-bold text-secondary">{spec.value}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="bg-card py-16 md:py-24 border-y border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Key Benefits</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {benefits.map((benefit, idx) => (
-                <div key={idx} className="flex gap-4 p-4 hover:bg-background rounded-lg transition-colors duration-300">
-                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-muted-foreground">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features */}
+        {/* Features Grid */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <Zap className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-foreground">High Throughput</h3>
-                <p className="text-muted-foreground text-sm">Optimized for continuous high-speed production.</p>
-              </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Core Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {features.map((feature, idx) => (
+                <div key={idx} className="p-6 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                  <Zap className="w-8 h-8 text-secondary mb-3" />
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">{feature.title}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <Shield className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-foreground">Robust Construction</h3>
-                <p className="text-muted-foreground text-sm">Durable SS construction built for long life and easy cleaning.</p>
-              </div>
+        {/* Applications Icons */}
+        <section className="bg-card py-16 md:py-24 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Applications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {applications.map((app, idx) => (
+                <div key={idx} className="flex flex-col items-center justify-center p-6 bg-background rounded-lg border border-border hover:border-secondary/50 transition-colors">
+                  <Shield className="w-8 h-8 text-secondary mb-3" />
+                  <p className="text-center font-medium text-foreground text-sm">{app}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <Check className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-semibold text-lg mb-2 text-foreground">Easy Integration</h3>
-                <p className="text-muted-foreground text-sm">Designed to integrate with existing filling lines and automation systems.</p>
-              </div>
+        {/* Benefits Infographic */}
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Benefits</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {benefits.map((benefit, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center p-6 rounded-lg border border-border bg-card hover:border-secondary/50 transition-colors">
+                  <Check className="w-6 h-6 text-secondary mb-3" />
+                  <p className="text-sm font-medium text-foreground">{benefit}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -193,9 +162,8 @@ export default function RFCPage() {
         {/* CTA */}
         <section className="bg-secondary/5 py-16 md:py-24 border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Ready to Automate Your Line?</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Contact our engineers for a customized RFC solution.</p>
-            
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Ready to Scale?</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Let our engineers design your custom RFC solution</p>
           </div>
         </section>
       </main>

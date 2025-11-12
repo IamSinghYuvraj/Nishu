@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/navigation"
-import { Check } from "@/components/icons"
+import { Check, Shield } from "@/components/icons"
 import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 
@@ -50,9 +50,8 @@ const mediaItems: MediaItem[] = [
                   SS & MS Vessel Tanks
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  We manufacture and supply robust Stainless Steel (SS) and Mild Steel (MS) Vessel Tanks designed for secure, high-capacity storage across various industries.
+                  Custom-engineered storage vessels in stainless steel and mild steel for industrial applications
                 </p>
-                
               </div>
 
               <div>
@@ -62,25 +61,14 @@ const mediaItems: MediaItem[] = [
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Product Range</h2>
-            <p className="text-lg text-muted-foreground mb-12">Our storage solutions are engineered for durability and reliability across various industrial applications:</p>
-            
-            <div className="grid gap-8">
-              {products.map((product, idx) => (
-                <div key={idx} className="border border-border rounded-lg p-6 bg-card">
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{product.name}</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-medium text-muted-foreground mb-2">Primary Function</h4>
-                      <p className="text-foreground">{product.description}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-muted-foreground mb-2">Core Benefits & Features</h4>
-                      <p className="text-foreground">{product.features}</p>
-                    </div>
-                  </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Technical Specifications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {specs.map((spec, idx) => (
+                <div key={idx} className="p-8 rounded-lg border border-border bg-background hover:border-secondary/50 hover:shadow-lg transition-all duration-300">
+                  <h3 className="font-semibold text-muted-foreground mb-3 text-sm uppercase tracking-wide">{spec.label}</h3>
+                  <p className="text-3xl font-bold text-secondary">{spec.value}</p>
                 </div>
               ))}
             </div>
@@ -89,12 +77,13 @@ const mediaItems: MediaItem[] = [
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Technical Specifications</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Product Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {specs.map((spec, idx) => (
-                <div key={idx} className="p-6 rounded-lg border border-border bg-card">
-                  <h3 className="font-semibold text-muted-foreground mb-2 text-sm">{spec.label}</h3>
-                  <p className="text-2xl font-bold text-foreground">{spec.value}</p>
+              {products.map((product, idx) => (
+                <div key={idx} className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <Shield className="w-6 h-6 text-secondary mb-4" />
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3">{product.description}</p>
                 </div>
               ))}
             </div>
@@ -103,12 +92,12 @@ const mediaItems: MediaItem[] = [
 
         <section className="bg-card py-16 md:py-24 border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Key Benefits</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center">Key Benefits</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {benefits.map((b, idx) => (
-                <div key={idx} className="flex gap-4 p-4 hover:bg-background rounded-lg">
-                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-muted-foreground">{b}</p>
+                <div key={idx} className="flex flex-col items-center text-center p-6 rounded-lg border border-border bg-background hover:border-secondary/50 transition-colors">
+                  <Check className="w-6 h-6 text-secondary mb-3" />
+                  <p className="text-sm font-medium text-foreground">{b}</p>
                 </div>
               ))}
             </div>
