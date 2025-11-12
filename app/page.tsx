@@ -1,422 +1,453 @@
-import { Navigation } from "@/components/navigation"
-import AnimatedSection from "@/components/animation";
-import Link from "next/link"
-import { ArrowRight, Droplet, Cog, Shield, CheckCircle, Globe, Users, Award } from "@/components/icons"
-import { ClientLogos } from "@/components/client-logos"
-import { Industries } from "@/components/industries"
-import ContactUs from "@/components/contactus"
+"use client";
 
+import type React from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Sparkles,
+  Shield,
+  Leaf,
+  Play,
+  Heart,
+  Clock,
+  Globe,
+  MapPin,
+  Factory,
+  Users,
+  ChevronRight,
+} from "lucide-react";
+import { ClientLogos } from "@/components/client-logos";
+import ContactUs from "@/components/contactus";
+import AnimatedSectionPage from "@/components/animation";
+import { Navigation } from "@/components/navigation";
+import Image from "next/image";
 
-export default function Home() {
+// Define types for the data structures
+interface GlobalStat {
+  icon: React.ReactNode;
+  count: number;
+  label: string;
+}
+
+const Home: React.FC = () => {
+  const [visible, setVisible] = useState<boolean>(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % 3);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const globalStats: GlobalStat[] = [
+    {
+      icon: <MapPin className="h-8 w-8 text-primary" />,
+      count: 45,
+      label: "Countries",
+    },
+    {
+      icon: <Factory className="h-8 w-8 text-primary" />,
+      count: 1200,
+      label: "Plants Installed",
+    },
+    {
+      icon: <Users className="h-8 w-8 text-primary" />,
+      count: 3500,
+      label: "Clients Worldwide",
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <>
+      {/* Navigation Bar */}
       <Navigation />
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <AnimatedSection>
-          <section className="relative bg-linear-to-br from-primary/5 to-secondary/10 border-b border-border py-20 md:py-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl">
-                <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6 text-foreground">
-                  Pure Water,
-                  <span className="text-secondary"> Advanced Solutions</span>
-                </h1>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Nishu Enterprises delivers cutting-edge water treatment plants and industrial machinery to clients
-                  worldwide. Over 20 years of excellence in engineering and innovation.
-                </p>
-                <div className="flex gap-4 flex-wrap items-center mb-6">
-                  <Link
-                    href="/products/water-treatment"
-                    className="px-8 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all duration-300 font-medium flex items-center gap-2 group hover:-translate-y-1 hover:shadow-lg"
-                  >
-                    Explore Products
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                  >
-                    Get a Quote
-                  </Link>
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full overflow-hidden">
+        {/* Background Images Carousel */}
+        <div className="absolute inset-0">
+          {["/Ro-img6.jpg", "/DM image 1.jpg", "/Commercial-Water-Treatment-Plant.jpg"].map((image, index) => (
+            <div
+              key={image}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`Water treatment facility ${index + 1}`}
+                fill
+                className="object-cover brightness-50"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/40 to-primary/40" />
+        <div className="container relative flex min-h-screen items-center pt-20">
+          <div className="max-w-2xl animate-slide-in pl-5">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              Pure Water,
+              <br />
+              <span className="text-accent">Perfectly Engineered</span>
+            </h1>
+            <p className="mt-6 text-lg text-gray-200">
+              Leading manufacturer of water treatment and purification systems, serving industries worldwide with innovative solutions
+            </p>
+            <div className="mt-8 flex gap-4">
+              <Button
+                asChild
+                size="lg"
+              >
+                <Link href="/products">Our Products</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-black"
+              >
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <AnimatedSectionPage>
+        <section className="w-full py-24 bg-linear-to-br from-white via-gray-50 to-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              {/* Story Text */}
+              <div className="flex-1">
+                <div className="text-center md:text-left mb-10">
+                  <h2 className="text-3xl font-bold mb-4">Our Story</h2>
+                  <div className="w-16 h-1 bg-primary mx-auto md:mx-0"></div>
                 </div>
-                <Link
-                  href="/about"
-                  className="text-secondary hover:text-secondary/80 transition-all duration-300 font-medium flex items-center gap-2 group"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <div className="space-y-4">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Nishu Enterprises, established in 1996, is a professionally managed company engaged in manufacturing, supplying, exporting, and servicing a wide range of water treatment solutions.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water Projects.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon), pressure gauges and switches, SS fittings, and essential water treatment chemicals including antiscalants, Gramacid, and citric acid.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Over the years, we have strengthened our expertise by adopting cutting-edge technology and building a skilled team of professionals. Today, our solutions serve a wide customer base across diverse industries, including the Pharmaceutical and Food & Beverage Industry.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    The company is driven by a philosophy of innovation and excellence, with a strong focus on turnkey project execution and a total system approach, ensuring reliability, efficiency, and customer satisfaction.
+                  </p>
+                  <div className="mt-6">
+                    <Link
+                      href="/about"
+                      className="inline-flex items-center text-primary font-medium hover:underline"
+                    >
+                      Read More
+                      <ChevronRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="flex-1">
+                <div className="relative h-96">
+                  <div className="absolute -inset-4 bg-linear-to-tr from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-70"></div>
+                  <Image
+                    src="/Ro-img6.jpg"
+                    alt="Water treatment facility"
+                    fill
+                    className="rounded-lg shadow-lg relative object-cover"
+                  />
+                </div>
               </div>
             </div>
-          </section>
-        </AnimatedSection>
+          </div>
+        </section>
+      </AnimatedSectionPage>
 
-        {/* Stats Section */}
-        <AnimatedSection>
-          <section className="py-12 bg-linear-to-r from-primary/5 to-secondary/5 border-y border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center p-6 rounded-lg bg-background border border-border hover:shadow-lg transition-all duration-300">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-4xl font-bold text-foreground mb-2">200+</h3>
-                  <p className="text-muted-foreground">Projects Completed</p>
-                </div>
-                <div className="text-center p-6 rounded-lg bg-background border border-border hover:shadow-lg transition-all duration-300">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Globe className="w-8 h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-4xl font-bold text-foreground mb-2">15+</h3>
-                  <p className="text-muted-foreground">Countries Served</p>
-                </div>
-                <div className="text-center p-6 rounded-lg bg-background border border-border hover:shadow-lg transition-all duration-300">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-4xl font-bold text-foreground mb-2">500+</h3>
-                  <p className="text-muted-foreground">Happy Clients</p>
-                </div>
-              </div>
+      {/* Global Presence Section */}
+      <AnimatedSectionPage>
+        <section className="w-full py-24 bg-linear-to-tl from-white via-primary/5 to-secondary/5 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-64 bg-linear-to-b from-white to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-64 bg-linear-to-t from-white to-transparent"></div>
+          <div className="absolute -left-32 top-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute -right-32 bottom-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Global Presence</h2>
+              <p className="text-muted-foreground">Serving clients across the world with excellence</p>
             </div>
-          </section>
-        </AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {globalStats.map((stat, index) => (
+                <div key={index} className="text-center p-6 rounded-lg bg-white border border-border hover:shadow-lg transition-all duration-300">
+                  <div className="flex justify-center mb-4">
+                    {stat.icon}
+                  </div>
+                  <h3 className="text-4xl font-bold text-primary mb-2">{stat.count}</h3>
+                  <p className="text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSectionPage>
 
-        {/* Features Section */}
-        <AnimatedSection>
-          <section className="py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-foreground">
-                Why Choose Nishu Enterprises
+      {/* 6 Reasons to Choose Us Section */}
+      <AnimatedSectionPage>
+        <section className="w-full py-24 bg-linear-to-br from-white via-gray-50 to-primary/10 relative">
+          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-linear-to-bl from-secondary/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-linear-to-tr from-primary/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary">
+                6 Reasons to Choose Us
               </h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                We combine innovation, reliability, and customer commitment to deliver water treatment solutions that
-                exceed expectations.
+              <p className="mt-4 text-muted-foreground">
+                Discover why we are the preferred choice for water treatment solutions
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Feature 1 */}
-                <div className="p-8 rounded-lg border border-border bg-card hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 group transition-all duration-300">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-all duration-300">
-                    <Droplet className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Purification Excellence</h3>
-                  <p className="text-muted-foreground">
-                    Advanced filtration and treatment technologies that ensure highest water quality standards for
-                    industrial and municipal applications.
-                  </p>
-                </div>
-
-                {/* Feature 2 */}
-                <div className="p-8 rounded-lg border border-border bg-card hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 group transition-all duration-300">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-all duration-300">
-                    <Cog className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Engineered for Durability</h3>
-                  <p className="text-muted-foreground">
-                    Robust machinery designed for continuous operation in demanding industrial environments with minimal
-                    maintenance requirements.
-                  </p>
-                </div>
-
-                {/* Feature 3 */}
-                <div className="p-8 rounded-lg border border-border bg-card hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 group transition-all duration-300">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-all duration-300">
-                    <Shield className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Environmental Responsibility</h3>
-                  <p className="text-muted-foreground">
-                    Committed to sustainable practices and eco-friendly solutions that protect our planet for future
-                    generations.
-                  </p>
-                </div>
-              </div>
             </div>
-          </section>
-        </AnimatedSection>
-
-        {/* Welcome Section */}
-        <AnimatedSection>
-          <section className="py-16 md:py-24 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Welcome to Nishu Enterprises
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Nishu Enterprises, established in 1996, is a professionally managed company engaged in manufacturing,
-                  supplying, exporting, and servicing a wide range of water treatment solutions.
-                </p>
-              </div>
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="p-8 rounded-lg border border-border bg-card">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Our Offerings</h3>
-                  <p className="text-muted-foreground">
-                    Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water
-                    Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water
-                    Projects.
-                  </p>
-                </div>
-                <div className="p-8 rounded-lg border border-border bg-card">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Comprehensive Spares</h3>
-                  <p className="text-muted-foreground">
-                    We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types
-                    of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon),
-                    pressure gauges and switches, SS fittings, and essential water treatment chemicals including
-                    antiscalants, Gramacid, and citric acid.
-                  </p>
-                </div>
-                <div className="p-8 rounded-lg border border-border bg-card md:col-span-2 lg:col-span-1">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Our Expertise</h3>
-                  <p className="text-muted-foreground">
-                    Over the years, we have strengthened our expertise by adopting cutting-edge technology and building a
-                    skilled team of professionals. Today, our solutions serve a wide customer base across diverse
-                    industries, including the Pharmaceutical and Food & Beverage Industry.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8 text-center">
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  The company is driven by a philosophy of innovation and excellence, with a strong focus on turnkey
-                  project execution and a total system approach, ensuring reliability, efficiency, and customer
-                  satisfaction.
-                </p>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* Quality Assurance Section */}
-        <AnimatedSection>
-          <section className="py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="animate-slide-in-left">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Quality Assurance</h2>
-                  <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                    Quality is of paramount importance to us and pivotal to our success in the industry. Our products
-                    boast of durability, quality and dependability and aptly meet the variegated demands of our clients.
-                  </p>
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    In order to provide the clients with a qualitative range, we test each & every product manufactured by
-                    us on the basis of certain pre-defined parameters. Requisite tests are carried out at our
-                    state-of-the-art lab by a dexterous team of quality controllers.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Further, we make it a point to see that all the services that we offer to the clients are rendered
-                    using quality material and advanced technology.
-                  </p>
-                </div>
-                <div className="bg-linear-to-br from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-pulse-glow">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Rigorous Testing Standards</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">State-of-the-Art Laboratory</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Expert Quality Controllers</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Premium Material & Advanced Technology</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* Industries We Serve Section */}
-        <AnimatedSection>
-          <Industries />
-        </AnimatedSection>
-
-        {/* Client Logos Section */}
-        <AnimatedSection>
-          <ClientLogos />
-        </AnimatedSection>
-
-        {/* Client Satisfaction Section */}
-        <AnimatedSection>
-          <section className="py-16 md:py-24 bg-linear-to-b from-secondary/5 to-primary/5 border-y border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                              <div className="order-2 md:order-1 bg-linear-to-bl from-secondary/10 to-secondary/5 rounded-lg p-8 md:p-12 border border-secondary/20 hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-pulse-glow-reverse">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Faultless Product Delivery</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Client-Centric Approach</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Timely Deliveries</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 shrink-0" />
-                      <p className="text-foreground font-medium">Cost-Effective Solutions</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="order-1 md:order-2 animate-fade-in-up">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Client Satisfaction</h2>
-                  <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                    We toil to provide our clients with what they need and leave no stone unturned to exceed their
-                    expectations. Be it the water treatment plant or a spare part, every product manufactured by us is
-                    tested for quality.
-                  </p>
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    We ensure that only a faultless range is delivered at the clients' end. Further, we make it a point to
-                    ensure that all our services are rendered as per the clients' requirements.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Timely deliveries, cost-effective products and client-centric approach are some of the factors that
-                    have helped us achieve client contentment and muster a huge clientele across the world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* Infrastructure Section */}
-        <AnimatedSection>
-          <section className="py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">State-of-the-Art Infrastructure</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Equipped with cutting-edge technology and experienced professionals
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: "Advanced Purification Systems",
-                    desc: "Designed & developed advanced purification systems using latest technology",
-                  },
-                  {
-                    title: "Reverse Osmosis",
-                    desc: "Complete RO systems for industrial and municipal applications",
-                  },
-                  {
-                    title: "Ultra Filtration",
-                    desc: "Membrane process technology for precision water treatment",
-                  },
-                  {
-                    title: "Water Softening",
-                    desc: "De-mineralization and softening plant systems",
-                  },
-                  {
-                    title: "Chemical Dosing",
-                    desc: "Automated chemical dosing systems for treatment optimization",
-                  },
-                  {
-                    title: "UV & Ionization",
-                    desc: "Ultraviolet and ionization technology for disinfection",
-                  },
-                ].map((item, idx) => (
+            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: <Sparkles className="h-8 w-8" />,
+                  title: "Advanced Technology",
+                  description:
+                    "State-of-the-art water treatment solutions using cutting-edge technology for optimal performance",
+                  color: "from-blue-500 to-purple-600",
+                },
+                {
+                  icon: <Shield className="h-8 w-8" />,
+                  title: "Quality Assurance",
+                  description:
+                    "Rigorous quality control and testing procedures to ensure reliable and efficient water treatment",
+                  color: "from-green-500 to-emerald-600",
+                },
+                {
+                  icon: <Leaf className="h-8 w-8" />,
+                  title: "Eco-Friendly",
+                  description:
+                    "Sustainable solutions that minimize environmental impact while maximizing efficiency",
+                  color: "from-yellow-500 to-amber-600",
+                },
+                {
+                  icon: <Heart className="h-8 w-8" />,
+                  title: "Customer-Centric",
+                  description:
+                    "We prioritize customer satisfaction with personalized solutions and dedicated support",
+                  color: "from-red-500 to-pink-600",
+                },
+                {
+                  icon: <Clock className="h-8 w-8" />,
+                  title: "Timely Delivery",
+                  description:
+                    "We ensure on-time delivery of products and services to meet your project deadlines",
+                  color: "from-indigo-500 to-blue-600",
+                },
+                {
+                  icon: <Globe className="h-8 w-8" />,
+                  title: "Global Standards",
+                  description:
+                    "Our products and services meet international quality and environmental standards",
+                  color: "from-purple-500 to-indigo-600",
+                },
+              ].map((card, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
                   <div
-                    key={idx}
-                    className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                  >
-                    <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-all">
-                      <div className="w-6 h-6 rounded-full bg-linear-to-br from-secondary to-secondary/60" />
+                    className={`absolute inset-0 bg-linear-to-br ${card.color} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+                  ></div>
+                  <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div>
+                  <div className="relative z-10 transition-all duration-300 group-hover:-translate-y-2">
+                    <div
+                      className={`inline-flex p-3 rounded-full bg-linear-to-br ${card.color} text-white shadow-lg mb-4 transition-transform duration-300 group-hover:scale-110`}
+                    >
+                      {card.icon}
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.desc}</p>
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
+                      {card.title}
+                    </h3>
+                    <p className="text-gray-600 group-hover:text-gray-100 transition-colors duration-300">
+                      {card.description}
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          </section>
-        </AnimatedSection>
+          </div>
+        </section>
+      </AnimatedSectionPage>
 
-        {/* Working Methodology Section */}
-        <AnimatedSection>
-          <section className="py-16 md:py-24 bg-primary/5 border-y border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">Our Working Methodology</h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Simple, crystal-clear, and results-driven approach to deliver customized water treatment solutions
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                {[
-                  { step: "01", title: "Understand", desc: "We analyze what clients exactly want" },
-                  { step: "02", title: "Analyze", desc: "We examine their water source thoroughly" },
-                  { step: "03", title: "Design", desc: "We engineer the perfect plant system" },
-                  { step: "04", title: "Deliver", desc: "We produce advanced purification systems" },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="relative p-8 rounded-lg border border-border bg-card hover:border-secondary/50 transition-all duration-300 group"
-                  >
-                    {/* Connector line between steps */}
-                    {idx < 3 && (
-                      <div className="hidden md:block absolute -right-3 top-1/2 w-6 h-0.5 bg-linear-to-r from-secondary to-secondary/30" />
-                    )}
-                    <div className="text-4xl font-bold text-secondary/30 mb-4 group-hover:text-secondary/50 transition-all">
-                      {item.step}
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-.
-                    <p className="text-muted-foreground text-sm">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-center text-lg text-muted-foreground mt-12 max-w-3xl mx-auto">
-                Our ability to draw on all available techniques has helped us cater to the variegated needs of our clients
-                and surpass our industry counterparts.
+      {/* Featured Products Section */}
+      <AnimatedSectionPage>
+        <section className="w-full py-24 bg-linear-to-tr from-muted via-muted/50 to-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-white to-transparent"></div>
+          <div className="absolute -left-32 top-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute -right-32 bottom-1/3 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold">Featured Products</h2>
+              <p className="mt-4 text-muted-foreground">
+                Explore our range of high-quality water treatment solutions
               </p>
             </div>
-          </section>
-        </AnimatedSection>
-
-        {/* Experience Section */}
-        <AnimatedSection>
-          <section className="bg-primary/5 py-16 md:py-24 border-y border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center hover:scale-105 transition-all duration-300">
-                  <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">20+</h3>
-                  <p className="text-muted-foreground">Years of Experience</p>
-                </div>
-                <div className="text-center hover:scale-105 transition-all duration-300">
-                  <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">500+</h3>
-                  <p className="text-muted-foreground">Installations Worldwide</p>
-                </div>
-                <div className="text-center hover:scale-105 transition-all duration-300">
-                  <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">150+</h3>
-                  <p className="text-muted-foreground">Trained Professionals</p>
-                </div>
-                <div className="text-center hover:scale-105 transition-all duration-300">
-                  <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-2">98%</h3>
-                  <p className="text-muted-foreground">Client Satisfaction</p>
-                </div>
-              </div>
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Water Softeners",
+                  description: "Industrial and commercial water softening systems",
+                  image: "/Water-Softening-Plant.jpg",
+                  href: "/products/water-softening",
+                },
+                {
+                  title: "RO Systems",
+                  description: "Advanced reverse osmosis systems",
+                  image: "/ro-img11.jpeg",
+                  href: "/products/reverse-osmosis",
+                },
+                {
+                  title: "DM Plants",
+                  description: "Demineralization plants for pure water",
+                  image: "/DM image 3.jpeg",
+                  href: "/products/demineralized",
+                },
+              ].map((product) => (
+                <Link key={product.title} href={product.href} className="group">
+                  <Card className="overflow-hidden transition-transform hover:scale-105 border-0 shadow-lg relative bg-white">
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative aspect-video bg-linear-to-br from-secondary/10 to-primary/10 flex items-center justify-center overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardHeader className="relative">
+                      <CardTitle>{product.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="relative">
+                      <p className="text-muted-foreground">
+                        {product.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
             </div>
-          </section>
-        </AnimatedSection>
+            <div className="mt-8 text-center">
+              <Button asChild size="lg">
+                <Link href="/products">View All Products</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </AnimatedSectionPage>
 
-        {/* CTA removed — ContactUs is rendered globally in layout.tsx */}
-      </main>
-              <ContactUs />
-      
-    </div>
-  )
-}
+      {/* Featured Videos Section */}
+      <AnimatedSectionPage>
+        <section className="w-full py-24 bg-linear-to-bl from-white via-gray-50 to-primary/5 relative">
+          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+          <div className="absolute top-1/4 right-0 w-1/2 h-1/2 bg-linear-to-bl from-secondary/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-0 w-1/2 h-1/2 bg-linear-to-tr from-primary/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold">Featured Videos</h2>
+              <p className="mt-4 text-muted-foreground">
+                Watch our product demonstrations and installation guides
+              </p>
+            </div>
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  id: "video-1",
+                  title: "Complete Mineral Water Project",
+                  description:
+                    "Step-by-step guide to setting up a complete mineral water project",
+                  thumbnail: "/Complete-Mineral-Water-Project(5).webp",
+                  href: "/products/mineral-water-project",
+                },
+                {
+                  id: "video-2",
+                  title: "Ozone System",
+                  description: "Explore the features and applications of our ozone systems.",
+                  thumbnail: "/ozone-system(4).png",
+                  href: "/products/dosing-ozonation-uv",
+                },
+                {
+                  id: "video-3",
+                  title: "Mineral Water Plant Installation",
+                  description: "Complete setup and installation of mineral water production systems",
+                  thumbnail: "/Mineral-Water-Plant(2).webp",
+                  href: "/products/mineral-water-project",
+                },
+              ].map((video) => (
+                <Link key={video.id} href={video.href} className="group">
+                  <Card className="overflow-hidden transition-transform hover:scale-105 border-0 shadow-lg relative bg-white">
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative aspect-video bg-linear-to-br from-primary/10 to-secondary/10 flex items-center justify-center overflow-hidden">
+                      <Image
+                        src={video.thumbnail}
+                        alt={video.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-white rounded-full blur-md opacity-30 scale-125"></div>
+                          <Play className="h-12 w-12 text-white relative" />
+                        </div>
+                      </div>
+                    </div>
+                    <CardHeader className="relative">
+                      <CardTitle>{video.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="relative">
+                      <p className="text-muted-foreground">
+                        {video.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button asChild size="lg">
+                <Link href="/products">View All Videos</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </AnimatedSectionPage>
+
+      {/* Client Logos Section */}
+      <AnimatedSectionPage>
+        <ClientLogos />
+      </AnimatedSectionPage>
+
+      {/* Get a Quote Section */}
+      <ContactUs />
+
+    </>
+  );
+};
+
+export default Home;

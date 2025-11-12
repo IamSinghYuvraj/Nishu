@@ -8,7 +8,7 @@ export default function DosingOzonationUVPage() {
   const mediaItems: MediaItem[] = [
     { type: "image", src: "/Ozone_system(3).jpg", title: "Ozone System 1" },
     { type: "image", src: "/Ozone-system(2).jpg", title: "Ozone System 3" },
-    { type: "image", src: "/ozone-system(5).JPG.jpeg", title: "Ozone System 5" },
+    { type: "image", src: "/ozone-system(5).jpeg", title: "Ozone System 5" },
   ]
 
   const specs = [
