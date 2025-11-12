@@ -21,7 +21,7 @@ const industries = [
   {
     name: "Pharmaceutical",
     icon: Beaker,
-    image: "/placeholder.svg",
+    image: "/pharma-industry.jpg",
     description: "Ultra-pure water systems for pharmaceutical manufacturing",
     color: "bg-violet-500",
     hoverColor: "group-hover:bg-violet-600",
@@ -30,7 +30,7 @@ const industries = [
   {
     name: "Manufacturing",
     icon: Factory,
-    image: "/placeholder.svg",
+    image: "/manufacturing-industry.jpeg",
     description: "Industrial water treatment for manufacturing processes",
     color: "bg-emerald-500",
     hoverColor: "group-hover:bg-emerald-600",
@@ -39,7 +39,7 @@ const industries = [
   {
     name: "Food & Beverage",
     icon: Truck,
-    image: "/placeholder.svg",
+    image: "/food-beverage-industry.jpeg",
     description: "Safe water solutions for food processing",
     color: "bg-amber-500",
     hoverColor: "group-hover:bg-amber-600",
@@ -48,7 +48,7 @@ const industries = [
   {
     name: "Commercial",
     icon: Building2,
-    image: "/placeholder.svg",
+    image: "/commercial-industry.jpeg",
     description: "Water treatment for commercial buildings",
     color: "bg-sky-500",
     hoverColor: "group-hover:bg-sky-600",
@@ -57,7 +57,7 @@ const industries = [
   {
     name: "Power Generation",
     icon: HardHat,
-    image: "/placeholder.svg",
+    image: "/power-generation-industry.jpg",
     description: "Boiler feed water and cooling systems",
     color: "bg-rose-500",
     hoverColor: "group-hover:bg-rose-600",
@@ -66,7 +66,7 @@ const industries = [
   {
     name: "Agriculture",
     icon: Leaf,
-    image: "/placeholder.svg",
+    image: "/agriculture-industry.jpeg",
     description: "Irrigation and hydroponics water treatment",
     color: "bg-lime-500",
     hoverColor: "group-hover:bg-lime-600",
@@ -75,7 +75,7 @@ const industries = [
   {
     name: "Construction",
     icon: Hammer,
-    image: "/placeholder.svg",
+    image: "/construction-industry.jpeg",
     description: "Water solutions for construction projects",
     color: "bg-cyan-500",
     hoverColor: "group-hover:bg-cyan-600",
@@ -84,7 +84,7 @@ const industries = [
   {
     name: "Warehousing",
     icon: Warehouse,
-    image: "/placeholder.svg",
+    image: "/warehousing-industry",
     description: "Water management for storage facilities",
     color: "bg-fuchsia-500",
     hoverColor: "group-hover:bg-fuchsia-600",
