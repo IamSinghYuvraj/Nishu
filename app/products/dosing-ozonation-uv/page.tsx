@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/navigation"
-import { Check, Zap } from "@/components/icons"
-import Link from "next/link"
+import { Check } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
@@ -57,25 +56,26 @@ export default function DosingOzonationUVPage() {
       <Navigation />
 
       <main className="flex-1">
-        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Dosing, Ozonation & UV Systems</h1>
-                <p className="text-lg text-muted-foreground mb-8">
-                  These systems are an integral part of advanced water treatment, providing powerful disinfection, oxidation, and precise chemical control for the highest water quality.
-                </p>
-                
-              </div>
-
+        <AnimatedSection>
+          <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <MediaGallery items={mediaItems} />
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Dosing, Ozonation & UV Systems</h1>
+                  <p className="text-lg text-muted-foreground mb-8">
+                    These systems are an integral part of advanced water treatment, providing powerful disinfection, oxidation, and precise chemical control for the highest water quality.
+                  </p>
+                  
+                </div>
+
+                  <div>
+                    <MediaGallery items={mediaItems} />
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
         </AnimatedSection>
-
+        
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Core Benefits</h2>
@@ -144,8 +144,12 @@ export default function DosingOzonationUVPage() {
             </div>
           </div>
         </section>
+        <AnimatedSection>
+          <section className="py-16 md:py-24">
+            <ContactUs />
+          </section>
+        </AnimatedSection>
       </main>
-      <ContactUs />
     </div>
   )
 }

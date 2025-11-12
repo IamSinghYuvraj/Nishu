@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import Link from "next/link"
-import { Check, Zap, Shield } from "@/components/icons"
+import { Check } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
@@ -61,6 +61,7 @@ export default function ROPage() {
       <Navigation />
 
       <main className="flex-1">
+        <AnimatedSection>
         <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -133,9 +134,12 @@ export default function ROPage() {
               ))}
             </div>
           </div>
-        </section>
+        <AnimatedSection>
+          <section className="py-16 md:py-24">
+            <ContactUs />
+          </section>
+        </AnimatedSection>
       </main>
-      <AnimatedSection><ContactUs/></AnimatedSection>
     </div>
   )
 }
