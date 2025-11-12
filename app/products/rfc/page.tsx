@@ -99,8 +99,8 @@ export default function RFCPage() {
           </section>
         </AnimatedSection>
 
-        {/* Features */}
-        <section className="py-16 md:py-24">
+        {/* Specs Infographic */}
+        <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Advanced RFC Technology</h2>
