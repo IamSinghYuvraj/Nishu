@@ -38,10 +38,10 @@ export default function InfrastructureCards() {
           key={index}
           className="group p-6 rounded-lg border border-border bg-background hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50 transition-all duration-500"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+          <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
           <div className="relative">
             <div className="flex items-start gap-3 mb-3">
-              <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
               <h3 className="text-lg font-semibold text-foreground group-hover:text-secondary transition-colors">
                 {item.title}
               </h3>

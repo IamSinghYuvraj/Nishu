@@ -65,7 +65,7 @@ export function ClientLogos() {
             {[...clients, ...clients, ...clients].map((client, index) => (
               <Card
                 key={`${index}`} // Use index as the key since there's no unique identifier
-                className="min-w-[200px] h-[200px] flex-shrink-0 flex flex-col items-center text-center overflow-hidden relative"
+                className="min-w-[200px] h-[200px] shrink-0 flex flex-col items-center text-center overflow-hidden relative"
               >
                 {/* Fullscreen logo */}
                 <div className="absolute inset-0">

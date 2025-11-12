@@ -68,7 +68,7 @@ export const Industries = () => {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/5">
+    <section className="py-16 md:py-24 bg-linear-to-b from-background to-secondary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Industries We Serve</h2>
@@ -88,7 +88,7 @@ export const Industries = () => {
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-primary/5 to-secondary/5 border border-border rounded-xl p-8">
+        <div className="mt-12 bg-linear-to-r from-primary/5 to-secondary/5 border border-border rounded-xl p-8">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-foreground mb-4">Custom Solutions for Every Need</h3>
             <p className="text-muted-foreground mb-6">

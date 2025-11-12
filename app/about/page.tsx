@@ -195,7 +195,7 @@ export default function AboutPage() {
     <>
     <Navigation/>
       <div className="overflow-x-hidden">
-        <section className="py-16 bg-gradient-to-b from-cyan-50 via-white to-cyan-50 flex justify-center items-center">
+        <section className="py-16 bg-linear-to-b from-cyan-50 via-white to-cyan-50 flex justify-center items-center">
           <div className="container">
             <div className="grid gap-16 md:grid-cols-2 items-center">
               {/* Left Content */}
@@ -241,7 +241,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-b from-white to-cyan-50 py-16 flex justify-center items-center">
+        <section className="bg-linear-to-b from-white to-cyan-50 py-16 flex justify-center items-center">
           <div className="container">
             <AnimatedSection>
               <h2 className="text-center text-3xl font-bold text-cyan-800">
@@ -266,7 +266,7 @@ export default function AboutPage() {
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4">
                           <h3 className="flex items-center gap-2 text-lg font-semibold text-white">
                             <industry.icon className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
@@ -322,7 +322,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-b from-cyan-50 to-white py-16 flex justify-center items-center">
+        <section className="bg-linear-to-b from-cyan-50 to-white py-16 flex justify-center items-center">
           <div className="container">
             <AnimatedSection>
               <h2 className="text-center text-3xl font-bold text-cyan-800">

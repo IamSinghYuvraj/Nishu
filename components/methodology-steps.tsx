@@ -43,7 +43,7 @@ export function MethodologySteps() {
             className="group relative p-6 rounded-lg border border-border bg-card cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-secondary/50"
             onMouseEnter={() => setActiveStep(index)}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+            <div className="absolute inset-0 bg-linear-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
 
             <div className="relative z-10">
               <div className="text-5xl font-bold text-secondary/20 mb-3 group-hover:text-secondary/40 transition-colors duration-300">
@@ -57,7 +57,7 @@ export function MethodologySteps() {
               </p>
             </div>
 
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-transparent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-secondary to-transparent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           </div>
         ))}
       </div>
