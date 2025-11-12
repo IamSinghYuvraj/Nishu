@@ -62,26 +62,26 @@ export default function ROPage() {
 
       <main className="flex-1">
         <AnimatedSection>
-        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                  Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
-                </h1>
-                <p className="text-lg text-muted-foreground mb-8">
-                  We are a prominent supplier of Reverse Osmosis (RO) Systems, providing the perfect solution for removing impurities and unwanted elements from water. RO technology purifies brackish or saline water by reducing Total Dissolved Solids (TDS) for various commercial and industrial needs.
-                </p>
-                
-              </div>
-
+          <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <MediaGallery items={mediaItems} />
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
+                    Reverse Osmosis Plant <span className="text-secondary">(RO)</span>
+                  </h1>
+                  <p className="text-lg text-muted-foreground mb-8">
+                    We are a prominent supplier of Reverse Osmosis (RO) Systems, providing the perfect solution for removing impurities and unwanted elements from water. RO technology purifies brackish or saline water by reducing Total Dissolved Solids (TDS) for various commercial and industrial needs.
+                  </p>
+                  
+                </div>
+
+                  <div>
+                    <MediaGallery items={mediaItems} />
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        </AnimatedSection>
+            </section>
+          </AnimatedSection>
 
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,10 +134,10 @@ export default function ROPage() {
               ))}
             </div>
           </div>
+        </section>
+
         <AnimatedSection>
-          <section className="py-16 md:py-24">
-            <ContactUs />
-          </section>
+          <ContactUs />
         </AnimatedSection>
       </main>
     </div>
