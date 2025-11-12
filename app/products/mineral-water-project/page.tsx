@@ -7,6 +7,7 @@ import ContactUs from "@/components/contactus";
 
 export default function MineralWaterProjectPage() {
   const mediaItems: MediaItem[] = [
+    { type: "video", src: "/Complete-Mineral-Water-Project video(1).mp4", title: "Complete Mineral Water Project Video" },
     { type: "image", src: "/Complete-Mineral-Water-Project(5).webp", title: "Complete Mineral Water Project" },
     { type: "image", src: "/COMPLETE-PROJECT-FLOW-DIAGRAM(3)).webp", title: "Project Flow Diagram" },
     { type: "image", src: "/Mineral-Drinking-Water-Plant(1).webp", title: "Mineral Drinking Water Plant" },
