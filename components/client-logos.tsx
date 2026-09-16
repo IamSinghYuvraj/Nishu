@@ -73,9 +73,8 @@ export function ClientLogos() {
                   <Image
                     src={client.logo}
                     alt="Client Logo" // Use a generic alt text since there's no name
-                    layout="fill"
-                    objectFit="contain"
-                    className="opacity-90"
+                    fill
+                    className="object-contain opacity-90"
                   />
                 </div>
               </Card>

@@ -15,7 +15,6 @@ import {
   Loader2,
   Mail,
   MapPin,
-  Phone,
   AlertCircle,
   Send,
 } from "lucide-react";
@@ -75,12 +74,6 @@ export default function ContactPage() {
       label: "Email",
       value: "nishudbj@gmail.com",
       link: "mailto:nishudbj@gmail.com",
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "9820142424",
-      link: "tel:+919820142424",
     },
     {
       icon: MapPin,
@@ -150,8 +143,14 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const messageBody = `New Contact Form Submission:\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nSubject: ${formData.subject}\nMessage: ${formData.message}`;
-      const greenApiResult = await sendContactMessage(messageBody);
+      const greenApiResult = await sendContactMessage({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.replace(/\D/g, ""),
+        company: formData.company.trim(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+      });
 
       if (
         greenApiResult &&
@@ -304,21 +303,6 @@ export default function ContactPage() {
                   </div>
                 </Card>
 
-                <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-200 hover:bg-white/95">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
-                      <Phone className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                    </div>
-                    <div className="group-hover:translate-x-1 transition-transform duration-300">
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Phone</h3>
-                      <p className="text-sm text-muted-foreground">
-                        <a href="tel:+919820142424" className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block">
-                          +91 9820142424
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </Card>
 
                 <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-300 hover:bg-white/95">
                   <div className="flex items-start space-x-4">
