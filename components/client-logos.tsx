@@ -25,7 +25,8 @@ const clients = [
   { logo: ACTIVE },
   { logo: HP },
   { logo: CLOUD9 },
-  { logo: MERU }
+  { logo: MERU },
+  { logo: "/CAMPA.png" }
 ];
 
 export function ClientLogos() {

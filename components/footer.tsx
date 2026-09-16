@@ -102,13 +102,13 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 shrink-0" />
-                <a href="tel:+918048611863" className="hover:text-secondary transition-all duration-300">
+                <a href="tel:+919820142424" className="hover:text-secondary transition-all duration-300">
                   9820142424
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 shrink-0" />
-                <a href="mailto:info@nishuenterprises.com" className="hover:text-secondary transition-all duration-300">
+                <a href="mailto:nishudbj@gmail.com" className="hover:text-secondary transition-all duration-300">
                   nishudbj@gmail.com
                 </a>
               </li>
