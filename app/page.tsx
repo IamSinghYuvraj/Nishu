@@ -389,7 +389,7 @@ const Home: React.FC = () => {
                   id: "video-2",
                   title: "Ozone System",
                   description: "Explore the features and applications of our ozone systems.",
-                  thumbnail: "/ozone-system(4).png",
+                  thumbnail: "/Ozone-system(4).png",
                   href: "/products/dosing-ozonation-uv",
                 },
                 {

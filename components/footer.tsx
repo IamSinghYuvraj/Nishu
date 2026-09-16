@@ -130,7 +130,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-secondary/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm opacity-75">
-          <p>&copy; 2025 Nishu Enterprises. All rights reserved.</p>
+          <p>&copy; 2026 Nishu Enterprises. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-secondary transition-all duration-300">
               Privacy Policy
