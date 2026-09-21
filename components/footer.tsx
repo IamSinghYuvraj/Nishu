@@ -4,6 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Phone, Mail, ChevronDown } from "@/components/icons"
+import { Linkedin, Instagram, Facebook, Youtube } from "lucide-react"
+import { BUSINESS } from "@/lib/site"
 
 export function Footer() {
   const [productsOpen, setProductsOpen] = useState(false)
@@ -19,6 +21,13 @@ export function Footer() {
     { title: "Rinsing Filling Capping Machine (RFC)", link: "/products/rfc" },
   ]
 
+  const socialLinks = [
+    { label: "LinkedIn", href: BUSINESS.social.linkedin, Icon: Linkedin },
+    { label: "Instagram", href: BUSINESS.social.instagram, Icon: Instagram },
+    { label: "Facebook", href: BUSINESS.social.facebook, Icon: Facebook },
+    { label: "YouTube", href: BUSINESS.social.youtube, Icon: Youtube },
+  ].filter((s) => s.href)
+
   return (
     <footer className="bg-primary text-primary-foreground border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -31,6 +40,22 @@ export function Footer() {
             <p className="text-sm opacity-75 leading-relaxed">
               Established in 1996, manufacturing water treatment plants and spare parts with innovation and reliability.
             </p>
+            {socialLinks.length > 0 && (
+              <div className="flex gap-3 mt-4">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Nishu Enterprises on ${label}`}
+                    className="p-2 rounded-full bg-primary-foreground/10 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Quick Links */}

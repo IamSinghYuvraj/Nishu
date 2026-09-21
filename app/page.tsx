@@ -86,7 +86,7 @@ const Home: React.FC = () => {
             >
               <Image
                 src={image}
-                alt={`Water treatment facility ${index + 1}`}
+                alt={["Industrial RO plant installed by Nishu Enterprises","Demineralization (DM) plant by Nishu Enterprises","Commercial water treatment plant by Nishu Enterprises"][index]}
                 fill
                 className="object-cover brightness-50"
                 priority={index === 0}
@@ -170,7 +170,7 @@ const Home: React.FC = () => {
                   <div className="absolute -inset-4 bg-linear-to-tr from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-70"></div>
                   <Image
                     src="/Ro-img6.jpg"
-                    alt="Water treatment facility"
+                    alt="Industrial reverse osmosis plant manufactured by Nishu Enterprises"
                     fill
                     className="rounded-lg shadow-lg relative object-cover"
                   />

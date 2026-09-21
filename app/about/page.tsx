@@ -230,7 +230,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0 transform transition-transform duration-500 group-hover:scale-[0.97] group-hover:rotate-1">
                     <Image
                       src={"/Ro-img6.jpg"}
-                      alt="Water treatment facility"
+                      alt="Nishu Enterprises RO plant installation"
                       fill
                       className="rounded-lg object-cover"
                     />

@@ -11,6 +11,10 @@ export default function WhatsAppChat() {
   const message = "Hello! I'm interested in your water treatment solutions.";
 
   const handleWhatsAppClick = () => {
+    // GA4 event (no-op until NEXT_PUBLIC_GA_ID is configured)
+    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.("event", "whatsapp_click", {
+      page_path: window.location.pathname,
+    });
     const url = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };

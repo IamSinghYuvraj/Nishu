@@ -19,6 +19,7 @@ import {
   Send,
 } from "lucide-react";
 import { sendContactMessage } from "@/app/contact/actions";
+import { FAQS } from "@/lib/site";
 
 interface FormData {
   name: string;
@@ -464,30 +465,12 @@ export default function ContactPage() {
                 Frequently Asked Questions
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-6 rounded-lg bg-card border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">How long is the installation process?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Installation timelines vary based on system complexity and site conditions, typically ranging from 2-8 weeks.
-                  </p>
-                </div>
-                <div className="p-6 rounded-lg bg-card border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">Do you offer maintenance services?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Yes, we provide comprehensive maintenance and support packages to ensure optimal system performance.
-                  </p>
-                </div>
-                <div className="p-6 rounded-lg bg-card border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">What warranty do you provide?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our systems come with a 5-10 year warranty covering parts and labor for manufacturing defects.
-                  </p>
-                </div>
-                <div className="p-6 rounded-lg bg-card border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">Can you customize solutions for my needs?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    We specialize in tailored solutions designed specifically for your requirements.
-                  </p>
-                </div>
+                {FAQS.map((faq) => (
+                  <div key={faq.question} className="p-6 rounded-lg bg-card border border-border">
+                    <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
+                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

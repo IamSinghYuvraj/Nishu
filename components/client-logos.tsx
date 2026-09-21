@@ -16,17 +16,17 @@ import MERU from "@/public/MERU-SPRING.png";
 import { Card } from "@/components/ui/card";
 
 const clients = [
-  { logo: MANTRA },
-  { logo: BISLERI },
-  { logo: BAILEY },
-  { logo: MCD },
-  { logo: O2RISE },
-  { logo: ROYAL },
-  { logo: ACTIVE },
-  { logo: HP },
-  { logo: CLOUD9 },
-  { logo: MERU },
-  { logo: "/CAMPA.png" }
+  { name: "Mantra", logo: MANTRA },
+  { name: "Bisleri", logo: BISLERI },
+  { name: "Bailey", logo: BAILEY },
+  { name: "McDonald's", logo: MCD },
+  { name: "O2Rise", logo: O2RISE },
+  { name: "Royal", logo: ROYAL },
+  { name: "Active", logo: ACTIVE },
+  { name: "HP-RO", logo: HP },
+  { name: "Cloud9", logo: CLOUD9 },
+  { name: "Meru Spring", logo: MERU },
+  { name: "Campa", logo: "/CAMPA.png" }
 ];
 
 export function ClientLogos() {
@@ -72,7 +72,7 @@ export function ClientLogos() {
                 <div className="absolute inset-0">
                   <Image
                     src={client.logo}
-                    alt="Client Logo" // Use a generic alt text since there's no name
+                    alt={`${client.name} logo`}
                     fill
                     className="object-contain opacity-90"
                   />
