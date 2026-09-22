@@ -12,7 +12,19 @@ export async function sendContactMessage(input: ContactMailInput) {
   let whatsappOk = false;
   if (phoneNumber) {
     try {
-      const body = `New Contact Form Submission:\nName: ${input.name}\nEmail: ${input.email}\nPhone: ${input.phone}\nCompany: ${input.company || '-'}\nSubject: ${input.subject || '-'}\nMessage: ${input.message}`;
+      const body = [
+        'New Contact Form Submission:',
+        `Name: ${input.name}`,
+        `Email: ${input.email}`,
+        `Phone: ${input.phone}`,
+        `Company: ${input.company || '-'}`,
+        `System required: ${input.product || '-'}`,
+        `Capacity: ${input.capacity || '-'}`,
+        `Site location: ${input.city || '-'}`,
+        `Subject: ${input.subject || '-'}`,
+        `Attachment: ${input.attachment ? input.attachment.name + ' (sent by email)' : '-'}`,
+        `Message: ${input.message}`,
+      ].join('\n');
       const wa = await greenApiClient.sendMessage(phoneNumber, body);
       whatsappOk = Boolean(wa?.success);
     } catch {

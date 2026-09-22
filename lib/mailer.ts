@@ -15,8 +15,16 @@ export interface ContactMailInput {
   email: string;
   phone: string;
   company?: string;
+  /** Which system the enquiry is for. */
+  product?: string;
+  /** Output requirement, normally litres per hour. */
+  capacity?: string;
+  /** Where the plant will be installed. */
+  city?: string;
   subject?: string;
   message: string;
+  /** Site drawing or specification, capped client-side at 4 MB. */
+  attachment?: File;
 }
 
 export async function sendContactMail(input: ContactMailInput) {
@@ -29,7 +37,10 @@ export async function sendContactMail(input: ContactMailInput) {
     auth: { user: MAIL_FROM, pass: MAIL_APP_PASSWORD },
   });
 
-  const subject = `New website enquiry${input.subject ? `: ${input.subject}` : ""} - ${input.name}`;
+  // Lead the subject line with the system and capacity so the enquiry can be
+  // triaged from the inbox list without opening it.
+  const qualifier = [input.product, input.capacity].filter(Boolean).join(" ");
+  const subject = `New enquiry${qualifier ? `: ${qualifier}` : ""} - ${input.name}`;
 
   const text = [
     "New contact form submission",
@@ -38,11 +49,24 @@ export async function sendContactMail(input: ContactMailInput) {
     `Email: ${input.email}`,
     `Phone: +91 ${input.phone}`,
     `Company: ${input.company || "-"}`,
+    "",
+    `System required: ${input.product || "-"}`,
+    `Capacity: ${input.capacity || "-"}`,
+    `Site location: ${input.city || "-"}`,
     `Subject: ${input.subject || "-"}`,
     "",
     "Message:",
     input.message,
   ].join("\n");
+
+  const attachments = [];
+  if (input.attachment) {
+    attachments.push({
+      filename: input.attachment.name,
+      content: Buffer.from(await input.attachment.arrayBuffer()),
+      contentType: input.attachment.type || "application/octet-stream",
+    });
+  }
 
   try {
     await transporter.sendMail({
@@ -51,6 +75,7 @@ export async function sendContactMail(input: ContactMailInput) {
       replyTo: input.email,
       subject,
       text,
+      ...(attachments.length ? { attachments } : {}),
     });
     return { success: true };
   } catch (error) {

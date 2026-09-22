@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import AnimatedSection from "@/components/animation";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -15,11 +15,13 @@ import {
   Loader2,
   Mail,
   MapPin,
+  Phone,
+  Paperclip,
   AlertCircle,
   Send,
 } from "lucide-react";
 import { sendContactMessage } from "@/app/contact/actions";
-import { FAQS, BUSINESS } from "@/lib/site";
+import { FAQS, BUSINESS, PRODUCTS } from "@/lib/site";
 import { trackLead } from "@/lib/track";
 
 interface FormData {
@@ -27,18 +29,67 @@ interface FormData {
   email: string;
   phone: string;
   company: string;
+  /** Which system they need - drives routing and the quotation. */
+  product: string;
+  /** Output requirement, normally litres per hour. */
+  capacity: string;
+  /** Where the plant will be installed. */
+  city: string;
   subject: string;
   message: string;
 }
 
-interface TouchedState {
-  name: boolean;
-  email: boolean;
-  phone: boolean;
-  company: boolean;
-  subject: boolean;
-  message: boolean;
-}
+type TouchedState = Record<keyof FormData, boolean>;
+
+/** Fields that are collected but not required to submit. */
+const OPTIONAL_FIELDS: (keyof FormData)[] = [
+  "company",
+  "capacity",
+  "city",
+  "subject",
+];
+
+const EMPTY_FORM: FormData = {
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  product: "",
+  capacity: "",
+  city: "",
+  subject: "",
+  message: "",
+};
+
+const UNTOUCHED: TouchedState = {
+  name: false,
+  email: false,
+  phone: false,
+  company: false,
+  product: false,
+  capacity: false,
+  city: false,
+  subject: false,
+  message: false,
+};
+
+const ALL_TOUCHED: TouchedState = {
+  name: true,
+  email: true,
+  phone: true,
+  company: true,
+  product: true,
+  capacity: true,
+  city: true,
+  subject: true,
+  message: true,
+};
+
+// Vercel caps a serverless request body at ~4.5 MB, so keep the attachment
+// comfortably under it. Matches serverActions.bodySizeLimit in next.config.mjs.
+const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024;
+const ACCEPTED_ATTACHMENTS =
+  ".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.dwg,.dxf";
 
 interface Notification {
   type: "success" | "error" | "warning";
@@ -53,22 +104,11 @@ export default function ContactPage() {
     message: "",
     show: false,
   });
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    subject: "",
-    message: "",
-  });
-  const [touched, setTouched] = useState<TouchedState>({
-    name: false,
-    email: false,
-    phone: false,
-    company: false,
-    subject: false,
-    message: false,
-  });
+  const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
+  const [touched, setTouched] = useState<TouchedState>(UNTOUCHED);
+  const [attachment, setAttachment] = useState<File | null>(null);
+  const [attachmentError, setAttachmentError] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const contactInfo = [
     {
@@ -114,8 +154,35 @@ export default function ContactPage() {
       formData.name.trim() !== "" &&
       emailRegex.test(formData.email.trim()) &&
       formData.phone.replace(/\D/g, "").length === 10 &&
-      formData.message.trim() !== ""
+      formData.product.trim() !== "" &&
+      formData.message.trim() !== "" &&
+      attachmentError === ""
     );
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null;
+    if (!file) {
+      setAttachment(null);
+      setAttachmentError("");
+      return;
+    }
+    if (file.size > MAX_ATTACHMENT_BYTES) {
+      setAttachment(null);
+      setAttachmentError(
+        `That file is ${(file.size / 1024 / 1024).toFixed(1)} MB. Please keep it under 4 MB, or email it to us directly.`
+      );
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+    setAttachment(file);
+    setAttachmentError("");
+  };
+
+  const clearAttachment = () => {
+    setAttachment(null);
+    setAttachmentError("");
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const showNotification = (type: Notification["type"], message: string) => {
@@ -128,14 +195,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setTouched({
-      name: true,
-      email: true,
-      phone: true,
-      company: true,
-      subject: true,
-      message: true,
-    });
+    setTouched(ALL_TOUCHED);
 
     if (!validateForm()) {
       showNotification("error", "Please fill in all required fields correctly.");
@@ -150,51 +210,43 @@ export default function ContactPage() {
         email: formData.email.trim(),
         phone: formData.phone.replace(/\D/g, ""),
         company: formData.company.trim(),
+        product: formData.product.trim(),
+        capacity: formData.capacity.trim(),
+        city: formData.city.trim(),
         subject: formData.subject.trim(),
         message: formData.message.trim(),
+        attachment: attachment ?? undefined,
       });
 
-      // Lead conversion: the enquiry reached us regardless of which
-      // channel delivered it, so report it once here.
-      trackLead("form", { product: formData.subject.trim() || undefined });
+      const delivered =
+        !greenApiResult ||
+        typeof greenApiResult !== "object" ||
+        !("success" in greenApiResult) ||
+        greenApiResult.success;
 
-      if (
-        greenApiResult &&
-        typeof greenApiResult === "object" &&
-        "success" in greenApiResult
-      ) {
-        if (greenApiResult.success) {
-          showNotification(
-            "success",
-            "Your query has been sent successfully! We'll contact you shortly."
-          );
-        } else {
-          console.error("Green API Error:", greenApiResult.error);
-          showNotification(
-            "warning",
-            "Message received! We'll get back to you as soon as possible."
-          );
-        }
-      } else {
-        showNotification("success", "Thank you! We'll get back to you soon.");
+      if (!delivered) {
+        // Neither email nor WhatsApp accepted the enquiry. Do not clear the
+        // form and do not count a conversion - the message reached nobody, and
+        // telling the buyer otherwise loses the lead silently.
+        console.error("Contact form delivery failed:", greenApiResult.error);
+        showNotification(
+          "error",
+          `We couldn't send your enquiry just now. Please call us on ${BUSINESS.phone} or WhatsApp us, and your details below have been kept so you can try again.`
+        );
+        return;
       }
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: "",
-      });
-      setTouched({
-        name: false,
-        email: false,
-        phone: false,
-        company: false,
-        subject: false,
-        message: false,
-      });
+      // Lead conversion: only once we know a channel actually accepted it.
+      trackLead("form", { product: formData.product.trim() || undefined });
+
+      showNotification(
+        "success",
+        "Your query has been sent successfully! We'll contact you shortly."
+      );
+
+      setFormData(EMPTY_FORM);
+      setTouched(UNTOUCHED);
+      clearAttachment();
     } catch (error) {
       console.error("Error sending message:", error);
       const errorMessage =
@@ -219,7 +271,7 @@ export default function ContactPage() {
       } else if (field === "email") {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         isFieldInvalid = !emailRegex.test(formData.email.trim());
-      } else if (field === "company" || field === "subject") {
+      } else if (OPTIONAL_FIELDS.includes(field)) {
         isFieldInvalid = false;
       } else {
         isFieldInvalid = !(formData[field] as string).trim();
@@ -310,6 +362,26 @@ export default function ContactPage() {
                 </Card>
 
 
+                <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-200 hover:bg-white/95">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                      <Phone className="h-6 w-6 text-primary group-hover:animate-pulse" />
+                    </div>
+                    <div className="group-hover:translate-x-1 transition-transform duration-300">
+                      <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Phone</h3>
+                      <p className="text-sm text-muted-foreground">
+                        <a
+                          href={`tel:${BUSINESS.phoneE164}`}
+                          onClick={() => trackLead("phone")}
+                          className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block"
+                        >
+                          {BUSINESS.phone}
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
                 <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-300 hover:bg-white/95">
                   <div className="flex items-start space-x-4">
                     <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
@@ -398,6 +470,83 @@ export default function ContactPage() {
                         />
                       </div>
 
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2 group">
+                          <Label htmlFor="company" className="text-sm font-medium group-focus-within:text-primary transition-colors">
+                            Company
+                          </Label>
+                          <Input
+                            id="company"
+                            type="text"
+                            value={formData.company}
+                            onChange={handleInputChange}
+                            onBlur={() => handleBlur("company")}
+                            className={getInputClassName("company")}
+                            placeholder="Your company name"
+                            disabled={isSubmitting}
+                          />
+                        </div>
+
+                        <div className="space-y-2 group">
+                          <Label htmlFor="city" className="text-sm font-medium group-focus-within:text-primary transition-colors">
+                            Site location
+                          </Label>
+                          <Input
+                            id="city"
+                            type="text"
+                            value={formData.city}
+                            onChange={handleInputChange}
+                            onBlur={() => handleBlur("city")}
+                            className={getInputClassName("city")}
+                            placeholder="City where the plant will be installed"
+                            disabled={isSubmitting}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2 group">
+                          <Label htmlFor="product" className="text-sm font-medium group-focus-within:text-primary transition-colors">
+                            System required *
+                          </Label>
+                          <select
+                            id="product"
+                            value={formData.product}
+                            onChange={handleInputChange}
+                            onBlur={() => handleBlur("product")}
+                            required
+                            className={getInputClassName("product")}
+                            disabled={isSubmitting}
+                          >
+                            <option value="">Select a system…</option>
+                            {PRODUCTS.map((p) => (
+                              <option key={p.slug} value={p.name}>
+                                {p.name}
+                              </option>
+                            ))}
+                            <option value="Spares & consumables">Spares &amp; consumables</option>
+                            <option value="Service / AMC">Service / AMC</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                          </select>
+                        </div>
+
+                        <div className="space-y-2 group">
+                          <Label htmlFor="capacity" className="text-sm font-medium group-focus-within:text-primary transition-colors">
+                            Required capacity
+                          </Label>
+                          <Input
+                            id="capacity"
+                            type="text"
+                            value={formData.capacity}
+                            onChange={handleInputChange}
+                            onBlur={() => handleBlur("capacity")}
+                            className={getInputClassName("capacity")}
+                            placeholder="e.g. 5000 LPH"
+                            disabled={isSubmitting}
+                          />
+                        </div>
+                      </div>
+
                       <div className="space-y-2 group">
                         <Label htmlFor="message" className="text-sm font-medium group-focus-within:text-primary transition-colors">
                           Message *
@@ -409,9 +558,47 @@ export default function ContactPage() {
                           onBlur={() => handleBlur("message")}
                           required
                           className={`min-h-[150px] resize-none ${getInputClassName("message")}`}
-                          placeholder="Tell us about your inquiry..."
+                          placeholder="Feed water source and analysis if you have one, daily requirement, and anything else that affects the design."
                           disabled={isSubmitting}
                         />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="attachment" className="text-sm font-medium">
+                          Site drawing or specification
+                        </Label>
+                        <input
+                          ref={fileInputRef}
+                          id="attachment"
+                          type="file"
+                          accept={ACCEPTED_ATTACHMENTS}
+                          onChange={handleFileChange}
+                          disabled={isSubmitting}
+                          className="block w-full text-sm text-muted-foreground file:mr-4 file:rounded-lg file:border-0 file:bg-primary/10 file:px-4 file:py-2 file:text-sm file:font-medium file:text-primary hover:file:bg-primary/20 file:cursor-pointer cursor-pointer rounded-lg border border-border p-2 transition-colors"
+                        />
+                        {attachment && (
+                          <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Paperclip className="h-4 w-4 shrink-0 text-primary" />
+                            <span className="truncate">{attachment.name}</span>
+                            <span className="shrink-0">
+                              ({(attachment.size / 1024).toFixed(0)} KB)
+                            </span>
+                            <button
+                              type="button"
+                              onClick={clearAttachment}
+                              className="shrink-0 text-primary hover:underline"
+                            >
+                              Remove
+                            </button>
+                          </p>
+                        )}
+                        {attachmentError ? (
+                          <p className="text-sm text-red-600">{attachmentError}</p>
+                        ) : (
+                          <p className="text-xs text-muted-foreground">
+                            Optional. PDF, image, Office or CAD file, up to 4 MB.
+                          </p>
+                        )}
                       </div>
 
                       <Button
