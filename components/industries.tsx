@@ -1,108 +1,57 @@
-import { Building2, Droplets, Factory, Utensils, Hospital, Home, Leaf, Zap } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import { Building2, Factory, Utensils, Hospital, HardHat, Zap } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import { INDUSTRIES } from "@/lib/industries"
 
-type IndustryCardProps = {
-  title: string
-  description: string
-  icon: React.ReactNode
-  image?: string
-}
-
-const IndustryCard = ({ title, description, icon, image }: IndustryCardProps) => {
-  return (
-    <Card className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50 group">
-      {image && (
-        <div className="w-full overflow-hidden rounded-t-lg">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-      )}
-      <CardHeader className="pb-2">
-        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-          {icon}
-        </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground">{description}</p>
-      </CardContent>
-    </Card>
-  )
+// Icon per industry slug. Keep in step with INDUSTRIES in lib/industries.ts.
+const ICONS: Record<string, React.ReactNode> = {
+  pharmaceutical: <Hospital className="w-6 h-6 text-primary" />,
+  "food-beverage": <Utensils className="w-6 h-6 text-primary" />,
+  "power-generation": <Zap className="w-6 h-6 text-primary" />,
+  manufacturing: <Factory className="w-6 h-6 text-primary" />,
+  hospitality: <Building2 className="w-6 h-6 text-primary" />,
+  construction: <HardHat className="w-6 h-6 text-primary" />,
 }
 
 export const Industries = () => {
-  const industries = [
-    {
-      title: "Municipal Water",
-      description: "Clean and safe drinking water solutions for cities and communities.",
-      icon: <Droplets className="w-6 h-6 text-primary" />,
-      image: "/commercial-industry.jpeg",
-    },
-    {
-      title: "Industrial",
-      description: "Custom water treatment solutions for manufacturing and processing plants.",
-      icon: <Factory className="w-6 h-6 text-primary" />,
-      image: "/manufacturing-industry.jpeg",
-    },
-    {
-      title: "Healthcare",
-      description: "Ultra-pure water systems for hospitals and medical facilities.",
-      icon: <Hospital className="w-6 h-6 text-primary" />,
-      image: "/pharma-industry.jpg",
-    },
-    {
-      title: "Hospitality",
-      description: "Water purification systems for hotels, resorts, and restaurants.",
-      icon: <Utensils className="w-6 h-6 text-primary" />,
-      image: "/food-beverage-industry.jpeg",
-    },
-    {
-      title: "Commercial",
-      description: "Water treatment solutions for offices, malls, and commercial complexes.",
-      icon: <Building2 className="w-6 h-6 text-primary" />,
-      image: "/commercial-industry.jpeg",
-    },
-    {
-      title: "Residential",
-      description: "Home water purification and softening systems for healthier living.",
-      icon: <Home className="w-6 h-6 text-primary" />,
-      image: "/Commercial-Water-Treatment-Plant.jpg", // Using a generic image as no specific residential image found
-    },
-    {
-      title: "Renewable Energy",
-      description: "Water treatment for solar and other renewable energy plants.",
-      icon: <Zap className="w-6 h-6 text-primary" />,
-      image: "/power-generation-industry.jpg",
-    },
-    {
-      title: "Agriculture",
-      description: "Irrigation water treatment and management solutions.",
-      icon: <Leaf className="w-6 h-6 text-primary" />,
-      image: "/agriculture-industry.jpeg",
-    },
-  ]
-
   return (
     <section className="py-16 md:py-24 bg-linear-to-b from-background to-primary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Industries We Serve</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Delivering cutting-edge water treatment solutions across diverse sectors with customized approaches for each industry's unique needs.
+            Water is a different problem in every sector. Each of these pages sets out how we
+            approach it — and what we need from you to quote accurately.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {industries.map((industry, index) => (
-            <IndustryCard
-              key={index}
-              title={industry.title}
-              description={industry.description}
-              icon={industry.icon}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {INDUSTRIES.map((industry) => (
+            <Link key={industry.slug} href={`/industries/${industry.slug}`} className="group">
+              <Card className="h-full overflow-hidden pt-0 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+                <div className="relative w-full h-40 overflow-hidden">
+                  <Image
+                    src={industry.image}
+                    alt={industry.imageAlt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <CardHeader className="pb-2">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    {ICONS[industry.slug]}
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    {industry.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{industry.cardBlurb}</p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
@@ -112,12 +61,12 @@ export const Industries = () => {
             <p className="text-muted-foreground mb-6">
               Don't see your industry listed? Our team specializes in developing bespoke water treatment solutions tailored to your specific requirements and challenges.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-300"
             >
               Get a Custom Solution
-            </a>
+            </Link>
           </div>
         </div>
       </div>

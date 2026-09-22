@@ -1,5 +1,6 @@
 import { SITE_URL, BUSINESS, FAQS, type ProductSeo } from "@/lib/site";
 import type { Post } from "@/lib/posts";
+import type { Industry } from "@/lib/industries";
 
 const sameAs = Object.values(BUSINESS.social).filter(Boolean);
 
@@ -49,15 +50,19 @@ export const websiteSchema = {
   publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQS.map((f) => ({
-    "@type": "Question",
-    name: f.question,
-    acceptedAnswer: { "@type": "Answer", text: f.answer },
-  })),
-};
+export function faqPageSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}
+
+export const faqSchema = faqPageSchema(FAQS);
 
 export function productSchema(p: ProductSeo) {
   return {
@@ -69,6 +74,21 @@ export function productSchema(p: ProductSeo) {
     url: `${SITE_URL}/products/${p.slug}`,
     brand: { "@type": "Brand", name: BUSINESS.name },
     manufacturer: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
+export function industrySchema(i: Industry) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: i.heading,
+    description: i.description,
+    image: `${SITE_URL}${i.image}`,
+    url: `${SITE_URL}/industries/${i.slug}`,
+    serviceType: "Water treatment plant design, manufacture and installation",
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: "Worldwide",
+    audience: { "@type": "BusinessAudience", name: i.name },
   };
 }
 

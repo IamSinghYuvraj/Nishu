@@ -107,6 +107,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/industries"
+                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  Industries
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/blog"
                   className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
                 >
