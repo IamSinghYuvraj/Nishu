@@ -8,12 +8,20 @@ export const BUSINESS = {
   phone: "+91 98201 42424",
   phoneE164: "+919820142424",
   email: "nishudbj@gmail.com",
+  // Single source of truth. Keep this identical to the Google Business
+  // Profile and every directory listing - matching NAP text is a local
+  // ranking signal.
   address: {
-    street: "Gala No. 5, Bldg No. 6, Parsvanath Industrial Estate, Bhutpada, Vasai East",
-    city: "Vasai",
+    street: "Gala No. 5, Bldg No. 6, Parshwanath Industrial Estate, Waliv, Bhutpada",
+    locality: "Vasai East",
+    city: "Vasai-Virar",
     region: "Maharashtra",
     postalCode: "401208",
     country: "IN",
+  },
+  get addressLine() {
+    const a = BUSINESS.address;
+    return `${a.street}, ${a.locality}, ${a.city}, ${a.region} ${a.postalCode}`;
   },
   geo: { lat: 19.4169473, lng: 72.8611239 },
   // Fill these in once the profiles exist; they feed the footer + Organization schema.

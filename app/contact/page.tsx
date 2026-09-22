@@ -19,7 +19,7 @@ import {
   Send,
 } from "lucide-react";
 import { sendContactMessage } from "@/app/contact/actions";
-import { FAQS } from "@/lib/site";
+import { FAQS, BUSINESS } from "@/lib/site";
 import { trackLead } from "@/lib/track";
 
 interface FormData {
@@ -81,7 +81,7 @@ export default function ContactPage() {
       icon: MapPin,
       label: "Address",
       value:
-        "Gala No.5, Bld. No.6, Parsawanath Ind. Est., Vasai East, Vasai - 401208, Maharashtra, India",
+        BUSINESS.addressLine,
       link: "#",
     },
   ];
@@ -303,7 +303,7 @@ export default function ContactPage() {
                     <div className="group-hover:translate-x-1 transition-transform duration-300">
                       <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Address</h3>
                       <address className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors not-italic">
-                        Gala No.5, Bld. No. 6, Parsawanath Indl. Est., Kolekar Pada, Waliv Village. Vasai East, Vasai - 401208, Maharashtra, India.
+                        {BUSINESS.addressLine}
                       </address>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ export default function ContactPage() {
                     <div className="group-hover:translate-x-1 transition-transform duration-300">
                       <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Email</h3>
                       <p className="text-sm text-muted-foreground">
-                        <a href="mailto:nishudbj@gmail.com" onClick={() => trackLead("email")} className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block">
+                        <a href={`mailto:${BUSINESS.email}`} onClick={() => trackLead("email")} className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block">
                           nishudbj@gmail.com
                         </a>
                       </p>

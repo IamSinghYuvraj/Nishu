@@ -1,4 +1,5 @@
 import { SITE_URL, BUSINESS, FAQS, type ProductSeo } from "@/lib/site";
+import type { Post } from "@/lib/posts";
 
 const sameAs = Object.values(BUSINESS.social).filter(Boolean);
 
@@ -19,7 +20,7 @@ export const organizationSchema = {
   address: {
     "@type": "PostalAddress",
     streetAddress: BUSINESS.address.street,
-    addressLocality: BUSINESS.address.city,
+    addressLocality: BUSINESS.address.locality,
     addressRegion: BUSINESS.address.region,
     postalCode: BUSINESS.address.postalCode,
     addressCountry: BUSINESS.address.country,
@@ -81,5 +82,21 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       name: it.name,
       item: `${SITE_URL}${it.path}`,
     })),
+  };
+}
+
+export function articleSchema(post: Post) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: `${SITE_URL}${post.image}`,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    datePublished: post.published,
+    dateModified: post.published,
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };
 }

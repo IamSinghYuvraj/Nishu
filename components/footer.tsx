@@ -107,6 +107,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog"
+                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
                 >
@@ -123,18 +131,18 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-1 shrink-0" />
                 <span>
-                  gala no.5 bld no.6,parsvanath ind estate bhutpada vasai east Vasai - 401208, Palghar, Maharashtra, India
+                  {BUSINESS.addressLine}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 shrink-0" />
-                <a href="tel:+919820142424" onClick={() => trackLead("phone")} className="hover:text-secondary transition-all duration-300">
+                <a href={`tel:${BUSINESS.phoneE164}`} onClick={() => trackLead("phone")} className="hover:text-secondary transition-all duration-300">
                   9820142424
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 shrink-0" />
-                <a href="mailto:nishudbj@gmail.com" onClick={() => trackLead("email")} className="hover:text-secondary transition-all duration-300">
+                <a href={`mailto:${BUSINESS.email}`} onClick={() => trackLead("email")} className="hover:text-secondary transition-all duration-300">
                   nishudbj@gmail.com
                 </a>
               </li>
