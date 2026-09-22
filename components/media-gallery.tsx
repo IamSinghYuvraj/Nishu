@@ -66,6 +66,10 @@ export function MediaGallery({ items }: MediaGalleryProps) {
               src={currentItem.src}
               className="w-full h-full"
               controls
+              // Several of these files run to ~20 MB. Without this the browser
+              // starts fetching as soon as the gallery mounts, on a page most
+              // visitors never play the video on.
+              preload="none"
             />
           )}
         </div>
