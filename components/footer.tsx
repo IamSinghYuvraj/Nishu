@@ -6,6 +6,7 @@ import Image from "next/image"
 import { MapPin, Phone, Mail, ChevronDown } from "@/components/icons"
 import { Linkedin, Instagram, Facebook, Youtube } from "lucide-react"
 import { BUSINESS } from "@/lib/site"
+import { trackLead } from "@/lib/track"
 
 export function Footer() {
   const [productsOpen, setProductsOpen] = useState(false)
@@ -127,13 +128,13 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 shrink-0" />
-                <a href="tel:+919820142424" className="hover:text-secondary transition-all duration-300">
+                <a href="tel:+919820142424" onClick={() => trackLead("phone")} className="hover:text-secondary transition-all duration-300">
                   9820142424
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 shrink-0" />
-                <a href="mailto:nishudbj@gmail.com" className="hover:text-secondary transition-all duration-300">
+                <a href="mailto:nishudbj@gmail.com" onClick={() => trackLead("email")} className="hover:text-secondary transition-all duration-300">
                   nishudbj@gmail.com
                 </a>
               </li>

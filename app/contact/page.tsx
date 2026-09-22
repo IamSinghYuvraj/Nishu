@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { sendContactMessage } from "@/app/contact/actions";
 import { FAQS } from "@/lib/site";
+import { trackLead } from "@/lib/track";
 
 interface FormData {
   name: string;
@@ -152,6 +153,10 @@ export default function ContactPage() {
         subject: formData.subject.trim(),
         message: formData.message.trim(),
       });
+
+      // Lead conversion: the enquiry reached us regardless of which
+      // channel delivered it, so report it once here.
+      trackLead("form", { product: formData.subject.trim() || undefined });
 
       if (
         greenApiResult &&
@@ -313,7 +318,7 @@ export default function ContactPage() {
                     <div className="group-hover:translate-x-1 transition-transform duration-300">
                       <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Email</h3>
                       <p className="text-sm text-muted-foreground">
-                        <a href="mailto:nishudbj@gmail.com" className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block">
+                        <a href="mailto:nishudbj@gmail.com" onClick={() => trackLead("email")} className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block">
                           nishudbj@gmail.com
                         </a>
                       </p>
