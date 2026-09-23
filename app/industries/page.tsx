@@ -8,14 +8,14 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { INDUSTRIES } from "@/lib/industries";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Water Treatment Plants for Pharma, F&B, Power & More",
+  title: { absolute: "Water Treatment Plants by Industry | Pharma, Hotels, Labs" },
   description:
-    "Water treatment plants built for the specification your sector works to — pharmaceutical, food and beverage, power generation, manufacturing, hospitality and construction. 1200+ plants since 1996.",
+    "Water treatment plants for pharma, food and beverage, housing societies, hotels, hospitals, labs, chemical, textile and more. 1200+ plants since 1996.",
   alternates: { canonical: "/industries" },
   openGraph: {
-    title: "Industries We Serve | Nishu Enterprises",
+    title: "Water Treatment Plants by Industry | Nishu Enterprises",
     description:
-      "Water treatment plants for pharmaceutical, food and beverage, power, manufacturing, hospitality and construction projects.",
+      "Water treatment plants for pharma, food and beverage, housing societies, hotels, hospitals, labs, chemical, textile and more.",
     url: "/industries",
   },
 };
@@ -35,7 +35,7 @@ export default function IndustriesPage() {
         <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-14 md:py-20">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-balance mb-5 text-foreground">
-              Industries We Serve
+              Water Treatment Plants for Every Industry We Serve
             </h1>
             <p className="text-lg text-muted-foreground">
               Water is a different problem in every sector. A pharmaceutical loop, a bottling
@@ -65,13 +65,13 @@ export default function IndustriesPage() {
                     />
                   </div>
                   <div className="flex flex-col flex-1 p-6">
-                    <h2 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    <h2 className="text-xl font-semibold text-foreground mb-2 group-hover:text-cyan-700 transition-colors">
                       {industry.name}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed flex-1">
                       {industry.cardBlurb}
                     </p>
-                    <span className="inline-block mt-4 text-sm font-medium text-primary">
+                    <span className="inline-block mt-4 text-sm font-medium text-cyan-700">
                       Read more →
                     </span>
                   </div>

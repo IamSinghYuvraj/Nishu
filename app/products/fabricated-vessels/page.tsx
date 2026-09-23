@@ -4,6 +4,12 @@ import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "fabricated-vessels")!
 
 export default function FabricatedVesselsPage() {
 const mediaItems: MediaItem[] = [
@@ -49,11 +55,9 @@ const mediaItems: MediaItem[] = [
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                    SS & MS Vessel Tanks
-                  </h1>
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture and supply robust Stainless Steel (SS) and Mild Steel (MS) Vessel Tanks designed for secure, high-capacity storage across various industries.
+                    We manufacture stainless steel (SS) and mild steel (MS) storage tanks, pressure vessels and filter vessels in-house in Vasai, built to your capacity and site layout for water treatment and process industries by a water treatment manufacturer established in 1996.
                   </p>
                   
                 </div>
@@ -64,6 +68,8 @@ const mediaItems: MediaItem[] = [
                 </div>
               </div>
             </section>
+
+        <TrustBar />
           </AnimatedSection>
 <AnimatedSection><section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,6 +124,7 @@ const mediaItems: MediaItem[] = [
             </div>
           </div>
         </section>
+        <FaqSection faqs={PRODUCT_FAQS["fabricated-vessels"] ?? []} />
       </main>
       <ContactUs />
     </div>

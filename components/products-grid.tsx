@@ -65,6 +65,27 @@ const products = [
     image: "/rfc(1).webp",
     href: "/products/rfc",
   },
+  {
+    title: "Desalination Plant",
+    description:
+      "Seawater and brackish water desalination plants using RO, with pre-treatment and remineralisation.",
+    image: "/ro-img7.jpg",
+    href: "/products/desalination",
+  },
+  {
+    title: "RO Spares & Consumables",
+    description:
+      "RO membranes, ion exchange resins, cartridges, filter media, gauges, fittings and antiscalants.",
+    image: "/DM image 3.jpeg",
+    href: "/products/spares-consumables",
+  },
+  {
+    title: "AMC & Plant Maintenance",
+    description:
+      "Annual maintenance contracts for RO, DM and softening plants, with scheduled service and genuine spares.",
+    image: "/Ro-img3.jpg",
+    href: "/products/amc-maintenance",
+  },
 ];
 
 export function ProductsGrid() {
@@ -75,11 +96,12 @@ export function ProductsGrid() {
         <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-              Our Products
+              Water Treatment Plants &amp; Equipment
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Explore our complete range of water treatment plants, components and
-              bottling machinery, manufactured and supplied since 1996.
+              RO plants, DM plants, water softeners, desalination plants, mineral water
+              projects and bottling machinery, plus the spares and maintenance that keep them
+              running. Manufactured in Vasai, Mumbai since 1996.
             </p>
           </div>
         </section>

@@ -93,9 +93,27 @@ export function Navigation() {
                 </Link>
                 <Link
                   href="/products/rfc"
-                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground last:rounded-b-lg transition-all duration-300"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
                 >
                   Rinsing Filling Capping Machine (RFC)
+                </Link>
+                <Link
+                  href="/products/desalination"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  Desalination Plant
+                </Link>
+                <Link
+                  href="/products/spares-consumables"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                >
+                  RO Spares &amp; Consumables
+                </Link>
+                <Link
+                  href="/products/amc-maintenance"
+                  className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 last:rounded-b-lg"
+                >
+                  AMC &amp; Plant Maintenance
                 </Link>
               </div>
             </div>
@@ -207,6 +225,24 @@ export function Navigation() {
                   className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
                 >
                   Rinsing Filling Capping Machine (RFC)
+                </Link>
+                <Link
+                  href="/products/desalination"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  Desalination Plant
+                </Link>
+                <Link
+                  href="/products/spares-consumables"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  RO Spares &amp; Consumables
+                </Link>
+                <Link
+                  href="/products/amc-maintenance"
+                  className="block px-4 py-2 text-sm hover:text-secondary transition-all duration-300"
+                >
+                  AMC &amp; Plant Maintenance
                 </Link>
                 
               </div>

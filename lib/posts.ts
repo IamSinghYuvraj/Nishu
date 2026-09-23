@@ -14,6 +14,8 @@ export type Block =
 export interface Post {
   slug: string;
   title: string;
+  /** Search-result title when the headline is too long or misses the query. Under 60 chars. */
+  seoTitle?: string;
   /** Meta description and listing subtitle. */
   description: string;
   /** The search phrase this article is written for. */
@@ -192,8 +194,9 @@ export const POSTS: Post[] = [
   {
     slug: "mineral-water-plant-setup-cost-india",
     title: "Mineral Water Plant Setup in India: What Actually Drives the Cost",
+    seoTitle: "Mineral Water Plant Setup Cost in India: What Drives It",
     description:
-      "The cost components of a packaged drinking water plant — treatment line, bottling speed, BIS and FSSAI compliance, utilities and space — and where budgets usually slip.",
+      "What drives mineral water plant setup cost in India: treatment line, bottling speed, BIS and FSSAI compliance, utilities and space, and where budgets slip.",
     targetQuery: "mineral water plant setup cost india",
     published: "2026-09-22",
     readingMinutes: 7,
@@ -281,6 +284,7 @@ export const POSTS: Post[] = [
   {
     slug: "hard-water-industrial-boilers-softener",
     title: "What Hard Water Does to an Industrial Boiler",
+    seoTitle: "Water Softener for Boilers: What Hard Water Does to a Boiler",
     description:
       "How scale forms in boilers and cooling systems, what it costs in fuel, and how an industrial water softener differs from RO for hardness removal.",
     targetQuery: "industrial water softener for boiler feed water",

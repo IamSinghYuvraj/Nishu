@@ -1,10 +1,12 @@
 // Single source of truth for site-wide SEO / business details.
 export const SITE_URL = "https://nishuenterprises.org";
 
+const FOUNDING_YEAR = 1996;
+
 export const BUSINESS = {
   name: "Nishu Enterprises",
   legalName: "Nishu Enterprises",
-  foundingYear: "1996",
+  foundingYear: String(FOUNDING_YEAR),
   phone: "+91 98201 42424",
   phoneE164: "+919820142424",
   email: "nishudbj@gmail.com",
@@ -24,6 +26,25 @@ export const BUSINESS = {
     return `${a.street}, ${a.locality}, ${a.city}, ${a.region} ${a.postalCode}`;
   },
   geo: { lat: 19.4169473, lng: 72.8611239 },
+  // Trust figures. Every page that quotes them reads from here, so they can
+  // never disagree with each other. Years is computed so it stays correct.
+  stats: {
+    years: new Date().getFullYear() - FOUNDING_YEAR,
+    plants: 1200,
+    clients: 3500,
+    countries: 45,
+  },
+  // Local areas served. Feeds areaServed in the Organization schema and the
+  // footer; these are the towns buyers put in "... manufacturer in <city>".
+  serviceAreas: [
+    "Vasai-Virar",
+    "Mumbai",
+    "Thane",
+    "Navi Mumbai",
+    "Palghar",
+    "Bhiwandi",
+    "Pune",
+  ],
   // Fill these in once the profiles exist; they feed the footer + Organization schema.
   social: {
     linkedin: "",
@@ -33,78 +54,146 @@ export const BUSINESS = {
   },
 };
 
+/** "Since 1996 · 1200+ plants installed · 3500+ clients · 45 countries" */
+export const TRUST_LINE = `Since ${BUSINESS.foundingYear} · ${BUSINESS.stats.plants}+ plants installed · ${BUSINESS.stats.clients}+ clients · ${BUSINESS.stats.countries} countries`;
+
 export interface ProductSeo {
   slug: string;
+  /** Short name used in menus, the contact dropdown and enquiry emails. */
   name: string;
+  /** Page H1. */
+  heading: string;
+  /** Full <title>, rendered as-is (no brand suffix). Keep it under 60 chars. */
   title: string;
+  /** Meta description. Keep it under 160 chars. */
   description: string;
+  /** The search phrase this page is primarily written for. */
+  targetQuery: string;
   image: string;
+  imageAlt: string;
 }
 
 export const PRODUCTS: ProductSeo[] = [
   {
     slug: "reverse-osmosis",
     name: "Reverse Osmosis Plant (RO)",
-    title: "RO Plant Manufacturer in India | Industrial Reverse Osmosis Systems",
+    heading: "Industrial & Commercial RO Plant Manufacturer",
+    title: "Industrial & Commercial RO Plant Manufacturer in Mumbai",
     description:
-      "Industrial & commercial RO plant manufacturer in Vasai, Mumbai. Reverse osmosis systems up to 10,000 LPH and beyond for beverage, pharma and process industries. Get a quote.",
+      "Industrial and commercial RO plants up to 10,000+ LPH for factories, hotels, hospitals and housing societies. Built in Vasai, Mumbai since 1996.",
+    targetQuery: "industrial ro plant manufacturer",
     image: "/ro-img11.jpeg",
+    imageAlt: "Industrial reverse osmosis plant manufactured by Nishu Enterprises",
   },
   {
     slug: "demineralized",
     name: "Demineralized Plant (DM)",
-    title: "Demineralized Water Plant Supplier | DM Plant Manufacturer India",
+    heading: "DM Water Plant Manufacturer: Two-Bed & Mixed-Bed",
+    title: "DM Water Plant Manufacturer in Mumbai | Two-Bed & Mixed-Bed",
     description:
-      "Two-bed and mixed-bed demineralization (DM) plants for boilers, pharma and process water. 30 years of experience, 1200+ plants installed. Request a quotation.",
+      "Two-bed and mixed-bed DM water plants for boiler feed, pharmaceutical and process water. Manufactured in Vasai, Mumbai since 1996. 1200+ plants installed.",
+    targetQuery: "dm water plant manufacturer in mumbai",
     image: "/DM image 1.jpg",
+    imageAlt: "Demineralisation (DM) water plant with ion-exchange vessels",
   },
   {
     slug: "water-softening",
     name: "Water Softening Plant",
-    title: "Industrial Water Softener Manufacturer India | Water Softening Plants",
+    heading: "Industrial Water Softener Plant Manufacturer",
+    title: "Industrial Water Softener Plant Manufacturer in Mumbai",
     description:
-      "Industrial and commercial water softening plants that remove hardness and protect boilers, cooling towers and process equipment. Manufacturer in Vasai, Maharashtra.",
+      "Automatic water softening plants for boilers, cooling towers, hotels and housing societies. Removes hardness from borewell water. Made in Vasai since 1996.",
+    targetQuery: "water softener plant manufacturer in mumbai",
     image: "/Water-Softening-Plant.jpg",
+    imageAlt: "Industrial water softening plant with twin softener vessels",
   },
   {
     slug: "membrane-housing",
     name: "Membrane Housing",
-    title: "RO Membrane Housing & High Pressure Pumps | Nishu Enterprises",
+    heading: "RO Membrane Housings: FRP & Stainless Steel",
+    title: "RO Membrane Housing Supplier | FRP & SS Pressure Vessels",
     description:
-      "FRP and stainless-steel RO membrane housings and high-pressure pumps for reliable, cost-effective reverse osmosis operation. Supplier in Mumbai, India.",
+      "FRP and stainless-steel RO membrane housings and high-pressure pumps for industrial reverse osmosis plants. Supplied from Vasai, Mumbai since 1996.",
+    targetQuery: "ro membrane housing",
     image: "/membrane-Housing(1).jpg",
+    imageAlt: "Stainless steel RO membrane housing",
   },
   {
     slug: "fabricated-vessels",
     name: "Fabricated SS & MS Vessels / Tanks",
-    title: "SS & MS Storage Tank Fabrication | Custom Pressure Vessels India",
+    heading: "SS & MS Storage Tanks and Pressure Vessels",
+    title: "SS Storage Tank Manufacturer India | MS & Pressure Vessels",
     description:
-      "Custom fabricated stainless-steel and mild-steel vessels, storage tanks and pressure vessels for water treatment and process industries. Made in Vasai, Maharashtra.",
+      "Custom stainless-steel and mild-steel storage tanks, pressure vessels and filter vessels, fabricated in-house in Vasai, Maharashtra since 1996.",
+    targetQuery: "ss storage tank manufacturers in india",
     image: "/ss-storage-tank(5).png",
+    imageAlt: "Fabricated stainless steel storage tank",
   },
   {
     slug: "mineral-water-project",
     name: "Complete Mineral Water Project",
-    title: "Mineral Water Plant Setup | Turnkey Packaged Drinking Water Project",
+    heading: "Turnkey Mineral Water & Packaged Drinking Water Plants",
+    title: "Mineral Water Plant Setup | Packaged Drinking Water Plant",
     description:
-      "Turnkey packaged drinking water plant projects: raw water treatment, RO, ozonation, bottling and RFC machines. BIS/FSSAI compliant. Trusted by Bisleri, Bailey, Campa.",
+      "Turnkey packaged drinking water plants: RO, ozonation, bottling and RFC machines, designed for BIS IS 14543. Trusted by Bisleri, Bailey and Campa since 1996.",
+    targetQuery: "packaged drinking water plant manufacturer",
     image: "/Complete-Mineral-Water-Project(5).webp",
+    imageAlt: "Complete mineral water and packaged drinking water plant",
   },
   {
     slug: "dosing-ozonation-uv",
     name: "Dosing, Ozonation & UV Systems",
-    title: "Ozone Generators, UV Sterilizers & Dosing Systems | Water Disinfection",
+    heading: "Ozone Generators, UV Sterilisers & Dosing Systems",
+    title: "Ozone Generator for Water Treatment | UV & Dosing Systems",
     description:
-      "Ozonation systems, UV sterilizers and chemical dosing units for water disinfection and precise treatment control. Manufacturer and supplier in Mumbai, India.",
+      "Ozone generators for water tanks and bottling plants, UV sterilisers and chemical dosing systems for water disinfection. Manufacturer in Mumbai since 1996.",
+    targetQuery: "ozone generator for water treatment",
     image: "/Ozone_system(3).jpg",
+    imageAlt: "Ozone generator for water treatment",
   },
   {
     slug: "rfc",
     name: "Rinsing Filling Capping Machine (RFC)",
-    title: "RFC Machine Manufacturer | Automatic Bottle Rinsing Filling Capping",
+    heading: "Automatic RFC Bottle Rinsing, Filling & Capping Machine",
+    title: "RFC Machine Manufacturer | Bottle Rinsing Filling Capping",
     description:
-      "Automatic rinsing, filling and capping (RFC) machines for packaged drinking water and beverage bottling lines. Hygienic, high-speed. Manufacturer in Vasai, India.",
+      "Automatic rinsing, filling and capping (RFC) machines for packaged drinking water and beverage bottling lines. Manufactured in Vasai, Mumbai since 1996.",
+    targetQuery: "rfc machine manufacturer",
     image: "/rfc(1).webp",
+    imageAlt: "Automatic rinsing filling capping (RFC) machine for water bottles",
+  },
+  {
+    slug: "desalination",
+    name: "Desalination Plant",
+    heading: "Desalination Plants: Seawater & Brackish Water RO",
+    title: "Desalination Plant Manufacturer | Seawater & Brackish RO",
+    description:
+      "Seawater and brackish water desalination plants using reverse osmosis, with pre-treatment and remineralisation. Manufactured in Vasai, Mumbai since 1996.",
+    targetQuery: "desalination plant companies in india",
+    image: "/ro-img7.jpg",
+    imageAlt: "Multi-stage RO plant with stainless steel membrane housings in series",
+  },
+  {
+    slug: "spares-consumables",
+    name: "RO Spares & Consumables",
+    heading: "RO Plant Spare Parts, Membranes, Resins & Chemicals",
+    title: "RO Plant Spare Parts, Membranes & Resins Supplier, Mumbai",
+    description:
+      "RO membranes (BW, SW, UF, NF), ion exchange resins, cartridges, filter media, gauges, SS fittings and antiscalants for water treatment plants. Since 1996.",
+    targetQuery: "ro plant spare parts",
+    image: "/DM image 3.jpeg",
+    imageAlt: "Water treatment system showing filter vessels, cartridge housings and control panel",
+  },
+  {
+    slug: "amc-maintenance",
+    name: "AMC & Plant Maintenance",
+    heading: "RO Plant AMC & Water Treatment Plant Maintenance",
+    title: "RO Plant AMC & Water Treatment Plant Maintenance Services",
+    description:
+      "Annual maintenance contracts for RO, DM and softening plants: scheduled servicing, membrane cleaning, resin checks and genuine spares. Vasai, Mumbai, Thane.",
+    targetQuery: "ro plant amc",
+    image: "/Ro-img3.jpg",
+    imageAlt: "Technician working on site beside an installed industrial RO plant",
   },
 ];
 

@@ -19,10 +19,12 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { ClientLogos } from "@/components/client-logos";
+import { Industries } from "@/components/industries";
 import ContactUs from "@/components/contactus";
 import AnimatedSectionPage from "@/components/animation";
 import { Navigation } from "@/components/navigation";
 import Image from "next/image";
+import { BUSINESS } from "@/lib/site";
 
 // Define types for the data structures
 interface GlobalStat {
@@ -52,19 +54,24 @@ const Home: React.FC = () => {
 
   const globalStats: GlobalStat[] = [
     {
-      icon: <MapPin className="h-8 w-8 text-primary" />,
-      count: 45,
-      label: "Countries",
+      icon: <Clock className="h-8 w-8 text-primary" />,
+      count: BUSINESS.stats.years,
+      label: `Years in Water Treatment (since ${BUSINESS.foundingYear})`,
     },
     {
       icon: <Factory className="h-8 w-8 text-primary" />,
-      count: 1200,
+      count: BUSINESS.stats.plants,
       label: "Plants Installed",
     },
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      count: 3500,
+      count: BUSINESS.stats.clients,
       label: "Clients Worldwide",
+    },
+    {
+      icon: <MapPin className="h-8 w-8 text-primary" />,
+      count: BUSINESS.stats.countries,
+      label: "Countries",
     },
   ];
 
@@ -98,12 +105,15 @@ const Home: React.FC = () => {
         <div className="container relative flex min-h-screen items-center pt-20">
           <div className="max-w-2xl animate-slide-in pl-5">
             <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="mb-4 block text-base font-semibold uppercase tracking-wider text-gray-200 sm:text-lg">
+                RO &amp; Water Treatment Plant Manufacturer · Since {BUSINESS.foundingYear}
+              </span>
               Pure Water,
               <br />
               <span className="text-accent">Perfectly Engineered</span>
             </h1>
             <p className="mt-6 text-lg text-gray-200">
-              Leading manufacturer of water treatment and purification systems, serving industries worldwide with innovative solutions
+              RO plants, DM plants, water softeners and complete mineral water projects, designed and built in Vasai, Mumbai for {BUSINESS.stats.years} years - with more than {BUSINESS.stats.plants} plants installed across {BUSINESS.stats.countries} countries.
             </p>
             <div className="mt-8 flex gap-4">
               <Button
@@ -190,16 +200,18 @@ const Home: React.FC = () => {
           <div className="absolute -right-32 bottom-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="mx-auto max-w-3xl text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Global Presence</h2>
-              <p className="text-muted-foreground">Serving clients across the world with excellence</p>
+              <h2 className="text-3xl font-bold mb-4">{BUSINESS.stats.years} Years of Water Treatment Engineering</h2>
+              <p className="text-muted-foreground">
+                Designing and building water treatment plants in Vasai, Mumbai since {BUSINESS.foundingYear} - for clients across India and {BUSINESS.stats.countries} countries.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {globalStats.map((stat, index) => (
                 <div key={index} className="text-center p-6 rounded-lg bg-white border border-border hover:shadow-lg transition-all duration-300">
                   <div className="flex justify-center mb-4">
                     {stat.icon}
                   </div>
-                  <h3 className="text-4xl font-bold text-primary mb-2">{stat.count}</h3>
+                  <h3 className="text-4xl font-bold text-foreground mb-2">{stat.count}</h3>
                   <p className="text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
@@ -360,6 +372,11 @@ const Home: React.FC = () => {
             </div>
           </div>
         </section>
+      </AnimatedSectionPage>
+
+      {/* Industries Section - internal links into every industry page */}
+      <AnimatedSectionPage>
+        <Industries />
       </AnimatedSectionPage>
 
       {/* Featured Videos Section */}

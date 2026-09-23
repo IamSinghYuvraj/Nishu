@@ -4,6 +4,12 @@ import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "mineral-water-project")!
 
 export default function MineralWaterProjectPage() {
   const mediaItems: MediaItem[] = [
@@ -72,10 +78,10 @@ export default function MineralWaterProjectPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Turnkey Mineral Water Project</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                  We offer complete, end-to-end turnkey solutions for setting up Packaged Drinking Water Plants. Our projects cover every stage, from initial raw water treatment to final bottling and packaging, ensuring compliance with BIS, WHO, and FSSAI standards.
-                </p>
+                    We set up complete, turnkey mineral water and packaged drinking water plants, covering every stage from raw water treatment to bottling and packaging, designed for BIS, WHO and FSSAI requirements. Our plants run for Bisleri, Bailey and Campa, among more than 1200 installations since 1996.
+                  </p>
                 
               </div>
 
@@ -85,6 +91,8 @@ export default function MineralWaterProjectPage() {
             </div>
           </div>
         </section>
+
+        <TrustBar />
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,6 +162,7 @@ export default function MineralWaterProjectPage() {
             </div>
           </div>
         </section>
+        <FaqSection faqs={PRODUCT_FAQS["mineral-water-project"] ?? []} />
       </main>
       <ContactUs />
     </div>

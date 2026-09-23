@@ -15,7 +15,28 @@ export const organizationSchema = {
   image: `${SITE_URL}/nishu-logo.png`,
   foundingDate: BUSINESS.foundingYear,
   description:
-    "Manufacturer of water treatment plants and machinery since 1996: RO plants, DM plants, water softeners, mineral water projects, ozonation/UV systems and RFC bottling machines.",
+    "Manufacturer of water treatment plants and machinery since 1996: RO plants, DM plants, water softeners, desalination plants, mineral water projects, ozonation/UV systems, RFC bottling machines, spares and AMC services.",
+  slogan: `Water treatment engineering since ${BUSINESS.foundingYear}`,
+  // Topics the business is an authority on. Helps search engines connect the
+  // organisation to the queries it should appear for.
+  knowsAbout: [
+    "Reverse osmosis plants",
+    "Industrial RO plants",
+    "Demineralisation (DM) water plants",
+    "Industrial water softeners",
+    "Boiler feed water treatment",
+    "Packaged drinking water plants",
+    "Mineral water plant setup",
+    "Desalination plants",
+    "Ozone generators for water treatment",
+    "UV water sterilisers",
+    "Purified water systems for pharmaceutical industry",
+    "Laboratory water purification",
+    "RO plant AMC and maintenance",
+    "RO membranes and ion exchange resins",
+    "Stainless steel storage tanks",
+    "Bottle rinsing filling capping machines",
+  ],
   telephone: BUSINESS.phoneE164,
   email: BUSINESS.email,
   address: {
@@ -31,7 +52,11 @@ export const organizationSchema = {
     latitude: BUSINESS.geo.lat,
     longitude: BUSINESS.geo.lng,
   },
-  areaServed: "Worldwide",
+  areaServed: [
+    ...BUSINESS.serviceAreas.map((name) => ({ "@type": "City", name })),
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "Country", name: "India" },
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: BUSINESS.phoneE164,
@@ -72,8 +97,23 @@ export function productSchema(p: ProductSeo) {
     description: p.description,
     image: `${SITE_URL}${p.image}`,
     url: `${SITE_URL}/products/${p.slug}`,
+    category: "Water treatment equipment",
     brand: { "@type": "Brand", name: BUSINESS.name },
     manufacturer: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
+export function serviceSchema(p: ProductSeo) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: p.heading,
+    description: p.description,
+    image: `${SITE_URL}${p.image}`,
+    url: `${SITE_URL}/products/${p.slug}`,
+    serviceType: p.name,
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: BUSINESS.serviceAreas.map((name) => ({ "@type": "City", name })),
   };
 }
 

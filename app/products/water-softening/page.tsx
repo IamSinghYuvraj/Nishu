@@ -3,6 +3,12 @@ import Link from "next/link"
 import { Check } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import ContactUs  from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "water-softening")!
 
 
 export default function WaterSofteningPage() {
@@ -47,8 +53,10 @@ export default function WaterSofteningPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Water Softening Plant</h1>
-                <p className="text-lg text-muted-foreground mb-8">We provide top-quality Water Softening Plants designed to remove hardness-causing minerals from water, ensuring efficient operation for industrial and civil water systems.</p>
+                <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
+                <p className="text-lg text-muted-foreground mb-8">
+                    We manufacture industrial and commercial water softening plants that remove the calcium and magnesium hardness behind scale in boilers, cooling towers, hotels, housing societies and process equipment. Automatic FRP and stainless steel softeners, built in Vasai, Mumbai since 1996.
+                  </p>
                 
               </div>
               <div>
@@ -57,6 +65,8 @@ export default function WaterSofteningPage() {
             </div>
           </div>
         </section>
+
+        <TrustBar />
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,6 +131,7 @@ export default function WaterSofteningPage() {
             </div>
           </div>
         </section>
+        <FaqSection faqs={PRODUCT_FAQS["water-softening"] ?? []} />
       </main>
       <ContactUs />
     </div>

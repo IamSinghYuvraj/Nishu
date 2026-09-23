@@ -7,9 +7,12 @@ import ContactUs from "@/components/contactus";
 import { JsonLd } from "@/components/json-ld";
 import { PostBody } from "@/components/post-body";
 import { Button } from "@/components/ui/button";
-import { breadcrumbSchema, industrySchema, faqPageSchema } from "@/lib/schema";
+import { TrustBar } from "@/components/trust-bar";
+import { FaqSection } from "@/components/faq-section";
+import { breadcrumbSchema, industrySchema } from "@/lib/schema";
 import { INDUSTRIES, getIndustry } from "@/lib/industries";
 import { PRODUCTS } from "@/lib/site";
+import { getPost } from "@/lib/posts";
 
 export function generateStaticParams() {
   return INDUSTRIES.map((industry) => ({ slug: industry.slug }));
@@ -24,7 +27,7 @@ export async function generateMetadata({
   const industry = getIndustry(slug);
   if (!industry) return {};
   return {
-    title: industry.title,
+    title: { absolute: industry.title },
     description: industry.description,
     alternates: { canonical: `/industries/${industry.slug}` },
     openGraph: {
@@ -51,10 +54,13 @@ export default async function IndustryPage({
 
   const others = INDUSTRIES.filter((i) => i.slug !== industry.slug);
 
+  const guides = (industry.relatedPosts ?? [])
+    .map((s) => getPost(s))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
   return (
     <div className="min-h-screen flex flex-col">
       <JsonLd data={industrySchema(industry)} />
-      <JsonLd data={faqPageSchema(industry.faqs)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
@@ -69,7 +75,7 @@ export default async function IndustryPage({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/industries"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm text-muted-foreground hover:text-cyan-700 transition-colors"
             >
               ← All industries
             </Link>
@@ -101,6 +107,8 @@ export default async function IndustryPage({
             </div>
           </div>
         </section>
+
+        <TrustBar />
 
         <section className="py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,11 +148,11 @@ export default async function IndustryPage({
                   href={`/products/${p.slug}`}
                   className="group p-6 rounded-lg border border-border bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
                 >
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-cyan-700 transition-colors">
                     {p.name}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">{p.description}</p>
-                  <span className="inline-block mt-4 text-sm font-medium text-primary">
+                  <span className="inline-block mt-4 text-sm font-medium text-cyan-700">
                     View specifications →
                   </span>
                 </Link>
@@ -153,21 +161,24 @@ export default async function IndustryPage({
           </div>
         </section>
 
-        <section className="border-t border-border bg-linear-to-br from-secondary/5 to-secondary/10 py-16 md:py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-foreground">
-              Frequently asked questions
-            </h2>
-            <dl className="space-y-6">
-              {industry.faqs.map((f) => (
-                <div key={f.question} className="p-6 rounded-lg border border-border bg-card">
-                  <dt className="text-lg font-semibold text-foreground mb-2">{f.question}</dt>
-                  <dd className="text-muted-foreground leading-relaxed">{f.answer}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
+        <FaqSection faqs={industry.faqs} />
+
+        {guides.length > 0 && (
+          <section className="pt-14">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-xl font-semibold text-foreground mb-4">Guides for this sector</h2>
+              <ul className="space-y-2">
+                {guides.map((g) => (
+                  <li key={g.slug}>
+                    <Link href={`/blog/${g.slug}`} className="text-cyan-700 hover:underline">
+                      {g.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,7 +186,7 @@ export default async function IndustryPage({
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {others.map((o) => (
                 <li key={o.slug}>
-                  <Link href={`/industries/${o.slug}`} className="text-primary hover:underline">
+                  <Link href={`/industries/${o.slug}`} className="text-cyan-700 hover:underline">
                     {o.name}
                   </Link>
                 </li>

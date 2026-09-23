@@ -4,6 +4,12 @@ import { Check, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "demineralized")!
 
 export default function DMPage() {
   const mediaItems: MediaItem[] = [
@@ -73,8 +79,10 @@ export default function DMPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Demineralized Plant <span className="text-secondary">(DM)</span></h1>
-                  <p className="text-lg text-muted-foreground mb-8">As a leading supplier and trader of advanced Demineralisation (DM) Plants, we provide efficient systems designed to purify water by removing a wide variety of impurities, including mineral salts and contaminants. Our DM plants are essential for industries requiring water of the highest quality.</p>
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
+                  <p className="text-lg text-muted-foreground mb-8">
+                    We manufacture two-bed and mixed-bed DM water plants that remove dissolved mineral salts to produce the high-purity water that boilers, pharmaceutical plants, laboratories and process industries depend on. Designed and built in Vasai, Mumbai since 1996.
+                  </p>
                   
                 </div>
                 <div>
@@ -83,6 +91,8 @@ export default function DMPage() {
               </div>
             </div>
           </section>
+
+        <TrustBar />
         </AnimatedSection>
 
         <section className="py-16 md:py-24">
@@ -145,6 +155,7 @@ export default function DMPage() {
             </div>
           </section>
         </AnimatedSection>
+        <FaqSection faqs={PRODUCT_FAQS["demineralized"] ?? []} />
       </main>
       <ContactUs />
     </div>

@@ -4,6 +4,12 @@ import { Check, Zap, Shield } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs  from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "rfc")!
 
 export default function RFCPage() {
   const mediaItems: MediaItem[] = [
@@ -74,11 +80,9 @@ export default function RFCPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                    RFC Machine <span className="text-secondary">(Rinsing Filling Capping)</span>
-                  </h1>
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    Automatic Rinsing, Filling, and Capping (RFC) machines designed for packaged drinking water and beverages. Ensures hygienic, high-speed bottling operations.
+                    We manufacture automatic rinsing, filling and capping (RFC) machines for packaged drinking water and beverage bottling lines, built for hygienic, high-speed operation and matched to the water treatment plant upstream. Manufacturing in Vasai, Mumbai since 1996.
                   </p>
                   <div className="flex gap-4">
                     
@@ -97,6 +101,8 @@ export default function RFCPage() {
               </div>
             </div>
           </section>
+
+        <TrustBar />
         </AnimatedSection>
 
         {/* Specs Infographic */}
@@ -222,6 +228,7 @@ export default function RFCPage() {
             </div>
           </section>
         </AnimatedSection>
+        <FaqSection faqs={PRODUCT_FAQS["rfc"] ?? []} />
       </main>
       <ContactUs />
 

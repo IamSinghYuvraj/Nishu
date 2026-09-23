@@ -3,6 +3,12 @@ import { Check } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "dosing-ozonation-uv")!
 
 export default function DosingOzonationUVPage() {
   const mediaItems: MediaItem[] = [
@@ -61,9 +67,9 @@ export default function DosingOzonationUVPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">Dosing, Ozonation & UV Systems</h1>
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    These systems are an integral part of advanced water treatment, providing powerful disinfection, oxidation, and precise chemical control for the highest water quality.
+                    We manufacture ozone generators for water treatment, UV sterilisers and chemical dosing systems that provide disinfection, oxidation and precise chemical control for bottling plants, storage tanks, RO plants and process water. Built in Vasai, Mumbai since 1996.
                   </p>
                   
                 </div>
@@ -74,6 +80,8 @@ export default function DosingOzonationUVPage() {
                 </div>
               </div>
             </section>
+
+        <TrustBar />
         </AnimatedSection>
         
         <section className="py-16 md:py-24 bg-card border-y border-border">
@@ -149,6 +157,7 @@ export default function DosingOzonationUVPage() {
             <ContactUs />
           </section>
         </AnimatedSection>
+        <FaqSection faqs={PRODUCT_FAQS["dosing-ozonation-uv"] ?? []} />
       </main>
     </div>
   )

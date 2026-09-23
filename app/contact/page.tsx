@@ -333,10 +333,12 @@ export default function ContactPage() {
           <section className="bg-linear-to-br from-primary/5 to-secondary/5 border-b border-border py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                Get in <span className="text-primary">Touch</span>
+                Request a <span className="text-primary">Quotation</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                Have questions about our water treatment solutions? Our team is ready to help. Contact us today for a consultation.
+                Tell us what you need - an RO plant, DM plant, water softener or a complete
+                mineral water project - and we will size it against your water before quoting.
+                Designing and building water treatment plants since {BUSINESS.foundingYear}.
               </p>
             </div>
           </section>
@@ -524,8 +526,6 @@ export default function ContactPage() {
                                 {p.name}
                               </option>
                             ))}
-                            <option value="Spares & consumables">Spares &amp; consumables</option>
-                            <option value="Service / AMC">Service / AMC</option>
                             <option value="Not sure yet">Not sure yet</option>
                           </select>
                         </div>

@@ -3,13 +3,13 @@ import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Request a Quotation',
+  title: { absolute: "Request a Quote: RO, DM & Water Softening Plants | Mumbai" },
   description:
-    'Get a quote for RO plants, DM plants, water softeners or a complete mineral water project. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East, Maharashtra.',
+    "Get a quote for RO plants, DM plants, water softeners or a mineral water project. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: 'Contact Us - Request a Quotation',
-    description: 'Get a quote for RO plants, DM plants, water softeners or a complete mineral water project. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East, Maharashtra.',
+    title: "Request a Quote: RO, DM & Water Softening Plants | Mumbai",
+    description: "Get a quote for RO plants, DM plants, water softeners or a mineral water project. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East.",
     url: "/contact",
   },
 };

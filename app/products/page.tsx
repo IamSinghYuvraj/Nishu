@@ -3,12 +3,12 @@ import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { ProductsGrid } from "@/components/products-grid";
 
-const title = "Water Treatment Plants & Machinery";
+const title = "Water Treatment Plants & Equipment | RO, DM, Softener, UV";
 const description =
-  "Browse all Nishu Enterprises products: RO plants, DM plants, water softeners, membrane housings, fabricated SS/MS tanks, turnkey mineral water projects, ozone/UV systems and RFC bottling machines.";
+  "RO plants, DM plants, water softeners, desalination and mineral water plants, ozone/UV, RFC machines, spares and AMC. Manufacturer in Mumbai since 1996.";
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: { canonical: "/products" },
   openGraph: { title, description, url: "/products" },

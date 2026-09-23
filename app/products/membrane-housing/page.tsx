@@ -4,6 +4,12 @@ import Link from "next/link"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "membrane-housing")!
 
 export default function MembraneHousingPage() {
   const mediaItems: MediaItem[] = [
@@ -44,11 +50,9 @@ export default function MembraneHousingPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                    Membrane Housing
-                  </h1>
+                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    As a leading manufacturer of water treatment components, we offer advanced High Pressure Pumps designed to ensure the optimal and cost-effective operation of your systems.
+                    We supply FRP and stainless steel RO membrane housings, together with high-pressure pumps matched to the membrane array, for industrial reverse osmosis plants - the same components we have specified into our own RO plants since 1996.
                   </p>
                   
                 </div>
@@ -59,6 +63,8 @@ export default function MembraneHousingPage() {
               </div>
             </div>
           </section>
+
+        <TrustBar />
         </AnimatedSection>
 
         <section className="py-16 md:py-24">
@@ -121,6 +127,7 @@ export default function MembraneHousingPage() {
             </div>
           </section>
         </AnimatedSection>
+        <FaqSection faqs={PRODUCT_FAQS["membrane-housing"] ?? []} />
       </main>
       <ContactUs />
     </div>

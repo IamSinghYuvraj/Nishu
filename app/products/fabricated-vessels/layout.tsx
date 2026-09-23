@@ -6,14 +6,14 @@ import { productSchema, breadcrumbSchema } from "@/lib/schema";
 const product = PRODUCTS.find((p) => p.slug === "fabricated-vessels")!;
 
 export const metadata: Metadata = {
-  title: product.title,
+  title: { absolute: product.title },
   description: product.description,
   alternates: { canonical: `/products/${product.slug}` },
   openGraph: {
     title: product.title,
     description: product.description,
     url: `/products/${product.slug}`,
-    images: [{ url: product.image, alt: product.name }],
+    images: [{ url: product.image, alt: product.imageAlt }],
   },
 };
 

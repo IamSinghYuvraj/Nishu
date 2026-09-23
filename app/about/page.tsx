@@ -16,6 +16,7 @@ import {
 import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
 import { Navigation } from "@/components/navigation";
+import { BUSINESS } from "@/lib/site";
 
 const industries = [
   {
@@ -201,12 +202,15 @@ export default function AboutPage() {
               {/* Left Content */}
               <AnimatedSection delay={200}>
                 <div>
-                  <h2 className="text-4xl font-extrabold text-cyan-800">
-                    Our Story
-                  </h2>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
+                    Our story · Since {BUSINESS.foundingYear}
+                  </p>
+                  <h1 className="mt-2 text-4xl font-extrabold text-cyan-800">
+                    {BUSINESS.stats.years} Years of Water Treatment Engineering
+                  </h1>
                   <div className="mt-4 h-1 w-20 bg-cyan-600 rounded"></div>
                                     <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-                    Nishu enterprises, established in 1996, is a professionally managed company engaged in manufacturing, supplying, exporting, and servicing a wide range of water treatment solutions.
+                    Nishu Enterprises, established in 1996 in Vasai, Mumbai, is a professionally managed company engaged in manufacturing, supplying, exporting, and servicing a wide range of water treatment solutions.
                     </p>
                     <p className="mt-4 text-lg text-gray-700 leading-relaxed">
                     Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water Projects.

@@ -20,6 +20,9 @@ export function Footer() {
     { title: "Complete Mineral Water Project", link: "/products/mineral-water-project" },
     { title: "Dosing, Ozonation & UV Systems", link: "/products/dosing-ozonation-uv" },
     { title: "Rinsing Filling Capping Machine (RFC)", link: "/products/rfc" },
+    { title: "Desalination Plant", link: "/products/desalination" },
+    { title: "RO Spares & Consumables", link: "/products/spares-consumables" },
+    { title: "AMC & Plant Maintenance", link: "/products/amc-maintenance" },
   ]
 
   const socialLinks = [
@@ -39,7 +42,12 @@ export function Footer() {
               <Image src="/nishu-logo.png" alt="Nishu Enterprises" width={250} height={250} className="rounded-md" />
             </h3>
             <p className="text-sm opacity-75 leading-relaxed">
-              Established in 1996, manufacturing water treatment plants and spare parts with innovation and reliability.
+              Established in {BUSINESS.foundingYear}, manufacturing water treatment plants and spare parts with innovation and reliability.
+            </p>
+            <p className="mt-3 text-sm opacity-75 leading-relaxed">
+              Serving {BUSINESS.serviceAreas.slice(0, -1).join(", ")} and{" "}
+              {BUSINESS.serviceAreas[BUSINESS.serviceAreas.length - 1]}, with plants installed in{" "}
+              {BUSINESS.stats.countries} countries.
             </p>
             {socialLinks.length > 0 && (
               <div className="flex gap-3 mt-4">
@@ -145,13 +153,13 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 shrink-0" />
                 <a href={`tel:${BUSINESS.phoneE164}`} onClick={() => trackLead("phone")} className="hover:text-secondary transition-all duration-300">
-                  9820142424
+                  {BUSINESS.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 shrink-0" />
                 <a href={`mailto:${BUSINESS.email}`} onClick={() => trackLead("email")} className="hover:text-secondary transition-all duration-300">
-                  nishudbj@gmail.com
+                  {BUSINESS.email}
                 </a>
               </li>
             </ul>

@@ -7,12 +7,12 @@ import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { POSTS } from "@/lib/posts";
 
-const title = "Water Treatment Guides & Resources";
+const title = "Water Treatment Guides: RO, DM, Softeners & Boilers";
 const description =
   "Practical guides for plant engineers and buyers: sizing an RO plant, choosing between RO and DM, mineral water plant costs, and boiler feed water treatment.";
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: { canonical: "/blog" },
   openGraph: { title, description, url: "/blog" },
@@ -34,7 +34,7 @@ export default function BlogIndex() {
         <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-              Guides &amp; Resources
+              Water Treatment Guides &amp; Resources
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Thirty years of specifying and installing water treatment plants, written

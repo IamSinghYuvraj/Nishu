@@ -1,4 +1,5 @@
 import type { Block } from "@/lib/posts";
+import { MORE_INDUSTRIES } from "@/lib/industries-more";
 
 // Industry landing pages for /industries. Each page targets the way a buyer in
 // that sector actually searches ("water treatment plant for pharmaceutical
@@ -27,17 +28,19 @@ export interface Industry {
   faqs: { question: string; answer: string }[];
   /** Slugs from PRODUCTS in lib/site.ts, in the order they should be offered. */
   relatedProducts: string[];
+  /** Slugs from POSTS in lib/posts.ts - guides worth reading for this sector. */
+  relatedPosts?: string[];
 }
 
-export const INDUSTRIES: Industry[] = [
+const CORE_INDUSTRIES: Industry[] = [
   {
     slug: "pharmaceutical",
     name: "Pharmaceutical",
-    heading: "Water Treatment Plants for the Pharmaceutical Industry",
-    title: "Pharmaceutical Water Treatment Plant Manufacturer India | Purified Water Systems",
+    heading: "Purified Water Systems for the Pharmaceutical Industry",
+    title: "Purified Water System for Pharmaceutical Industry | RO & DM",
     description:
-      "Purified water systems for pharmaceutical manufacturing: multi-bed DM, mixed-bed polishing, RO and distribution loops built to IP/USP requirements. Manufacturer in Vasai, Mumbai.",
-    targetQuery: "water treatment plant for pharmaceutical industry",
+      "Purified water systems for pharmaceutical plants: RO with mixed-bed polishing and 316L distribution loops built to IP/USP limits. Mumbai, since 1996.",
+    targetQuery: "purified water system in pharmaceutical industry",
     cardBlurb:
       "Purified water systems built to hold IP/USP limits continuously, with validated distribution loops.",
     image: "/pharma-industry.jpg",
@@ -149,10 +152,10 @@ export const INDUSTRIES: Industry[] = [
     slug: "food-beverage",
     name: "Food & Beverage",
     heading: "RO Plants & Water Treatment for Food and Beverage Factories",
-    title: "RO Plant for Beverage Factory | Food Industry Water Treatment India",
+    title: "Water Treatment & RO Plant for Food and Beverage Industry",
     description:
-      "Industrial RO plants, ozonation and complete mineral water projects for beverage, dairy and food processing plants. Trusted by Bisleri, Bailey, Campa and McDonald's. Get a quote.",
-    targetQuery: "ro plant for beverage factory",
+      "RO plants, remineralisation and ozonation for beverage, dairy and food factories. Trusted by Bisleri, Bailey, Campa and McDonald's since 1996.",
+    targetQuery: "water treatment for food industry",
     cardBlurb:
       "RO, remineralisation and ozonation for beverage, dairy and packaged drinking water lines.",
     image: "/Complete-Mineral-Water-Project(5).webp",
@@ -262,9 +265,9 @@ export const INDUSTRIES: Industry[] = [
     slug: "power-generation",
     name: "Power & Boilers",
     heading: "DM Plants & Boiler Feed Water Treatment for Power Generation",
-    title: "Boiler Feed Water Treatment Plant | DM Plant for Power Plants India",
+    title: "Boiler Feed Water Treatment: DM Plant & Softener for Boilers",
     description:
-      "Demineralisation plants and boiler feed water treatment for power generation, captive boilers and process steam. Two-bed and mixed-bed DM systems. Manufacturer in Vasai, Maharashtra.",
+      "DM plants and water softeners for steam boilers, captive power and turbines: two-bed and mixed-bed DM with silica control. Manufacturer in Mumbai since 1996.",
     targetQuery: "boiler feed water treatment plant",
     cardBlurb:
       "Two-bed and mixed-bed DM plants for boiler feed water, with silica control for turbine service.",
@@ -378,10 +381,10 @@ export const INDUSTRIES: Industry[] = [
     slug: "manufacturing",
     name: "Manufacturing",
     heading: "Process Water Treatment for Manufacturing Plants",
-    title: "Industrial Process Water Treatment Plant Manufacturer | Manufacturing Industry",
+    title: "Water Treatment Plant for Factories & Cooling Towers",
     description:
-      "Process water treatment for manufacturing: RO plants, water softening, DM systems and custom fabricated vessels for textile, chemical, engineering and general process industries.",
-    targetQuery: "industrial process water treatment plant",
+      "Process, cooling tower and rinse water treatment for factories: RO plants, softeners, DM plants and SS vessels. Built in Vasai, Mumbai since 1996.",
+    targetQuery: "water treatment plant for factory",
     cardBlurb:
       "Process, cooling and rinse water treated to the standard each duty actually needs.",
     image: "/Ro-img1.jpg",
@@ -489,11 +492,11 @@ export const INDUSTRIES: Industry[] = [
   {
     slug: "hospitality",
     name: "Hotels & Hospitality",
-    heading: "Water Treatment Plants for Hotels, Resorts and Restaurants",
-    title: "Water Treatment Plant for Hotels & Resorts | Commercial RO and Softener India",
+    heading: "RO Plants & Water Softeners for Hotels, Resorts and Restaurants",
+    title: "RO Plant & Water Softener for Hotels and Resorts",
     description:
-      "Commercial RO plants and water softening systems for hotels, resorts and restaurants — guest water, kitchens, laundry, boilers and cooling. Manufacturer in Vasai, Mumbai.",
-    targetQuery: "water treatment plant for hotels",
+      "Commercial RO plants and water softeners for hotels, resorts and restaurants: guest rooms, kitchens, laundry and boilers. Built in Vasai, Mumbai since 1996.",
+    targetQuery: "ro plant for hotel",
     cardBlurb:
       "Softening across the property with RO where taste matters — guest rooms, laundry and kitchens.",
     image: "/Ro-img5.jpg",
@@ -602,9 +605,9 @@ export const INDUSTRIES: Industry[] = [
     slug: "construction",
     name: "Construction & Infrastructure",
     heading: "Water Treatment for Construction Sites and Infrastructure Projects",
-    title: "Water Treatment Plant for Construction Sites | Site RO and Softening Systems",
+    title: "Water Treatment Plant for Construction Sites | Site RO",
     description:
-      "Water treatment for construction and infrastructure projects: site drinking water, concrete mixing and curing water treatment, and relocatable RO plants. Manufacturer in Vasai, India.",
+      "Site drinking water, concrete mixing and curing water treatment, and relocatable RO plants for construction projects. Built in Vasai, Mumbai since 1996.",
     targetQuery: "water treatment plant for construction site",
     cardBlurb:
       "Relocatable plants for site drinking water, concrete mixing and curing water treatment.",
@@ -708,6 +711,43 @@ export const INDUSTRIES: Industry[] = [
     relatedProducts: ["reverse-osmosis", "fabricated-vessels", "water-softening", "dosing-ozonation-uv"],
   },
 ];
+
+// Guides linked from each industry page. Kept here rather than on each entry
+// so the mapping is easy to review as posts are added.
+const RELATED_POSTS: Record<string, string[]> = {
+  pharmaceutical: ["ro-vs-dm-plant", "ro-plant-capacity-for-your-factory"],
+  "food-beverage": ["mineral-water-plant-setup-cost-india", "ro-plant-capacity-for-your-factory"],
+  "power-generation": ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant"],
+  manufacturing: ["ro-plant-capacity-for-your-factory", "hard-water-industrial-boilers-softener"],
+  hospitality: ["hard-water-industrial-boilers-softener", "mineral-water-plant-setup-cost-india"],
+  hospitals: ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant"],
+  chemical: ["ro-vs-dm-plant", "hard-water-industrial-boilers-softener"],
+  textile: ["hard-water-industrial-boilers-softener", "ro-plant-capacity-for-your-factory"],
+  laboratories: ["ro-vs-dm-plant"],
+  "schools-offices": ["ro-plant-capacity-for-your-factory"],
+  "residential-societies": ["ro-plant-capacity-for-your-factory"],
+  construction: ["ro-plant-capacity-for-your-factory"],
+};
+
+// Display order. The first six are featured on the homepage.
+const ORDER = [
+  "pharmaceutical",
+  "food-beverage",
+  "residential-societies",
+  "hospitality",
+  "hospitals",
+  "manufacturing",
+  "chemical",
+  "textile",
+  "power-generation",
+  "laboratories",
+  "schools-offices",
+  "construction",
+];
+
+export const INDUSTRIES: Industry[] = [...CORE_INDUSTRIES, ...MORE_INDUSTRIES]
+  .map((i) => ({ ...i, relatedPosts: i.relatedPosts ?? RELATED_POSTS[i.slug] ?? [] }))
+  .sort((a, b) => ORDER.indexOf(a.slug) - ORDER.indexOf(b.slug));
 
 export function getIndustry(slug: string) {
   return INDUSTRIES.find((i) => i.slug === slug);
