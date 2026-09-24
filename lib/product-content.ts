@@ -35,7 +35,7 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
     {
       question: "Do you install RO plants outside Mumbai?",
       answer:
-        "Yes. We manufacture in Vasai and have installed more than 1200 plants across India and 45 countries. For sites outside Maharashtra we plan dispatch, installation and commissioning as part of the quotation.",
+        "Yes. We manufacture in Vasai and have installed plants across India and in 45 countries. For sites outside Maharashtra we plan dispatch, installation and commissioning as part of the quotation.",
     },
   ],
 
@@ -424,7 +424,7 @@ export const PRODUCT_PAGES: Record<string, ProductPage> = {
   },
 
   "amc-maintenance": {
-    intro: `Most water treatment plants that fail do not fail because of design - they fail because nobody was watching the numbers. Our annual maintenance contracts keep RO, DM and softening plants running to specification with scheduled service, cleaning based on real performance data, and genuine spares, backed by ${BUSINESS.stats.years} years of building the plants ourselves.`,
+    intro: `Most water treatment plants that fail do not fail because of design - they fail because nobody was watching the numbers. Our annual maintenance contracts keep RO, DM and softening plants running to specification with scheduled service, cleaning based on real performance data, and genuine spares, backed by building the plants ourselves since ${BUSINESS.foundingYear}.`,
     highlights: [
       {
         title: "Scheduled service visits",

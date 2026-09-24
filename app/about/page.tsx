@@ -152,7 +152,7 @@ export default function AboutPage() {
               <div className="animate-fade-in-up">
                 <p className="eyebrow">Our story · Since {BUSINESS.foundingYear}</p>
                 <h1 className="mt-4 text-4xl text-foreground text-balance md:text-6xl">
-                  {BUSINESS.stats.years} Years of Water Treatment Engineering
+                  Water Treatment Engineering Since {BUSINESS.foundingYear}
                 </h1>
                 <p className="mt-6 text-xl leading-relaxed text-foreground/90">
                   Nishu Enterprises, established in 1996 in Vasai, Mumbai, is a professionally managed company engaged in manufacturing, supplying, exporting, and servicing a wide range of water treatment solutions.

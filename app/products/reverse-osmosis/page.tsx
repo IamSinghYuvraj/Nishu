@@ -76,7 +76,7 @@ export default function ROPage() {
                   <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture industrial and commercial RO plants in Vasai, Mumbai, reducing Total Dissolved Solids (TDS) in brackish and borewell water for factories, hotels, hospitals, housing societies and bottling plants. Every plant is sized on the customer's own water analysis and daily demand, backed by more than 1200 installations since 1996.
+                    We manufacture industrial and commercial RO plants in Vasai, Mumbai, reducing Total Dissolved Solids (TDS) in brackish and borewell water for factories, hotels, hospitals, housing societies and bottling plants. Every plant is sized on the customer's own water analysis and daily demand, backed by plant-building experience since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                   

@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600
 
 const HOME_TITLE = "RO & Water Treatment Plant Manufacturer, Mumbai | Since 1996"
 const HOME_DESCRIPTION =
-  "RO plants, DM plants, water softeners and mineral water projects, built in Vasai, Mumbai since 1996. 1200+ plants installed in 45 countries. Get a quote."
+  "RO plants, DM plants, water softeners and mineral water projects, built in Vasai, Mumbai since 1996. Plants installed in 45 countries. Get a quote."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     siteName: "Nishu Enterprises",
     title: HOME_TITLE,
     description:
-      `RO, DM, water softening, mineral water projects and bottling machinery. ${BUSINESS.stats.years} years, ${BUSINESS.stats.plants}+ plants installed, trusted by Bisleri, Bailey, Campa and more.`,
+      `RO, DM, water softening, mineral water projects and bottling machinery. Since ${BUSINESS.foundingYear}, plants in ${BUSINESS.stats.countries} countries, trusted by Bisleri, Bailey, Campa and more.`,
     images: [{ url: "/Ro-img6.jpg", width: 1200, height: 630, alt: "Industrial RO plant built by Nishu Enterprises" }],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_TITLE,
     description:
-      `RO, DM, water softening, mineral water projects and bottling machinery. ${BUSINESS.stats.years} years, ${BUSINESS.stats.plants}+ plants installed.`,
+      `RO, DM, water softening, mineral water projects and bottling machinery. Since ${BUSINESS.foundingYear}, plants in ${BUSINESS.stats.countries} countries.`,
     images: ["/Ro-img6.jpg"],
   },
   robots: { index: true, follow: true },

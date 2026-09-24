@@ -40,7 +40,7 @@ export function Footer() {
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               Established in {BUSINESS.foundingYear}, manufacturing water treatment plants and spare parts in
-              Vasai, Mumbai. {BUSINESS.stats.plants}+ plants installed in {BUSINESS.stats.countries} countries.
+              Vasai, Mumbai. Plants installed in {BUSINESS.stats.countries} countries.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Serving {BUSINESS.serviceAreas.slice(0, -1).join(", ")} and{" "}

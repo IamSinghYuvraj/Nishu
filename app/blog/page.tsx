@@ -38,7 +38,7 @@ export default function BlogIndex() {
               Water Treatment Guides &amp; Resources
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Thirty years of specifying and installing water treatment plants, written
+              Specifying and installing water treatment plants since 1996, written
               up for the engineers and buyers who have to make the decision.
             </p>
           </div>

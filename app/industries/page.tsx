@@ -10,7 +10,7 @@ import { INDUSTRIES } from "@/lib/industries";
 export const metadata: Metadata = {
   title: { absolute: "Water Treatment Plants by Industry | Pharma, Hotels, Labs" },
   description:
-    "Water treatment plants for pharma, food and beverage, housing societies, hotels, hospitals, labs, chemical, textile and more. 1200+ plants since 1996.",
+    "Water treatment plants for pharma, food and beverage, housing societies, hotels, hospitals, labs, chemical, textile and more. Built in Mumbai since 1996.",
   alternates: { canonical: "/industries" },
   openGraph: {
     title: "Water Treatment Plants by Industry | Nishu Enterprises",

@@ -83,7 +83,7 @@ export default function MineralWaterProjectPage() {
                 <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                    We set up complete, turnkey mineral water and packaged drinking water plants, covering every stage from raw water treatment to bottling and packaging, designed for BIS, WHO and FSSAI requirements. Our plants run for Bisleri, Bailey and Campa, among more than 1200 installations since 1996.
+                    We set up complete, turnkey mineral water and packaged drinking water plants, covering every stage from raw water treatment to bottling and packaging, designed for BIS, WHO and FSSAI requirements. Our plants run for Bisleri, Bailey and Campa, and we have been building them since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                 

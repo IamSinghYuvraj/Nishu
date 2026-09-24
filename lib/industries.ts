@@ -161,7 +161,7 @@ const CORE_INDUSTRIES: Industry[] = [
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete mineral water and beverage bottling plant installed by Nishu Enterprises",
     intro:
-      "In food and beverage production, water is the largest ingredient by volume and the one that decides whether the product tastes the same in March as it did in October. It is also the input most exposed to seasonal variation in the borewell or municipal supply. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDonald's and Meru Spring, among roughly 1200 installations since 1996.",
+      "In food and beverage production, water is the largest ingredient by volume and the one that decides whether the product tastes the same in March as it did in October. It is also the input most exposed to seasonal variation in the borewell or municipal supply. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDonald's and Meru Spring, and we have been building them since 1996.",
     challenges: [
       {
         title: "Taste consistency across seasons",
