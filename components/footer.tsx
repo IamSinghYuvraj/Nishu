@@ -5,6 +5,7 @@ import Image from "next/image"
 import { MapPin, Phone, Mail } from "@/components/icons"
 import { Linkedin, Instagram, Facebook, Youtube } from "lucide-react"
 import { BUSINESS, PRODUCTS } from "@/lib/site"
+import { COUNTRIES_LINE } from "@/lib/countries"
 import { trackLead } from "@/lib/track"
 
 const COMPANY_LINKS = [
@@ -40,7 +41,7 @@ export function Footer() {
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               Established in {BUSINESS.foundingYear}, manufacturing water treatment plants and spare parts in
-              Vasai, Mumbai. Plants installed in {BUSINESS.stats.countries} countries.
+              Vasai, Mumbai. Plants running in {COUNTRIES_LINE}.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Serving {BUSINESS.serviceAreas.slice(0, -1).join(", ")} and{" "}

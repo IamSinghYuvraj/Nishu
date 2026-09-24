@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { BUSINESS } from "@/lib/site";
+import { COUNTRIES_LINE } from "@/lib/countries";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "About Nishu Enterprises | Water Treatment Since 1996" },
   description:
-    `Nishu Enterprises has manufactured water treatment plants in Vasai, Mumbai since 1996, with plants installed across ${BUSINESS.stats.countries} countries.`,
+    `Nishu Enterprises has manufactured water treatment plants in Vasai, Mumbai since 1996, with plants installed in India, ${COUNTRIES_LINE}.`,
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Nishu Enterprises | Water Treatment Since 1996",
-    description: `Nishu Enterprises has manufactured water treatment plants in Vasai, Mumbai since 1996, with plants installed across ${BUSINESS.stats.countries} countries.`,
+    description: `Nishu Enterprises has manufactured water treatment plants in Vasai, Mumbai since 1996, with plants installed in India, ${COUNTRIES_LINE}.`,
     url: "/about",
   },
 };

@@ -1,5 +1,6 @@
 import type { Block } from "@/lib/posts";
 import { BUSINESS } from "@/lib/site";
+import { COUNTRIES_LINE } from "@/lib/countries";
 
 // Extra content for product pages. FAQs are written against the questions
 // buyers actually type into Google (price drivers, regeneration, maintenance,
@@ -35,7 +36,7 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
     {
       question: "Do you install RO plants outside Mumbai?",
       answer:
-        `Yes. We manufacture in Vasai and have installed plants across India and in ${BUSINESS.stats.countries} countries. For sites outside Maharashtra we plan dispatch, installation and commissioning as part of the quotation.`,
+        `Yes. We manufacture in Vasai and have installed plants across India and in ${COUNTRIES_LINE}. For sites outside Maharashtra we plan dispatch, installation and commissioning as part of the quotation.`,
     },
   ],
 

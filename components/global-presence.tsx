@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import createGlobe from "cobe"
 import { MapPin } from "lucide-react"
 import { BUSINESS } from "@/lib/site"
-import { HOME_BASE, PLANT_COUNTRIES, type PlantCountry } from "@/lib/countries"
-import { CountUp } from "@/components/count-up"
+import { COUNTRIES_LINE, HOME_BASE, PLANT_COUNTRIES, type PlantCountry } from "@/lib/countries"
 
 const TAU = Math.PI * 2
 
@@ -179,18 +178,12 @@ export function GlobalPresence() {
             Built in Vasai. Running across two continents.
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Every plant leaves our workshop in Vasai East. Since {BUSINESS.foundingYear} they have been installed
-            in {BUSINESS.stats.countries} countries across Africa and South Asia. Pick a country to turn the globe to it.
+            Every plant leaves our workshop in Vasai East. Since {BUSINESS.foundingYear} they have gone to {COUNTRIES_LINE},
+            across Africa and South Asia. Pick a country to turn the globe to it.
           </p>
 
-          <div className="mt-8 flex items-end gap-6">
-            <div>
-              <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground">Countries</p>
-              <p className="readout mt-1 text-6xl text-lime">
-                <CountUp value={BUSINESS.stats.countries} />
-              </p>
-            </div>
-            <div className="mb-1 min-h-[3.25rem] border-l border-border pl-6" aria-live="polite">
+          <div className="mt-8">
+            <div className="min-h-[3.25rem] border-l-2 border-lime pl-5" aria-live="polite">
               <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground">
                 {focus ? "Showing" : "Home base"}
               </p>

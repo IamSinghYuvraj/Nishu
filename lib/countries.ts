@@ -1,6 +1,6 @@
 // Countries with Nishu plants installed, plotted on the global presence globe.
-// Coordinates are [latitude, longitude]. Keep the list to countries we can name;
-// the headline figure lives in BUSINESS.stats.countries.
+// Coordinates are [latitude, longitude]. Keep the list to countries we can name.
+// Pages never quote a count: they name a few countries and add "and many more".
 export interface PlantCountry {
   id: string
   name: string
@@ -27,3 +27,9 @@ export const PLANT_COUNTRIES: PlantCountry[] = [
   { id: "malawi", name: "Malawi", region: "Africa", location: [-13.2543, 34.3015] },
   { id: "mozambique", name: "Mozambique", region: "Africa", location: [-18.6657, 35.5296] },
 ]
+
+/** The countries named wherever the site talks about our reach. */
+export const FEATURED_COUNTRIES = ["Nigeria", "Ghana", "Tanzania", "Nepal"]
+
+/** "Nigeria, Ghana, Tanzania, Nepal and many more" */
+export const COUNTRIES_LINE = `${FEATURED_COUNTRIES.join(", ")} and many more`

@@ -1,5 +1,5 @@
 // Single source of truth for site-wide SEO / business details.
-import { PLANT_COUNTRIES } from "@/lib/countries";
+import { COUNTRIES_LINE } from "@/lib/countries";
 export const SITE_URL = "https://nishuenterprises.org";
 
 const FOUNDING_YEAR = 1996;
@@ -27,12 +27,6 @@ export const BUSINESS = {
     return `${a.street}, ${a.locality}, ${a.city}, ${a.region} ${a.postalCode}`;
   },
   geo: { lat: 19.4169473, lng: 72.8611239 },
-  // Trust figures. Every page that quotes them reads from here, so they can
-  // never disagree with each other. Years is computed so it stays correct.
-  stats: {
-    // Counted from the named list, so the figure always matches the globe.
-    countries: PLANT_COUNTRIES.length,
-  },
   // Local areas served. Feeds areaServed in the Organization schema and the
   // footer; these are the towns buyers put in "... manufacturer in <city>".
   serviceAreas: [
@@ -53,8 +47,8 @@ export const BUSINESS = {
   },
 };
 
-/** "Since 1996 · 12 countries" */
-export const TRUST_LINE = `Since ${BUSINESS.foundingYear} · ${BUSINESS.stats.countries} countries`;
+/** "Since 1996 · Nigeria, Ghana, Tanzania, Nepal and many more" */
+export const TRUST_LINE = `Since ${BUSINESS.foundingYear} · ${COUNTRIES_LINE}`;
 
 export interface ProductSeo {
   slug: string;
@@ -90,7 +84,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "DM Water Plant Manufacturer: Two-Bed & Mixed-Bed",
     title: "DM Water Plant Manufacturer in Mumbai | Two-Bed & Mixed-Bed",
     description:
-      `Two-bed and mixed-bed DM water plants for boiler feed, pharmaceutical and process water. Manufactured in Vasai, Mumbai since 1996, with plants in ${PLANT_COUNTRIES.length} countries.`,
+      `Two-bed and mixed-bed DM water plants for boiler feed, pharmaceutical and process water. Manufactured in Vasai, Mumbai since 1996, with plants in ${COUNTRIES_LINE}.`,
     targetQuery: "dm water plant manufacturer in mumbai",
     image: "/DM image 1.jpg",
     imageAlt: "Demineralisation (DM) water plant with ion-exchange vessels",

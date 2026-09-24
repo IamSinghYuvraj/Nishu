@@ -23,8 +23,8 @@ import AnimatedSectionPage from "@/components/animation";
 import { Navigation } from "@/components/navigation";
 import { TreatmentTrain } from "@/components/treatment-train";
 import { GlobalPresence } from "@/components/global-presence";
-import { CountUp } from "@/components/count-up";
 import { BUSINESS, PRODUCTS } from "@/lib/site";
+import { COUNTRIES_LINE, FEATURED_COUNTRIES } from "@/lib/countries";
 
 const HERO_SLIDES = [
   { src: "/Ro-img6.jpg", alt: "Industrial RO plant installed by Nishu Enterprises", caption: "Industrial RO plant" },
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
               <span className="text-lime">Perfectly Engineered</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/85 animate-fade-in-up [animation-delay:240ms] md:text-xl">
-              RO plants, DM plants, water softeners and complete mineral water projects, designed and built in Vasai, Mumbai since {BUSINESS.foundingYear} - with plants installed across {BUSINESS.stats.countries} countries.
+              RO plants, DM plants, water softeners and complete mineral water projects, designed and built in Vasai, Mumbai since {BUSINESS.foundingYear} - with plants running in {COUNTRIES_LINE}.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-in-up [animation-delay:360ms]">
               <Button asChild size="lg" variant="cta" className="group">
@@ -200,20 +200,21 @@ const Home: React.FC = () => {
 
         {/* Stats strip */}
         <div className="border-t border-white/10 bg-ink-deep/70 backdrop-blur-md">
-          <dl className="max-w-7xl mx-auto grid grid-cols-2 px-4 sm:px-6 md:grid-cols-[1fr_1fr_2fr] lg:px-8">
-            <div className="group py-6 md:py-8">
+          <dl className="max-w-7xl mx-auto grid grid-cols-1 px-4 sm:px-6 md:grid-cols-[auto_1.3fr_1fr] lg:px-8">
+            <div className="group py-6 md:py-8 md:pr-10">
               <dt className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/65">Established</dt>
               <dd className="readout mt-2 text-4xl text-white transition-colors duration-300 group-hover:text-lime md:text-5xl">
                 {BUSINESS.foundingYear}
               </dd>
             </div>
-            <div className="group border-l border-white/10 py-6 pl-6 md:py-8 md:pl-8">
-              <dt className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/65">Countries with our plants</dt>
-              <dd className="readout mt-2 text-4xl text-white transition-colors duration-300 group-hover:text-lime md:text-5xl">
-                <CountUp value={BUSINESS.stats.countries} />
+            <div className="group border-t border-white/10 py-6 md:border-l md:border-t-0 md:py-8 md:pl-8">
+              <dt className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/65">Plants running in</dt>
+              <dd className="mt-3 text-lg font-semibold text-white md:text-2xl">
+                <span className="transition-colors duration-300 group-hover:text-lime">{FEATURED_COUNTRIES.join(" · ")}</span>
+                <span className="text-white/65"> &amp; many more</span>
               </dd>
             </div>
-            <div className="group col-span-2 border-t border-white/10 py-6 md:col-span-1 md:border-l md:border-t-0 md:py-8 md:pl-8">
+            <div className="group border-t border-white/10 py-6 md:border-l md:border-t-0 md:py-8 md:pl-8">
               <dt className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/65">Trusted by</dt>
               <dd className="mt-3 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-lime md:text-2xl">
                 Bisleri · Bailey · Campa · McDonald&apos;s
