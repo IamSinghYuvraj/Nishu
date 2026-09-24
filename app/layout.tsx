@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600
 
 const HOME_TITLE = "RO & Water Treatment Plant Manufacturer, Mumbai | Since 1996"
 const HOME_DESCRIPTION =
-  "RO plants, DM plants, water softeners and mineral water projects, built in Vasai, Mumbai since 1996. Plants installed in 45 countries. Get a quote."
+  `RO plants, DM plants, water softeners and mineral water projects, built in Vasai, Mumbai since 1996. Plants installed in ${BUSINESS.stats.countries} countries. Get a quote.`
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

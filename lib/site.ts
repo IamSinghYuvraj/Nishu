@@ -1,4 +1,5 @@
 // Single source of truth for site-wide SEO / business details.
+import { PLANT_COUNTRIES } from "@/lib/countries";
 export const SITE_URL = "https://nishuenterprises.org";
 
 const FOUNDING_YEAR = 1996;
@@ -29,7 +30,8 @@ export const BUSINESS = {
   // Trust figures. Every page that quotes them reads from here, so they can
   // never disagree with each other. Years is computed so it stays correct.
   stats: {
-    countries: 45,
+    // Counted from the named list, so the figure always matches the globe.
+    countries: PLANT_COUNTRIES.length,
   },
   // Local areas served. Feeds areaServed in the Organization schema and the
   // footer; these are the towns buyers put in "... manufacturer in <city>".
@@ -51,7 +53,7 @@ export const BUSINESS = {
   },
 };
 
-/** "Since 1996 · 45 countries" */
+/** "Since 1996 · 12 countries" */
 export const TRUST_LINE = `Since ${BUSINESS.foundingYear} · ${BUSINESS.stats.countries} countries`;
 
 export interface ProductSeo {
@@ -88,7 +90,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "DM Water Plant Manufacturer: Two-Bed & Mixed-Bed",
     title: "DM Water Plant Manufacturer in Mumbai | Two-Bed & Mixed-Bed",
     description:
-      "Two-bed and mixed-bed DM water plants for boiler feed, pharmaceutical and process water. Manufactured in Vasai, Mumbai since 1996, with plants in 45 countries.",
+      `Two-bed and mixed-bed DM water plants for boiler feed, pharmaceutical and process water. Manufactured in Vasai, Mumbai since 1996, with plants in ${PLANT_COUNTRIES.length} countries.`,
     targetQuery: "dm water plant manufacturer in mumbai",
     image: "/DM image 1.jpg",
     imageAlt: "Demineralisation (DM) water plant with ion-exchange vessels",

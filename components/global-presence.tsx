@@ -180,7 +180,7 @@ export function GlobalPresence() {
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Every plant leaves our workshop in Vasai East. Since {BUSINESS.foundingYear} they have been installed
-            in {BUSINESS.stats.countries} countries. Here are some of them. Pick a country to turn the globe to it.
+            in {BUSINESS.stats.countries} countries across Africa and South Asia. Pick a country to turn the globe to it.
           </p>
 
           <div className="mt-8 flex items-end gap-6">

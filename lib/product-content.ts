@@ -35,7 +35,7 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
     {
       question: "Do you install RO plants outside Mumbai?",
       answer:
-        "Yes. We manufacture in Vasai and have installed plants across India and in 45 countries. For sites outside Maharashtra we plan dispatch, installation and commissioning as part of the quotation.",
+        `Yes. We manufacture in Vasai and have installed plants across India and in ${BUSINESS.stats.countries} countries. For sites outside Maharashtra we plan dispatch, installation and commissioning as part of the quotation.`,
     },
   ],
 
