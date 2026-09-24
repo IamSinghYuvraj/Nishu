@@ -32,12 +32,13 @@ export default function IndustriesPage() {
       <Navigation />
 
       <main className="flex-1">
-        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-14 md:py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-balance mb-5 text-foreground">
+        <section className="on-dark page-hero py-14 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="eyebrow">Industries · {INDUSTRIES.length} sectors</p>
+            <h1 className="mt-4 max-w-4xl text-4xl md:text-6xl text-balance mb-6 text-foreground">
               Water Treatment Plants for Every Industry We Serve
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="max-w-3xl text-lg text-muted-foreground">
               Water is a different problem in every sector. A pharmaceutical loop, a bottling
               line and a high-pressure boiler need different trains, different materials and
               different documentation. These pages set out how we approach each one — and what
@@ -53,26 +54,26 @@ export default function IndustriesPage() {
                 <Link
                   key={industry.slug}
                   href={`/industries/${industry.slug}`}
-                  className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/50"
+                  className="group card-lift card-rule flex flex-col rounded-2xl border border-border bg-card overflow-hidden"
                 >
                   <div className="relative aspect-video overflow-hidden">
                     <Image
                       src={industry.image}
                       alt={industry.imageAlt}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="zoom-img object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                   <div className="flex flex-col flex-1 p-6">
-                    <h2 className="text-xl font-semibold text-foreground mb-2 group-hover:text-cyan-700 transition-colors">
+                    <h2 className="text-xl text-foreground mb-2 group-hover:text-primary transition-colors">
                       {industry.name}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed flex-1">
                       {industry.cardBlurb}
                     </p>
-                    <span className="inline-block mt-4 text-sm font-medium text-cyan-700">
-                      Read more →
+                    <span className="link-arrow mt-5 text-sm">
+                      How we treat it <span className="arrow">→</span>
                     </span>
                   </div>
                 </Link>

@@ -1,3 +1,5 @@
+import { ProductHeroActions } from "@/components/product-hero-actions"
+import { RelatedProducts } from "@/components/related-products"
 import { Navigation } from "@/components/navigation"
 import Link from "next/link"
 import { Check, Zap, Shield } from "@/components/icons"
@@ -75,24 +77,16 @@ export default function RFCPage() {
 
       <main className="flex-1">
         {/* Hero */}
-        <AnimatedSection>
-          <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
+          <section className="on-dark page-hero py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
+                  <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
+                  <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
                     We manufacture automatic rinsing, filling and capping (RFC) machines for packaged drinking water and beverage bottling lines, built for hygienic, high-speed operation and matched to the water treatment plant upstream. Manufacturing in Vasai, Mumbai since 1996.
                   </p>
-                  <div className="flex gap-4">
-                    
-                    <Link
-                      href="/brochure.pdf"
-                      className="inline-block px-8 py-3 bg-background text-foreground rounded-lg border border-border hover:border-secondary transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-lg"
-                    >
-                      Brochure
-                    </Link>
-                  </div>
+                  <ProductHeroActions productName={seo.name} />
                 </div>
 
                 <div>
@@ -103,7 +97,6 @@ export default function RFCPage() {
           </section>
 
         <TrustBar />
-        </AnimatedSection>
 
         {/* Specs Infographic */}
         <section className="py-16 md:py-24 bg-card border-y border-border">
@@ -116,7 +109,7 @@ export default function RFCPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {features.map((feature, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="p-8 rounded-xl border border-border bg-card card-lift card-rule group">
                     <Zap className="w-8 h-8 text-secondary mb-4" />
                     <h3 className="font-semibold text-lg mb-2 text-foreground">{feature.title}</h3>
                     <p className="text-muted-foreground text-sm">{feature.description}</p>
@@ -137,7 +130,7 @@ export default function RFCPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {applications.map((app, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="flex gap-4 p-4 bg-background rounded-lg">
+                  <div className="benefit-row">
                     <Shield className="w-6 h-6 text-secondary shrink-0 mt-1" />
                     <p className="text-foreground">{app}</p>
                   </div>
@@ -157,12 +150,12 @@ export default function RFCPage() {
                 {specs.map((spec, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg transition-all duration-300 group"
+                    className="p-6 rounded-xl border border-border bg-card card-lift card-rule group"
                   >
-                    <h3 className="font-semibold text-muted-foreground mb-2 text-sm group-hover:text-secondary transition-colors">
+                    <h3 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">
                       {spec.label}
                     </h3>
-                    <p className="text-2xl font-bold text-foreground">{spec.value}</p>
+                    <p className="font-display text-2xl font-bold text-foreground">{spec.value}</p>
                   </div>
                 ))}
               </div>
@@ -177,9 +170,9 @@ export default function RFCPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Key Benefits</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {benefits.map((benefit, idx) => (
-                  <div key={idx} className="flex gap-4 p-4 hover:bg-background rounded-lg transition-colors duration-300">
+                  <div key={idx} className="benefit-row">
                     <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                    <p className="text-muted-foreground">{benefit}</p>
+                    <p>{benefit}</p>
                   </div>
                 ))}
               </div>
@@ -192,7 +185,7 @@ export default function RFCPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <AnimatedSection delay={0}>
-                <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                <div className="p-8 rounded-xl border border-border bg-card card-lift card-rule group">
                   <Zap className="w-8 h-8 text-secondary mb-4" />
                   <h3 className="font-semibold text-lg mb-2 text-foreground">High Throughput</h3>
                   <p className="text-muted-foreground text-sm">Optimized for continuous high-speed production.</p>
@@ -200,7 +193,7 @@ export default function RFCPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={100}>
-                <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                <div className="p-8 rounded-xl border border-border bg-card card-lift card-rule group">
                   <Shield className="w-8 h-8 text-secondary mb-4" />
                   <h3 className="font-semibold text-lg mb-2 text-foreground">Robust Construction</h3>
                   <p className="text-muted-foreground text-sm">Durable SS construction built for long life and easy cleaning.</p>
@@ -208,7 +201,7 @@ export default function RFCPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={200}>
-                <div className="p-8 rounded-lg border border-border bg-card hover:border-secondary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                <div className="p-8 rounded-xl border border-border bg-card card-lift card-rule group">
                   <Check className="w-8 h-8 text-secondary mb-4" />
                   <h3 className="font-semibold text-lg mb-2 text-foreground">Easy Integration</h3>
                   <p className="text-muted-foreground text-sm">Designed to integrate with existing filling lines and automation systems.</p>
@@ -217,18 +210,8 @@ export default function RFCPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA */}
-        <AnimatedSection>
-          <section className="bg-secondary/5 py-16 md:py-24 border-t border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Ready to Automate Your Line?</h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Contact our engineers for a customized RFC solution.</p>
-              
-            </div>
-          </section>
-        </AnimatedSection>
         <FaqSection faqs={PRODUCT_FAQS["rfc"] ?? []} />
+        <RelatedProducts current="rfc" />
       </main>
       <ContactUs />
 

@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google"
 import "./globals.css"
 import { Footer } from "@/components/footer"
 import Icon from "@/public/nishu-icon.png"
@@ -9,8 +9,11 @@ import { JsonLd } from "@/components/json-ld"
 import { organizationSchema, websiteSchema } from "@/lib/schema"
 import { Analytics } from "@/components/analytics"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+// Archivo's width axis gives the headings a wide, nameplate-like stance;
+// Plex carries body copy and spec readouts.
+const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-archivo", display: "swap" })
+const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-plex", display: "swap" })
+const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex-mono", display: "swap" })
 
 const HOME_TITLE = "RO & Water Treatment Plant Manufacturer, Mumbai | Since 1996"
 const HOME_DESCRIPTION =
@@ -69,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className={`${archivo.variable} ${plex.variable} ${plexMono.variable}`}>
+      <body className="font-sans antialiased">
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
         <Analytics />

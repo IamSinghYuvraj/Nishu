@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Beaker,
   Factory,
@@ -17,6 +16,7 @@ import AnimatedSection from "@/components/animation";
 import ContactUs from "@/components/contactus";
 import { Navigation } from "@/components/navigation";
 import { BUSINESS } from "@/lib/site";
+import { TrustBar } from "@/components/trust-bar";
 
 const industries = [
   {
@@ -24,72 +24,48 @@ const industries = [
     icon: Beaker,
     image: "/pharma-industry.jpg",
     description: "Ultra-pure water systems for pharmaceutical manufacturing",
-    color: "bg-violet-500",
-    hoverColor: "group-hover:bg-violet-600",
-    textColor: "text-violet-50",
   },
   {
     name: "Manufacturing",
     icon: Factory,
     image: "/manufacturing-industry.jpeg",
     description: "Industrial water treatment for manufacturing processes",
-    color: "bg-emerald-500",
-    hoverColor: "group-hover:bg-emerald-600",
-    textColor: "text-emerald-50",
   },
   {
     name: "Food & Beverage",
     icon: Truck,
     image: "/food-beverage-industry.jpeg",
     description: "Safe water solutions for food processing",
-    color: "bg-amber-500",
-    hoverColor: "group-hover:bg-amber-600",
-    textColor: "text-amber-50",
   },
   {
     name: "Commercial",
     icon: Building2,
     image: "/commercial-industry.jpeg",
     description: "Water treatment for commercial buildings",
-    color: "bg-sky-500",
-    hoverColor: "group-hover:bg-sky-600",
-    textColor: "text-sky-50",
   },
   {
     name: "Power Generation",
     icon: HardHat,
     image: "/power-generation-industry.jpg",
     description: "Boiler feed water and cooling systems",
-    color: "bg-rose-500",
-    hoverColor: "group-hover:bg-rose-600",
-    textColor: "text-rose-50",
   },
   {
     name: "Agriculture",
     icon: Leaf,
     image: "/agriculture-industry.jpeg",
     description: "Irrigation and hydroponics water treatment",
-    color: "bg-lime-500",
-    hoverColor: "group-hover:bg-lime-600",
-    textColor: "text-lime-50",
   },
   {
     name: "Construction",
     icon: Hammer,
     image: "/construction-industry.jpeg",
     description: "Water solutions for construction projects",
-    color: "bg-cyan-500",
-    hoverColor: "group-hover:bg-cyan-600",
-    textColor: "text-cyan-50",
   },
   {
     name: "Warehousing",
     icon: Warehouse,
-    image: "/warehousing-industry.jpeg",
+    image: "/ss-storage-tanks(4).jpg",
     description: "Water management for storage facilities",
-    color: "bg-fuchsia-500",
-    hoverColor: "group-hover:bg-fuchsia-600",
-    textColor: "text-fuchsia-50",
   },
 ];
 
@@ -98,30 +74,22 @@ const turnkeyProjects = [
     title: "Industries / Plants / Manufacturing Units",
     description:
       "Customized water treatment solutions for industrial and manufacturing needs.",
-    color: "bg-teal-600",
-    hoverColor: "hover:bg-teal-700",
     icon: Factory,
   },
   {
     title: "Packaged Mineral Water Manufacturers",
     description: "Advanced purification systems for mineral water production.",
-    color: "bg-cyan-600",
-    hoverColor: "hover:bg-cyan-700",
     icon: Beaker,
   },
   {
     title: "Builders / Real Estate Developers",
     description:
       "Water treatment solutions for residential and commercial projects.",
-    color: "bg-blue-600",
-    hoverColor: "hover:bg-blue-700",
     icon: Building2,
   },
   {
     title: "Housing Societies / Complexes / Townships",
     description: "Reliable water treatment for large residential communities.",
-    color: "bg-indigo-600",
-    hoverColor: "hover:bg-indigo-700",
     icon: Building2,
   },
   {
@@ -129,8 +97,6 @@ const turnkeyProjects = [
       "Municipality / Government Water / Waste Water / Sewage Management Departments",
     description:
       "Comprehensive solutions for public water and sewage management.",
-    color: "bg-purple-600",
-    hoverColor: "hover:bg-purple-700",
     icon: HardHat,
   },
   {
@@ -138,8 +104,6 @@ const turnkeyProjects = [
       "Hotels / Retail / Laundries / Swimming Pools / Parks / Hospitals / Commercial / Corporates",
     description:
       "Tailored water treatment systems for diverse commercial sectors.",
-    color: "bg-violet-600",
-    hoverColor: "hover:bg-violet-700",
     icon: Building2,
   },
 ];
@@ -148,142 +112,131 @@ const applications = [
   {
     title: "Battery Water: Two Bed DM Unit",
     description: "Demineralized water systems for battery manufacturing.",
-    color: "bg-amber-600",
-    hoverColor: "hover:bg-amber-700",
     icon: Factory,
   },
   {
     title: "Pharma Industries: Two Bed + Mixed Bed DM Unit",
     description: "Advanced water treatment for pharmaceutical production.",
-    color: "bg-emerald-600",
-    hoverColor: "hover:bg-emerald-700",
     icon: Beaker,
   },
   {
     title: "Pathology Lab: Two Bed + Mixed Bed DM Unit (RO)",
     description: "Pure water systems for medical and pathology labs.",
-    color: "bg-sky-600",
-    hoverColor: "hover:bg-sky-700",
     icon: Beaker,
   },
   {
     title: "Medical Dialysis: DM or RO Unit",
     description: "Water treatment for medical dialysis applications.",
-    color: "bg-rose-600",
-    hoverColor: "hover:bg-rose-700",
     icon: Beaker,
   },
   {
     title: "Mineral Water: Filtration or RO Unit",
     description: "Purification systems for mineral water production.",
-    color: "bg-blue-600",
-    hoverColor: "hover:bg-blue-700",
     icon: Beaker,
   },
   {
     title: "Cooling Tower: Softening Plant / Filter Unit",
     description: "Water treatment for cooling tower systems.",
-    color: "bg-cyan-600",
-    hoverColor: "hover:bg-cyan-700",
     icon: Factory,
   },
 ];
 
 export default function AboutPage() {
-  
-
   return (
     <>
-    <Navigation/>
+      <Navigation />
       <div className="overflow-x-hidden">
-        <section className="py-16 bg-linear-to-b from-cyan-50 via-white to-cyan-50 flex justify-center items-center">
-          <div className="container">
-            <div className="grid gap-16 md:grid-cols-2 items-center">
-              {/* Left Content */}
-              <AnimatedSection delay={200}>
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-cyan-700">
-                    Our story · Since {BUSINESS.foundingYear}
-                  </p>
-                  <h1 className="mt-2 text-4xl font-extrabold text-cyan-800">
-                    {BUSINESS.stats.years} Years of Water Treatment Engineering
-                  </h1>
-                  <div className="mt-4 h-1 w-20 bg-cyan-600 rounded"></div>
-                                    <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-                    Nishu Enterprises, established in 1996 in Vasai, Mumbai, is a professionally managed company engaged in manufacturing, supplying, exporting, and servicing a wide range of water treatment solutions.
-                    </p>
-                    <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-                    Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water Projects.
-                    </p>
-                    <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-                    We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon), pressure gauges and switches, SS fittings, and essential water treatment chemicals including antiscalants, Gramacid, and citric acid.
-                    </p>
-                    <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-                    Over the years, we have strengthened our expertise by adopting cutting-edge technology and building a skilled team of professionals. Today, our solutions serve a wide customer base across diverse industries, including the Pharmaceutical and Food & Beverage Industry.
-                    </p>
-                    <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-                    The company is driven by a philosophy of innovation and excellence, with a strong focus on turnkey project execution and a total system approach, ensuring reliability, efficiency, and customer satisfaction.
-                    </p>
-                </div>
-              </AnimatedSection>
+        <section className="on-dark page-hero py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div className="animate-fade-in-up">
+                <p className="eyebrow">Our story · Since {BUSINESS.foundingYear}</p>
+                <h1 className="mt-4 text-4xl text-foreground text-balance md:text-6xl">
+                  {BUSINESS.stats.years} Years of Water Treatment Engineering
+                </h1>
+                <p className="mt-6 text-xl leading-relaxed text-foreground/90">
+                  Nishu Enterprises, established in 1996 in Vasai, Mumbai, is a professionally managed company engaged in manufacturing, supplying, exporting, and servicing a wide range of water treatment solutions.
+                </p>
+              </div>
 
-              {/* Right Image */}
-              <AnimatedSection delay={400}>
-                <div className="relative h-[400px] group">
-                  <div className="absolute inset-0 bg-cyan-100 rounded-lg shadow-lg transition-all duration-500 group-hover:bg-cyan-200"></div>
-                  <div className="absolute inset-0 transform transition-transform duration-500 group-hover:scale-[0.97] group-hover:rotate-1">
+              <div className="animate-fade-in-up [animation-delay:150ms]">
+                <div className="group relative">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/30">
                     <Image
                       src={"/Ro-img6.jpg"}
                       alt="Nishu Enterprises RO plant installation"
                       fill
-                      className="rounded-lg object-cover"
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="zoom-img object-cover"
                     />
                   </div>
+                  <div className="absolute -bottom-5 -left-3 rounded-2xl bg-lime px-5 py-4 text-ink shadow-xl sm:-left-6">
+                    <p className="font-mono text-xs uppercase tracking-[0.14em]">Established</p>
+                    <p className="readout text-4xl">{BUSINESS.foundingYear}</p>
+                  </div>
                 </div>
-              </AnimatedSection>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-linear-to-b from-white to-cyan-50 py-16 flex justify-center items-center">
-          <div className="container">
+        <TrustBar />
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto grid gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_2fr] lg:px-8">
             <AnimatedSection>
-              <h2 className="text-center text-3xl font-bold text-cyan-800">
-                Industries We Serve
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
+              <p className="eyebrow">Who we are</p>
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">Plants, parts and the service behind them</h2>
+            </AnimatedSection>
+            <AnimatedSection delay={100}>
+              <div className="space-y-5 text-lg leading-relaxed text-foreground/85">
+                <p>
+                  Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water Projects.
+                </p>
+                <p>
+                  We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon), pressure gauges and switches, SS fittings, and essential water treatment chemicals including antiscalants, Gramacid, and citric acid.
+                </p>
+                <p>
+                  Over the years, we have strengthened our expertise by adopting cutting-edge technology and building a skilled team of professionals. Today, our solutions serve a wide customer base across diverse industries, including the Pharmaceutical and Food & Beverage Industry.
+                </p>
+                <p className="rounded-r-xl border-l-4 border-secondary bg-white px-6 py-5 font-medium text-foreground shadow-sm">
+                  The company is driven by a philosophy of innovation and excellence, with a strong focus on turnkey project execution and a total system approach, ensuring reliability, efficiency, and customer satisfaction.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        <section className="bg-white py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection>
+              <p className="eyebrow">Industries</p>
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">Industries We Serve</h2>
+              <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
                 Our water treatment solutions cater to diverse industrial needs,
                 providing customized systems for various sectors
               </p>
             </AnimatedSection>
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {industries.map((industry, index) => (
-                <AnimatedSection key={industry.name} delay={index * 100}>
-                  <div className="group h-full">
-                    <Card
-                      className={`h-full overflow-hidden transition-all duration-300 ${industry.color} hover:shadow-xl hover:-translate-y-2`}
-                    >
-                      <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={industry.image || "/placeholder.svg"}
-                          alt={industry.name}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <h3 className="flex items-center gap-2 text-lg font-semibold text-white">
-                            <industry.icon className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
-                            {industry.name}
-                          </h3>
-                        </div>
-                      </div>
-                      <CardContent className={`p-4 ${industry.textColor}`}>
-                        <p className="text-sm opacity-90 transition-opacity duration-300 group-hover:opacity-100">
-                          {industry.description}
-                        </p>
-                      </CardContent>
-                    </Card>
+                <AnimatedSection key={industry.name} delay={index * 70}>
+                  <div className="group relative h-72 overflow-hidden rounded-2xl bg-ink">
+                    <Image
+                      src={industry.image || "/placeholder.svg"}
+                      alt={industry.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="zoom-img object-cover opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/50 to-transparent transition-all duration-500 group-hover:via-ink/75" />
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <span className="grid h-10 w-10 place-items-center rounded-lg bg-white/15 text-lime backdrop-blur-sm transition-all duration-300 group-hover:bg-lime group-hover:text-ink">
+                        <industry.icon className="h-5 w-5" />
+                      </span>
+                      <h3 className="mt-3 text-xl text-white">{industry.name}</h3>
+                      <p className="mt-1 text-sm text-white/85">{industry.description}</p>
+                    </div>
                   </div>
                 </AnimatedSection>
               ))}
@@ -291,77 +244,62 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-white flex justify-center items-center">
-          <div className="container">
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
-              <h2 className="text-center text-3xl font-bold text-cyan-800">
-                We Undertake Turnkey Projects For
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
+              <p className="eyebrow">Turnkey projects</p>
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">We Undertake Turnkey Projects For</h2>
+              <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
                 Providing comprehensive water treatment solutions for a wide range
                 of industries and applications
               </p>
             </AnimatedSection>
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {turnkeyProjects.map((project, index) => (
-                <AnimatedSection key={project.title} delay={index * 100}>
-                  <Card
-                    className={`h-full transition-all duration-300 ${project.color} ${project.hoverColor} hover:shadow-xl hover:-translate-y-2`}
-                  >
-                    <CardHeader className="pb-2">
-                      <div className="flex items-center gap-2">
-                        <project.icon className="h-6 w-6 text-white transition-transform duration-300 group-hover:rotate-12" />
-                        <CardTitle className="text-xl text-white">
-                          {project.title}
-                        </CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-white/90">{project.description}</p>
-                    </CardContent>
-                  </Card>
+                <AnimatedSection key={project.title} delay={index * 70}>
+                  <div className="group card-lift card-rule h-full rounded-2xl border border-border bg-card p-7">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                      <project.icon className="h-6 w-6" />
+                    </span>
+                    <h3 className="mt-5 text-lg text-foreground">{project.title}</h3>
+                    <p className="mt-2 leading-relaxed text-muted-foreground">{project.description}</p>
+                  </div>
                 </AnimatedSection>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-linear-to-b from-cyan-50 to-white py-16 flex justify-center items-center">
-          <div className="container">
+        <section className="on-dark bg-ink py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
-              <h2 className="text-center text-3xl font-bold text-cyan-800">
-                Applications for Water Treatment Plants
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
+              <p className="eyebrow">Applications</p>
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">Applications for Water Treatment Plants</h2>
+              <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
                 Specialized water treatment solutions for various applications
               </p>
             </AnimatedSection>
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {applications.map((application, index) => (
-                <AnimatedSection key={application.title} delay={index * 100}>
-                  <Card
-                    className={`h-full transition-all duration-300 ${application.color} ${application.hoverColor} hover:shadow-xl hover:-translate-y-2 group`}
-                  >
-                    <CardHeader className="pb-2">
-                      <div className="flex items-center gap-2">
-                        <application.icon className="h-6 w-6 text-white transition-transform duration-300 group-hover:rotate-12" />
-                        <CardTitle className="text-xl text-white">
-                          {application.title}
-                        </CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-white/90">{application.description}</p>
-                    </CardContent>
-                  </Card>
-                </AnimatedSection>
-              ))}
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {applications.map((application, index) => {
+                const [use, unit] = application.title.split(": ");
+                return (
+                  <AnimatedSection key={application.title} delay={index * 70}>
+                    <div className="group card-rule h-full rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-bright/50 hover:bg-accent">
+                      <span className="grid h-12 w-12 place-items-center rounded-xl bg-white/5 text-lime transition-all duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-ink">
+                        <application.icon className="h-6 w-6" />
+                      </span>
+                      <h3 className="mt-5 text-xl text-foreground">{use}</h3>
+                      {unit && <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-lime">{unit}</p>}
+                      <p className="mt-3 leading-relaxed text-muted-foreground">{application.description}</p>
+                    </div>
+                  </AnimatedSection>
+                );
+              })}
             </div>
           </div>
-
         </section>
-                <ContactUs />
-        
+
+        <ContactUs />
       </div>
     </>
   );

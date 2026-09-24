@@ -1,13 +1,10 @@
 "use client";
 
 import WhatsAppIcon from "@/public/whatsapp.png";
-import { useState } from "react";
 import Image from "next/image";
 import { trackLead } from "@/lib/track";
 
 export default function WhatsAppChat() {
-  const [isHovered, setIsHovered] = useState(false);
-
   const whatsappNumber = "+919820142424";
   const message = "Hello! I'm interested in your water treatment solutions.";
 
@@ -18,30 +15,23 @@ export default function WhatsAppChat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-5 right-5 z-50 md:bottom-6 md:right-6">
       <button
         onClick={handleWhatsAppClick}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="group relative flex items-center justify-center hover:scale-110 transition-transform duration-300 rounded-full"
-        style={{ width: "80px", height: "80px" }} // Increased button size
+        className="group relative grid h-16 w-16 place-items-center rounded-full transition-transform duration-300 hover:scale-110"
         aria-label="Chat on WhatsApp"
       >
+        <span className="absolute inset-0 rounded-full bg-[#25d366] animate-ping-soft" aria-hidden="true" />
         <Image
           src={WhatsAppIcon}
-          alt="WhatsApp"
-          className="rounded-full object-cover"
-          width={72} // Bigger icon
-          height={72}
+          alt=""
+          className="relative rounded-full object-cover shadow-lg shadow-black/25"
+          width={64}
+          height={64}
         />
-
-        {/* Tooltip */}
-        {isHovered && (
-          <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Chat with us on WhatsApp
-            <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-t-gray-800"></div>
-          </div>
-        )}
+        <span className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 translate-x-2 whitespace-nowrap rounded-lg bg-ink px-3 py-2 text-sm font-medium text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+          Chat with us on WhatsApp
+        </span>
       </button>
     </div>
   );

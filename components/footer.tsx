@@ -1,30 +1,22 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, Phone, Mail, ChevronDown } from "@/components/icons"
+import { MapPin, Phone, Mail } from "@/components/icons"
 import { Linkedin, Instagram, Facebook, Youtube } from "lucide-react"
-import { BUSINESS } from "@/lib/site"
+import { BUSINESS, PRODUCTS } from "@/lib/site"
 import { trackLead } from "@/lib/track"
 
+const COMPANY_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About us" },
+  { href: "/products", label: "All products" },
+  { href: "/industries", label: "Industries" },
+  { href: "/blog", label: "Resources" },
+  { href: "/contact", label: "Contact" },
+]
+
 export function Footer() {
-  const [productsOpen, setProductsOpen] = useState(false)
-
-  const products = [
-    { title: "Reverse Osmosis Plant (RO)", link: "/products/reverse-osmosis" },
-    { title: "Demineralized Plant (DM)", link: "/products/demineralized" },
-    { title: "Water Softening Plant", link: "/products/water-softening" },
-    { title: "Membrane Housing", link: "/products/membrane-housing" },
-    { title: "Specially Fabricated SS & MS Vessel/Tanks", link: "/products/fabricated-vessels" },
-    { title: "Complete Mineral Water Project", link: "/products/mineral-water-project" },
-    { title: "Dosing, Ozonation & UV Systems", link: "/products/dosing-ozonation-uv" },
-    { title: "Rinsing Filling Capping Machine (RFC)", link: "/products/rfc" },
-    { title: "Desalination Plant", link: "/products/desalination" },
-    { title: "RO Spares & Consumables", link: "/products/spares-consumables" },
-    { title: "AMC & Plant Maintenance", link: "/products/amc-maintenance" },
-  ]
-
   const socialLinks = [
     { label: "LinkedIn", href: BUSINESS.social.linkedin, Icon: Linkedin },
     { label: "Instagram", href: BUSINESS.social.instagram, Icon: Instagram },
@@ -32,25 +24,30 @@ export function Footer() {
     { label: "YouTube", href: BUSINESS.social.youtube, Icon: Youtube },
   ].filter((s) => s.href)
 
+  const linkClass = "text-muted-foreground transition-all duration-300 hover:text-lime hover:translate-x-1 inline-block"
+
   return (
-    <footer className="bg-primary text-primary-foreground border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
-          <div className="md:col-span-1">
-            <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-              <Image src="/nishu-logo.png" alt="Nishu Enterprises" width={250} height={250} className="rounded-md" />
-            </h3>
-            <p className="text-sm opacity-75 leading-relaxed">
-              Established in {BUSINESS.foundingYear}, manufacturing water treatment plants and spare parts with innovation and reliability.
+    <footer className="on-dark relative overflow-hidden bg-ink-deep">
+      <div
+        className="h-1 w-full bg-linear-to-r from-cyan-bright via-secondary to-lime"
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1.4fr_0.8fr_1.3fr]">
+          <div>
+            <Link href="/" className="inline-block rounded-xl bg-white px-4 py-3 transition-transform duration-300 hover:-translate-y-0.5">
+              <Image src="/nishu-logo-trim.png" alt="Nishu Enterprises" width={612} height={166} className="h-10 w-auto" />
+            </Link>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              Established in {BUSINESS.foundingYear}, manufacturing water treatment plants and spare parts in
+              Vasai, Mumbai. {BUSINESS.stats.plants}+ plants installed in {BUSINESS.stats.countries} countries.
             </p>
-            <p className="mt-3 text-sm opacity-75 leading-relaxed">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Serving {BUSINESS.serviceAreas.slice(0, -1).join(", ")} and{" "}
-              {BUSINESS.serviceAreas[BUSINESS.serviceAreas.length - 1]}, with plants installed in{" "}
-              {BUSINESS.stats.countries} countries.
+              {BUSINESS.serviceAreas[BUSINESS.serviceAreas.length - 1]}.
             </p>
             {socialLinks.length > 0 && (
-              <div className="flex gap-3 mt-4">
+              <div className="mt-5 flex gap-3">
                 {socialLinks.map(({ label, href, Icon }) => (
                   <a
                     key={label}
@@ -58,7 +55,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Nishu Enterprises on ${label}`}
-                    className="p-2 rounded-full bg-primary-foreground/10 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+                    className="rounded-full bg-card p-2.5 text-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-secondary"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -67,111 +64,67 @@ export function Footer() {
             )}
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-1">
-            <h4 className="font-semibold text-sm mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="relative">
-                <button
-                  onClick={() => setProductsOpen(!productsOpen)}
-                  className="hover:text-secondary transition-all duration-300 flex items-center gap-1 group"
-                >
-                  Products
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-300 ${productsOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {/* Products Dropdown */}
-                {productsOpen && (
-                  <div className="absolute left-0 mt-2 w-72 bg-primary/90 rounded-lg border border-secondary/30 py-2 z-50">
-                    {products.map((product, idx) => (
-                      <Link
-                        key={idx}
-                        href={product.link}
-                        className="block px-4 py-2 hover:bg-secondary/20 transition-colors text-sm"
-                        onClick={() => setProductsOpen(false)}
-                      >
-                        {product.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Industries
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Resources
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                >
-                  Contact
-                </Link>
-              </li>
+          <div>
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-lime">Products</h3>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {PRODUCTS.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/products/${p.slug}`} className={linkClass}>
+                    {p.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="md:col-span-1">
-            <h4 className="font-semibold text-sm mb-4">Contact Info</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  {BUSINESS.addressLine}
-                </span>
+          <div>
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-lime">Company</h3>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {COMPANY_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={linkClass}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-lime">Visit or call</h3>
+            <ul className="mt-4 space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span className="text-muted-foreground">{BUSINESS.addressLine}</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-1 shrink-0" />
-                <a href={`tel:${BUSINESS.phoneE164}`} onClick={() => trackLead("phone")} className="hover:text-secondary transition-all duration-300">
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <a
+                  href={`tel:${BUSINESS.phoneE164}`}
+                  onClick={() => trackLead("phone")}
+                  className="font-semibold text-foreground transition-colors hover:text-lime"
+                >
                   {BUSINESS.phone}
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-1 shrink-0" />
-                <a href={`mailto:${BUSINESS.email}`} onClick={() => trackLead("email")} className="hover:text-secondary transition-all duration-300">
+              <li className="flex items-start gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <a
+                  href={`mailto:${BUSINESS.email}`}
+                  onClick={() => trackLead("email")}
+                  className="font-semibold text-foreground transition-colors hover:text-lime"
+                >
                   {BUSINESS.email}
                 </a>
               </li>
             </ul>
-          </div>
-
-          <div className="md:col-span-1">
-            <h4 className="font-semibold text-sm mb-4">Location</h4>
             <iframe
+              title="Nishu Enterprises on Google Maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8948818652284!2d72.8611239!3d19.4169473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9811b5a8405%3A0x8d1f9ec7ec39b6c6!2sNISHU%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1762612705634!5m2!1sen!2sin"
               width="100%"
-              height="150"
-              style={{ border: 0, borderRadius: "8px" }}
+              height="140"
+              className="mt-5 rounded-xl border border-border"
+              style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -179,16 +132,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-secondary/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm opacity-75">
-          <p>&copy; 2026 Nishu Enterprises. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-secondary transition-all duration-300">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-secondary transition-all duration-300">
-              Terms of Service
-            </a>
-          </div>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row">
+          <p>&copy; {new Date().getFullYear()} Nishu Enterprises. All rights reserved.</p>
+          <p className="font-mono text-xs tracking-wider">Water is life. Treat it right.</p>
         </div>
       </div>
     </footer>

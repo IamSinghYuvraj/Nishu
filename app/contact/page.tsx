@@ -3,13 +3,13 @@
 import { useRef, useState } from "react";
 import AnimatedSection from "@/components/animation";
 import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  Plus,
   CheckCircle,
   X,
   Loader2,
@@ -261,7 +261,7 @@ export default function ContactPage() {
 
   const getInputClassName = (field: keyof FormData): string => {
     const baseClass =
-      "w-full px-4 py-2 rounded-lg border bg-background text-foreground placeholder-muted-foreground transition-all duration-300 focus:ring-2 focus:ring-primary/20 focus:border-primary focus:scale-[1.02]";
+      "w-full px-4 py-2 rounded-lg border bg-white text-foreground placeholder:text-muted-foreground/80 transition-all duration-300 hover:border-primary/40 focus:ring-4 focus:ring-primary/15 focus:border-primary";
     const isFieldTouched = touched[field as keyof TouchedState];
     let isFieldInvalid = false;
 
@@ -329,344 +329,346 @@ export default function ContactPage() {
       )}
 
       <main className="flex-1">
-        <AnimatedSection>
-          <section className="bg-linear-to-br from-primary/5 to-secondary/5 border-b border-border py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
-                Request a <span className="text-primary">Quotation</span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Tell us what you need - an RO plant, DM plant, water softener or a complete
-                mineral water project - and we will size it against your water before quoting.
-                Designing and building water treatment plants since {BUSINESS.foundingYear}.
-              </p>
-            </div>
-          </section>
-        </AnimatedSection>
+        <section className="on-dark page-hero py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="eyebrow">Contact · Vasai East, Mumbai</p>
+            <h1 className="mt-4 text-4xl md:text-6xl text-balance mb-6 text-foreground">
+              Request a <span className="text-lime">Quotation</span>
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Tell us what you need - an RO plant, DM plant, water softener or a complete
+              mineral water project - and we will size it against your water before quoting.
+              Designing and building water treatment plants since {BUSINESS.foundingYear}.
+            </p>
 
-
-        <AnimatedSection>
-          <section className="py-16 flex justify-center items-center bg-linear-to-b from-background to-muted/20">
-            <div className="container mx-auto px-4">
-              <div className="grid gap-8 lg:grid-cols-3 mb-16">
-                <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-100 hover:bg-white/95">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
-                      <MapPin className="h-6 w-6 text-primary group-hover:animate-pulse" />
-                    </div>
-                    <div className="group-hover:translate-x-1 transition-transform duration-300">
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Address</h3>
-                      <address className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors not-italic">
-                        {BUSINESS.addressLine}
-                      </address>
-                    </div>
-                  </div>
-                </Card>
-
-
-                <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-200 hover:bg-white/95">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
-                      <Phone className="h-6 w-6 text-primary group-hover:animate-pulse" />
-                    </div>
-                    <div className="group-hover:translate-x-1 transition-transform duration-300">
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Phone</h3>
-                      <p className="text-sm text-muted-foreground">
-                        <a
-                          href={`tel:${BUSINESS.phoneE164}`}
-                          onClick={() => trackLead("phone")}
-                          className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block"
-                        >
-                          {BUSINESS.phone}
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="group p-6 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-in slide-in-from-bottom-4 delay-300 hover:bg-white/95">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
-                      <Mail className="h-6 w-6 text-primary group-hover:animate-pulse" />
-                    </div>
-                    <div className="group-hover:translate-x-1 transition-transform duration-300">
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Email</h3>
-                      <p className="text-sm text-muted-foreground">
-                        <a href={`mailto:${BUSINESS.email}`} onClick={() => trackLead("email")} className="hover:text-primary transition-all duration-200 hover:underline hover:scale-105 inline-block">
-                          nishudbj@gmail.com
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+            <div className="mt-12 grid gap-4 md:grid-cols-3">
+              <a
+                href={`tel:${BUSINESS.phoneE164}`}
+                onClick={() => trackLead("phone")}
+                className="group flex items-start gap-4 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-bright/60 hover:bg-card"
+              >
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/5 text-lime transition-all duration-300 group-hover:bg-lime group-hover:text-ink">
+                  <Phone className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="block font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">Phone</span>
+                  <span className="mt-1 block text-lg font-semibold text-foreground">{BUSINESS.phone}</span>
+                </span>
+              </a>
+              <a
+                href={`mailto:${BUSINESS.email}`}
+                onClick={() => trackLead("email")}
+                className="group flex items-start gap-4 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-bright/60 hover:bg-card"
+              >
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/5 text-lime transition-all duration-300 group-hover:bg-lime group-hover:text-ink">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">Email</span>
+                  <span className="mt-1 block truncate text-lg font-semibold text-foreground">{BUSINESS.email}</span>
+                </span>
+              </a>
+              <div className="group flex items-start gap-4 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-bright/60 hover:bg-card">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/5 text-lime transition-all duration-300 group-hover:bg-lime group-hover:text-ink">
+                  <MapPin className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="block font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">Address</span>
+                  <address className="mt-1 block text-sm not-italic leading-relaxed text-foreground">{BUSINESS.addressLine}</address>
+                </span>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="relative group">
-                {/* Animated backglow on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl blur-2xl bg-linear-to-br from-primary/20 via-primary/10 to-transparent pointer-events-none"></div>
-                
-                <div className="relative grid gap-8 lg:grid-cols-2 transition-all duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2">
-                <Card className="mx-auto w-full max-w-2xl p-8 border-2 border-dashed border-primary/20 shadow-2xl shadow-primary/10 bg-white/90 backdrop-blur-sm animate-in slide-in-from-left-4 duration-700 delay-400 transition-all ring-1 ring-primary/5 relative group/form hover:border-primary/40 hover:shadow-3xl hover:shadow-primary/20 hover:bg-white/95">
-                  <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 rounded-lg pointer-events-none"></div>
-                  <div className="absolute inset-0 opacity-0 group-hover/form:opacity-10 transition-opacity duration-700 rounded-lg pointer-events-none" style={{backgroundImage: 'linear-gradient(90deg, var(--color-primary) 1px, transparent 1px), linear-gradient(0deg, var(--color-primary) 1px, transparent 1px)', backgroundSize: '40px 40px'}}></div>
-                  <div className="relative">
-                    <h2 className="text-3xl font-bold mb-2 bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                      Get in Touch
-                    </h2>
-                    <p className="text-muted-foreground mb-6">
-                      We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-                    </p>
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto grid gap-8 px-4 sm:px-6 lg:grid-cols-[1.5fr_1fr] lg:px-8">
+            <AnimatedSection>
+              <Card className="w-full gap-0 rounded-2xl border border-border bg-white p-6 shadow-xl shadow-ink/5 sm:p-10">
+                <p className="eyebrow">Enquiry form</p>
+                <h2 className="mt-3 text-3xl text-foreground mb-2">Get in Touch</h2>
+                <p className="text-muted-foreground mb-8">
+                  We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+                </p>
 
-                    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                      <div className="grid gap-6 sm:grid-cols-2">
-                        <div className="space-y-2 group">
-                          <Label htmlFor="name" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                            Name *
-                          </Label>
-                          <Input
-                            id="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            onBlur={() => handleBlur("name")}
-                            required
-                            className={getInputClassName("name")}
-                            placeholder="Your full name"
-                            disabled={isSubmitting}
-                          />
-                        </div>
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="space-y-2 group">
+                      <Label htmlFor="name" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                        Name *
+                      </Label>
+                      <Input
+                        id="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        onBlur={() => handleBlur("name")}
+                        required
+                        className={getInputClassName("name")}
+                        placeholder="Your full name"
+                        disabled={isSubmitting}
+                      />
+                    </div>
 
-                        <div className="space-y-2 group">
-                          <Label htmlFor="email" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                            Email *
-                          </Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            onBlur={() => handleBlur("email")}
-                            required
-                            className={getInputClassName("email")}
-                            placeholder="your.email@example.com"
-                            disabled={isSubmitting}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2 group">
-                        <Label htmlFor="phone" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                          Phone (10 digits) *
-                        </Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          onBlur={() => handleBlur("phone")}
-                          required
-                          placeholder="Enter 10-digit phone number"
-                          className={getInputClassName("phone")}
-                          maxLength={10}
-                          pattern="[0-9]{10}"
-                          disabled={isSubmitting}
-                        />
-                      </div>
-
-                      <div className="grid gap-6 md:grid-cols-2">
-                        <div className="space-y-2 group">
-                          <Label htmlFor="company" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                            Company
-                          </Label>
-                          <Input
-                            id="company"
-                            type="text"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            onBlur={() => handleBlur("company")}
-                            className={getInputClassName("company")}
-                            placeholder="Your company name"
-                            disabled={isSubmitting}
-                          />
-                        </div>
-
-                        <div className="space-y-2 group">
-                          <Label htmlFor="city" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                            Site location
-                          </Label>
-                          <Input
-                            id="city"
-                            type="text"
-                            value={formData.city}
-                            onChange={handleInputChange}
-                            onBlur={() => handleBlur("city")}
-                            className={getInputClassName("city")}
-                            placeholder="City where the plant will be installed"
-                            disabled={isSubmitting}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid gap-6 md:grid-cols-2">
-                        <div className="space-y-2 group">
-                          <Label htmlFor="product" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                            System required *
-                          </Label>
-                          <select
-                            id="product"
-                            value={formData.product}
-                            onChange={handleInputChange}
-                            onBlur={() => handleBlur("product")}
-                            required
-                            className={getInputClassName("product")}
-                            disabled={isSubmitting}
-                          >
-                            <option value="">Select a system…</option>
-                            {PRODUCTS.map((p) => (
-                              <option key={p.slug} value={p.name}>
-                                {p.name}
-                              </option>
-                            ))}
-                            <option value="Not sure yet">Not sure yet</option>
-                          </select>
-                        </div>
-
-                        <div className="space-y-2 group">
-                          <Label htmlFor="capacity" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                            Required capacity
-                          </Label>
-                          <Input
-                            id="capacity"
-                            type="text"
-                            value={formData.capacity}
-                            onChange={handleInputChange}
-                            onBlur={() => handleBlur("capacity")}
-                            className={getInputClassName("capacity")}
-                            placeholder="e.g. 5000 LPH"
-                            disabled={isSubmitting}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2 group">
-                        <Label htmlFor="message" className="text-sm font-medium group-focus-within:text-primary transition-colors">
-                          Message *
-                        </Label>
-                        <Textarea
-                          id="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          onBlur={() => handleBlur("message")}
-                          required
-                          className={`min-h-[150px] resize-none ${getInputClassName("message")}`}
-                          placeholder="Feed water source and analysis if you have one, daily requirement, and anything else that affects the design."
-                          disabled={isSubmitting}
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="attachment" className="text-sm font-medium">
-                          Site drawing or specification
-                        </Label>
-                        <input
-                          ref={fileInputRef}
-                          id="attachment"
-                          type="file"
-                          accept={ACCEPTED_ATTACHMENTS}
-                          onChange={handleFileChange}
-                          disabled={isSubmitting}
-                          className="block w-full text-sm text-muted-foreground file:mr-4 file:rounded-lg file:border-0 file:bg-primary/10 file:px-4 file:py-2 file:text-sm file:font-medium file:text-primary hover:file:bg-primary/20 file:cursor-pointer cursor-pointer rounded-lg border border-border p-2 transition-colors"
-                        />
-                        {attachment && (
-                          <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <Paperclip className="h-4 w-4 shrink-0 text-primary" />
-                            <span className="truncate">{attachment.name}</span>
-                            <span className="shrink-0">
-                              ({(attachment.size / 1024).toFixed(0)} KB)
-                            </span>
-                            <button
-                              type="button"
-                              onClick={clearAttachment}
-                              className="shrink-0 text-primary hover:underline"
-                            >
-                              Remove
-                            </button>
-                          </p>
-                        )}
-                        {attachmentError ? (
-                          <p className="text-sm text-red-600">{attachmentError}</p>
-                        ) : (
-                          <p className="text-xs text-muted-foreground">
-                            Optional. PDF, image, Office or CAD file, up to 4 MB.
-                          </p>
-                        )}
-                      </div>
-
-                      <Button
-                        type="submit"
-                        className="w-full h-12 text-base font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed group bg-linear-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary"
-                        disabled={isSubmitting || !validateForm()}
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                            <span className="animate-pulse">Sending Message...</span>
-                          </>
-                        ) : (
-                          <>
-                            <Send className="mr-2 h-5 w-5" />
-                            <span className="group-hover:animate-pulse">Send Message</span>
-                          </>
-                        )}
-                      </Button>
-
-                      <div className="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
-                        <div className="flex items-center justify-center text-blue-700 text-sm">
-                          <Mail className="h-4 w-4 mr-2" />
-                          We'll respond to your message within 24 hours
-                        </div>
-                      </div>
-                    </form>
+                    <div className="space-y-2 group">
+                      <Label htmlFor="email" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                        Email *
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        onBlur={() => handleBlur("email")}
+                        required
+                        className={getInputClassName("email")}
+                        placeholder="your.email@example.com"
+                        disabled={isSubmitting}
+                      />
+                    </div>
                   </div>
-                </Card>
 
-                <div className="h-[600px] w-full overflow-hidden rounded-xl shadow-2xl shadow-primary/10 animate-in slide-in-from-right-4 duration-700 delay-500 hover:shadow-3xl hover:shadow-primary/20 transition-all ring-1 ring-primary/5 hover:ring-primary/10">
-                  <div className="h-full w-full transition-transform duration-500 hover:scale-[1.01]">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8948818652284!2d72.8611239!3d19.4169473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9811b5a8405%3A0x8d1f9ec7ec39b6c6!2sNISHU%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1762612705634!5m2!1sen!2sin"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-xl"
-                      title="Nishu Enterprises Location"
+                  <div className="space-y-2 group">
+                    <Label htmlFor="phone" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                      Phone (10 digits) *
+                    </Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      onBlur={() => handleBlur("phone")}
+                      required
+                      placeholder="Enter 10-digit phone number"
+                      className={getInputClassName("phone")}
+                      maxLength={10}
+                      pattern="[0-9]{10}"
+                      disabled={isSubmitting}
                     />
                   </div>
+
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div className="space-y-2 group">
+                      <Label htmlFor="company" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                        Company
+                      </Label>
+                      <Input
+                        id="company"
+                        type="text"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        onBlur={() => handleBlur("company")}
+                        className={getInputClassName("company")}
+                        placeholder="Your company name"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+
+                    <div className="space-y-2 group">
+                      <Label htmlFor="city" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                        Site location
+                      </Label>
+                      <Input
+                        id="city"
+                        type="text"
+                        value={formData.city}
+                        onChange={handleInputChange}
+                        onBlur={() => handleBlur("city")}
+                        className={getInputClassName("city")}
+                        placeholder="City where the plant will be installed"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div className="space-y-2 group">
+                      <Label htmlFor="product" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                        System required *
+                      </Label>
+                      <select
+                        id="product"
+                        value={formData.product}
+                        onChange={handleInputChange}
+                        onBlur={() => handleBlur("product")}
+                        required
+                        className={`h-10 ${getInputClassName("product")}`}
+                        disabled={isSubmitting}
+                      >
+                        <option value="">Select a system…</option>
+                        {PRODUCTS.map((p) => (
+                          <option key={p.slug} value={p.name}>
+                            {p.name}
+                          </option>
+                        ))}
+                        <option value="Not sure yet">Not sure yet</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2 group">
+                      <Label htmlFor="capacity" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                        Required capacity
+                      </Label>
+                      <Input
+                        id="capacity"
+                        type="text"
+                        value={formData.capacity}
+                        onChange={handleInputChange}
+                        onBlur={() => handleBlur("capacity")}
+                        className={getInputClassName("capacity")}
+                        placeholder="e.g. 5000 LPH"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 group">
+                    <Label htmlFor="message" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                      Message *
+                    </Label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      onBlur={() => handleBlur("message")}
+                      required
+                      className={`min-h-[150px] resize-none ${getInputClassName("message")}`}
+                      placeholder="Feed water source and analysis if you have one, daily requirement, and anything else that affects the design."
+                      disabled={isSubmitting}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="attachment" className="text-sm font-semibold">
+                      Site drawing or specification
+                    </Label>
+                    <input
+                      ref={fileInputRef}
+                      id="attachment"
+                      type="file"
+                      accept={ACCEPTED_ATTACHMENTS}
+                      onChange={handleFileChange}
+                      disabled={isSubmitting}
+                      className="block w-full text-sm text-muted-foreground file:mr-4 file:rounded-lg file:border-0 file:bg-accent file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary hover:file:bg-primary hover:file:text-white file:transition-colors file:cursor-pointer cursor-pointer rounded-lg border border-dashed border-border bg-mist p-2 transition-colors hover:border-primary/50"
+                    />
+                    {attachment && (
+                      <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Paperclip className="h-4 w-4 shrink-0 text-primary" />
+                        <span className="truncate">{attachment.name}</span>
+                        <span className="shrink-0">
+                          ({(attachment.size / 1024).toFixed(0)} KB)
+                        </span>
+                        <button
+                          type="button"
+                          onClick={clearAttachment}
+                          className="shrink-0 text-primary hover:underline"
+                        >
+                          Remove
+                        </button>
+                      </p>
+                    )}
+                    {attachmentError ? (
+                      <p className="text-sm text-red-600">{attachmentError}</p>
+                    ) : (
+                      <p className="text-xs text-muted-foreground">
+                        Optional. PDF, image, Office or CAD file, up to 4 MB.
+                      </p>
+                    )}
+                  </div>
+
+                  <Button
+                    type="submit"
+                    variant="cta"
+                    size="lg"
+                    className="group w-full disabled:cursor-not-allowed"
+                    disabled={isSubmitting || !validateForm()}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </Button>
+
+                  <p className="flex items-center justify-center gap-2 rounded-lg bg-accent px-3 py-3 text-sm font-medium text-foreground">
+                    <Mail className="h-4 w-4 text-primary" />
+                    We&apos;ll respond to your message within 24 hours
+                  </p>
+                </form>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection delay={120}>
+              <div className="flex h-full flex-col gap-6">
+                <div className="on-dark page-hero no-wave rounded-2xl p-8">
+                  <p className="eyebrow">For an accurate quote</p>
+                  <h2 className="mt-3 text-2xl text-foreground">What to send us</h2>
+                  <ul className="mt-6 space-y-4">
+                    {[
+                      ["Water source", "Borewell, municipal, tanker, river or seawater."],
+                      ["Water analysis", "A lab report with TDS, hardness and turbidity, if you have one."],
+                      ["Daily demand", "Litres per hour or per day, and the hours the plant runs."],
+                      ["End use", "Drinking, bottling, boiler feed, pharma or process water."],
+                    ].map(([title, text]) => (
+                      <li key={title} className="flex gap-3">
+                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-lime" />
+                        <span>
+                          <span className="block font-semibold text-foreground">{title}</span>
+                          <span className="text-sm text-muted-foreground">{text}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="min-h-[320px] flex-1 overflow-hidden rounded-2xl border border-border shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8948818652284!2d72.8611239!3d19.4169473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9811b5a8405%3A0x8d1f9ec7ec39b6c6!2sNISHU%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1762612705634!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: 320 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Nishu Enterprises Location"
+                  />
                 </div>
               </div>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
+            </AnimatedSection>
+          </div>
+        </section>
 
-        <AnimatedSection>
-          <section className="bg-primary/5 py-16 md:py-24 border-t border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
-                Frequently Asked Questions
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {FAQS.map((faq) => (
-                  <div key={faq.question} className="p-6 rounded-lg bg-card border border-border">
-                    <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
-                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
+        <section className="border-t border-border bg-white py-16 md:py-24">
+          <div className="max-w-7xl mx-auto grid gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_2fr] lg:px-8">
+            <div>
+              <p className="eyebrow">FAQ</p>
+              <h2 className="mt-3 text-3xl md:text-4xl text-foreground">Frequently Asked Questions</h2>
             </div>
-          </section>
-        </AnimatedSection>
+            <div className="space-y-3">
+              {FAQS.map((faq, i) => (
+                <details
+                  key={faq.question}
+                  open={i === 0}
+                  className="group rounded-xl border border-border bg-mist transition-all duration-300 hover:border-primary/40 open:border-primary/40 open:bg-white open:shadow-lg open:shadow-ink/5"
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-5 md:p-6 [&::-webkit-details-marker]:hidden">
+                    <span className="text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                      {faq.question}
+                    </span>
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-primary transition-all duration-300 group-open:rotate-45 group-open:bg-primary group-open:text-white">
+                      <Plus className="h-4 w-4" />
+                    </span>
+                  </summary>
+                  <p className="px-5 pb-6 leading-relaxed text-muted-foreground md:px-6">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
     </div>

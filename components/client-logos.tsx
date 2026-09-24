@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { BUSINESS } from "@/lib/site";
 import MANTRA from "@/public/MANTRA.jpg";
 import BISLERI from "@/public/BISLERI.jpg";
 import BAILEY from "@/public/BAILEY.jpg";
@@ -12,8 +12,6 @@ import ROYAL from "@/public/ROYAL.jpg";
 import ACTIVE from "@/public/ACTIVE.jpg";
 import CLOUD9 from "@/public/ClOUD9.jpg";
 import MERU from "@/public/MERU-SPRING.png";
-
-import { Card } from "@/components/ui/card";
 
 const clients = [
   { name: "Mantra", logo: MANTRA },
@@ -29,57 +27,45 @@ const clients = [
   { name: "Campa", logo: "/CAMPA.png" }
 ];
 
-export function ClientLogos() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const scrollWidth = container.scrollWidth;
-    const clientWidth = container.clientWidth;
-    let scrollPos = 0;
-
-    const scroll = () => {
-      scrollPos += 1;
-      if (scrollPos >= scrollWidth / 2) {
-        scrollPos = 0;
-      }
-      container.scrollLeft = scrollPos;
-    };
-
-    const interval = setInterval(scroll, 20);
-    return () => clearInterval(interval);
-  }, []);
+// Infinite marquee of client logos. Pure CSS: pauses on hover, and stops
+// entirely for visitors who prefer reduced motion.
+export function ClientLogos({ compact = false }: { compact?: boolean }) {
+  const row = [...clients, ...clients];
 
   return (
-    <section className="bg-muted py-16 flex justify-center items-center">
-      <div className="container">
-        <h2 className="text-center text-3xl font-bold">Our Trusted Clients</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-          We are proud to serve some of world&apos;s largest companies with our water
-          treatment solutions
-        </p>
-
-        <div className="mt-12 overflow-hidden" ref={containerRef}>
-          <div className="flex animate-scroll gap-8">
-            {[...clients, ...clients, ...clients].map((client, index) => (
-              <Card
-                key={`${index}`} // Use index as the key since there's no unique identifier
-                className="min-w-[200px] h-[200px] shrink-0 flex flex-col items-center text-center overflow-hidden relative"
-              >
-                {/* Fullscreen logo */}
-                <div className="absolute inset-0">
-                  <Image
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    fill
-                    className="object-contain opacity-90"
-                  />
-                </div>
-              </Card>
-            ))}
+    <section className={compact ? "border-y border-border bg-white py-8" : "bg-white py-16 md:py-20"}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {compact ? (
+          <p className="text-center font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+            Plants running for Bisleri, Bailey, Campa, McDonald&apos;s and {BUSINESS.stats.clients.toLocaleString("en-IN")}+ other clients
+          </p>
+        ) : (
+          <div className="text-center">
+            <p className="eyebrow">Clients</p>
+            <h2 className="mt-3 text-3xl md:text-4xl text-foreground">Brands that run on our plants</h2>
           </div>
+        )}
+      </div>
+
+      <div
+        className={`pause-on-hover relative mt-6 overflow-hidden ${compact ? "" : "md:mt-10"} [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]`}
+      >
+        <div className="flex w-max animate-marquee gap-5 motion-reduce:animate-none">
+          {row.map((client, index) => (
+            <div
+              key={index}
+              aria-hidden={index >= clients.length}
+              className="group relative h-24 w-40 shrink-0 overflow-hidden rounded-xl border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg md:h-28 md:w-48"
+            >
+              <Image
+                src={client.logo}
+                alt={index < clients.length ? `${client.name} logo` : ""}
+                fill
+                sizes="192px"
+                className="object-contain p-3 grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

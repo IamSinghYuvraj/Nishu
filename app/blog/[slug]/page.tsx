@@ -61,26 +61,23 @@ export default async function PostPage({
       <Navigation />
       <main className="flex-1">
         <article>
-          <header className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-14 md:py-20">
+          <header className="on-dark page-hero pt-14 pb-36 md:pt-20 md:pb-40">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-              <Link
-                href="/blog"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                ← All resources
+              <Link href="/blog" className="eyebrow transition-opacity hover:opacity-80">
+                All resources
               </Link>
-              <h1 className="text-3xl md:text-5xl font-bold text-balance mt-4 mb-4 text-foreground">
+              <h1 className="text-4xl md:text-5xl text-balance mt-5 mb-5 text-foreground">
                 {post.title}
               </h1>
               <p className="text-lg text-muted-foreground">{post.description}</p>
-              <p className="text-sm text-muted-foreground mt-4">
+              <p className="mt-6 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
                 {post.readingMinutes} min read
               </p>
             </div>
           </header>
 
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="relative aspect-video rounded-lg overflow-hidden mb-10">
+            <div className="relative -mt-24 mb-12 aspect-video overflow-hidden rounded-2xl border-4 border-white shadow-2xl shadow-ink/20 md:-mt-28">
               <Image
                 src={post.image}
                 alt={post.imageAlt}
@@ -92,8 +89,9 @@ export default async function PostPage({
 
             <PostBody blocks={post.body} />
 
-            <div className="mt-12 p-6 rounded-lg border border-border bg-card">
-              <h2 className="text-xl font-semibold text-foreground mb-2">
+            <div className="on-dark page-hero no-wave mt-14 rounded-2xl p-8">
+              <p className="eyebrow">Next step</p>
+              <h2 className="mt-3 text-2xl text-foreground mb-2">
                 Need this specified for your site?
               </h2>
               <p className="text-muted-foreground mb-5">
@@ -101,7 +99,7 @@ export default async function PostPage({
                 plant before quoting.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button asChild>
+                <Button asChild variant="cta">
                   <Link href={post.cta.href}>{post.cta.label}</Link>
                 </Button>
                 <Button asChild variant="outline">
@@ -112,17 +110,24 @@ export default async function PostPage({
 
             {related.length > 0 && (
               <div className="mt-12">
-                <h2 className="text-xl font-semibold text-foreground mb-4">
+                <p className="eyebrow">Keep reading</p>
+                <h2 className="mt-3 text-2xl text-foreground mb-6">
                   Related guides
                 </h2>
-                <ul className="space-y-3">
+                <ul className="grid gap-4 sm:grid-cols-2">
                   {related.map((r) => (
                     <li key={r.slug}>
                       <Link
                         href={`/blog/${r.slug}`}
-                        className="text-primary hover:underline"
+                        className="group card-lift flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
                       >
-                        {r.title}
+                        <span className="relative block aspect-video overflow-hidden bg-muted">
+                          <Image src={r.image} alt={r.imageAlt} fill sizes="(max-width: 640px) 100vw, 360px" className="zoom-img object-cover" />
+                        </span>
+                        <span className="flex flex-1 flex-col p-5">
+                          <span className="font-semibold text-foreground transition-colors group-hover:text-primary">{r.title}</span>
+                          <span className="link-arrow mt-3 text-sm">Read <span className="arrow">→</span></span>
+                        </span>
                       </Link>
                     </li>
                   ))}

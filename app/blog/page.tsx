@@ -31,12 +31,13 @@ export default function BlogIndex() {
       />
       <Navigation />
       <main className="flex-1">
-        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
+        <section className="on-dark page-hero py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="eyebrow">Resources · {posts.length} guides</p>
+            <h1 className="mt-4 max-w-3xl text-4xl md:text-6xl text-balance mb-6 text-foreground">
               Water Treatment Guides &amp; Resources
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl">
               Thirty years of specifying and installing water treatment plants, written
               up for the engineers and buyers who have to make the decision.
             </p>
@@ -44,29 +45,33 @@ export default function BlogIndex() {
         </section>
 
         <section className="py-16 md:py-24">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 sm:grid-cols-2">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                  <article className="h-full flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-transform hover:scale-[1.02] hover:shadow-lg">
+                  <article className="card-lift card-rule h-full flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
                     <div className="relative aspect-video overflow-hidden">
                       <Image
                         src={post.image}
                         alt={post.imageAlt}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="zoom-img object-cover"
                       />
                     </div>
                     <div className="flex flex-col flex-1 p-6">
-                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
-                        {post.readingMinutes} min read
+                      <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-3">
+                        Guide · {post.readingMinutes} min read
                       </p>
-                      <h2 className="text-xl font-semibold text-foreground mb-2 text-balance">
+                      <h2 className="text-xl text-foreground mb-3 text-balance transition-colors group-hover:text-primary">
                         {post.title}
                       </h2>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="flex-1 text-sm text-muted-foreground leading-relaxed">
                         {post.description}
                       </p>
+                      <span className="link-arrow mt-5 text-sm">
+                        Read the guide <span className="arrow">→</span>
+                      </span>
                     </div>
                   </article>
                 </Link>

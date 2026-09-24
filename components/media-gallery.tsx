@@ -43,7 +43,7 @@ export function MediaGallery({ items }: MediaGalleryProps) {
   return (
     <div className="space-y-6">
       {/* Main Media Display */}
-      <div className="relative bg-card rounded-xl border border-border overflow-hidden group">
+      <div className="relative bg-card rounded-2xl border border-border overflow-hidden group shadow-2xl shadow-black/30">
         <div className="relative w-full h-96 bg-muted">
           {currentItem.type === "image" ? (
             <>
@@ -79,13 +79,15 @@ export function MediaGallery({ items }: MediaGalleryProps) {
           <>
             <button
               onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-secondary text-secondary-foreground p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-secondary/90"
+              aria-label="Previous image"
+              className="absolute left-4 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-white/90 text-ink shadow-lg opacity-80 transition-all duration-300 group-hover:opacity-100 hover:scale-110 hover:bg-lime"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-secondary text-secondary-foreground p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-secondary/90"
+              aria-label="Next image"
+              className="absolute right-4 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-white/90 text-ink shadow-lg opacity-80 transition-all duration-300 group-hover:opacity-100 hover:scale-110 hover:bg-lime"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -100,8 +102,10 @@ export function MediaGallery({ items }: MediaGalleryProps) {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`shrink-0 w-20 h-20 rounded-lg border-2 transition-all duration-300 overflow-hidden hover:border-secondary ${
-                idx === currentIndex ? "border-secondary" : "border-border"
+              aria-label={`Show item ${idx + 1}`}
+              aria-current={idx === currentIndex}
+              className={`shrink-0 w-20 h-20 rounded-xl border-2 transition-all duration-300 overflow-hidden hover:-translate-y-0.5 hover:border-lime ${
+                idx === currentIndex ? "border-lime" : "border-border opacity-70 hover:opacity-100"
               }`}
             >
               {item.type === "image" ? (
@@ -113,8 +117,8 @@ export function MediaGallery({ items }: MediaGalleryProps) {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full bg-secondary/20 flex items-center justify-center">
-                  <div className="w-0 h-0 border-l-6 border-r-6 border-t-8 border-l-transparent border-r-transparent border-t-secondary"></div>
+                <div className="w-full h-full bg-muted flex items-center justify-center text-lime">
+                  <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
                 </div>
               )}
             </button>
@@ -124,8 +128,8 @@ export function MediaGallery({ items }: MediaGalleryProps) {
 
       {/* Info */}
       <div className="flex justify-between items-center">
-        <p className="text-muted-foreground text-sm">
-          {currentIndex + 1} of {items.length}
+        <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+          {currentIndex + 1} / {items.length}
         </p>
         
       </div>

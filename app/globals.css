@@ -3,79 +3,89 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  Nishu design tokens.
+  The palette is taken from the logo at full strength: cyan (water), magenta
+  (the "N" mark) and lime (the lower stroke), anchored by a deep water-ink
+  navy for text and dark bands. Body copy never sits below 4.5:1 contrast.
+*/
 :root {
-  /* Modern luxury theme - deep navy background, purple accent, minimal cream */
-  --background: #fdfdff;
-  --foreground: #333333;
+  --ink: #0a2536;
+  --ink-deep: #061a27;
+  --cyan: #0071a7;
+  --cyan-bright: #38b6e8;
+  --magenta: #cc0a6e;
+  --magenta-bright: #ff5ca8;
+  --lime: #c6d92e;
+  --mist: #f3f7f9;
+
+  --background: var(--mist);
+  --foreground: var(--ink);
   --card: #ffffff;
-  --card-foreground: #333333;
+  --card-foreground: var(--ink);
   --popover: #ffffff;
-  --popover-foreground: #0f0f0e;
-  --primary: #e6e6fa;
-  --primary-foreground: #333333;
-  --secondary: #ffc0cb;
-  --secondary-foreground: #333333;
-  --muted: #f5f5f5;
-  --muted-foreground: #6b6b6b;
-  --accent: #fffacd;
-  --accent-foreground: #333333;
-  --destructive: #dc2626;
-  --destructive-foreground: #fecaca;
-  --border: #e2dcd5;
-  --input: #f8f7f5;
-  --ring: #e6e6fa;
-  --chart-1: #1a1a2e;
-  --chart-2: #e6e6fa;
-  --chart-3: #6d5dd5;
-  --chart-4: #8e7fef;
-  --chart-5: #b0a5f5;
-  --radius: 0.625rem;
+  --popover-foreground: var(--ink);
+  --primary: var(--cyan);
+  --primary-foreground: #ffffff;
+  --secondary: var(--magenta);
+  --secondary-foreground: #ffffff;
+  --muted: #e6eff4;
+  --muted-foreground: #4a6070;
+  --accent: #e2f1f8;
+  --accent-foreground: var(--ink);
+  --destructive: #c62828;
+  --destructive-foreground: #ffffff;
+  --border: #d3e1e8;
+  --input: #ffffff;
+  --ring: #0e8fc6;
+  --chart-1: var(--cyan);
+  --chart-2: var(--magenta);
+  --chart-3: var(--lime);
+  --chart-4: #5a7a8c;
+  --chart-5: #9fb7c4;
+  --radius: 0.75rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #0f0f0e;
-  --sidebar-primary: #1a1a2e;
-  --sidebar-primary-foreground: #f8f7f5;
-  --sidebar-accent: #e6e6fa;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e2dcd5;
-  --sidebar-ring: #e6e6fa;
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--cyan);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2f1f8;
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: #d3e1e8;
+  --sidebar-ring: #0e8fc6;
 }
 
+/* Any dark band (page heroes, story, CTA, footer) flips the tokens, so the
+   same utilities (text-foreground, bg-card, border-border) stay legible. */
+.on-dark,
 .dark {
-  --background: #2c3e50;
-  --foreground: #ecf0f1;
-  --card: #34495e;
-  --card-foreground: #ecf0f1;
-  --popover: #13131f;
-  --popover-foreground: #f8f7f5;
-  --primary: #e6e6fa;
-  --primary-foreground: #333333;
-  --secondary: #ffc0cb;
-  --secondary-foreground: #333333;
-  --muted: #3a3a48;
-  --muted-foreground: #b8b8b8;
-  --accent: #fffacd;
-  --accent-foreground: #333333;
-  --destructive: #f87171;
-  --destructive-foreground: #7f1d1d;
-  --border: #2a2a38;
-  --input: #13131f;
-  --ring: #e6e6fa;
-  --chart-1: #e8dcc8;
-  --chart-2: #e6e6fa;
-  --chart-3: #9d8df7;
-  --chart-4: #b5a5f9;
-  --chart-5: #cdbdfb;
-  --sidebar: #13131f;
-  --sidebar-foreground: #f8f7f5;
-  --sidebar-primary: #e8dcc8;
-  --sidebar-primary-foreground: #0a0a0f;
-  --sidebar-accent: #e6e6fa;
-  --sidebar-accent-foreground: #f8f7f5;
-  --sidebar-border: #2a2a38;
-  --sidebar-ring: #e6e6fa;
+  --background: var(--ink);
+  --foreground: #f1f7fa;
+  --card: #0f3147;
+  --card-foreground: #f1f7fa;
+  --popover: #0f3147;
+  --popover-foreground: #f1f7fa;
+  --primary: var(--cyan-bright);
+  --primary-foreground: var(--ink-deep);
+  --muted: #123a52;
+  --muted-foreground: #a9c0ce;
+  --accent: #154360;
+  --accent-foreground: #ffffff;
+  --border: #21506b;
+  --input: #0f3147;
+  color: var(--foreground);
 }
 
 @theme inline {
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --color-lime: var(--lime);
+  --color-magenta: var(--magenta);
+  --color-magenta-bright: var(--magenta-bright);
+  --color-cyan-bright: var(--cyan-bright);
+  --color-mist: var(--mist);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -114,28 +124,294 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Tailwind v4's container has no gutter or centring; give it the same frame
+   as max-w-7xl px-4 sm:px-6 lg:px-8 so every section lines up. */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 80rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01";
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-stretch: 112%;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  h1 {
+    font-weight: 800;
+  }
+  h2 {
+    font-weight: 750;
+  }
+  h3 {
+    font-weight: 650;
+    font-stretch: 105%;
+    letter-spacing: -0.005em;
+  }
+  ::selection {
+    background: var(--lime);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
   }
 }
 
-/* Add carousel animation and fade effects */
+@layer components {
+  /* Small monospace label above a section heading: states what the section is. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 2px;
+    background: var(--secondary);
+  }
+  .on-dark .eyebrow {
+    color: var(--lime);
+  }
+
+  /* Dark header band used at the top of every inner page. */
+  .page-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      radial-gradient(60rem 30rem at 85% -10%, rgb(56 182 232 / 0.22), transparent 60%),
+      radial-gradient(40rem 24rem at -10% 110%, rgb(204 10 110 / 0.16), transparent 60%),
+      var(--ink);
+  }
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 64px;
+    z-index: -1;
+    opacity: 0.18;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='64' viewBox='0 0 120 64'%3E%3Cpath d='M0 20 Q15 10 30 20 T60 20 T90 20 T120 20 M0 36 Q15 26 30 36 T60 36 T90 36 T120 36 M0 52 Q15 42 30 52 T60 52 T90 52 T120 52' fill='none' stroke='%2338b6e8' stroke-width='2.5'/%3E%3C/svg%3E")
+      repeat-x bottom / 120px 64px;
+    animation: wave-drift 18s linear infinite;
+  }
+  .page-hero.no-wave::after {
+    display: none;
+  }
+
+  /* Hover lift used by every clickable or content card. */
+  .card-lift {
+    transition:
+      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--primary) 45%, var(--border));
+    box-shadow:
+      0 18px 40px -18px rgb(10 37 54 / 0.35),
+      0 2px 6px -2px rgb(10 37 54 / 0.08);
+  }
+
+  /* Card with a cyan bar that draws in along the top edge on hover. */
+  .card-rule {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-rule::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .card-rule:hover::before,
+  .card-rule:focus-within::before {
+    transform: scaleX(1);
+  }
+
+  /* Tick-list row (benefits, applications). */
+  .benefit-row {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      background-color 0.3s ease;
+  }
+  .benefit-row:hover {
+    transform: translateX(4px);
+    border-color: color-mix(in oklab, var(--primary) 45%, var(--border));
+    background: color-mix(in oklab, var(--primary) 5%, var(--card));
+  }
+  .benefit-row p {
+    color: var(--foreground);
+  }
+
+  /* Text link whose arrow slides on hover. */
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+  .link-arrow svg,
+  .link-arrow .arrow {
+    transition: transform 0.3s ease;
+  }
+  .link-arrow:hover svg,
+  .link-arrow:hover .arrow,
+  .group:hover .link-arrow svg,
+  .group:hover .link-arrow .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Underline that grows from the left. */
+  .link-underline {
+    background: linear-gradient(currentColor, currentColor) no-repeat left bottom / 0 2px;
+    transition: background-size 0.3s ease;
+    padding-bottom: 2px;
+  }
+  .link-underline:hover,
+  .link-underline[aria-current="page"] {
+    background-size: 100% 2px;
+  }
+
+  /* Pill-shaped chip links (industries, related guides). */
+  .chip-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+  .chip-link:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+    transform: translateY(-2px);
+  }
+
+  /* Image that zooms slightly inside its frame when the parent is hovered. */
+  .zoom-img {
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .group:hover .zoom-img {
+    transform: scale(1.06);
+  }
+
+  /* Large readout numerals. */
+  .readout {
+    font-family: var(--font-display);
+    font-stretch: 125%;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+}
+
 @layer utilities {
-  @keyframes scroll {
-    0% {
+  @keyframes marquee {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(calc(-100% / 2));
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .pause-on-hover:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  @keyframes wave-drift {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: 120px;
     }
   }
 
-  .animate-scroll {
-    animation: scroll 20s linear infinite;
+  @keyframes grow-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes flow {
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
+  .animate-flow {
+    animation: flow 1.2s linear infinite;
+  }
+
+  @keyframes ping-soft {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+  .animate-ping-soft {
+    animation: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   @keyframes fadeInUp {
@@ -148,37 +424,20 @@
       transform: translateY(0);
     }
   }
-
   .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
+}
 
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-
-  .animate-slide-in-left {
-    animation: slideInLeft 0.6s ease-out;
-  }
-
-  @keyframes pulseGlow {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
-
-  .animate-pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

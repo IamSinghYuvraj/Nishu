@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import ContactUs from "@/components/contactus";
 import AnimatedSection from "@/components/animation";
@@ -93,12 +92,13 @@ export function ProductsGrid() {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-1">
-        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">
+        <section className="on-dark page-hero py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="eyebrow">Products · {products.length} systems</p>
+            <h1 className="mt-4 max-w-3xl text-4xl md:text-6xl text-balance mb-6 text-foreground">
               Water Treatment Plants &amp; Equipment
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl">
               RO plants, DM plants, water softeners, desalination plants, mineral water
               projects and bottling machinery, plus the spares and maintenance that keep them
               running. Manufactured in Vasai, Mumbai since 1996.
@@ -111,26 +111,29 @@ export function ProductsGrid() {
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {products.map((product, idx) => (
                 <AnimatedSection key={product.href} delay={idx * 75}>
-                  <Link href={product.href} className="group block h-full">
-                    <Card className="h-full overflow-hidden transition-transform hover:scale-105 border-0 shadow-lg relative bg-white">
-                      <div className="relative aspect-video overflow-hidden">
-                        <Image
-                          src={product.image}
-                          alt={product.title}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-                      <CardHeader>
-                        <CardTitle className="flex items-center justify-between gap-2">
-                          <span>{product.title}</span>
-                          <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">{product.description}</p>
-                      </CardContent>
-                    </Card>
+                  <Link
+                    href={product.href}
+                    className="group card-lift card-rule flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
+                  >
+                    <div className="relative aspect-video overflow-hidden bg-muted">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="zoom-img object-cover"
+                      />
+                      <span className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-ink transition-all duration-500 group-hover:rotate-45 group-hover:bg-lime">
+                        <ArrowUpRight className="h-5 w-5" />
+                      </span>
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h2 className="text-xl text-foreground transition-colors group-hover:text-primary">{product.title}</h2>
+                      <p className="mt-2 flex-1 leading-relaxed text-muted-foreground">{product.description}</p>
+                      <span className="link-arrow mt-5 text-sm">
+                        Specifications &amp; range <ChevronRight className="h-4 w-4" />
+                      </span>
+                    </div>
                   </Link>
                 </AnimatedSection>
               ))}

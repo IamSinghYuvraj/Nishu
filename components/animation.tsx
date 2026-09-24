@@ -1,36 +1,5 @@
 "use client"
-import React, { useState, useRef, useEffect } from "react";
-
-const useIntersectionObserver = (options = {}) => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const [hasIntersected, setHasIntersected] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null); // Explicitly type the ref as HTMLDivElement
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsIntersecting(entry.isIntersecting);
-
-      // If element intersects for the first time, set hasIntersected to true
-      if (entry.isIntersecting && !hasIntersected) {
-        setHasIntersected(true);
-      }
-    }, options);
-
-    const currentRef = ref.current;
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [options, hasIntersected]);
-
-  return [ref, isIntersecting, hasIntersected] as const;
-};
+import React, { useEffect, useRef, useState } from "react";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -38,24 +7,36 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
+// Fades and lifts its children in the first time they scroll into view.
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   children,
   className = "",
   delay = 0,
 }) => {
-  const [ref, isIntersecting, hasIntersected] = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px",
-  });
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
 
-  // Element is visible if it's currently intersecting OR if it has ever intersected before
-  const isVisible = isIntersecting || hasIntersected;
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -60px 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
-      ref={ref} // Now the ref is correctly typed as HTMLDivElement
-      className={`transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+      ref={ref}
+      className={`transition-all duration-700 ease-[cubic-bezier(0.2,0.7,0.2,1)] motion-reduce:transition-none ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >

@@ -8,9 +8,10 @@ import { JsonLd } from "@/components/json-ld";
 import { PostBody } from "@/components/post-body";
 import { TrustBar } from "@/components/trust-bar";
 import { FaqSection } from "@/components/faq-section";
-import { Button } from "@/components/ui/button";
+import { ProductHeroActions } from "@/components/product-hero-actions";
+import { RelatedProducts } from "@/components/related-products";
 import { breadcrumbSchema, productSchema, serviceSchema } from "@/lib/schema";
-import { BUSINESS, PRODUCTS } from "@/lib/site";
+import { PRODUCTS } from "@/lib/site";
 import { PRODUCT_FAQS, PRODUCT_PAGES } from "@/lib/product-content";
 import { INDUSTRIES } from "@/lib/industries";
 
@@ -83,32 +84,20 @@ export default async function DataProductPage({
       <Navigation />
 
       <main className="flex-1">
-        <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-14 md:py-20">
+        <section className="on-dark page-hero py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              href="/products"
-              className="text-sm text-muted-foreground hover:text-cyan-700 transition-colors"
-            >
-              ← All products
+            <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">
+              All products
             </Link>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-4">
               <div>
-                <h1 className="text-3xl md:text-5xl font-bold text-balance mb-5 text-foreground">
+                <h1 className="text-4xl md:text-5xl text-balance mb-5 text-foreground">
                   {product.heading}
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8">{page.intro}</p>
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild>
-                    <Link href="/contact">Request a quotation</Link>
-                  </Button>
-                  <Button asChild variant="outline">
-                    <a href={`https://wa.me/${BUSINESS.phoneE164.replace("+", "")}?text=${encodeURIComponent(`Hi, I have an enquiry about: ${product.name}`)}`}>
-                      WhatsApp us
-                    </a>
-                  </Button>
-                </div>
+                <ProductHeroActions productName={product.name} />
               </div>
-              <div className="relative aspect-video rounded-lg overflow-hidden">
+              <div className="relative aspect-video overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/30">
                 <Image
                   src={product.image}
                   alt={product.imageAlt}
@@ -128,8 +117,8 @@ export default async function DataProductPage({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {page.highlights.map((h) => (
-                <div key={h.title} className="p-6 rounded-lg border border-border bg-card">
-                  <h2 className="text-lg font-semibold text-foreground mb-2">{h.title}</h2>
+                <div key={h.title} className="p-6 rounded-xl border border-border bg-card card-lift card-rule">
+                  <h2 className="text-xl text-foreground mb-2">{h.title}</h2>
                   <p className="text-muted-foreground leading-relaxed">{h.text}</p>
                 </div>
               ))}
@@ -146,11 +135,12 @@ export default async function DataProductPage({
         {industries.length > 0 && (
           <section className="py-14">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Industries this serves</h2>
-              <ul className="flex flex-wrap gap-x-6 gap-y-2">
+              <p className="eyebrow">Where it&apos;s used</p>
+              <h2 className="mt-3 text-2xl text-foreground mb-6">Industries this serves</h2>
+              <ul className="flex flex-wrap gap-3">
                 {industries.map((i) => (
                   <li key={i.slug}>
-                    <Link href={`/industries/${i.slug}`} className="text-cyan-700 hover:underline">
+                    <Link href={`/industries/${i.slug}`} className="chip-link">
                       {i.heading}
                     </Link>
                   </li>
@@ -161,6 +151,7 @@ export default async function DataProductPage({
         )}
 
         <FaqSection faqs={PRODUCT_FAQS[product.slug] ?? []} />
+        <RelatedProducts current={product.slug} />
       </main>
       <ContactUs />
     </div>

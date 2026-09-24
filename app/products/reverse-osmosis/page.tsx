@@ -1,3 +1,5 @@
+import { ProductHeroActions } from "@/components/product-hero-actions"
+import { RelatedProducts } from "@/components/related-products"
 import { Navigation } from "@/components/navigation"
 import Link from "next/link"
 import { Check } from "@/components/icons"
@@ -67,15 +69,16 @@ export default function ROPage() {
       <Navigation />
 
       <main className="flex-1">
-        <AnimatedSection>
-          <section className="bg-linear-to-br from-secondary/5 to-secondary/10 border-b border-border py-16 md:py-24">
+          <section className="on-dark page-hero py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4 text-foreground">{seo.heading}</h1>
+                  <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
+                  <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
                     We manufacture industrial and commercial RO plants in Vasai, Mumbai, reducing Total Dissolved Solids (TDS) in brackish and borewell water for factories, hotels, hospitals, housing societies and bottling plants. Every plant is sized on the customer's own water analysis and daily demand, backed by more than 1200 installations since 1996.
                   </p>
+                  <ProductHeroActions productName={seo.name} />
                   
                 </div>
 
@@ -87,7 +90,6 @@ export default function ROPage() {
             </section>
 
         <TrustBar />
-          </AnimatedSection>
 
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,15 +98,15 @@ export default function ROPage() {
             
             <div className="grid gap-8">
               {products.map((product, idx) => (
-                <div key={idx} className="border border-border rounded-lg p-6 bg-card">
+                <div key={idx} className="card-lift card-rule border border-border rounded-xl p-6 bg-card">
                   <h3 className="text-xl font-semibold mb-4 text-foreground">{product.name}</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-medium text-muted-foreground mb-2">Primary Function</h4>
+                      <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">Primary Function</h4>
                       <p className="text-foreground">{product.description}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-muted-foreground mb-2">Core Benefits & Output</h4>
+                      <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">Core Benefits & Output</h4>
                       <p className="text-foreground">{product.features}</p>
                     </div>
                   </div>
@@ -119,9 +121,9 @@ export default function ROPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Technical Specifications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {specs.map((spec, idx) => (
-                <div key={idx} className="p-6 rounded-lg border border-border bg-card">
-                  <h3 className="font-semibold text-muted-foreground mb-2 text-sm">{spec.label}</h3>
-                  <p className="text-2xl font-bold text-foreground">{spec.value}</p>
+                <div key={idx} className="p-6 rounded-xl border border-border bg-card card-lift card-rule">
+                  <h3 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">{spec.label}</h3>
+                  <p className="font-display text-2xl font-bold text-foreground">{spec.value}</p>
                 </div>
               ))}
             </div>
@@ -133,20 +135,18 @@ export default function ROPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Key Benefits</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((b, idx) => (
-                <div key={idx} className="flex gap-4 p-4 hover:bg-background rounded-lg">
+                <div key={idx} className="benefit-row">
                   <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-muted-foreground">{b}</p>
+                  <p>{b}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        <AnimatedSection>
-          <ContactUs />
-        </AnimatedSection>
         <FaqSection faqs={PRODUCT_FAQS["reverse-osmosis"] ?? []} />
+        <RelatedProducts current="reverse-osmosis" />
       </main>
+      <ContactUs />
     </div>
   )
 }
