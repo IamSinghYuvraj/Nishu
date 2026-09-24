@@ -48,14 +48,14 @@ function Globe({ focus }: { focus: PlantCountry | null }) {
 
     const markers = (focused: PlantCountry | null) => [
       { location: HOME_BASE, size: 0.07, color: MAGENTA, id: "home" },
-      ...PLANT_COUNTRIES.filter((c) => c.id !== "india").map((c) => ({
+      ...PLANT_COUNTRIES.map((c) => ({
         location: c.location,
         size: focused?.id === c.id ? 0.1 : 0.05,
         color: focused && focused.id !== c.id ? CYAN : LIME,
         id: c.id,
       })),
     ]
-    const arcs = PLANT_COUNTRIES.filter((c) => c.id !== "india").map((c) => ({
+    const arcs = PLANT_COUNTRIES.map((c) => ({
       from: HOME_BASE,
       to: c.location,
       id: `home-${c.id}`,
