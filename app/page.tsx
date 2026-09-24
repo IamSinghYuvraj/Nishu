@@ -22,6 +22,7 @@ import ContactUs from "@/components/contactus";
 import AnimatedSectionPage from "@/components/animation";
 import { Navigation } from "@/components/navigation";
 import { TreatmentTrain } from "@/components/treatment-train";
+import { GlobalPresence } from "@/components/global-presence";
 import { CountUp } from "@/components/count-up";
 import { BUSINESS, PRODUCTS } from "@/lib/site";
 
@@ -422,6 +423,9 @@ const Home: React.FC = () => {
 
       {/* Industries - internal links into every industry page */}
       <Industries />
+
+      {/* Countries with our plants, on a spinning globe */}
+      <GlobalPresence />
 
       {/* Featured videos */}
       <section className="py-20 md:py-28">

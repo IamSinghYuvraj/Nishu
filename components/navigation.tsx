@@ -120,16 +120,17 @@ export function Navigation() {
             <a
               href={`tel:${BUSINESS.phoneE164}`}
               onClick={() => trackLead("phone")}
+              aria-label={`Call ${BUSINESS.phone}`}
               className="flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
             >
               <span className="grid h-9 w-9 place-items-center rounded-full bg-accent text-primary">
                 <Phone className="h-4 w-4" />
               </span>
-              {BUSINESS.phone}
+              <span className="hidden whitespace-nowrap xl:inline">{BUSINESS.phone}</span>
             </a>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-secondary/30"
+              className="group inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-secondary/30"
             >
               Get a quote
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

@@ -17,6 +17,7 @@ import ContactUs from "@/components/contactus";
 import { Navigation } from "@/components/navigation";
 import { BUSINESS } from "@/lib/site";
 import { TrustBar } from "@/components/trust-bar";
+import { GlobalPresence } from "@/components/global-presence";
 
 const industries = [
   {
@@ -207,6 +208,8 @@ export default function AboutPage() {
             </AnimatedSection>
           </div>
         </section>
+
+        <GlobalPresence />
 
         <section className="bg-white py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
