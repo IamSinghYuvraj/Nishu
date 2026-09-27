@@ -2,16 +2,19 @@
 
 import WhatsAppIcon from "@/public/whatsapp.png";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { DEFAULT_WHATSAPP_TEXT, whatsappUrl } from "@/lib/site";
 import { trackLead } from "@/lib/track";
 
-export default function WhatsAppChat() {
-  const whatsappNumber = "+919820142424";
-  const message = "Hello! I'm interested in your water treatment solutions.";
+// `messages` maps a page path to its own prefilled WhatsApp text, so the
+// first message already says which system, industry or guide the enquiry
+// came from. Built in the root layout so page copy stays out of this bundle.
+export default function WhatsAppChat({ messages }: { messages: Record<string, string> }) {
+  const pathname = usePathname() ?? "/";
 
   const handleWhatsAppClick = () => {
-    trackLead("whatsapp");
-    const url = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    trackLead("whatsapp", { location: "floating-button" });
+    window.open(whatsappUrl(messages[pathname] ?? DEFAULT_WHATSAPP_TEXT), "_blank");
   };
 
   return (

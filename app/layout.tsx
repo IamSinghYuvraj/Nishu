@@ -59,6 +59,14 @@ export const metadata: Metadata = {
     images: ["/Ro-img6.jpg"],
   },
   robots: { index: true, follow: true },
+  // Ownership tags for Google Search Console and Bing Webmaster Tools (Bing's
+  // index also feeds Copilot). Set the env vars; unset ones render nothing.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
+  },
   icons: {
     icon: Icon.src,
     apple: Icon.src
@@ -66,6 +74,18 @@ export const metadata: Metadata = {
 }
 
 import WhatsAppChat from "@/components/whatsapp-chat";
+import { PRODUCTS, productWhatsappText } from "@/lib/site"
+import { INDUSTRIES } from "@/lib/industries"
+import { POSTS } from "@/lib/posts"
+
+// Page-specific WhatsApp openers, keyed by path. Enquiries then arrive already
+// saying what the buyer was reading, and the text shows which page produced them.
+const WHATSAPP_MESSAGES: Record<string, string> = Object.fromEntries([
+  ...PRODUCTS.map((p) => [`/products/${p.slug}`, productWhatsappText(p.name)]),
+  ...INDUSTRIES.map((i) => [`/industries/${i.slug}`, `Hi, I need water treatment for: ${i.name}\nCapacity (LPH): \nSite location: `]),
+  ...POSTS.map((p) => [`/blog/${p.slug}`, `Hi, I was reading your guide "${p.title}" and have a question: `]),
+  ["/contact", "Hi, I'd like a quotation. System: \nCapacity (LPH): \nSite location: "],
+])
 
 export default function RootLayout({
   children,
@@ -79,7 +99,7 @@ export default function RootLayout({
         <JsonLd data={websiteSchema} />
         <Analytics />
         {children}
-        <WhatsAppChat />
+        <WhatsAppChat messages={WHATSAPP_MESSAGES} />
         <Footer />
       </body>
     </html>

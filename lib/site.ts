@@ -47,6 +47,20 @@ export const BUSINESS = {
   },
 };
 
+/** Click-to-chat link to the business WhatsApp, optionally with a prefilled message. */
+export function whatsappUrl(text?: string) {
+  const base = `https://wa.me/${BUSINESS.phoneE164.replace("+", "")}`;
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+}
+
+/** Default WhatsApp opener when a page has no message of its own. */
+export const DEFAULT_WHATSAPP_TEXT = "Hello! I'm interested in your water treatment solutions.";
+
+/** WhatsApp opener for a product page: names the system and asks for the two facts we size on. */
+export function productWhatsappText(productName: string) {
+  return `Hi, I have a requirement for: ${productName}\nCapacity (LPH): \nSite location: `;
+}
+
 /** "Since 1996 · Nigeria, Ghana, Tanzania, Nepal and many more" */
 export const TRUST_LINE = `Since ${BUSINESS.foundingYear} · ${COUNTRIES_LINE}`;
 

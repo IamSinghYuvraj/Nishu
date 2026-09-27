@@ -4,14 +4,12 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import AnimatedSection from "./animation";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, DEFAULT_WHATSAPP_TEXT, whatsappUrl } from "@/lib/site";
 import { trackLead } from "@/lib/track";
 
 // Closing call to action shared by every page.
 const ContactUs: React.FC = () => {
-  const whatsapp = `https://wa.me/${BUSINESS.phoneE164.replace("+", "")}?text=${encodeURIComponent(
-    "Hello! I'm interested in your water treatment solutions.",
-  )}`;
+  const whatsapp = whatsappUrl(DEFAULT_WHATSAPP_TEXT);
 
   return (
     <section className="py-16 md:py-24">
@@ -49,7 +47,7 @@ const ContactUs: React.FC = () => {
                 </a>
                 <a
                   href={whatsapp}
-                  onClick={() => trackLead("whatsapp")}
+                  onClick={() => trackLead("whatsapp", { location: "cta-band" })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between rounded-xl border border-border px-6 py-4 font-semibold text-foreground transition-all duration-300 hover:-translate-y-1 hover:border-[#25d366] hover:bg-card"

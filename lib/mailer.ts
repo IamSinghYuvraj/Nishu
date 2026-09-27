@@ -22,6 +22,8 @@ export interface ContactMailInput {
   /** Where the plant will be installed. */
   city?: string;
   subject?: string;
+  /** Answer to "How did you find us?". */
+  source?: string;
   message: string;
   /** Site drawing or specification, capped client-side at 4 MB. */
   attachment?: File;
@@ -54,6 +56,7 @@ export async function sendContactMail(input: ContactMailInput) {
     `Capacity: ${input.capacity || "-"}`,
     `Site location: ${input.city || "-"}`,
     `Subject: ${input.subject || "-"}`,
+    `Found us via: ${input.source || "-"}`,
     "",
     "Message:",
     input.message,

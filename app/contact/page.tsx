@@ -36,6 +36,8 @@ interface FormData {
   /** Where the plant will be installed. */
   city: string;
   subject: string;
+  /** "How did you find us?" - ties each enquiry back to a channel. */
+  source: string;
   message: string;
 }
 
@@ -47,6 +49,7 @@ const OPTIONAL_FIELDS: (keyof FormData)[] = [
   "capacity",
   "city",
   "subject",
+  "source",
 ];
 
 const EMPTY_FORM: FormData = {
@@ -58,6 +61,7 @@ const EMPTY_FORM: FormData = {
   capacity: "",
   city: "",
   subject: "",
+  source: "",
   message: "",
 };
 
@@ -70,6 +74,7 @@ const UNTOUCHED: TouchedState = {
   capacity: false,
   city: false,
   subject: false,
+  source: false,
   message: false,
 };
 
@@ -82,11 +87,24 @@ const ALL_TOUCHED: TouchedState = {
   capacity: true,
   city: true,
   subject: true,
+  source: true,
   message: true,
 };
 
 // Vercel caps a serverless request body at ~4.5 MB, so keep the attachment
 // comfortably under it. Matches serverActions.bodySizeLimit in next.config.mjs.
+// Options for "How did you find us?". Kept short so the answer is quick to
+// give and easy to count by channel.
+const LEAD_SOURCES = [
+  "Google search",
+  "Google Maps / Business Profile",
+  "IndiaMART or another directory",
+  "LinkedIn, Instagram or YouTube",
+  "Recommended by someone",
+  "Existing client",
+  "Other",
+];
+
 const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024;
 const ACCEPTED_ATTACHMENTS =
   ".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.dwg,.dxf";
@@ -214,6 +232,7 @@ export default function ContactPage() {
         capacity: formData.capacity.trim(),
         city: formData.city.trim(),
         subject: formData.subject.trim(),
+        source: formData.source.trim(),
         message: formData.message.trim(),
         attachment: attachment ?? undefined,
       });
@@ -237,7 +256,10 @@ export default function ContactPage() {
       }
 
       // Lead conversion: only once we know a channel actually accepted it.
-      trackLead("form", { product: formData.product.trim() || undefined });
+      trackLead("form", {
+        product: formData.product.trim() || undefined,
+        found_via: formData.source.trim() || undefined,
+      });
 
       showNotification(
         "success",
@@ -537,9 +559,30 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  <div className="space-y-2 group">
+                    <Label htmlFor="source" className="text-sm font-semibold group-focus-within:text-primary transition-colors">
+                      How did you find us?
+                    </Label>
+                    <select
+                      id="source"
+                      value={formData.source}
+                      onChange={handleInputChange}
+                      onBlur={() => handleBlur("source")}
+                      className={`h-10 ${getInputClassName("source")}`}
+                      disabled={isSubmitting}
+                    >
+                      <option value="">Select one (optional)…</option>
+                      {LEAD_SOURCES.map((s) => (
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="attachment" className="text-sm font-semibold">
-                      Site drawing or specification
+                      Water analysis, site drawing or specification
                     </Label>
                     <input
                       ref={fileInputRef}

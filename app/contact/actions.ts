@@ -22,6 +22,7 @@ export async function sendContactMessage(input: ContactMailInput) {
         `Capacity: ${input.capacity || '-'}`,
         `Site location: ${input.city || '-'}`,
         `Subject: ${input.subject || '-'}`,
+        `Found us via: ${input.source || '-'}`,
         `Attachment: ${input.attachment ? input.attachment.name + ' (sent by email)' : '-'}`,
         `Message: ${input.message}`,
       ].join('\n');
