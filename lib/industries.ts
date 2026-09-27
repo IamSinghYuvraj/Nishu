@@ -715,18 +715,18 @@ const CORE_INDUSTRIES: Industry[] = [
 // Guides linked from each industry page. Kept here rather than on each entry
 // so the mapping is easy to review as posts are added.
 const RELATED_POSTS: Record<string, string[]> = {
-  pharmaceutical: ["ro-vs-dm-plant", "ro-plant-capacity-for-your-factory"],
-  "food-beverage": ["mineral-water-plant-setup-cost-india", "ro-plant-capacity-for-your-factory"],
+  pharmaceutical: ["ro-vs-dm-plant", "ro-plant-capacity-for-your-factory", "industrial-ro-plant-amc-guide"],
+  "food-beverage": ["mineral-water-plant-setup-cost-india", "ro-plant-capacity-for-your-factory", "industrial-ro-plant-amc-guide"],
   "power-generation": ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant"],
-  manufacturing: ["ro-plant-capacity-for-your-factory", "hard-water-industrial-boilers-softener"],
-  hospitality: ["hard-water-industrial-boilers-softener", "mineral-water-plant-setup-cost-india"],
-  hospitals: ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant"],
+  manufacturing: ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations", "hard-water-industrial-boilers-softener", "industrial-ro-plant-amc-guide"],
+  hospitality: ["hard-water-industrial-boilers-softener", "water-softener-for-housing-society", "industrial-ro-plant-amc-guide"],
+  hospitals: ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant", "industrial-ro-plant-amc-guide"],
   chemical: ["ro-vs-dm-plant", "hard-water-industrial-boilers-softener"],
   textile: ["hard-water-industrial-boilers-softener", "ro-plant-capacity-for-your-factory"],
   laboratories: ["ro-vs-dm-plant"],
-  "schools-offices": ["ro-plant-capacity-for-your-factory"],
-  "residential-societies": ["ro-plant-capacity-for-your-factory"],
-  construction: ["ro-plant-capacity-for-your-factory"],
+  "schools-offices": ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
+  "residential-societies": ["water-softener-for-housing-society", "compare-ro-plant-quotations"],
+  construction: ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
 };
 
 // Display order. The first six are featured on the homepage.
