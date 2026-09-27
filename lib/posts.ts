@@ -151,7 +151,7 @@ export const POSTS: Post[] = [
     category: "buying-and-cost",
     cta: { label: "Compare RO and DM plants", href: "/products/demineralized" },
     products: ["demineralized", "reverse-osmosis"],
-    related: ["ro-plant-capacity-for-your-factory", "hard-water-industrial-boilers-softener"],
+    related: ["boiler-feed-water-softener-ro-dm", "dm-plant-regeneration-process"],
     body: [
       {
         kind: "p",
@@ -237,7 +237,7 @@ export const POSTS: Post[] = [
       href: "/products/mineral-water-project",
     },
     products: ["mineral-water-project", "rfc", "dosing-ozonation-uv"],
-    related: ["ro-plant-capacity-for-your-factory"],
+    related: ["mineral-water-plant-machinery-list", "ro-plant-capacity-for-your-factory"],
     body: [
       {
         kind: "p",
@@ -331,7 +331,7 @@ export const POSTS: Post[] = [
       href: "/products/water-softening",
     },
     products: ["water-softening", "demineralized"],
-    related: ["ro-vs-dm-plant"],
+    related: ["boiler-feed-water-softener-ro-dm", "ro-vs-dm-plant"],
     body: [
       {
         kind: "p",
@@ -496,7 +496,7 @@ export const POSTS: Post[] = [
     category: "operations",
     cta: { label: "See our AMC and plant maintenance service", href: "/products/amc-maintenance" },
     products: ["amc-maintenance", "reverse-osmosis", "spares-consumables"],
-    related: ["compare-ro-plant-quotations", "ro-plant-capacity-for-your-factory"],
+    related: ["ro-plant-output-dropping", "compare-ro-plant-quotations"],
     body: [
       {
         kind: "p",
@@ -702,6 +702,521 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "A committee that asks these questions gets comparable quotes and a softener that is neither undersized and constantly regenerating, nor oversized and expensive to buy.",
+      },
+    ],
+  },
+  {
+    slug: "frp-vs-ss-ro-plant",
+    title: "FRP vs SS RO Plant: Which Build Is Right for Your Water?",
+    seoTitle: "FRP vs SS RO Plant: Which One Should You Buy?",
+    description:
+      "FRP or stainless steel for an RO plant's vessels, membrane housings, frame and piping: where each material makes sense, where it fails, and how to specify it.",
+    targetQuery: "frp vs ss ro plant",
+    published: "2026-09-27",
+    readingMinutes: 6,
+    image: "/FRP-RO-Plant.jpg",
+    imageAlt: "RO plant with FRP filter vessels, stainless steel membrane housings and control panel",
+    category: "buying-and-cost",
+    cta: { label: "See our RO plant range", href: "/products/reverse-osmosis" },
+    products: ["reverse-osmosis", "membrane-housing", "fabricated-vessels"],
+    related: ["compare-ro-plant-quotations", "ro-plant-capacity-for-your-factory"],
+    body: [
+      {
+        kind: "p",
+        text: "\"FRP plant\" and \"SS plant\" sound like two different machines. In practice they describe the materials of four separate parts: the pre-treatment vessels, the membrane housings, the frame and the piping. A good RO plant often mixes materials, choosing each one for the job it does. Knowing which part is which lets you compare quotes properly and avoid paying for steel where it adds nothing.",
+      },
+      { kind: "h2", text: "The four parts that can be FRP or steel" },
+      {
+        kind: "table",
+        head: ["Part", "Options", "What decides it"],
+        rows: [
+          ["Pre-treatment vessels (sand, carbon, softener)", "FRP, MS with rubber lining or epoxy coating, stainless steel", "Size, hygiene requirement and budget"],
+          ["Membrane housings", "FRP or stainless steel (SS304 or SS316)", "Operating pressure, chloride content of the water, hygiene and appearance"],
+          ["Skid frame", "MS with epoxy or powder coating, or stainless steel", "Plant room environment and hygiene requirement"],
+          ["Piping", "UPVC or CPVC on the low-pressure side; stainless steel on the high-pressure side", "Pressure, above all"],
+        ],
+      },
+      { kind: "h2", text: "FRP: where it is the right choice" },
+      {
+        kind: "p",
+        text: "FRP (fibre-reinforced plastic) does not corrode. That makes it the natural choice for water that attacks steel: high-chloride borewell water, brackish water and seawater. FRP pressure vessels are made for specific pressure ratings, and seawater RO plants almost always use FRP membrane housings rated for high pressure, because ordinary stainless steel pits in seawater.",
+      },
+      {
+        kind: "ul",
+        items: [
+          "Corrosion-free on salty and high-chloride water.",
+          "Lighter than steel, and usually cheaper for the same size.",
+          "Standard for pre-treatment filters and softener vessels in small and medium plants.",
+          "Must be used within its rated pressure and protected from direct sunlight and impact.",
+        ],
+      },
+      { kind: "h2", text: "Stainless steel: where it earns its cost" },
+      {
+        kind: "p",
+        text: "Stainless steel costs more, but it is the expected material wherever hygiene, cleanability and appearance matter: packaged drinking water, food and beverage, dairy and pharmaceutical plants. It also tolerates knocks and heat better than FRP. SS316 resists chlorides better than SS304, but neither is suitable for membrane housings on seawater.",
+      },
+      {
+        kind: "ul",
+        items: [
+          "Easy to clean and sanitise, and inspectors expect it in food and bottling plants.",
+          "Robust against impact, vibration and hot cleaning solutions.",
+          "SS304 for most fresh water duties; SS316 where chlorides are higher.",
+          "Not for membrane housings on seawater, where FRP or special alloys are used.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Whatever the vessels are made of, the high-pressure piping between the pump and the membranes should be stainless steel. UPVC on the high-pressure side of an RO plant is a red flag.",
+      },
+      { kind: "h2", text: "Choosing by application" },
+      {
+        kind: "table",
+        head: ["Application", "Usual build"],
+        rows: [
+          ["Packaged drinking water and bottling", "SS membrane housings, SS frame, SS storage; FRP or SS pre-treatment vessels"],
+          ["Food, beverage and dairy process water", "Stainless steel for everything in contact with treated water"],
+          ["Pharmaceutical purified water", "SS316L for treated water contact parts, with sanitary fittings"],
+          ["Boiler feed and industrial process water", "FRP pre-treatment vessels and membrane housings on a coated MS or SS frame"],
+          ["Brackish or high-chloride borewell water", "FRP housings and vessels; SS316 or better on high-pressure piping"],
+          ["Seawater desalination", "High-pressure FRP membrane housings; high-grade alloy on the high-pressure side"],
+          ["Humid coastal or chemical plant rooms", "FRP or stainless steel; avoid painted MS frames that will rust"],
+        ],
+      },
+      { kind: "h2", text: "What to write into the specification" },
+      {
+        kind: "ol",
+        items: [
+          "Material of each part: pre-treatment vessels, membrane housings, frame, low-pressure and high-pressure piping.",
+          "Stainless grade (SS304 or SS316) wherever steel is quoted.",
+          "Pressure rating of the membrane housings and of the high-pressure piping.",
+          "Coating system for any MS parts, and whether vessels are rubber-lined.",
+          "The make of the FRP vessels and housings.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "With those five lines in every quotation, an \"FRP plant\" and an \"SS plant\" can be compared part by part. Often the best answer is FRP where the water is aggressive and steel where hygiene or pressure demands it.",
+      },
+    ],
+  },
+  {
+    slug: "boiler-feed-water-softener-ro-dm",
+    title: "Boiler Feed Water: Softener, RO or DM Plant?",
+    seoTitle: "Boiler Feed Water Treatment: Softener, RO or DM?",
+    description:
+      "Which boiler feed water treatment you need, by boiler pressure and feed water quality: when a softener is enough, when RO pays for itself and when DM is required.",
+    targetQuery: "softener vs dm plant for boiler",
+    published: "2026-09-27",
+    readingMinutes: 7,
+    image: "/DM image 3.jpeg",
+    imageAlt: "Water treatment system with pressure filters, ion-exchange columns and control panel",
+    category: "industry-guides",
+    cta: { label: "Water treatment for boilers and power plants", href: "/industries/power-generation" },
+    products: ["water-softening", "demineralized", "reverse-osmosis"],
+    related: ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant"],
+    body: [
+      {
+        kind: "p",
+        text: "Boiler feed water treatment has two jobs: stop scale forming on the heating surfaces, and keep dissolved solids low enough that the boiler does not need constant blowdown. How far you need to go depends mainly on the boiler's operating pressure and on how much dissolved solids your raw water carries.",
+      },
+      { kind: "h2", text: "The three options in one line each" },
+      {
+        kind: "ul",
+        items: [
+          "Softener: removes hardness (calcium and magnesium), which is what forms scale. Leaves total dissolved solids (TDS) almost unchanged.",
+          "RO plant: removes most dissolved solids, hardness included. Cuts blowdown sharply. Usually needs a softener or antiscalant in front of it.",
+          "DM plant: removes practically all dissolved ions, including silica. Produces water of very low conductivity for high-pressure boilers.",
+        ],
+      },
+      { kind: "h2", text: "Choosing by boiler pressure" },
+      {
+        kind: "p",
+        text: "The bands below are a rule of thumb for Indian industrial boilers. The actual limits come from your boiler maker's feed water specification and the relevant Indian Standard, so check them before you buy.",
+      },
+      {
+        kind: "table",
+        head: ["Boiler pressure", "Usual feed water treatment", "Why"],
+        rows: [
+          ["Low, up to about 20 kg/cm²", "Softener, with deaeration and chemical dosing", "Hardness is the main risk. Add RO if raw water TDS is high, to cut blowdown."],
+          ["Medium, about 20 to 40 kg/cm²", "Softener plus RO, or a DM plant", "Dissolved solids and silica start to matter."],
+          ["High, above about 40 kg/cm²", "DM plant with mixed bed, or RO followed by mixed bed", "Very low conductivity and silica are needed to protect tubes and turbines."],
+        ],
+      },
+      { kind: "h2", text: "Why TDS decides the blowdown" },
+      {
+        kind: "p",
+        text: "As a boiler makes steam, dissolved solids stay behind and concentrate. To keep them below the boiler's limit, some water is blown down to drain, and with it the heat and treatment chemicals it contains. The blowdown needed is roughly the feed water TDS divided by the boiler water TDS limit.",
+      },
+      {
+        kind: "table",
+        head: ["Example (boiler water limit 3,500 ppm, assumed)", "Feed TDS", "Blowdown as share of feed"],
+        rows: [
+          ["Softened borewell water", "500 ppm", "About 14%"],
+          ["RO-treated water", "50 ppm", "About 1.4%"],
+        ],
+      },
+      {
+        kind: "p",
+        text: "Every percent of blowdown is hot, treated water sent to drain. On a boiler running round the clock, cutting blowdown from 14% to under 2% saves fuel, water and chemicals every day. That saving is often what pays for an RO plant ahead of a low-pressure boiler.",
+      },
+      {
+        kind: "callout",
+        text: "A softener alone stops scale but does nothing for blowdown. If your raw water TDS is high, ask for the blowdown with and without RO before deciding.",
+      },
+      { kind: "h2", text: "Do not forget corrosion" },
+      {
+        kind: "p",
+        text: "Scale is only half the problem. Dissolved oxygen and carbon dioxide in feed water corrode boiler tubes and condensate lines. Deaeration and correctly dosed oxygen scavenger and pH control chemicals are needed whatever treatment plant is chosen. Returning as much clean condensate as possible also reduces make-up water and treatment load.",
+      },
+      { kind: "h2", text: "What to send for a proposal" },
+      {
+        kind: "ol",
+        items: [
+          "Boiler make, type, capacity in tonnes per hour of steam and operating pressure.",
+          "The boiler maker's feed water and boiler water specification.",
+          "A raw water analysis including TDS, hardness, alkalinity and silica.",
+          "How much condensate returns, and the make-up water needed per hour.",
+          "Current problems: scale, tube failures, high blowdown or high fuel use.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "With those numbers, the choice between softener, RO and DM becomes a calculation rather than a guess, and the running-cost difference between them can be shown before you buy.",
+      },
+    ],
+  },
+  {
+    slug: "ro-plant-output-dropping",
+    title: "RO Plant Output Dropping? Diagnose It From Your Own Readings",
+    seoTitle: "RO Plant Output Reduced? Causes and How to Fix It",
+    description:
+      "Why an industrial RO plant's output falls and how to find the cause from your own log sheet: temperature, pressure, pre-treatment, fouling, scaling or membrane damage.",
+    targetQuery: "ro plant output reduced",
+    published: "2026-09-27",
+    readingMinutes: 7,
+    image: "/ro-img8.jpeg",
+    imageAlt: "Stainless steel industrial RO plant with membrane housings and control panel",
+    category: "operations",
+    cta: { label: "Book a service visit or AMC", href: "/products/amc-maintenance" },
+    products: ["amc-maintenance", "reverse-osmosis", "spares-consumables"],
+    related: ["industrial-ro-plant-amc-guide", "ro-plant-capacity-for-your-factory"],
+    body: [
+      {
+        kind: "p",
+        text: "Your RO gave 1,000 litres an hour last year; now it gives 700. Before replacing membranes or calling for a new plant, look at your own readings. The pattern of pressures, flows and TDS usually points straight at the cause, and many of the causes are cheap to fix.",
+      },
+      { kind: "h2", text: "First, rule out the water temperature" },
+      {
+        kind: "p",
+        text: "RO membranes produce less water when the feed is colder: roughly 3% less for every degree Celsius drop. A plant rated at 25 °C can lose a noticeable share of its output in a cool winter morning without anything being wrong. Compare readings taken at similar temperatures, or ask for normalised figures that correct for temperature and pressure.",
+      },
+      { kind: "h2", text: "Read the pattern" },
+      {
+        kind: "table",
+        head: ["What you see", "Likely cause", "What to check"],
+        rows: [
+          ["Low output, high pressure drop across the first stage", "Particles, silt or biological fouling on the lead membranes", "Cartridge filter condition, sand filter backwash, SDI of the feed"],
+          ["Low output, high pressure drop across the last stage", "Scaling on the tail membranes", "Antiscalant dosing, recovery setting, feed hardness"],
+          ["Low output, pressures normal", "Cold feed water, low pump pressure or organic fouling", "Feed temperature, pump discharge pressure, pump condition"],
+          ["Low output and rising permeate TDS", "Scaling or heavy fouling", "Last-stage pressure drop, antiscalant, cleaning history"],
+          ["High output and rising permeate TDS", "Membrane damage, often from chlorine, or a leaking O-ring or seal", "Chlorine in the feed, SMBS dosing, stage-by-stage conductivity"],
+          ["Cartridge filters choking within days", "Pre-treatment is not coping", "Sand and carbon filter backwash, feed turbidity, source changes"],
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Rising permeate TDS with rising output almost always means the membranes have been damaged, most often by chlorine. Cleaning will not fix it, so check the dechlorination before replacing membranes, or the new ones will fail the same way.",
+      },
+      { kind: "h2", text: "Check the simple things first" },
+      {
+        kind: "ol",
+        items: [
+          "Feed water temperature today compared with when the plant was commissioned.",
+          "High-pressure pump discharge pressure against its design value.",
+          "Pressure drop across the cartridge filter; change cartridges if it has risen.",
+          "Antiscalant and SMBS dosing pumps actually running, with chemical in the tank.",
+          "Sand and carbon filters backwashed on schedule.",
+          "Any change in the water source: new borewell, tanker supply or season.",
+        ],
+      },
+      { kind: "h2", text: "When the membranes need cleaning" },
+      {
+        kind: "p",
+        text: "Membrane makers commonly advise cleaning when, compared with the plant's own baseline, normalised permeate flow has fallen by about 10%, salt passage has risen by 5 to 10%, or the pressure drop across a stage has risen by about 15%. Scale is removed with an acid clean, organic and biological fouling with an alkaline clean. The cleaning chemicals, concentrations and temperatures should follow the membrane maker's guide.",
+      },
+      {
+        kind: "p",
+        text: "Clean early. Fouling left too long may not come off, and the membranes then have to be replaced well before their time.",
+      },
+      { kind: "h2", text: "Keep a log sheet" },
+      {
+        kind: "p",
+        text: "None of this works without readings. Record every shift: feed, permeate and reject flow; pressures before and after the cartridge filter, at the pump and across each stage; feed and permeate TDS; feed temperature; and any alarms. Those numbers are what turn \"the plant is giving less water\" into a diagnosis.",
+      },
+      {
+        kind: "p",
+        text: "If you already keep a log sheet, send us a photo of the last few weeks with your enquiry. The trend usually shows whether the plant needs cleaning, a pre-treatment repair or new membranes.",
+      },
+    ],
+  },
+  {
+    slug: "mineral-water-plant-machinery-list",
+    title: "Mineral Water Plant Machinery List: Every Machine, Stage by Stage",
+    seoTitle: "Mineral Water Plant Machinery List (Stage by Stage)",
+    description:
+      "The complete machinery list for a packaged drinking water plant, from raw water tank to packed cartons, with what each machine does and what decides its size.",
+    targetQuery: "mineral water plant machinery list",
+    published: "2026-09-27",
+    readingMinutes: 7,
+    image: "/Mineral-Drinking-Water-Plant(1).webp",
+    imageAlt: "Mineral drinking water plant with stainless steel vessels and control panel",
+    category: "buying-and-cost",
+    cta: { label: "Explore turnkey mineral water projects", href: "/products/mineral-water-project" },
+    products: ["mineral-water-project", "rfc", "dosing-ozonation-uv"],
+    related: ["mineral-water-plant-setup-cost-india", "compare-ro-plant-quotations"],
+    body: [
+      {
+        kind: "p",
+        text: "A packaged drinking water plant is a chain of machines, and a quotation that leaves one out is not cheaper, just incomplete. This list follows the water from the raw water tank to the packed carton, so you can check every quotation against it.",
+      },
+      { kind: "h2", text: "Stage 1: raw water treatment" },
+      {
+        kind: "table",
+        head: ["Machine", "What it does", "What decides its size"],
+        rows: [
+          ["Raw water storage tank and pump", "Holds and feeds source water to the plant", "Daily output and how reliable the source is"],
+          ["Chlorine dosing system", "Disinfects raw water and controls bacterial growth ahead of the filters", "Flow rate"],
+          ["Pressure sand filter", "Removes suspended solids and turbidity", "Flow rate and feed turbidity"],
+          ["Activated carbon filter", "Removes chlorine, odour and organics that would damage RO membranes", "Flow rate"],
+          ["Water softener (if needed)", "Removes hardness on very hard water", "Feed hardness and flow"],
+          ["Antiscalant dosing", "Prevents scale on the RO membranes", "Flow rate"],
+          ["Micron cartridge filter", "Final protection for the RO membranes", "Flow rate"],
+        ],
+      },
+      { kind: "h2", text: "Stage 2: purification" },
+      {
+        kind: "table",
+        head: ["Machine", "What it does", "What decides its size"],
+        rows: [
+          ["RO plant", "Reduces dissolved solids to the level needed", "Output in litres per hour and feed TDS"],
+          ["Mineral dosing system", "Adds back a controlled mineral profile for taste and to meet product standards", "Output flow"],
+          ["UV steriliser", "Disinfects treated water", "Output flow"],
+          ["Ozone generator with contact tank", "Disinfects water and leaves a small residual that protects it in the bottle", "Output flow and the dose needed"],
+          ["SS treated water storage tanks", "Buffer between treatment and filling", "Filling speed and shift pattern"],
+          ["Polishing micron filters", "Final filtration before the filler", "Filling flow"],
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Ozone dose needs care: enough to leave a small residual at filling, no more. On water containing bromide, too much ozone forms bromate, which has a regulatory limit.",
+      },
+      { kind: "h2", text: "Stage 3: bottling and packing" },
+      {
+        kind: "table",
+        head: ["Machine", "What it does", "What decides its size"],
+        rows: [
+          ["Bottle blowing machine (for PET bottles)", "Blows bottles from PET preforms on site", "Bottles per hour; some plants buy ready bottles instead"],
+          ["Rinsing, filling and capping (RFC) machine", "Rinses, fills and caps bottles in one machine", "Bottles per minute and bottle sizes"],
+          ["20-litre jar washing, filling and capping machine", "Handles returnable jars", "Jars per hour"],
+          ["Inspection station", "Checks fill level and foreign particles", "Line speed"],
+          ["Labelling or shrink-sleeve machine", "Applies the product label", "Line speed and label type"],
+          ["Batch coding printer", "Prints batch number and dates", "Line speed"],
+          ["Shrink wrapping or carton packing", "Packs bottles for dispatch", "Line speed and pack format"],
+        ],
+      },
+      { kind: "h2", text: "Supporting equipment people forget" },
+      {
+        kind: "ul",
+        items: [
+          "Air compressor for the bottling machines.",
+          "In-house laboratory equipment for routine testing.",
+          "Power backup sized for the whole line, not just lighting.",
+          "Chiller if the blowing machine needs one.",
+          "Conveyors between machines.",
+          "Cleaning and sanitising system for tanks and pipework.",
+        ],
+      },
+      { kind: "h2", text: "Match the machines to each other" },
+      {
+        kind: "p",
+        text: "The most common mistake is a mismatched line: an RO plant that cannot keep up with the filler, or an ozone generator sized for a smaller plant. Size the chain from your planned daily output and shift pattern. The RO output, storage, ozonation and filling speed all have to agree.",
+      },
+      {
+        kind: "p",
+        text: "We build the water treatment plant, ozonation and RFC machines as one scope, so the stages are sized together. Tell us your target output, pack sizes and source water, and we will set out which machines your plant needs.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-read-a-water-test-report",
+    title: "How to Read a Water Test Report Before You Buy a Treatment Plant",
+    seoTitle: "How to Read a Water Test Report (for Plant Buyers)",
+    description:
+      "What each line of a water test report means for choosing a treatment plant: TDS, hardness, iron, silica, chloride, pH and bacteria, with Indian drinking water limits.",
+    targetQuery: "how to read water test report",
+    published: "2026-09-27",
+    readingMinutes: 7,
+    image: "/Commercial-Water-Treatment-Plant.jpg",
+    imageAlt: "Commercial water treatment plant with stainless steel tanks and RO skid",
+    category: "buying-and-cost",
+    cta: { label: "Send us your water report for a recommendation", href: "/contact" },
+    products: ["reverse-osmosis", "water-softening", "demineralized"],
+    related: ["compare-ro-plant-quotations", "ro-vs-dm-plant"],
+    body: [
+      {
+        kind: "p",
+        text: "A water test report decides which treatment plant you need. The same report that looks like a page of chemistry answers three practical questions: is there too much dissolved salt, is the water hard, and is there anything that will foul or damage the equipment? This guide explains each common line.",
+      },
+      { kind: "h2", text: "Units first" },
+      {
+        kind: "ul",
+        items: [
+          "mg/L and ppm (parts per million) mean the same thing for water.",
+          "Hardness and alkalinity are usually reported \"as CaCO3\", so different minerals can be added together.",
+          "Conductivity is in µS/cm. TDS is roughly 0.55 to 0.7 times the conductivity, depending on which salts are present.",
+          "NTU is the unit for turbidity (cloudiness).",
+        ],
+      },
+      { kind: "h2", text: "The lines that decide the plant" },
+      {
+        kind: "table",
+        head: ["Parameter", "What a high value means", "Usual treatment"],
+        rows: [
+          ["TDS (total dissolved solids)", "Salty or brackish taste; high blowdown in boilers", "RO; DM for very pure water"],
+          ["Total hardness", "Scale on pipes, fittings, geysers and boilers", "Softener, or RO where TDS is also high"],
+          ["Iron and manganese", "Brown staining; fouls softener resin and RO membranes", "Oxidation and filtration before other treatment"],
+          ["Silica", "Hard scale in boilers and on RO membranes; carried over to turbines", "RO with antiscalant; DM with strong base anion resin"],
+          ["Chloride", "Salty taste; corrodes steel, especially stainless", "RO; choose FRP or suitable steel grade"],
+          ["Turbidity", "Cloudy water; clogs filters and membranes", "Sand filtration, sometimes with coagulation"],
+          ["pH", "Low pH is corrosive; high pH favours scale", "Dosing to correct pH"],
+          ["Coliform or E. coli", "Unsafe to drink", "Chlorination, UV or ozone, plus finding the source"],
+        ],
+      },
+      { kind: "h2", text: "Drinking water: Indian limits" },
+      {
+        kind: "p",
+        text: "For drinking water, compare the report with IS 10500, the Indian Standard for drinking water. It gives an acceptable limit and, for some parameters, a higher permissible limit that applies only when no better source is available. A few key values:",
+      },
+      {
+        kind: "table",
+        head: ["Parameter", "Acceptable limit", "Permissible limit (no alternate source)"],
+        rows: [
+          ["TDS", "500 mg/L", "2,000 mg/L"],
+          ["Total hardness (as CaCO3)", "200 mg/L", "600 mg/L"],
+          ["Chloride", "250 mg/L", "1,000 mg/L"],
+          ["Sulphate", "200 mg/L", "400 mg/L"],
+          ["Fluoride", "1.0 mg/L", "1.5 mg/L"],
+          ["Nitrate", "45 mg/L", "No relaxation"],
+          ["pH", "6.5 to 8.5", "No relaxation"],
+          ["Turbidity", "1 NTU", "5 NTU"],
+          ["Coliform bacteria", "Must not be detectable in a 100 ml sample", "No relaxation"],
+        ],
+      },
+      {
+        kind: "p",
+        text: "Check the current edition of IS 10500 for the full list. Packaged drinking water and industrial uses such as boiler feed or pharmaceutical water have their own, stricter specifications.",
+      },
+      { kind: "h2", text: "Taking a sample that means something" },
+      {
+        kind: "ol",
+        items: [
+          "Use a clean bottle from the laboratory; bacteriological tests need a sterile bottle.",
+          "Run the tap or pump for a few minutes before filling, so the sample is fresh source water.",
+          "Fill to the top, cap tightly and label with the source, date and time.",
+          "Deliver it to a NABL-accredited laboratory within the time the lab specifies.",
+          "Where the source changes through the year, test again in a different season.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "One analysis is a snapshot. Borewell and tanker water can change a lot between the monsoon and summer, so a plant sized on a single test may be undersized for the worst month.",
+      },
+      {
+        kind: "p",
+        text: "Send us your report with how much water you need and what it is for. We will tell you which lines matter for your plant and what treatment they call for.",
+      },
+    ],
+  },
+  {
+    slug: "dm-plant-regeneration-process",
+    title: "DM Plant Regeneration Process: Step by Step",
+    seoTitle: "DM Plant Regeneration Process, Step by Step",
+    description:
+      "How a two-bed and mixed-bed DM plant is regenerated with acid and caustic, when to regenerate, how to do it safely and what short runs or high silica mean.",
+    targetQuery: "dm plant regeneration process",
+    published: "2026-09-27",
+    readingMinutes: 7,
+    image: "/DM image 2.jpg",
+    imageAlt: "Compact DM plant with FRP ion-exchange columns and PVC pipework",
+    category: "operations",
+    cta: { label: "See our DM plant range", href: "/products/demineralized" },
+    products: ["demineralized", "amc-maintenance"],
+    related: ["ro-vs-dm-plant", "boiler-feed-water-softener-ro-dm"],
+    body: [
+      {
+        kind: "p",
+        text: "A DM (demineralisation) plant removes dissolved salts by ion exchange. Its resins do not last forever between services: they fill up with the ions they remove and have to be regenerated with acid and caustic. Regeneration done well gives long, consistent runs; done carelessly, it gives short runs, poor water and wasted chemicals.",
+      },
+      { kind: "h2", text: "How a two-bed DM plant works" },
+      {
+        kind: "ul",
+        items: [
+          "Cation unit: strong acid cation resin swaps calcium, magnesium, sodium and other positive ions for hydrogen ions.",
+          "Degasser (on larger plants): strips out carbon dioxide formed after the cation unit, lightening the load on the anion resin.",
+          "Anion unit: strong base anion resin swaps chloride, sulphate, silica and other negative ions for hydroxide ions.",
+          "The hydrogen and hydroxide ions combine to form water, leaving treated water of low conductivity.",
+        ],
+      },
+      { kind: "h2", text: "When to regenerate" },
+      {
+        kind: "p",
+        text: "Regenerate when the treated water conductivity rises above your set point, when silica starts to rise at the anion outlet, or when the unit has treated its designed volume since the last regeneration. A conductivity meter on the outlet, and a record of volume treated per run, tell you both.",
+      },
+      { kind: "h2", text: "The regeneration steps" },
+      {
+        kind: "ol",
+        items: [
+          "Backwash: water flows upward through the bed to loosen it and flush out trapped dirt and resin fines.",
+          "Chemical injection: dilute acid (hydrochloric or sulphuric) passes through the cation resin; dilute caustic soda passes through the anion resin.",
+          "Slow rinse: water at the same slow rate pushes the chemical through the whole bed so it all does its work.",
+          "Fast rinse: a faster flow washes out the remaining chemical until the outlet water reaches quality.",
+          "Return to service once conductivity is within the set point.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Chemical quantities, concentrations and flow rates are specific to each plant and resin. Follow your plant's O&M manual rather than a general guide, and change them only on the advice of the plant designer.",
+      },
+      { kind: "h2", text: "Mixed-bed regeneration" },
+      {
+        kind: "p",
+        text: "A mixed-bed unit holds cation and anion resin in one vessel, which gives very high purity water. To regenerate it, the resins are first separated by backwashing: the lighter anion resin rises above the heavier cation resin. Each layer is then regenerated with its own chemical, rinsed, and the two resins are remixed with air before the final rinse.",
+      },
+      { kind: "h2", text: "Doing it safely" },
+      {
+        kind: "ul",
+        items: [
+          "Acid and caustic cause serious burns. Wear face shields, gloves, aprons and boots when handling them.",
+          "Keep an eyewash and safety shower near the chemical area.",
+          "Always add concentrated chemical to water, never water to concentrated chemical.",
+          "Collect waste regenerant in a neutralisation pit and correct its pH before discharge.",
+        ],
+      },
+      { kind: "h2", text: "Troubleshooting" },
+      {
+        kind: "table",
+        head: ["Problem", "Common causes"],
+        rows: [
+          ["Runs getting shorter", "Too little chemical or wrong concentration; resin fouled by iron or organics; resin loss; channelling in the bed"],
+          ["High conductivity right after regeneration", "Rinse not complete; a valve leaking chemical or raw water into the outlet"],
+          ["Silica rising early", "Anion resin under-regenerated; warm caustic helps silica removal on many plants"],
+          ["Resin found in the outlet", "Damaged internal strainers or excessive backwash flow"],
+          ["Pressure drop rising", "Dirt in the bed, fines from broken resin, or inadequate backwash"],
+        ],
+      },
+      {
+        kind: "p",
+        text: "Resin loses capacity with age. When runs stay short even after correct regeneration, send a resin sample for testing; it will show whether cleaning or replacement is the answer.",
       },
     ],
   },

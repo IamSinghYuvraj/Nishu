@@ -711,6 +711,6 @@ export const MORE_INDUSTRIES: Industry[] = [
       },
     ],
     relatedProducts: ["mineral-water-project", "dosing-ozonation-uv", "rfc", "amc-maintenance", "reverse-osmosis"],
-    relatedPosts: ["mineral-water-plant-setup-cost-india", "industrial-ro-plant-amc-guide", "compare-ro-plant-quotations"],
+    relatedPosts: ["mineral-water-plant-machinery-list", "mineral-water-plant-setup-cost-india", "ro-plant-output-dropping", "industrial-ro-plant-amc-guide"],
   },
 ];

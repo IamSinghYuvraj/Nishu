@@ -715,18 +715,18 @@ const CORE_INDUSTRIES: Industry[] = [
 // Guides linked from each industry page. Kept here rather than on each entry
 // so the mapping is easy to review as posts are added.
 const RELATED_POSTS: Record<string, string[]> = {
-  pharmaceutical: ["ro-vs-dm-plant", "ro-plant-capacity-for-your-factory", "industrial-ro-plant-amc-guide"],
-  "food-beverage": ["mineral-water-plant-setup-cost-india", "ro-plant-capacity-for-your-factory", "industrial-ro-plant-amc-guide"],
-  "power-generation": ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant"],
-  manufacturing: ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations", "hard-water-industrial-boilers-softener", "industrial-ro-plant-amc-guide"],
-  hospitality: ["hard-water-industrial-boilers-softener", "water-softener-for-housing-society", "industrial-ro-plant-amc-guide"],
-  hospitals: ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant", "industrial-ro-plant-amc-guide"],
-  chemical: ["ro-vs-dm-plant", "hard-water-industrial-boilers-softener"],
-  textile: ["hard-water-industrial-boilers-softener", "ro-plant-capacity-for-your-factory"],
-  laboratories: ["ro-vs-dm-plant"],
-  "schools-offices": ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
-  "residential-societies": ["water-softener-for-housing-society", "compare-ro-plant-quotations"],
-  construction: ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
+  pharmaceutical: ["ro-vs-dm-plant", "dm-plant-regeneration-process", "ro-plant-capacity-for-your-factory", "industrial-ro-plant-amc-guide"],
+  "food-beverage": ["mineral-water-plant-setup-cost-india", "mineral-water-plant-machinery-list", "frp-vs-ss-ro-plant", "industrial-ro-plant-amc-guide"],
+  "power-generation": ["boiler-feed-water-softener-ro-dm", "hard-water-industrial-boilers-softener", "ro-vs-dm-plant", "dm-plant-regeneration-process"],
+  manufacturing: ["ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations", "boiler-feed-water-softener-ro-dm", "ro-plant-output-dropping"],
+  hospitality: ["hard-water-industrial-boilers-softener", "water-softener-for-housing-society", "boiler-feed-water-softener-ro-dm", "industrial-ro-plant-amc-guide"],
+  hospitals: ["hard-water-industrial-boilers-softener", "ro-vs-dm-plant", "how-to-read-a-water-test-report", "industrial-ro-plant-amc-guide"],
+  chemical: ["ro-vs-dm-plant", "boiler-feed-water-softener-ro-dm", "dm-plant-regeneration-process", "frp-vs-ss-ro-plant"],
+  textile: ["hard-water-industrial-boilers-softener", "boiler-feed-water-softener-ro-dm", "ro-plant-capacity-for-your-factory"],
+  laboratories: ["ro-vs-dm-plant", "dm-plant-regeneration-process", "how-to-read-a-water-test-report"],
+  "schools-offices": ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
+  "residential-societies": ["water-softener-for-housing-society", "how-to-read-a-water-test-report", "compare-ro-plant-quotations"],
+  construction: ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
 };
 
 // Display order. The first six are featured on the homepage.
