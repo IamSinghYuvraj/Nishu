@@ -168,8 +168,8 @@ const CORE_INDUSTRIES: Industry[] = [
         text: "Feed water TDS and hardness shift through the year. Without correction, the product profile shifts with it — and consumers notice before your QC does.",
       },
       {
-        title: "BIS and FSSAI compliance",
-        text: "Packaged drinking water has to meet IS 14543. Failing a sample is not just a quality problem, it is a licensing problem.",
+        title: "FSSAI licensing and testing",
+        text: "Packaged drinking water is a high-risk food category under FSSAI, with inspections, third-party audits and compulsory laboratory testing. Failing a sample is not just a quality problem, it is a licensing problem.",
       },
       {
         title: "Production cannot stop",
@@ -243,7 +243,7 @@ const CORE_INDUSTRIES: Industry[] = [
           "Yes. We supply turnkey mineral water projects covering raw water treatment, RO, mineral dosing, ozonation, storage and the automatic rinsing-filling-capping machine, commissioned as one scope.",
       },
       {
-        question: "Will the plant meet BIS IS 14543 and FSSAI requirements?",
+        question: "Will the plant meet FSSAI requirements for packaged drinking water?",
         answer:
           "The treatment train is designed around those limits, including the mineral profile and the ozone residual at filling. We build to the specification your licence requires and commission against it.",
       },

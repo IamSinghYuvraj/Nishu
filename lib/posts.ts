@@ -21,6 +21,8 @@ export interface Post {
   /** The search phrase this article is written for. */
   targetQuery: string;
   published: string; // ISO date
+  /** Last substantive edit (ISO date). Shown on the post and used for dateModified and the sitemap. */
+  updated?: string;
   readingMinutes: number;
   image: string;
   imageAlt: string;
@@ -196,9 +198,10 @@ export const POSTS: Post[] = [
     title: "Mineral Water Plant Setup in India: What Actually Drives the Cost",
     seoTitle: "Mineral Water Plant Setup Cost in India: What Drives It",
     description:
-      "What drives mineral water plant setup cost in India: treatment line, bottling speed, BIS and FSSAI compliance, utilities and space, and where budgets slip.",
+      "What drives mineral water plant setup cost in India: treatment line, bottling speed, FSSAI licensing and testing, utilities and space, and where budgets slip.",
     targetQuery: "mineral water plant setup cost india",
     published: "2026-09-22",
+    updated: "2026-09-27",
     readingMinutes: 7,
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete packaged drinking water plant with bottling line",
@@ -240,13 +243,14 @@ export const POSTS: Post[] = [
       { kind: "h2", text: "Compliance is a cost line, not an afterthought" },
       {
         kind: "p",
-        text: "Packaged drinking water in India requires BIS certification, an FSSAI licence and a laboratory capable of the prescribed testing. These carry real costs — licence fees, laboratory equipment, a qualified chemist, and a plant layout that satisfies inspection — and they take time. Projects usually slip on approvals rather than on equipment delivery.",
+        text: "Packaged drinking water in India needs an FSSAI licence, an in-house laboratory and regular testing. BIS certification is no longer mandatory: FSSAI dropped that requirement in October 2024, made packaged drinking water a high-risk food category from November 2024 (with annual third-party audits for central licence holders), and brought in compulsory testing at FSSAI-notified NABL laboratories from January 2026. Compliance carries real costs — licence fees, laboratory equipment, a qualified chemist, testing charges and a plant layout that satisfies inspection — and it takes time. Projects usually slip on approvals rather than on equipment delivery. Rules in this category change, so confirm the current position with FSSAI or a compliance consultant before you budget.",
       },
       {
         kind: "ul",
         items: [
-          "BIS certification for packaged drinking water",
           "FSSAI manufacturing licence",
+          "Testing at an FSSAI-notified NABL laboratory under the compulsory testing scheme",
+          "Annual third-party food safety audit (central licence holders)",
           "An in-house laboratory with the prescribed testing capability",
           "Water source approval and periodic testing",
           "Pollution control consent, depending on your state",
@@ -276,7 +280,7 @@ export const POSTS: Post[] = [
       },
       {
         kind: "p",
-        text: "We deliver complete turnkey packaged drinking water projects — raw water treatment through to bottling — built to BIS and FSSAI standards, and will quote against your source water and target output rather than a generic package.",
+        text: "We deliver complete turnkey packaged drinking water projects — raw water treatment through to bottling — built to FSSAI standards, and will quote against your source water and target output rather than a generic package.",
       },
     ],
   },
@@ -350,6 +354,21 @@ export const POSTS: Post[] = [
     ],
   },
 ];
+
+/**
+ * Byline for every post. Replace with the engineer who wrote or reviewed each
+ * article once named authors are agreed; a named, experienced author is a
+ * trust signal for readers and search engines alike.
+ */
+export const POST_AUTHOR = {
+  name: "Nishu Enterprises engineering team",
+  description: `Water treatment plant engineers at Nishu Enterprises, Vasai, designing and building plants since 1996.`,
+};
+
+/** Date the post last changed: the update date if there is one, else publication. */
+export function postLastModified(post: Post) {
+  return post.updated ?? post.published;
+}
 
 export function getPost(slug: string) {
   return POSTS.find((p) => p.slug === slug);

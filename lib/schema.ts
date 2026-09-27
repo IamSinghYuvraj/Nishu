@@ -1,5 +1,5 @@
 import { SITE_URL, BUSINESS, FAQS, type ProductSeo } from "@/lib/site";
-import type { Post } from "@/lib/posts";
+import { POST_AUTHOR, postLastModified, type Post } from "@/lib/posts";
 import type { Industry } from "@/lib/industries";
 
 const sameAs = Object.values(BUSINESS.social).filter(Boolean);
@@ -154,8 +154,13 @@ export function articleSchema(post: Post) {
     image: `${SITE_URL}${post.image}`,
     url: `${SITE_URL}/blog/${post.slug}`,
     datePublished: post.published,
-    dateModified: post.published,
-    author: { "@id": `${SITE_URL}/#organization` },
+    dateModified: postLastModified(post),
+    author: {
+      "@type": "Organization",
+      name: POST_AUTHOR.name,
+      description: POST_AUTHOR.description,
+      parentOrganization: { "@id": `${SITE_URL}/#organization` },
+    },
     publisher: { "@id": `${SITE_URL}/#organization` },
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };

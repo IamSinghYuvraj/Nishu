@@ -7,8 +7,13 @@ import ContactUs from "@/components/contactus";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, articleSchema } from "@/lib/schema";
 import { PostBody } from "@/components/post-body";
-import { POSTS, getPost } from "@/lib/posts";
+import { POSTS, POST_AUTHOR, getPost, postLastModified } from "@/lib/posts";
 import { Button } from "@/components/ui/button";
+
+// "22 Sep 2026"
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+}
 
 export function generateStaticParams() {
   return POSTS.map((post) => ({ slug: post.slug }));
@@ -32,7 +37,16 @@ export async function generateMetadata({
       description: post.description,
       url: `/blog/${post.slug}`,
       publishedTime: post.published,
+      modifiedTime: postLastModified(post),
+      authors: [POST_AUTHOR.name],
       images: [{ url: post.image, alt: post.imageAlt }],
+    },
+    // Without this the post inherits the homepage's Twitter card text.
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle ?? post.title,
+      description: post.description,
+      images: [post.image],
     },
   };
 }
@@ -70,8 +84,17 @@ export default async function PostPage({
                 {post.title}
               </h1>
               <p className="text-lg text-muted-foreground">{post.description}</p>
-              <p className="mt-6 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                {post.readingMinutes} min read
+              <p className="mt-6 text-sm text-muted-foreground">
+                By <span className="font-semibold text-foreground">{POST_AUTHOR.name}</span>
+              </p>
+              <p className="mt-2 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                Published <time dateTime={post.published}>{formatDate(post.published)}</time>
+                {post.updated && (
+                  <>
+                    {" · "}Updated <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                  </>
+                )}
+                {" · "}{post.readingMinutes} min read
               </p>
             </div>
           </header>

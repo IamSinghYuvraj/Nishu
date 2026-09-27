@@ -154,7 +154,7 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
     {
       question: "Do I need BIS certification for packaged drinking water?",
       answer:
-        "Yes. Packaged drinking water in India must be certified by BIS to IS 14543 and the business needs an FSSAI licence. The plant, its process and its in-house testing facilities are assessed as part of certification, so the plant should be designed with that in mind from the start.",
+        "Not any more. FSSAI removed mandatory BIS certification for packaged drinking water and mineral water in October 2024. You still need an FSSAI licence, and the product is now a high-risk food category, with annual third-party audits for central licence holders and compulsory testing at FSSAI-notified NABL laboratories from January 2026. The plant, its process and its in-house laboratory are still inspected, so design for that from the start, and confirm the current rules with FSSAI before you apply.",
     },
     {
       question: "Do you supply the bottle filling machine as well?",

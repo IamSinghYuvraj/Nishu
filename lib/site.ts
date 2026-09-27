@@ -128,7 +128,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "Turnkey Mineral Water & Packaged Drinking Water Plants",
     title: "Mineral Water Plant Setup | Packaged Drinking Water Plant",
     description:
-      "Turnkey packaged drinking water plants: RO, ozonation, bottling and RFC machines, designed for BIS IS 14543. Trusted by Bisleri, Bailey and Campa since 1996.",
+      "Turnkey packaged drinking water plants: RO, ozonation, bottling and RFC machines, built for FSSAI requirements. Trusted by Bisleri, Bailey and Campa since 1996.",
     targetQuery: "packaged drinking water plant manufacturer",
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete mineral water and packaged drinking water plant",
