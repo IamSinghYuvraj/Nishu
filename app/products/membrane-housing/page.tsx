@@ -1,5 +1,6 @@
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import { Check } from "@/components/icons"
 import Link from "next/link"
@@ -130,6 +131,7 @@ export default function MembraneHousingPage() {
           </section>
         </AnimatedSection>
         <FaqSection faqs={PRODUCT_FAQS["membrane-housing"] ?? []} />
+        <BuyerGuides product="membrane-housing" />
         <RelatedProducts current="membrane-housing" />
       </main>
       <ContactUs />

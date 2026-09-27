@@ -10,6 +10,7 @@ import { TrustBar } from "@/components/trust-bar";
 import { FaqSection } from "@/components/faq-section";
 import { ProductHeroActions } from "@/components/product-hero-actions";
 import { RelatedProducts } from "@/components/related-products";
+import { BuyerGuides } from "@/components/buyer-guides";
 import { breadcrumbSchema, productSchema, serviceSchema } from "@/lib/schema";
 import { PRODUCTS } from "@/lib/site";
 import { PRODUCT_FAQS, PRODUCT_PAGES } from "@/lib/product-content";
@@ -151,6 +152,7 @@ export default async function DataProductPage({
         )}
 
         <FaqSection faqs={PRODUCT_FAQS[product.slug] ?? []} />
+        <BuyerGuides product={product.slug} />
         <RelatedProducts current={product.slug} />
       </main>
       <ContactUs />

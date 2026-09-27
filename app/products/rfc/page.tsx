@@ -1,5 +1,6 @@
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import Link from "next/link"
 import { Check, Zap, Shield } from "@/components/icons"
@@ -211,6 +212,7 @@ export default function RFCPage() {
           </div>
         </section>
         <FaqSection faqs={PRODUCT_FAQS["rfc"] ?? []} />
+        <BuyerGuides product="rfc" />
         <RelatedProducts current="rfc" />
       </main>
       <ContactUs />

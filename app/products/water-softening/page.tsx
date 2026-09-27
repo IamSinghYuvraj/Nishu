@@ -1,5 +1,6 @@
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import Link from "next/link"
 import { Check } from "@/components/icons"
@@ -137,6 +138,7 @@ export default function WaterSofteningPage() {
           </div>
         </section>
         <FaqSection faqs={PRODUCT_FAQS["water-softening"] ?? []} />
+        <BuyerGuides product="water-softening" />
         <RelatedProducts current="water-softening" />
       </main>
       <ContactUs />

@@ -1,5 +1,6 @@
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import Link from "next/link"
 import { Check } from "@/components/icons"
@@ -144,6 +145,7 @@ export default function ROPage() {
           </div>
         </section>
         <FaqSection faqs={PRODUCT_FAQS["reverse-osmosis"] ?? []} />
+        <BuyerGuides product="reverse-osmosis" />
         <RelatedProducts current="reverse-osmosis" />
       </main>
       <ContactUs />

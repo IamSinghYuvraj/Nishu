@@ -11,6 +11,17 @@ export type Block =
   | { kind: "table"; head: string[]; rows: string[][] }
   | { kind: "callout"; text: string };
 
+/** Resources sections, in display order. */
+export const POST_CATEGORIES = [
+  { slug: "buying-and-cost", name: "Buying and cost" },
+  { slug: "compliance", name: "Compliance" },
+  { slug: "operations", name: "Operations and troubleshooting" },
+  { slug: "industry-guides", name: "Industry guides" },
+  { slug: "export", name: "Export" },
+] as const;
+
+export type PostCategory = (typeof POST_CATEGORIES)[number]["slug"];
+
 export interface Post {
   slug: string;
   title: string;
@@ -26,8 +37,17 @@ export interface Post {
   readingMinutes: number;
   image: string;
   imageAlt: string;
-  /** Product page this article should send a qualified reader to. */
+  /** Resources section the post is listed under and breadcrumbed to. */
+  category: PostCategory;
+  /**
+   * Pillar page this article supports: linked near the top of the post and
+   * again in its closing call to action.
+   */
   cta: { label: string; href: string };
+  /** Product pages that list this post under "Guides for buyers". */
+  products: string[];
+  /** Sibling posts that answer the reader's next question, in order. */
+  related?: string[];
   body: Block[];
 }
 
@@ -42,7 +62,10 @@ export const POSTS: Post[] = [
     readingMinutes: 6,
     image: "/ro-img11.jpeg",
     imageAlt: "Industrial reverse osmosis plant installed at a factory",
+    category: "buying-and-cost",
     cta: { label: "See our RO plant range", href: "/products/reverse-osmosis" },
+    products: ["reverse-osmosis"],
+    related: ["ro-vs-dm-plant"],
     body: [
       {
         kind: "p",
@@ -125,7 +148,10 @@ export const POSTS: Post[] = [
     readingMinutes: 5,
     image: "/DM image 1.jpg",
     imageAlt: "Demineralisation plant with two-bed ion exchange vessels",
+    category: "buying-and-cost",
     cta: { label: "Compare RO and DM plants", href: "/products/demineralized" },
+    products: ["demineralized", "reverse-osmosis"],
+    related: ["ro-plant-capacity-for-your-factory", "hard-water-industrial-boilers-softener"],
     body: [
       {
         kind: "p",
@@ -205,10 +231,13 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete packaged drinking water plant with bottling line",
+    category: "buying-and-cost",
     cta: {
       label: "Explore turnkey mineral water projects",
       href: "/products/mineral-water-project",
     },
+    products: ["mineral-water-project", "rfc", "dosing-ozonation-uv"],
+    related: ["ro-plant-capacity-for-your-factory"],
     body: [
       {
         kind: "p",
@@ -296,10 +325,13 @@ export const POSTS: Post[] = [
     readingMinutes: 5,
     image: "/Water-Softening-Plant.jpg",
     imageAlt: "Industrial water softening plant with resin vessels",
+    category: "industry-guides",
     cta: {
       label: "See water softening plants",
       href: "/products/water-softening",
     },
+    products: ["water-softening", "demineralized"],
+    related: ["ro-vs-dm-plant"],
     body: [
       {
         kind: "p",
@@ -368,6 +400,31 @@ export const POST_AUTHOR = {
 /** Date the post last changed: the update date if there is one, else publication. */
 export function postLastModified(post: Post) {
   return post.updated ?? post.published;
+}
+
+export function getCategory(slug: PostCategory) {
+  return POST_CATEGORIES.find((c) => c.slug === slug)!;
+}
+
+/** Posts listed under "Guides for buyers" on a product page. */
+export function postsForProduct(productSlug: string) {
+  return POSTS.filter((p) => p.products.includes(productSlug));
+}
+
+/**
+ * "Keep reading" picks: the post's chosen siblings first, then others from the
+ * same section, then anything else.
+ */
+export function relatedPosts(post: Post, count = 2) {
+  const others = POSTS.filter((p) => p.slug !== post.slug);
+  const chosen = (post.related ?? [])
+    .map((s) => others.find((p) => p.slug === s))
+    .filter((p): p is Post => Boolean(p));
+  const rest = [
+    ...others.filter((p) => p.category === post.category),
+    ...others.filter((p) => p.category !== post.category),
+  ].filter((p) => !chosen.includes(p));
+  return [...chosen, ...rest].slice(0, count);
 }
 
 export function getPost(slug: string) {

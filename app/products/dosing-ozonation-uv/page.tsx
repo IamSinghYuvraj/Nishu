@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import { Check } from "@/components/icons"
 import { MediaGallery, type MediaItem } from "@/components/media-gallery"
@@ -156,6 +157,7 @@ export default function DosingOzonationUVPage() {
           </div>
         </section>
         <FaqSection faqs={PRODUCT_FAQS["dosing-ozonation-uv"] ?? []} />
+        <BuyerGuides product="dosing-ozonation-uv" />
         <RelatedProducts current="dosing-ozonation-uv" />
       </main>
       <ContactUs />

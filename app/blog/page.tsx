@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation";
 import ContactUs from "@/components/contactus";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
-import { POSTS } from "@/lib/posts";
+import { POSTS, POST_CATEGORIES } from "@/lib/posts";
 
 const title = "Water Treatment Guides: RO, DM, Softeners & Boilers";
 const description =
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 
 export default function BlogIndex() {
   const posts = [...POSTS].sort((a, b) => b.published.localeCompare(a.published));
+  // One section per category, in the order buyers need them; empty ones are skipped.
+  const groups = POST_CATEGORIES.map((c) => ({
+    ...c,
+    posts: posts.filter((p) => p.category === c.slug),
+  })).filter((g) => g.posts.length > 0);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -46,40 +51,59 @@ export default function BlogIndex() {
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                  <article className="card-lift card-rule h-full flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.imageAlt}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="zoom-img object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-col flex-1 p-6">
-                      <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-3">
-                        Guide · {post.readingMinutes} min read
-                      </p>
-                      <h2 className="text-xl text-foreground mb-3 text-balance transition-colors group-hover:text-primary">
-                        {post.title}
-                      </h2>
-                      <p className="flex-1 text-sm text-muted-foreground leading-relaxed">
-                        {post.description}
-                      </p>
-                      <span className="link-arrow mt-5 text-sm">
-                        Read the guide <span className="arrow">→</span>
-                      </span>
-                    </div>
-                  </article>
-                </Link>
+            {groups.length > 1 && (
+              <nav aria-label="Resource sections" className="mb-12 flex flex-wrap gap-3">
+                {groups.map((group) => (
+                  <a
+                    key={group.slug}
+                    href={`#${group.slug}`}
+                    className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {group.name} <span className="text-muted-foreground">({group.posts.length})</span>
+                  </a>
+                ))}
+              </nav>
+            )}
+            <div className="space-y-16">
+              {groups.map((group) => (
+                <div key={group.slug} id={group.slug} className="scroll-mt-28">
+                  <h2 className="mb-8 text-2xl text-foreground md:text-3xl">{group.name}</h2>
+                  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  {group.posts.map((post) => (
+                    <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+                      <article className="card-lift card-rule h-full flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+                        <div className="relative aspect-video overflow-hidden">
+                          <Image
+                            src={post.image}
+                            alt={post.imageAlt}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="zoom-img object-cover"
+                          />
+                        </div>
+                        <div className="flex flex-col flex-1 p-6">
+                          <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-3">
+                            Guide · {post.readingMinutes} min read
+                          </p>
+                          <h2 className="text-xl text-foreground mb-3 text-balance transition-colors group-hover:text-primary">
+                            {post.title}
+                          </h2>
+                          <p className="flex-1 text-sm text-muted-foreground leading-relaxed">
+                            {post.description}
+                          </p>
+                          <span className="link-arrow mt-5 text-sm">
+                            Read the guide <span className="arrow">→</span>
+                          </span>
+                        </div>
+                      </article>
+                    </Link>
+                  ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
-
         <ContactUs />
       </main>
     </div>

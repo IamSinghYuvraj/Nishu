@@ -1,5 +1,6 @@
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import { Check, Shield, Zap } from "@/components/icons"
 import Link from "next/link"
@@ -167,6 +168,7 @@ export default function MineralWaterProjectPage() {
           </div>
         </section>
         <FaqSection faqs={PRODUCT_FAQS["mineral-water-project"] ?? []} />
+        <BuyerGuides product="mineral-water-project" />
         <RelatedProducts current="mineral-water-project" />
       </main>
       <ContactUs />

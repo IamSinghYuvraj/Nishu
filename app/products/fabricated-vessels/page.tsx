@@ -1,5 +1,6 @@
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
 import { Navigation } from "@/components/navigation"
 import { Check, Shield } from "@/components/icons"
 import Link from "next/link"
@@ -127,6 +128,7 @@ const mediaItems: MediaItem[] = [
           </div>
         </section>
         <FaqSection faqs={PRODUCT_FAQS["fabricated-vessels"] ?? []} />
+        <BuyerGuides product="fabricated-vessels" />
         <RelatedProducts current="fabricated-vessels" />
       </main>
       <ContactUs />

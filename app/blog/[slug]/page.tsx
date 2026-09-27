@@ -7,7 +7,7 @@ import ContactUs from "@/components/contactus";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, articleSchema } from "@/lib/schema";
 import { PostBody } from "@/components/post-body";
-import { POSTS, POST_AUTHOR, getPost, postLastModified } from "@/lib/posts";
+import { POSTS, POST_AUTHOR, getCategory, getPost, postLastModified, relatedPosts } from "@/lib/posts";
 import { Button } from "@/components/ui/button";
 
 // "22 Sep 2026"
@@ -60,7 +60,11 @@ export default async function PostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
-  const related = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const related = relatedPosts(post);
+  const category = getCategory(post.category);
+  // Link up to the pillar page early, right after the opening paragraph, as well
+  // as in the closing call to action.
+  const pillarAt = 1;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -69,6 +73,7 @@ export default async function PostPage({
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Resources", path: "/blog" },
+          { name: category.name, path: `/blog#${category.slug}` },
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
@@ -77,9 +82,15 @@ export default async function PostPage({
         <article>
           <header className="on-dark page-hero pt-14 pb-36 md:pt-20 md:pb-40">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-              <Link href="/blog" className="eyebrow transition-opacity hover:opacity-80">
-                All resources
-              </Link>
+              <nav aria-label="Breadcrumb" className="eyebrow flex flex-wrap items-center gap-2">
+                <Link href="/" className="transition-opacity hover:opacity-80">Home</Link>
+                <span aria-hidden="true">›</span>
+                <Link href="/blog" className="transition-opacity hover:opacity-80">Resources</Link>
+                <span aria-hidden="true">›</span>
+                <Link href={`/blog#${category.slug}`} className="transition-opacity hover:opacity-80">
+                  {category.name}
+                </Link>
+              </nav>
               <h1 className="text-4xl md:text-5xl text-balance mt-5 mb-5 text-foreground">
                 {post.title}
               </h1>
@@ -110,7 +121,14 @@ export default async function PostPage({
               />
             </div>
 
-            <PostBody blocks={post.body} />
+            <PostBody blocks={post.body.slice(0, pillarAt)} />
+            <p className="my-8 rounded-xl border-l-4 border-primary bg-accent px-5 py-4 text-foreground">
+              Part of our buyer&apos;s guides.{" "}
+              <Link href={post.cta.href} className="font-semibold text-primary underline-offset-4 hover:underline">
+                {post.cta.label} →
+              </Link>
+            </p>
+            <PostBody blocks={post.body.slice(pillarAt)} />
 
             <div className="on-dark page-hero no-wave mt-14 rounded-2xl p-8">
               <p className="eyebrow">Next step</p>
