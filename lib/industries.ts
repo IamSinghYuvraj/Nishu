@@ -737,6 +737,7 @@ const ORDER = [
   "hospitality",
   "hospitals",
   "manufacturing",
+  "packaged-drinking-water",
   "chemical",
   "textile",
   "power-generation",

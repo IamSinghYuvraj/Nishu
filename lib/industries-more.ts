@@ -599,4 +599,118 @@ export const MORE_INDUSTRIES: Industry[] = [
     ],
     relatedProducts: ["water-softening", "reverse-osmosis", "demineralized", "amc-maintenance"],
   },
+  {
+    slug: "packaged-drinking-water",
+    name: "Packaged Drinking Water",
+    heading: "Water Treatment & Bottling for Packaged Drinking Water Manufacturers",
+    title: "Packaged Drinking Water Manufacturers: Plant Upgrades & AMC",
+    description:
+      "For packaged drinking water manufacturers: RO, ozonation and RFC upgrades, more output from the same plant, testing-ready quality control and AMC. Since 1996.",
+    targetQuery: "packaged drinking water manufacturers",
+    cardBlurb:
+      "Upgrades, extra output and dependable quality for bottlers already in production.",
+    image: "/Mineral-Water-Plant(2).webp",
+    imageAlt: "Packaged drinking water plant room with stainless steel tanks and treatment skids",
+    intro:
+      "Running a packaged drinking water plant is a different job from setting one up. Output has to keep pace with orders, every batch has to pass its tests, and inspections and audits arrive on their own schedule. This page is for bottlers already in production. We have built packaged drinking water plants since 1996, including for Bisleri, Bailey and Campa, and we upgrade and service plants built by others as well as our own.",
+    challenges: [
+      {
+        title: "Output has fallen",
+        text: "An RO plant that once gave its rated output now gives much less. Fouled membranes, tired pre-treatment and cold feed water are the usual causes, and most can be fixed without replacing the plant.",
+      },
+      {
+        title: "A sample failed",
+        text: "A microbiological or chemical failure is a licensing problem, not just a quality problem. The cause is usually in disinfection, storage, bottle washing or the filling room.",
+      },
+      {
+        title: "Ozone dose and bromate",
+        text: "Ozone keeps bottled water safe, but too much ozone on water containing bromide forms bromate. The dose has to be controlled and measured, not set once and left.",
+      },
+      {
+        title: "Inspections and audits",
+        text: "Packaged drinking water is a high-risk food category under FSSAI, with inspections, third-party audits and compulsory testing. The plant, records and laboratory all have to stand up to them.",
+      },
+    ],
+    body: [
+      { kind: "h2", text: "Getting more output from the same plant" },
+      {
+        kind: "p",
+        text: "Before buying a bigger plant, find out why the present one is short. Compare today's readings with the plant's commissioning figures: permeate flow, pressures across the cartridge filter and membranes, feed temperature and permeate TDS. If the drop is from fouling, cleaning or replacing membranes and repairing pre-treatment restores most of it. If demand has simply outgrown the plant, extra membrane capacity or a second train can often be added to the existing skid, with ozonation and filling matched to the new flow.",
+      },
+      {
+        kind: "table",
+        head: ["Symptom", "Likely cause", "First check"],
+        rows: [
+          ["Treated water flow has dropped", "Membrane fouling or scaling; cold feed water", "Normalised permeate flow against the commissioning baseline"],
+          ["Permeate TDS keeps rising", "Membrane wear or damage; O-ring or seal leaks", "Stage-by-stage conductivity"],
+          ["Cartridge filters choke quickly", "Sand or carbon filter not backwashed; feed quality changed", "Pressure drop across the cartridge; filter backwash routine"],
+          ["Ozone smell in bottles", "Ozone dose too high or contact time too short", "Residual ozone at filling"],
+          ["Underfilling or leaking caps", "Filling valve or capping head wear; wrong cap torque", "RFC machine service and change parts"],
+        ],
+      },
+      { kind: "h2", text: "Disinfection and bromate control" },
+      {
+        kind: "p",
+        text: "Ozonation, UV and clean storage together keep treated water microbiologically safe up to the filler. The ozone dose must be enough to leave a small residual at filling, and no more. On water that contains bromide, excess ozone forms bromate, which has a regulatory limit. The practical controls are a correctly sized ozone generator, a measured contact time, regular checks of residual ozone and periodic bromate testing, especially after changing the water source.",
+      },
+      {
+        kind: "callout",
+        text: "Most microbiological failures start after the RO: in storage tanks, pipework, bottle and jar washing, or the filling room. A plant audit should follow the water all the way to the sealed bottle.",
+      },
+      { kind: "h2", text: "Ready for testing, inspection and audit" },
+      {
+        kind: "p",
+        text: "FSSAI removed mandatory BIS certification for packaged drinking water in October 2024, made it a high-risk food category from November 2024 with annual third-party audits for central licence holders, and introduced compulsory testing at FSSAI-notified NABL laboratories from January 2026. For the plant, that means daily process records, a working in-house laboratory, documented cleaning and sanitisation, and equipment that can be shown to perform. Confirm the current requirements with FSSAI before an inspection; rules in this category have changed more than once.",
+      },
+      {
+        kind: "ul",
+        items: [
+          "Daily log sheets for flows, pressures, TDS and ozone residual.",
+          "Cleaning and sanitisation records for tanks, pipework and the filling machine.",
+          "Calibrated instruments and a laboratory able to run routine tests.",
+          "Clear separation of the filling room, with controlled access.",
+          "Traceable batches from treated water to finished product.",
+        ],
+      },
+      { kind: "h2", text: "Maintenance that protects production" },
+      {
+        kind: "p",
+        text: "A bottling line cannot wait for spares. An annual maintenance contract with scheduled visits, recorded readings and genuine membranes, cartridges and RFC change parts keeps the plant at its rated output and gives the records an inspector will ask for.",
+      },
+      { kind: "h2", text: "What we need to help" },
+      {
+        kind: "p",
+        text: "Your current output and the output you need, the plant's age and who built it, a recent raw and treated water analysis, a few days of log sheets if you keep them, the bottle and jar formats you run, and any recent test failures or audit observations.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you upgrade a packaged drinking water plant built by another company?",
+        answer:
+          "Yes. We survey the plant first: treatment train, membranes, ozonation, storage and filling. Then we propose the changes needed for the output or quality you want, reusing what is sound.",
+      },
+      {
+        question: "Why is our RO plant giving less water than before?",
+        answer:
+          "Usually membrane fouling or scaling, pre-treatment that is no longer doing its job, or colder feed water. Normalised readings compared with the commissioning figures show which, and most cases are fixed by cleaning, repairs or membrane replacement rather than a new plant.",
+      },
+      {
+        question: "How do we control bromate in ozonated water?",
+        answer:
+          "Size the ozone dose to leave only a small residual at filling, control contact time, check residual ozone regularly and test for bromate, especially after any change of water source. Excess ozone on water containing bromide is what forms bromate.",
+      },
+      {
+        question: "Is BIS certification still required for packaged drinking water?",
+        answer:
+          "No. FSSAI removed the mandatory BIS requirement in October 2024. You still need an FSSAI licence, and the category is subject to inspections, third-party audits and compulsory testing at FSSAI-notified laboratories. Check FSSAI's current notices before you rely on any summary.",
+      },
+      {
+        question: "Do you supply spares and service for RFC machines?",
+        answer:
+          "Yes. We manufacture rinsing, filling and capping machines and can service them alongside an AMC for the water treatment plant.",
+      },
+    ],
+    relatedProducts: ["mineral-water-project", "dosing-ozonation-uv", "rfc", "amc-maintenance", "reverse-osmosis"],
+    relatedPosts: ["mineral-water-plant-setup-cost-india", "industrial-ro-plant-amc-guide", "compare-ro-plant-quotations"],
+  },
 ];
