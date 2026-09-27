@@ -154,14 +154,14 @@ const CORE_INDUSTRIES: Industry[] = [
     heading: "RO Plants & Water Treatment for Food and Beverage Factories",
     title: "Water Treatment & RO Plant for Food and Beverage Industry",
     description:
-      "RO plants, remineralisation and ozonation for beverage, dairy and food factories. Trusted by Bisleri, Bailey, Campa and McDonald's since 1996.",
+      "RO plants, remineralisation and ozonation for beverage, dairy and food factories. Trusted by Bisleri, Bailey, Campa and McDowell's since 1996.",
     targetQuery: "water treatment for food industry",
     cardBlurb:
       "RO, remineralisation and ozonation for beverage, dairy and packaged drinking water lines.",
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete mineral water and beverage bottling plant installed by Nishu Enterprises",
     intro:
-      "In food and beverage production, water is the largest ingredient by volume and the one that decides whether the product tastes the same in March as it did in October. It is also the input most exposed to seasonal variation in the borewell or municipal supply. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDonald's and Meru Spring, and we have been building them since 1996.",
+      "In food and beverage production, water is the largest ingredient by volume and the one that decides whether the product tastes the same in March as it did in October. It is also the input most exposed to seasonal variation in the borewell or municipal supply. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDowell's and Meru Spring, and we have been building them since 1996.",
     challenges: [
       {
         title: "Taste consistency across seasons",
@@ -502,7 +502,7 @@ const CORE_INDUSTRIES: Industry[] = [
     image: "/Ro-img5.jpg",
     imageAlt: "Commercial reverse osmosis water treatment unit for a hospitality property",
     intro:
-      "A hotel is several water applications in one building, and they conflict. Guests notice taste and they notice scale on a shower fitting. The laundry cares about hardness because it decides detergent consumption and linen life. The kitchen cares about taste and about scale in the equipment. The boiler and the cooling plant care about something else again. We supply McDonald's among other hospitality clients, and the systems we build for this sector are usually segregated by duty for exactly that reason.",
+      "A hotel is several water applications in one building, and they conflict. Guests notice taste and they notice scale on a shower fitting. The laundry cares about hardness because it decides detergent consumption and linen life. The kitchen cares about taste and about scale in the equipment. The boiler and the cooling plant care about something else again. The systems we build for this sector are usually segregated by duty for exactly that reason.",
     challenges: [
       {
         title: "Guests notice water quality directly",

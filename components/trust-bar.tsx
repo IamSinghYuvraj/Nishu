@@ -4,7 +4,7 @@ import { FEATURED_COUNTRIES } from "@/lib/countries";
 // The track record, stated the same way on every product and industry page.
 // Only facts we can stand behind: the founding year, named countries and
 // named clients. No counts.
-const CLIENTS = ["Bisleri", "Bailey", "Campa", "McDonald's", "Mantra", "Meru Spring"];
+const CLIENTS = ["Bisleri", "Bailey", "Campa", "McDowell's", "Mantra", "Meru Spring"];
 
 export function TrustBar() {
   return (

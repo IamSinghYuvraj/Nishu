@@ -17,7 +17,7 @@ const clients = [
   { name: "Mantra", logo: MANTRA },
   { name: "Bisleri", logo: BISLERI },
   { name: "Bailey", logo: BAILEY },
-  { name: "McDonald's", logo: MCD },
+  { name: "McDowell's", logo: MCD },
   { name: "O2Rise", logo: O2RISE },
   { name: "Royal", logo: ROYAL },
   { name: "Active", logo: ACTIVE },
@@ -37,7 +37,7 @@ export function ClientLogos({ compact = false }: { compact?: boolean }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {compact ? (
           <p className="text-center font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-            Plants running for Bisleri, Bailey, Campa, McDonald&apos;s and many more
+            Plants running for Bisleri, Bailey, Campa, McDowell&apos;s and many more
           </p>
         ) : (
           <div className="text-center">

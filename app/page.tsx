@@ -217,7 +217,7 @@ const Home: React.FC = () => {
             <div className="group border-t border-white/10 py-6 md:border-l md:border-t-0 md:py-8 md:pl-8">
               <dt className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/65">Trusted by</dt>
               <dd className="mt-3 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-lime md:text-2xl">
-                Bisleri · Bailey · Campa · McDonald&apos;s
+                Bisleri · Bailey · Campa · McDowell&apos;s
               </dd>
             </div>
           </dl>
