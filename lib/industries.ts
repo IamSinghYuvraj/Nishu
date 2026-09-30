@@ -158,8 +158,8 @@ const CORE_INDUSTRIES: Industry[] = [
     targetQuery: "water treatment for food industry",
     cardBlurb:
       "RO, remineralisation and ozonation for beverage, dairy and packaged drinking water lines.",
-    image: "/Complete-Mineral-Water-Project(5).webp",
-    imageAlt: "Complete mineral water and beverage bottling plant installed by Nishu Enterprises",
+    image: "/food-beverage-industry.jpeg",
+    imageAlt: "Bottled water on a filling line at a food and beverage plant",
     intro:
       "In food and beverage production, water is the largest ingredient by volume and the one that decides whether the product tastes the same in March as it did in October. It is also the input most exposed to seasonal variation in the borewell or municipal supply. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDowell's and Meru Spring, and we have been building them since 1996.",
     challenges: [
@@ -387,8 +387,8 @@ const CORE_INDUSTRIES: Industry[] = [
     targetQuery: "water treatment plant for factory",
     cardBlurb:
       "Process, cooling and rinse water treated to the standard each duty actually needs.",
-    image: "/Ro-img1.jpg",
-    imageAlt: "Industrial reverse osmosis plant installed at a manufacturing facility",
+    image: "/manufacturing-industry.jpeg",
+    imageAlt: "Labelled product rolls on a manufacturing line",
     intro:
       "Manufacturing is the sector where \"water treatment\" means the widest range of things. A textile dyehouse, an engineering shop with a cooling tower and a chemical plant with a process requirement all need different water, and the only way to get the design right is to start from what the process actually demands rather than from a standard plant. We have built into all of these since 1996.",
     challenges: [
@@ -611,8 +611,8 @@ const CORE_INDUSTRIES: Industry[] = [
     targetQuery: "water treatment plant for construction site",
     cardBlurb:
       "Relocatable plants for site drinking water, concrete mixing and curing water treatment.",
-    image: "/ss-storage-tanks(7).jpg",
-    imageAlt: "Fabricated stainless steel water storage tanks for a site water installation",
+    image: "/construction-industry.jpeg",
+    imageAlt: "Engineers on a construction site with a crane at sunset",
     intro:
       "Construction water gets less attention than it deserves, on two fronts. Water used for mixing and curing concrete directly affects the strength the structure achieves, and it is governed by standards for good reason. Site drinking water is a welfare obligation on projects that often have no municipal supply at all. Both problems have to be solved with equipment that can be installed quickly and moved to the next project afterwards.",
     challenges: [

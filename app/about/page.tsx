@@ -65,7 +65,7 @@ const industries = [
   {
     name: "Warehousing",
     icon: Warehouse,
-    image: "/ss-storage-tanks(4).jpg",
+    image: "/warehousing-industry.jpeg",
     description: "Water management for storage facilities",
   },
 ];

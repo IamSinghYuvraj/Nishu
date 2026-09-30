@@ -230,8 +230,8 @@ export const MORE_INDUSTRIES: Industry[] = [
       "Commercial RO drinking water plants for schools, colleges, offices and campuses, with stainless steel storage and UV. Built in Vasai, Mumbai since 1996.",
     targetQuery: "ro plant for school",
     cardBlurb: "Safe drinking water for students and staff, sized for break-time peaks.",
-    image: "/ro-img10.jpeg",
-    imageAlt: "Commercial RO plant with stainless steel control panel and high-pressure pump",
+    image: "/commercial-industry.jpeg",
+    imageAlt: "Commercial-scale plant with stainless steel process tanks and piping",
     intro:
       "Drinking water in a school, college or office has two requirements that pull in different directions: it has to be safe every single day, and the people responsible for it are rarely water engineers. So the plant must be simple to run, easy to check, and built so that a missed filter change does not become a health problem. We have built RO plants since 1996, and we design institutional plants for the people who will actually operate them.",
     challenges: [

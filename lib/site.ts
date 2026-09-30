@@ -188,8 +188,8 @@ export const PRODUCTS: ProductSeo[] = [
     description:
       "RO membranes (BW, SW, UF, NF), ion exchange resins, cartridges, filter media, gauges, SS fittings and antiscalants for water treatment plants. Since 1996.",
     targetQuery: "ro plant spare parts",
-    image: "/DM image 3.jpeg",
-    imageAlt: "Water treatment system showing filter vessels, cartridge housings and control panel",
+    image: "/membrane-Housing(2).jpeg",
+    imageAlt: "Stainless steel RO membrane housing, a replaceable plant component",
   },
   {
     slug: "amc-maintenance",

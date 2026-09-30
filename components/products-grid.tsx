@@ -75,7 +75,7 @@ const products = [
     title: "RO Spares & Consumables",
     description:
       "RO membranes, ion exchange resins, cartridges, filter media, gauges, fittings and antiscalants.",
-    image: "/DM image 3.jpeg",
+    image: "/membrane-Housing(2).jpeg",
     href: "/products/spares-consumables",
   },
   {
