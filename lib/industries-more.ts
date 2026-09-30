@@ -18,8 +18,8 @@ export const MORE_INDUSTRIES: Industry[] = [
     targetQuery: "water softener for society",
     cardBlurb:
       "Building-wide softening for hard borewell and tanker water, with RO for drinking water.",
-    image: "/ss-storage-tanks(8).jpg",
-    imageAlt: "Twin MS pressure vessels for water filtration and softening, installed on site",
+    image: "/residential-societies-industry.jpg",
+    imageAlt: "Residential apartment towers in a city",
     intro:
       "Hard water is one of the most common complaints in housing societies across Vasai-Virar, Mira-Bhayandar, Thane and Mumbai's suburbs, especially where the building depends on a borewell or tanker supply. It shows up as white scale on taps and tiles, geysers that fail early, blocked shower heads and plumbing that loses pressure year after year. A softening plant on the building's supply solves it at source for every flat at once. We have built water treatment plants since 1996, and we size society plants around the building's actual water, not a catalogue model.",
     challenges: [
@@ -127,8 +127,8 @@ export const MORE_INDUSTRIES: Industry[] = [
     targetQuery: "ro plant for hospital",
     cardBlurb:
       "Treated water for drinking, kitchens, laundry, CSSD sterilisers and boilers.",
-    image: "/Ro-img2.jpg",
-    imageAlt: "Stainless steel RO water treatment skid with control panel and storage vessels",
+    image: "/hospitals-industry.jpg",
+    imageAlt: "Hospital corridor with ward doors on either side",
     intro:
       "A hospital uses water in more ways, and with less tolerance for failure, than almost any other building. Patients and staff drink it, kitchens cook with it, the laundry and CSSD depend on it, sterilisers and boilers run on it - and a failure anywhere in that chain is a clinical problem, not just a maintenance one. We design hospital water treatment around each of those duties separately, and we have built water treatment plants since 1996.",
     challenges: [
@@ -230,8 +230,8 @@ export const MORE_INDUSTRIES: Industry[] = [
       "Commercial RO drinking water plants for schools, colleges, offices and campuses, with stainless steel storage and UV. Built in Vasai, Mumbai since 1996.",
     targetQuery: "ro plant for school",
     cardBlurb: "Safe drinking water for students and staff, sized for break-time peaks.",
-    image: "/commercial-industry.jpeg",
-    imageAlt: "Commercial-scale plant with stainless steel process tanks and piping",
+    image: "/schools-offices-industry.jpg",
+    imageAlt: "Classroom with rows of student desks and chairs",
     intro:
       "Drinking water in a school, college or office has two requirements that pull in different directions: it has to be safe every single day, and the people responsible for it are rarely water engineers. So the plant must be simple to run, easy to check, and built so that a missed filter change does not become a health problem. We have built RO plants since 1996, and we design institutional plants for the people who will actually operate them.",
     challenges: [
@@ -325,8 +325,8 @@ export const MORE_INDUSTRIES: Industry[] = [
       "Central RO and DM water systems for laboratories, QC labs and research facilities, supplying Type II and Type III lab water. Manufacturer in Mumbai since 1996.",
     targetQuery: "laboratory water purification system",
     cardBlurb: "Central RO and DM systems that supply lab-grade water to every bench.",
-    image: "/DM image 2.jpg",
-    imageAlt: "DM water plant with FRP ion-exchange vessels and PVC piping",
+    image: "/laboratories-industry.jpg",
+    imageAlt: "Laboratory glassware: beakers and flasks",
     intro:
       "Laboratory water is graded, not just 'purified'. Analytical work, reagent preparation, glassware rinsing and instrument feed each need a defined grade, and the grade decides the treatment. Most laboratories are best served by a central system distributing Type II or Type III water to the benches, with small point-of-use polishers producing ultrapure water only where an instrument needs it. We build the central system that everything else depends on.",
     challenges: [
@@ -423,8 +423,8 @@ export const MORE_INDUSTRIES: Industry[] = [
       "DM plants, RO systems and water softeners for chemical and specialty chemical plants: process water, boiler feed and cooling. Manufacturer in Mumbai since 1996.",
     targetQuery: "water treatment plant for chemical industry",
     cardBlurb: "DM and RO process water, boiler feed and cooling water for chemical plants.",
-    image: "/ro-img8.jpeg",
-    imageAlt: "Industrial RO plant with stainless steel membrane housings",
+    image: "/chemical-industry.jpg",
+    imageAlt: "Large chemical storage tanks in a process plant",
     intro:
       "In a chemical plant, water is rarely just a utility. It is a reactant, a solvent, a heat-transfer medium and a cleaning agent, and the impurities it carries can end up in the product, interfere with a reaction, or scale a heat exchanger. The right treatment depends on which of those jobs the water is doing. We have built water treatment plants for process industries since 1996, together with the fabricated vessels and tanks that go with them.",
     challenges: [
@@ -517,8 +517,8 @@ export const MORE_INDUSTRIES: Industry[] = [
       "Water softeners, RO plants and boiler feed treatment for dyeing, processing and textile units in Bhiwandi and Maharashtra. Manufacturer in Vasai since 1996.",
     targetQuery: "ro plant for textile industry",
     cardBlurb: "Soft, iron-free process water for dyeing and processing, and boiler feed.",
-    image: "/ro-img9.jpeg",
-    imageAlt: "Industrial RO plant with multiple stainless steel membrane housings",
+    image: "/textile-industry.jpg",
+    imageAlt: "Rolls of fabric stacked on racks in a textile factory",
     intro:
       "Textile wet processing is unforgiving of bad water. Hardness reacts with dyes and soaps, iron stains fabric, and variation in the water shows up as variation in shade from one batch to the next. For dyeing and processing units in Bhiwandi - a short drive from our Vasai works - and across Maharashtra, treated water is one of the cheapest ways to protect quality and cut reprocessing. We have built water treatment plants since 1996.",
     challenges: [
@@ -609,8 +609,8 @@ export const MORE_INDUSTRIES: Industry[] = [
     targetQuery: "packaged drinking water manufacturers",
     cardBlurb:
       "Upgrades, extra output and dependable quality for bottlers already in production.",
-    image: "/Mineral-Water-Plant(2).webp",
-    imageAlt: "Packaged drinking water plant room with stainless steel tanks and treatment skids",
+    image: "/packaged-drinking-water-industry.jpg",
+    imageAlt: "Packaged water bottles moving along a conveyor on a filling line",
     intro:
       "Running a packaged drinking water plant is a different job from setting one up. Output has to keep pace with orders, every batch has to pass its tests, and inspections and audits arrive on their own schedule. This page is for bottlers already in production. We have built packaged drinking water plants since 1996, including for Bisleri, Bailey and Campa, and we upgrade and service plants built by others as well as our own.",
     challenges: [
@@ -712,5 +712,204 @@ export const MORE_INDUSTRIES: Industry[] = [
     ],
     relatedProducts: ["mineral-water-project", "dosing-ozonation-uv", "rfc", "amc-maintenance", "reverse-osmosis"],
     relatedPosts: ["mineral-water-plant-machinery-list", "mineral-water-plant-setup-cost-india", "ro-plant-output-dropping", "industrial-ro-plant-amc-guide"],
+  },
+  {
+    slug: "agriculture",
+    name: "Agriculture & Agro-processing",
+    heading: "Water Treatment for Agriculture, Hydroponics and Agro-processing",
+    title: "RO Plant & Water Treatment for Agriculture, Hydroponics & Agro-processing",
+    description:
+      "RO and softening for hydroponics, nurseries, dairy and agro-processing units: lower TDS irrigation water and clean process water. Mumbai, since 1996.",
+    targetQuery: "ro plant for agriculture and hydroponics",
+    cardBlurb:
+      "Low-TDS water for hydroponics and nurseries, and clean process water for dairy and agro-processing.",
+    image: "/agriculture-industry.jpeg",
+    imageAlt: "Tractor working in rows of green crops on a farm",
+    intro:
+      "Most field irrigation does not need treated water, and we will say so. Treatment pays where the water itself limits the result: hydroponic and greenhouse crops fed on a nutrient recipe, nurseries and tissue culture, and agro-processing units such as dairies and food processors whose product touches the water. For those, the feed water has to be known, controlled and consistent, and that is an RO and softening job.",
+    challenges: [
+      {
+        title: "Salinity and sodium in borewell water",
+        text: "High TDS and sodium stress plants and leave salts in the root zone. Hydroponic growers also cannot control a nutrient recipe if the starting water already carries a large and variable load of dissolved salts.",
+      },
+      {
+        title: "Hardness and bicarbonate clogging emitters",
+        text: "Hard water scales drip lines and foggers, and bicarbonate pushes the pH up. Both cost yield and maintenance long before anyone thinks of the water.",
+      },
+      {
+        title: "Seasonal variation",
+        text: "Borewell quality changes through the year and with the water table. A plant sized on one sample in the wet season can be wrong in summer.",
+      },
+      {
+        title: "Wasting water you cannot spare",
+        text: "RO sends a share of the feed to drain as reject. On a farm that water has a use, so the reject should be planned for, not simply thrown away.",
+      },
+    ],
+    body: [
+      { kind: "h2", text: "Where treated water is worth paying for" },
+      {
+        kind: "p",
+        text: "The test is whether the water quality changes the outcome enough to cover the plant and its running cost. For bulk field irrigation it almost never does. For a polyhouse with a nutrient recipe, a nursery, or a processing line that uses water as an ingredient or for washing product, it often does.",
+      },
+      {
+        kind: "table",
+        head: ["Use", "What the water needs", "Usual treatment"],
+        rows: [
+          ["Hydroponics and greenhouse crops", "Low, stable TDS so the nutrient recipe can be controlled", "Sediment and carbon filtration, then RO; blending back raw water if some minerals are wanted"],
+          ["Nurseries and tissue culture", "Low salinity, free of chlorine and suspended solids", "Filtration and RO"],
+          ["Dairy and food processing", "Potable quality for washing and as an ingredient", "Filtration, softening where hardness is a problem, RO, and UV or ozone for disinfection"],
+          ["Drip and fogger lines", "Low hardness and suspended solids", "Filtration and softening or antiscalant, not always RO"],
+          ["Livestock and poultry drinking water", "Safe, palatable, low in salts and microbes", "Filtration and disinfection, with RO if the borewell is brackish"],
+        ],
+      },
+      { kind: "h2", text: "Start with a water analysis" },
+      {
+        kind: "p",
+        text: "Get a full analysis before choosing a system: TDS, hardness, alkalinity, chloride, iron, and sodium if you can. A high-TDS borewell with modest hardness wants RO. A low-TDS but very hard source wants a softener. Iron wants removal before either. Test in the dry season as well, because that is usually the worst case.",
+      },
+      {
+        kind: "callout",
+        text: "Decide what to do with the RO reject before you buy the plant. Reject water is higher in salts but is still usable for some purposes, such as washing floors or irrigating salt-tolerant plantings, where the rules and the plants allow.",
+      },
+      { kind: "h2", text: "A typical train for a greenhouse or nursery" },
+      {
+        kind: "ol",
+        items: [
+          "Raw water tank and multigrade filtration to remove suspended solids.",
+          "Iron removal where the borewell carries iron.",
+          "Activated carbon where the source is chlorinated.",
+          "Softener or antiscalant dosing to protect the membranes from scaling.",
+          "Cartridge filtration ahead of the RO as final membrane protection.",
+          "Reverse osmosis, sized for peak irrigation demand with treated water storage to buffer it.",
+          "Dosing for pH and nutrients downstream, which the grower controls.",
+        ],
+      },
+      { kind: "h2", text: "What we need to quote accurately" },
+      {
+        kind: "p",
+        text: "Send us the water analysis, the crop or process, the litres per day at peak, the hours you can run the plant, how much space and power you have, and whether the reject has somewhere useful to go. We size the plant to the demand and the feed water, and tell you if a simpler filter and softener will do the job.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do I need an RO plant for normal field irrigation?",
+        answer:
+          "Usually not. The volumes are too large for RO to make economic sense. Treatment is worth it for hydroponics, nurseries, greenhouses, livestock drinking water and agro-processing, where the water quality directly affects the result.",
+      },
+      {
+        question: "What TDS is suitable for hydroponics?",
+        answer:
+          "Growers usually start from a very low TDS so they can control the nutrient recipe themselves, and the right figure depends on the crop and the recipe your agronomist uses. We supply the RO plant and the consistent low-TDS water; the nutrient programme is the grower's call.",
+      },
+      {
+        question: "What can be done with the RO reject water?",
+        answer:
+          "It carries more salts than the feed, so it is unsuitable for sensitive crops, but it can often be used for washing, cleaning or salt-tolerant uses. Plan for it at design stage and size recovery with that in mind.",
+      },
+      {
+        question: "Do you treat water for dairies and food processing units?",
+        answer:
+          "Yes. We build filtration, softening, RO and UV or ozone disinfection trains for processing units. Processing water for food also has licensing and testing requirements, so check the FSSAI rules that apply to your product.",
+      },
+      {
+        question: "Can the plant run on solar power?",
+        answer:
+          "It can be sized to run from a suitable power source, but RO pumps draw real power, so the solar array would need sizing for that load. Tell us your power situation and we will work out what is practical.",
+      },
+    ],
+    relatedProducts: ["reverse-osmosis", "water-softening", "dosing-ozonation-uv", "fabricated-vessels"],
+  },
+  {
+    slug: "warehousing",
+    name: "Warehousing & Cold Storage",
+    heading: "Water Treatment for Warehouses, Cold Storage and Logistics Parks",
+    title: "Water Treatment for Warehouses, Cold Storage & Logistics Parks",
+    description:
+      "Drinking water, softening and storage tanks for warehouses, cold chain units and logistics parks with large workforces and no municipal guarantee. Since 1996.",
+    targetQuery: "water treatment plant for warehouse",
+    cardBlurb:
+      "Drinking water for large workforces, softened water for chillers and cooling, and site storage tanks.",
+    image: "/warehousing-industry.jpeg",
+    imageAlt: "Warehouse aisle with racks of stacked cardboard boxes",
+    intro:
+      "A warehouse is not a heavy water user by industry standards, which is exactly why its water is often an afterthought: a borewell, a tank on the roof and a few small purifiers. The problems arrive later. Hundreds of staff and drivers need safe drinking water across shifts, cold storage and chillers scale up on hard water, and a large site may depend on tanker supply. We plan the water side of a storage facility as a small utility rather than a collection of purifiers.",
+    challenges: [
+      {
+        title: "Drinking water for a large, changing workforce",
+        text: "Headcount swings with seasons and contracts, and drivers and visitors add to it. A row of small purifiers becomes expensive to maintain and inconsistent in quality.",
+      },
+      {
+        title: "Scale in chillers and cooling systems",
+        text: "Cold storage and air-conditioned units use water in condensers and cooling towers. Hard water scales them, costs energy and shortens equipment life.",
+      },
+      {
+        title: "Uncertain supply",
+        text: "Many logistics parks sit outside municipal networks and depend on borewells and tankers. Storage has to bridge the gaps and keep the water in it clean.",
+      },
+      {
+        title: "Nobody on site to run it",
+        text: "Warehouses rarely have a water technician. The plant has to be simple to operate and easy to service under a contract.",
+      },
+    ],
+    body: [
+      { kind: "h2", text: "What a storage facility actually uses water for" },
+      {
+        kind: "table",
+        head: ["Duty", "What matters", "Typical solution"],
+        rows: [
+          ["Drinking water for staff and drivers", "Safe, consistent, with enough capacity at shift change", "A central RO plant with UV and treated water storage, with distribution to drinking points"],
+          ["Chillers, condensers and cooling towers", "Low hardness to limit scaling", "Softener on the make-up water, with a blowdown routine"],
+          ["Washing, sanitation and pest control", "Clean, non-scaling water", "Filtration and softening"],
+          ["Fire and general storage", "Volume and reliability rather than quality", "Fabricated tanks sized and sited for the site"],
+        ],
+      },
+      { kind: "h2", text: "One central plant or many small purifiers" },
+      {
+        kind: "p",
+        text: "For a small office block within a warehouse, point-of-use purifiers are fine. Once you have a few hundred people, a central plant with treated water storage and a distribution line is usually easier to maintain, gives steadier quality and costs less per litre. Size it on headcount and shift pattern, and let the storage tank absorb the peak at shift change rather than oversizing the treatment capacity for a short daily peak.",
+      },
+      {
+        kind: "callout",
+        text: "Treated water is only as clean as the tank it is stored in. Specify tanks with sealed lids, an overflow screen and easy cleaning access, and set a cleaning schedule.",
+      },
+      { kind: "h2", text: "Storage tanks built for the site" },
+      {
+        kind: "p",
+        text: "We fabricate SS and MS tanks and vessels ourselves, which lets us size and shape them around the yard, the plinth and the pipe routes you actually have rather than a catalogue size. Stainless is the usual choice for drinking water storage, and MS suits raw and utility water.",
+      },
+      { kind: "h2", text: "What we need to quote accurately" },
+      {
+        kind: "p",
+        text: "Send us the headcount across shifts, the water source and its analysis, the cold storage or cooling load, how much storage you want in hours of demand, and the space available. If you have tanker supply, tell us how often it arrives and how long a gap it has to cover.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you size drinking water for a warehouse?",
+        answer:
+          "On headcount and shift pattern, with treated water storage sized to cover the peak at shift change and meal breaks. That costs less than sizing the treatment plant for a short daily peak.",
+      },
+      {
+        question: "Do chillers and cold storage need softened water?",
+        answer:
+          "If your water is hard, yes, in most cases. Scale in condensers and cooling towers raises energy use and shortens equipment life. A softener on the make-up water is usually the lowest-cost fix.",
+      },
+      {
+        question: "Can you supply the storage tanks as well?",
+        answer:
+          "Yes. We fabricate SS and MS storage tanks and vessels in-house, sized to the site rather than a stock size.",
+      },
+      {
+        question: "We depend on tankers. Can the plant handle that?",
+        answer:
+          "Yes. Tanker water varies, so we size raw water storage to bridge the gaps between deliveries, add filtration at the inlet and test the water that arrives before we finalise the design.",
+      },
+      {
+        question: "Do you offer servicing, given we have no water technician?",
+        answer:
+          "Yes. We offer annual maintenance contracts with scheduled visits covering filters, membranes and dosing, so the plant does not depend on someone on site.",
+      },
+    ],
+    relatedProducts: ["reverse-osmosis", "fabricated-vessels", "water-softening", "amc-maintenance"],
   },
 ];

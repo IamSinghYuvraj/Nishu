@@ -499,8 +499,8 @@ const CORE_INDUSTRIES: Industry[] = [
     targetQuery: "ro plant for hotel",
     cardBlurb:
       "Softening across the property with RO where taste matters — guest rooms, laundry and kitchens.",
-    image: "/Ro-img5.jpg",
-    imageAlt: "Commercial reverse osmosis water treatment unit for a hospitality property",
+    image: "/hospitality-industry.jpg",
+    imageAlt: "Hotel lobby with marble floors and lounge seating",
     intro:
       "A hotel is several water applications in one building, and they conflict. Guests notice taste and they notice scale on a shower fitting. The laundry cares about hardness because it decides detergent consumption and linen life. The kitchen cares about taste and about scale in the equipment. The boiler and the cooling plant care about something else again. The systems we build for this sector are usually segregated by duty for exactly that reason.",
     challenges: [
@@ -726,6 +726,8 @@ const RELATED_POSTS: Record<string, string[]> = {
   laboratories: ["ro-vs-dm-plant", "dm-plant-regeneration-process", "how-to-read-a-water-test-report"],
   "schools-offices": ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
   "residential-societies": ["water-softener-for-housing-society", "how-to-read-a-water-test-report", "compare-ro-plant-quotations"],
+  agriculture: ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
+  warehousing: ["how-to-read-a-water-test-report", "compare-ro-plant-quotations", "industrial-ro-plant-amc-guide"],
   construction: ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
 };
 
@@ -744,6 +746,8 @@ const ORDER = [
   "laboratories",
   "schools-offices",
   "construction",
+  "agriculture",
+  "warehousing",
 ];
 
 export const INDUSTRIES: Industry[] = [...CORE_INDUSTRIES, ...MORE_INDUSTRIES]

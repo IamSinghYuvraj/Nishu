@@ -7,12 +7,14 @@ import {
   FlaskConical,
   HardHat,
   House,
+  Leaf,
   Microscope,
   Pill,
   School,
   Shirt,
   Stethoscope,
   Utensils,
+  Warehouse,
   Zap,
 } from "lucide-react"
 import { INDUSTRIES } from "@/lib/industries"
@@ -31,6 +33,8 @@ const ICONS: Record<string, React.ReactNode> = {
   laboratories: <Microscope className="w-6 h-6 text-primary" />,
   "schools-offices": <School className="w-6 h-6 text-primary" />,
   construction: <HardHat className="w-6 h-6 text-primary" />,
+  agriculture: <Leaf className="w-6 h-6 text-primary" />,
+  warehousing: <Warehouse className="w-6 h-6 text-primary" />,
 }
 
 // The homepage shows the first six; the rest are one click away.
