@@ -10,17 +10,23 @@ import ContactUs  from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "rfc")!
 
 export default function RFCPage() {
-  const mediaItems: MediaItem[] = [
+  const baseMedia: MediaItem[] = [
     { type: "image", src: "/rfc(1).webp", title: "RFC Machine 1" },
     { type: "image", src: "/rfc(2).webp", title: "RFC Machine 2" },
     { type: "image", src: "/rfc(3).webp", title: "RFC Machine 3" },
     { type: "video", src: "/rfc(1) video.mp4", title: "RFC Machine Video 1" },
     { type: "video", src: "/rfc(2)video.mp4", title: "RFC Machine Video 2" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("rfc").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [

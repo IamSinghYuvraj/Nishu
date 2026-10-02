@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { ClientLogos } from "@/components/client-logos";
 import { Industries } from "@/components/industries";
 import ContactUs from "@/components/contactus";
+import { YouTubeSection } from "@/components/youtube-section";
 import AnimatedSectionPage from "@/components/animation";
 import { Navigation } from "@/components/navigation";
 import { TreatmentTrain } from "@/components/treatment-train";
@@ -470,6 +471,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <YouTubeSection />
 
       <ContactUs />
     </>

@@ -10,15 +10,21 @@ import ContactUs from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "demineralized")!
 
 export default function DMPage() {
-  const mediaItems: MediaItem[] = [
+  const baseMedia: MediaItem[] = [
     { type: "image", src: "/DM image 1.jpg", title: "DM Plant Image 1" },
     { type: "image", src: "/DM image 2.jpg", title: "DM Plant Image 2" },
     { type: "image", src: "/DM image 3.jpeg", title: "DM Plant Image 3" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("demineralized").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [

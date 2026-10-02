@@ -43,7 +43,7 @@ export const BUSINESS = {
     linkedin: "",
     instagram: "",
     facebook: "",
-    youtube: "",
+    youtube: "https://www.youtube.com/@Madhusudanaquaindustries",
   },
 };
 

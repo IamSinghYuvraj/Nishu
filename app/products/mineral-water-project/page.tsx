@@ -10,17 +10,23 @@ import ContactUs from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "mineral-water-project")!
 
 export default function MineralWaterProjectPage() {
-  const mediaItems: MediaItem[] = [
+  const baseMedia: MediaItem[] = [
     { type: "video", src: "/Complete-Mineral-Water-Project video(1).mp4", title: "Complete Mineral Water Project Video" },
     { type: "image", src: "/Complete-Mineral-Water-Project(5).webp", title: "Complete Mineral Water Project" },
     { type: "image", src: "/COMPLETE-PROJECT-FLOW-DIAGRAM(3)).webp", title: "Project Flow Diagram" },
     { type: "image", src: "/Mineral-Drinking-Water-Plant(1).webp", title: "Mineral Drinking Water Plant" },
     { type: "image", src: "/Mineral-Water-Plant(2).webp", title: "Mineral Water Plant" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("mineral-water-project").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [

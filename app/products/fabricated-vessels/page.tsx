@@ -10,12 +10,13 @@ import ContactUs from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "fabricated-vessels")!
 
 export default function FabricatedVesselsPage() {
-const mediaItems: MediaItem[] = [
+const baseMedia: MediaItem[] = [
     { type: "image", src: "/ss-storage-tank(5).png", title: "SS Storage Tank 5" },
     { type: "image", src: "/ss-storage-tank(6).png", title: "SS Storage Tank 6" },
     { type: "image", src: "/ss-storage-tanks(10).jpeg", title: "SS Storage Tanks 10" },
@@ -23,6 +24,11 @@ const mediaItems: MediaItem[] = [
     { type: "image", src: "/ss-storage-tanks(8).jpg", title: "SS Storage Tanks 8" },
     { type: "video", src: "/ss-storage-tank(1)video.mp4", title: "SS Storage Tank Video 1" },
     { type: "video", src: "/ss-storage-tanks(1)video.mp4", title: "SS Storage Tanks Video 2" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("fabricated-vessels").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [

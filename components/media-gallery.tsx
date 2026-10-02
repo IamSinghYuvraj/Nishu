@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, ZoomIn, X } from "@/components/icons"
 import Image from "next/image"
+import { youTubeId } from "@/lib/videos"
 
 export interface MediaItem {
   type: "image" | "video"
@@ -37,7 +38,7 @@ export function MediaGallery({ items }: MediaGalleryProps) {
     } else if (url.includes("youtu.be/")) {
       videoId = url.split("youtu.be/")[1]?.split("?")[0] || ""
     }
-    return `https://www.youtube.com/embed/${videoId}`
+    return `https://www.youtube-nocookie.com/embed/${videoId}`
   }
 
   return (

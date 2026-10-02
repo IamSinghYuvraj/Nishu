@@ -9,16 +9,22 @@ import ContactUs  from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "water-softening")!
 
 
 export default function WaterSofteningPage() {
-  const mediaItems: MediaItem[] = [
+  const baseMedia: MediaItem[] = [
     { type: "image", src: "/Water-Softening-Plant.jpg", title: "Water Softening Plant" },
     {type: "image", src: "/water-softeners.webp", title: "Water Softeners"},
     {type: "image", src: "/water-softner(3).png", title: "Water Softeners"}
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("water-softening").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [

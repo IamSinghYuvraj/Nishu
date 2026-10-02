@@ -10,15 +10,21 @@ import ContactUs from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "dosing-ozonation-uv")!
 
 export default function DosingOzonationUVPage() {
-  const mediaItems: MediaItem[] = [
+  const baseMedia: MediaItem[] = [
     { type: "image", src: "/Ozone_system(3).jpg", title: "Ozone System 1" },
     { type: "image", src: "/Ozone-system(2).jpg", title: "Ozone System 3" },
     { type: "image", src: "/ozone-system(5).jpeg", title: "Ozone System 5" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("dosing-ozonation-uv").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [

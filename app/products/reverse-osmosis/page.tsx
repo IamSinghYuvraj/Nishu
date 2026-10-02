@@ -10,16 +10,22 @@ import ContactUs from "@/components/contactus";
 import { TrustBar } from "@/components/trust-bar"
 import { FaqSection } from "@/components/faq-section"
 import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
 import { PRODUCT_FAQS } from "@/lib/product-content"
 
 const seo = PRODUCTS.find((p) => p.slug === "reverse-osmosis")!
 
 export default function ROPage() {
-  const mediaItems: MediaItem[] = [
+  const baseMedia: MediaItem[] = [
     { type: "image", src: "/ro-img11.jpeg", title: "RO Plant Image 11" },
     { type: "image", src: "/Ro-img2.jpg", title: "RO Plant Image 2" },
     { type: "image", src: "/Ro-image4.jpg", title: "RO Plant Image 4" },
     { type: "image", src: "/Ro-img6.jpg", title: "RO Plant Image 6" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("reverse-osmosis").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
   ]
 
   const specs = [
