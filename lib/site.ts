@@ -137,17 +137,6 @@ export const PRODUCTS: ProductSeo[] = [
     imageAlt: "Fabricated stainless steel storage tank",
   },
   {
-    slug: "mineral-water-project",
-    name: "Complete Mineral Water Project",
-    heading: "Turnkey Mineral Water & Packaged Drinking Water Plants",
-    title: "Mineral Water Plant Setup | Packaged Drinking Water Plant",
-    description:
-      "Turnkey packaged drinking water plants: RO, ozonation, bottling and RFC machines, built for FSSAI requirements. Trusted by Bisleri, Bailey and Campa since 1996.",
-    targetQuery: "packaged drinking water plant manufacturer",
-    image: "/Complete-Mineral-Water-Project(5).webp",
-    imageAlt: "Complete mineral water and packaged drinking water plant",
-  },
-  {
     slug: "dosing-ozonation-uv",
     name: "Dosing, Ozonation & UV Systems",
     heading: "Ozone Generators, UV Sterilisers & Dosing Systems",
@@ -157,17 +146,6 @@ export const PRODUCTS: ProductSeo[] = [
     targetQuery: "ozone generator for water treatment",
     image: "/Ozone_system(3).jpg",
     imageAlt: "Ozone generator for water treatment",
-  },
-  {
-    slug: "rfc",
-    name: "Rinsing Filling Capping Machine (RFC)",
-    heading: "Automatic RFC Bottle Rinsing, Filling & Capping Machine",
-    title: "RFC Machine Manufacturer | Bottle Rinsing Filling Capping",
-    description:
-      "Automatic rinsing, filling and capping (RFC) machines for packaged drinking water and beverage bottling lines. Manufactured in Vasai, Mumbai since 1996.",
-    targetQuery: "rfc machine manufacturer",
-    image: "/rfc(1).webp",
-    imageAlt: "Automatic rinsing filling capping (RFC) machine for water bottles",
   },
   {
     slug: "desalination",

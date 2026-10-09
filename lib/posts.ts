@@ -233,10 +233,10 @@ export const POSTS: Post[] = [
     imageAlt: "Complete packaged drinking water plant with bottling line",
     category: "buying-and-cost",
     cta: {
-      label: "Explore turnkey mineral water projects",
-      href: "/products/mineral-water-project",
+      label: "Explore industrial RO plants",
+      href: "/products/reverse-osmosis",
     },
-    products: ["mineral-water-project", "rfc", "dosing-ozonation-uv"],
+    products: ["reverse-osmosis", "dosing-ozonation-uv"],
     related: ["mineral-water-plant-machinery-list", "ro-plant-capacity-for-your-factory"],
     body: [
       {
@@ -309,7 +309,7 @@ export const POSTS: Post[] = [
       },
       {
         kind: "p",
-        text: "We deliver complete turnkey packaged drinking water projects — raw water treatment through to bottling — built to FSSAI standards, and will quote against your source water and target output rather than a generic package.",
+        text: "We build the water treatment side of packaged drinking water plants — filtration, RO, mineral dosing, ozonation and UV — designed around FSSAI requirements, and will quote against your source water and target output rather than a generic package.",
       },
     ],
   },
@@ -971,8 +971,8 @@ export const POSTS: Post[] = [
     image: "/Mineral-Drinking-Water-Plant(1).webp",
     imageAlt: "Mineral drinking water plant with stainless steel vessels and control panel",
     category: "buying-and-cost",
-    cta: { label: "Explore turnkey mineral water projects", href: "/products/mineral-water-project" },
-    products: ["mineral-water-project", "rfc", "dosing-ozonation-uv"],
+    cta: { label: "Explore industrial RO plants", href: "/products/reverse-osmosis" },
+    products: ["reverse-osmosis", "dosing-ozonation-uv"],
     related: ["mineral-water-plant-setup-cost-india", "compare-ro-plant-quotations"],
     body: [
       {
@@ -1043,7 +1043,7 @@ export const POSTS: Post[] = [
       },
       {
         kind: "p",
-        text: "We build the water treatment plant, ozonation and RFC machines as one scope, so the stages are sized together. Tell us your target output, pack sizes and source water, and we will set out which machines your plant needs.",
+        text: "We build the water treatment plant and ozonation as one scope, so the stages are sized together. Tell us your target output and source water, and we will size the treatment side to keep pace with your filler.",
       },
     ],
   },

@@ -44,25 +44,11 @@ const products = [
     href: "/products/fabricated-vessels",
   },
   {
-    title: "Complete Mineral Water Project",
-    description:
-      "End-to-end turnkey packaged drinking water plants, from raw water treatment to bottling and packaging.",
-    image: "/Complete-Mineral-Water-Project(5).webp",
-    href: "/products/mineral-water-project",
-  },
-  {
     title: "Dosing, Ozonation & UV Systems",
     description:
       "Disinfection, oxidation and precise chemical dosing systems for the highest water quality.",
     image: "/Ozone_system(3).jpg",
     href: "/products/dosing-ozonation-uv",
-  },
-  {
-    title: "Rinsing Filling Capping Machine (RFC)",
-    description:
-      "Automatic RFC machines for hygienic, high-speed bottling of packaged drinking water and beverages.",
-    image: "/rfc(1).webp",
-    href: "/products/rfc",
   },
   {
     title: "Desalination Plant",

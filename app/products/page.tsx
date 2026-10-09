@@ -5,7 +5,7 @@ import { ProductsGrid } from "@/components/products-grid";
 
 const title = "Water Treatment Plants & Equipment | RO, DM, Softener, UV";
 const description =
-  "RO plants, DM plants, water softeners, desalination and mineral water plants, ozone/UV, RFC machines, spares and AMC. Manufacturer in Mumbai since 1996.";
+  "RO plants, DM plants, water softeners, desalination plants, ozone/UV, spares and AMC. Manufacturer in Mumbai since 1996.";
 
 export const metadata: Metadata = {
   title: { absolute: title },

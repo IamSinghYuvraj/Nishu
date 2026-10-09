@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { ArrowRight, Droplets, Filter, Layers, Waves, Sun, Package } from "lucide-react"
+import { ArrowRight, Droplets, Filter, Layers, Waves, Sun } from "lucide-react"
 
 // A typical packaged-drinking-water train fed from a borewell. The readings
 // are illustrative, not a guarantee: the site's water analysis decides the
@@ -65,26 +65,13 @@ const STAGES = [
     short: "Ozone + UV",
     name: "Ozonation & UV sterilisation",
     Icon: Sun,
-    text: "Ozone and UV kill bacteria and viruses without leaving a chemical taste, so the water stays safe in the bottle.",
+    text: "Ozone and UV kill bacteria and viruses without leaving a chemical taste, so the water stays safe in storage.",
     removes: ["Bacteria", "Viruses"],
     tds: 45,
     hardness: 2,
     turbidity: 0.1,
     microbes: "Disinfected",
     link: { href: "/products/dosing-ozonation-uv", label: "Ozone, UV & dosing systems" },
-  },
-  {
-    key: "bottling",
-    short: "Bottling",
-    name: "Rinse, fill & cap",
-    Icon: Package,
-    text: "The RFC machine rinses each bottle, fills it and seals it in one enclosed line, so treated water never meets open air.",
-    removes: [],
-    tds: 45,
-    hardness: 2,
-    turbidity: 0.1,
-    microbes: "Sealed",
-    link: { href: "/products/rfc", label: "RFC bottling machines" },
   },
 ]
 

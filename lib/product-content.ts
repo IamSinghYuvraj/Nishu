@@ -140,34 +140,6 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
     },
   ],
 
-  "mineral-water-project": [
-    {
-      question: "What equipment does a packaged drinking water plant need?",
-      answer:
-        "Raw water storage and filtration, activated carbon, softening or antiscalant dosing, micron cartridge filtration, RO, mineral dosing, ozonation of the storage tank, UV, and an automatic rinsing-filling-capping machine, plus the in-house testing facilities required for certification.",
-    },
-    {
-      question: "How much does it cost to set up a mineral water plant?",
-      answer:
-        "It depends on output in litres per hour, the bottle formats and line speed, the feed water quality and how much of the building and utilities already exist. We have written a guide to what drives mineral water plant setup cost in India, and we quote against your specific site.",
-    },
-    {
-      question: "Do I need BIS certification for packaged drinking water?",
-      answer:
-        "Not any more. FSSAI removed mandatory BIS certification for packaged drinking water and mineral water in October 2024. You still need an FSSAI licence, and the product is now a high-risk food category, with annual third-party audits for central licence holders and compulsory testing at FSSAI-notified NABL laboratories from January 2026. The plant, its process and its in-house laboratory are still inspected, so design for that from the start, and confirm the current rules with FSSAI before you apply.",
-    },
-    {
-      question: "Do you supply the bottle filling machine as well?",
-      answer:
-        "Yes. We supply the automatic rinsing, filling and capping (RFC) machine as part of the turnkey project, matched to your line speed and bottle formats.",
-    },
-    {
-      question: "How much space does a mineral water plant need?",
-      answer:
-        "It depends on capacity and whether bottling, storage and the testing lab share the building. Send us the site dimensions with your enquiry and we will propose a layout.",
-    },
-  ],
-
   "dosing-ozonation-uv": [
     {
       question: "Ozone, UV or chlorine - which disinfection method is best?",
@@ -188,28 +160,6 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
       question: "Is a UV steriliser enough on its own?",
       answer:
         "Only if the water is already clear. UV needs low turbidity to work, and because it leaves no residual, stored water can be recontaminated afterwards. It is usually one stage in a treatment train rather than the whole answer.",
-    },
-  ],
-
-  rfc: [
-    {
-      question: "What bottle sizes can an RFC machine handle?",
-      answer:
-        "RFC machines are configured for specific bottle formats and neck sizes. Tell us every format you plan to run and we will confirm the configuration and any change parts required.",
-    },
-    {
-      question: "How many bottles per hour does an RFC machine fill?",
-      answer:
-        "Output depends on the number of rinsing, filling and capping heads and on bottle size. Size the machine against your planned daily output and shift pattern, and the RO and ozonation capacity upstream have to match it.",
-    },
-    {
-      question: "What is the HSN code for an RFC machine?",
-      answer: `Machinery for filling, closing and capping bottles is commonly classified under HSN 8422 30. ${HSN_CAVEAT}`,
-    },
-    {
-      question: "Do I need a water treatment plant along with the RFC machine?",
-      answer:
-        "Yes. The RFC machine fills treated water, so it sits at the end of a line that includes RO, mineral dosing and ozonation. We supply the complete line as a turnkey mineral water project.",
     },
   ],
 

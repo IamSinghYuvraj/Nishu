@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: { absolute: "Request a Quote: RO, DM & Water Softening Plants | Mumbai" },
   description:
-    "Get a quote for RO plants, DM plants, water softeners or a mineral water project. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East.",
+    "Get a quote for RO plants, DM plants, water softeners or desalination plants. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Request a Quote: RO, DM & Water Softening Plants | Mumbai",
-    description: "Get a quote for RO plants, DM plants, water softeners or a mineral water project. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East.",
+    description: "Get a quote for RO plants, DM plants, water softeners or desalination plants. Call +91 98201 42424, WhatsApp, or send your requirement. Vasai East.",
     url: "/contact",
   },
 };

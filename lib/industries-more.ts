@@ -605,7 +605,7 @@ export const MORE_INDUSTRIES: Industry[] = [
     heading: "Water Treatment & Bottling for Packaged Drinking Water Manufacturers",
     title: "Packaged Drinking Water Manufacturers: Plant Upgrades & AMC",
     description:
-      "For packaged drinking water manufacturers: RO, ozonation and RFC upgrades, more output from the same plant, testing-ready quality control and AMC. Since 1996.",
+      "For packaged drinking water manufacturers: RO and ozonation upgrades, more output from the same plant, testing-ready quality control and AMC. Since 1996.",
     targetQuery: "packaged drinking water manufacturers",
     cardBlurb:
       "Upgrades, extra output and dependable quality for bottlers already in production.",
@@ -645,7 +645,7 @@ export const MORE_INDUSTRIES: Industry[] = [
           ["Permeate TDS keeps rising", "Membrane wear or damage; O-ring or seal leaks", "Stage-by-stage conductivity"],
           ["Cartridge filters choke quickly", "Sand or carbon filter not backwashed; feed quality changed", "Pressure drop across the cartridge; filter backwash routine"],
           ["Ozone smell in bottles", "Ozone dose too high or contact time too short", "Residual ozone at filling"],
-          ["Underfilling or leaking caps", "Filling valve or capping head wear; wrong cap torque", "RFC machine service and change parts"],
+          ["Underfilling or leaking caps", "Filling valve or capping head wear; wrong cap torque", "Service by the filling machine supplier"],
         ],
       },
       { kind: "h2", text: "Disinfection and bromate control" },
@@ -675,7 +675,7 @@ export const MORE_INDUSTRIES: Industry[] = [
       { kind: "h2", text: "Maintenance that protects production" },
       {
         kind: "p",
-        text: "A bottling line cannot wait for spares. An annual maintenance contract with scheduled visits, recorded readings and genuine membranes, cartridges and RFC change parts keeps the plant at its rated output and gives the records an inspector will ask for.",
+        text: "A bottling line cannot wait for spares. An annual maintenance contract with scheduled visits, recorded readings and genuine membranes and cartridges keeps the plant at its rated output and gives the records an inspector will ask for.",
       },
       { kind: "h2", text: "What we need to help" },
       {
@@ -704,13 +704,8 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "No. FSSAI removed the mandatory BIS requirement in October 2024. You still need an FSSAI licence, and the category is subject to inspections, third-party audits and compulsory testing at FSSAI-notified laboratories. Check FSSAI's current notices before you rely on any summary.",
       },
-      {
-        question: "Do you supply spares and service for RFC machines?",
-        answer:
-          "Yes. We manufacture rinsing, filling and capping machines and can service them alongside an AMC for the water treatment plant.",
-      },
     ],
-    relatedProducts: ["mineral-water-project", "dosing-ozonation-uv", "rfc", "amc-maintenance", "reverse-osmosis"],
+    relatedProducts: ["dosing-ozonation-uv", "amc-maintenance", "reverse-osmosis", "spares-consumables"],
     relatedPosts: ["mineral-water-plant-machinery-list", "mineral-water-plant-setup-cost-india", "ro-plant-output-dropping", "industrial-ro-plant-amc-guide"],
   },
   {

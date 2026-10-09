@@ -11,6 +11,13 @@ const nextConfig = {
       bodySizeLimit: "5mb",
     },
   },
+  async redirects() {
+    // Products no longer offered: send old links and search results to the catalogue.
+    return [
+      { source: "/products/mineral-water-project", destination: "/products", permanent: true },
+      { source: "/products/rfc", destination: "/products", permanent: true },
+    ]
+  },
   images: {
     // Served from Vercel, which runs Next.js image optimization: originals are
     // resized and converted to AVIF/WebP per request. Do not set
