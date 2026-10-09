@@ -77,26 +77,26 @@ const FEATURED_SLUGS = [
   "reverse-osmosis",
   "demineralized",
   "water-softening",
+  "mineral-water-project",
   "dosing-ozonation-uv",
   "desalination",
-  "membrane-housing",
 ];
 const FEATURED_BLURBS: Record<string, string> = {
   "reverse-osmosis": "Advanced reverse osmosis systems, from commercial units to 10,000+ LPH industrial plants.",
   demineralized: "Demineralization plants for pure water: boiler feed, pharma and process.",
   "water-softening": "Industrial and commercial water softening systems.",
+  "mineral-water-project": "Turnkey packaged drinking water plants, raw water to sealed bottle.",
   "dosing-ozonation-uv": "Ozone generators, UV sterilisers and chemical dosing.",
   desalination: "Seawater and brackish water RO with pre-treatment and remineralisation.",
-  "membrane-housing": "FRP and stainless-steel RO membrane housings and high-pressure pumps.",
 };
 
 const VIDEOS = [
   {
     id: "video-1",
-    title: "Reverse Osmosis Plant",
-    description: "See an industrial RO plant and how it is built.",
-    thumbnail: "/ro-img11.jpeg",
-    href: "/products/reverse-osmosis",
+    title: "Complete Mineral Water Project",
+    description: "Step-by-step guide to setting up a complete mineral water project",
+    thumbnail: "/Complete-Mineral-Water-Project(5).webp",
+    href: "/products/mineral-water-project",
   },
   {
     id: "video-2",
@@ -107,10 +107,10 @@ const VIDEOS = [
   },
   {
     id: "video-3",
-    title: "Water Softening Plant",
-    description: "Automatic softeners for boilers, cooling towers and buildings.",
-    thumbnail: "/Water-Softening-Plant.jpg",
-    href: "/products/water-softening",
+    title: "Mineral Water Plant Installation",
+    description: "Complete setup and installation of mineral water production systems",
+    thumbnail: "/Mineral-Water-Plant(2).webp",
+    href: "/products/mineral-water-project",
   },
 ];
 
@@ -164,7 +164,7 @@ const Home: React.FC = () => {
               <span className="text-lime">Perfectly Engineered</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/85 animate-fade-in-up [animation-delay:240ms] md:text-xl">
-              RO plants, DM plants, water softeners and desalination plants, designed and built in Vasai, Mumbai since {BUSINESS.foundingYear} - with plants running in {COUNTRIES_LINE}.
+              RO plants, DM plants, water softeners and complete mineral water projects, designed and built in Vasai, Mumbai since {BUSINESS.foundingYear} - with plants running in {COUNTRIES_LINE}.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-in-up [animation-delay:360ms]">
               <Button asChild size="lg" variant="cta" className="group">
@@ -239,7 +239,7 @@ const Home: React.FC = () => {
                 </h2>
               </div>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                A typical treatment train for water drawn from a borewell. Select a
+                A typical train for a packaged drinking water plant fed from a borewell. Select a
                 stage to see what it takes out, and what the water reads when it leaves.
               </p>
             </div>
@@ -250,8 +250,8 @@ const Home: React.FC = () => {
                 <Link href="/products/demineralized" className="chip-link">
                   Need boiler or pharma-grade water? DM plants
                 </Link>
-                <Link href="/products/reverse-osmosis" className="chip-link">
-                  Industrial RO plants
+                <Link href="/products/mineral-water-project" className="chip-link">
+                  The whole train, turnkey
                 </Link>
               </div>
             </div>
@@ -383,7 +383,7 @@ const Home: React.FC = () => {
               </p>
               <div className="mt-5 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, and Desalination Plants.
+                  Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water Projects.
                 </p>
                 <p>
                   We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon), pressure gauges and switches, SS fittings, and essential water treatment chemicals including antiscalants, Gramacid, and citric acid.

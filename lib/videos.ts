@@ -15,6 +15,16 @@ export interface YouTubeVideo {
 
 export const YOUTUBE_VIDEOS: YouTubeVideo[] = [
   {
+    url: "https://www.youtube.com/shorts/dCMYP6NjLwA",
+    title: "Bottle filling machine",
+    products: ["mineral-water-project"],
+  },
+  {
+    url: "https://www.youtube.com/shorts/EdnMkrgfWIw",
+    title: "Automatic rinsing, filling and capping machine",
+    products: ["mineral-water-project"],
+  },
+  {
     url: "https://www.youtube.com/shorts/lEka8o2ysXE",
     title: "Reverse osmosis plant",
     products: ["reverse-osmosis"],

@@ -12,11 +12,8 @@ const nextConfig = {
     },
   },
   async redirects() {
-    // Products no longer offered: send old links and search results to the catalogue.
-    return [
-      { source: "/products/mineral-water-project", destination: "/products", permanent: true },
-      { source: "/products/rfc", destination: "/products", permanent: true },
-    ]
+    // RFC machines are no longer offered as a separate product.
+    return [{ source: "/products/rfc", destination: "/products/mineral-water-project", permanent: true }]
   },
   images: {
     // Served from Vercel, which runs Next.js image optimization: originals are

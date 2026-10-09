@@ -1,0 +1,183 @@
+import { ProductHeroActions } from "@/components/product-hero-actions"
+import { RelatedProducts } from "@/components/related-products"
+import { BuyerGuides } from "@/components/buyer-guides"
+import { Navigation } from "@/components/navigation"
+import { Check, Shield, Zap } from "@/components/icons"
+import Link from "next/link"
+import { MediaGallery, type MediaItem } from "@/components/media-gallery"
+import AnimatedSection from "@/components/animation";
+import ContactUs from "@/components/contactus";
+import { TrustBar } from "@/components/trust-bar"
+import { FaqSection } from "@/components/faq-section"
+import { PRODUCTS } from "@/lib/site"
+import { videosForProduct } from "@/lib/videos"
+import { PRODUCT_FAQS } from "@/lib/product-content"
+
+const seo = PRODUCTS.find((p) => p.slug === "mineral-water-project")!
+
+export default function MineralWaterProjectPage() {
+  const baseMedia: MediaItem[] = [
+    { type: "video", src: "/Complete-Mineral-Water-Project video(1).mp4", title: "Complete Mineral Water Project Video" },
+    { type: "image", src: "/Complete-Mineral-Water-Project(5).webp", title: "Complete Mineral Water Project" },
+    { type: "image", src: "/COMPLETE-PROJECT-FLOW-DIAGRAM(3)).webp", title: "Project Flow Diagram" },
+    { type: "image", src: "/Mineral-Drinking-Water-Plant(1).webp", title: "Mineral Drinking Water Plant" },
+    { type: "image", src: "/Mineral-Water-Plant(2).webp", title: "Mineral Water Plant" },
+  ]
+
+  const mediaItems: MediaItem[] = [
+    ...baseMedia,
+    ...videosForProduct("mineral-water-project").map((v): MediaItem => ({ type: "video", src: v.url, title: v.title })),
+  ]
+
+  const specs = [
+    { label: "Plant Capacity Range", value: "2,000 to 50,000 LPH" },
+    { label: "Production Speed", value: "2,000 to 24,000 BPH" },
+    { label: "Bottle Sizes", value: "200ml to 20L" },
+  ]
+
+  const components = [
+    {
+      name: "Raw Water Treatment",
+      description: "Complete purification using RO, UV, and Ozonation.",
+      benefits: "Delivers water that meets the highest standards for safety and purity."
+    },
+    {
+      name: "Mineral Dosing System",
+      description: "Controlled and precise addition of essential minerals.",
+      benefits: "Ensures optimal taste and required mineral content in the final product."
+    },
+    {
+      name: "Quality Control Laboratory",
+      description: "Full laboratory facility setup for internal testing.",
+      benefits: "Enables continuous quality assurance and adherence to regulatory norms."
+    },
+    {
+      name: "Licensing & Regulatory Support",
+      description: "Assistance with obtaining necessary permits and clearances.",
+      benefits: "Provides support for FSSAI licensing, testing and other approvals."
+    },
+    {
+      name: "Bottling & Packaging Line",
+      description: "Includes Rinsing, Filling, Capping (RFC), Labeling, and Shrink Wrapping.",
+      benefits: "Automates the final production stages for high-volume, professional output."
+    }
+  ]
+
+  const deliverables = [
+    "Engineering & Design: Complete plant machinery and layout planning",
+    "Installation & Testing: End-to-end setup and final commissioning",
+    "Training & Support: Comprehensive operator training and ongoing Annual Maintenance Contract (AMC)"
+  ]
+
+  const benefits = [
+    "Complete turnkey solution",
+    "Designed for FSSAI and WHO requirements",
+    "Full regulatory support",
+    "Automated production line",
+    "Comprehensive quality control",
+    "Ongoing technical support"
+  ]
+
+  return (
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <Navigation />
+
+      <main className="flex-1">
+        <section className="on-dark page-hero py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              <div>
+                <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
+                  <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
+                <p className="text-lg text-muted-foreground mb-8">
+                    We set up complete, turnkey mineral water and packaged drinking water plants, covering every stage from raw water treatment to bottling and packaging, designed for FSSAI and WHO requirements. Our plants run for Bisleri, Bailey and Campa, and we have been building them since 1996.
+                  </p>
+                  <ProductHeroActions productName={seo.name} />
+                
+              </div>
+
+              <div>
+                <MediaGallery items={mediaItems} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <TrustBar />
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Project Components</h2>
+            <p className="text-lg text-muted-foreground mb-12">From Water Source to Shelf - Our comprehensive project scope includes:</p>
+            
+            <div className="grid gap-8">
+              {components.map((component, idx) => (
+                <div key={idx} className="card-lift card-rule border border-border rounded-xl p-6 bg-card">
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{component.name}</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">Primary Function</h4>
+                      <p className="text-foreground">{component.description}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">Core Benefits</h4>
+                      <p className="text-foreground">{component.benefits}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-card border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Complete Setup Package</h2>
+            <p className="text-lg text-muted-foreground mb-12">Our turnkey solution includes comprehensive deliverables:</p>
+            
+            <div className="grid gap-6">
+              {deliverables.map((deliverable, idx) => (
+                <div key={idx} className="benefit-row">
+                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
+                  <p className="text-foreground">{deliverable}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Project Specifications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {specs.map((spec, idx) => (
+                <div key={idx} className="p-6 rounded-xl border border-border bg-card card-lift card-rule">
+                  <h3 className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-2">{spec.label}</h3>
+                  <p className="font-display text-2xl font-bold text-foreground">{spec.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-card py-16 md:py-24 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">Key Benefits</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {benefits.map((b, idx) => (
+                <div key={idx} className="benefit-row">
+                  <Check className="w-6 h-6 text-secondary shrink-0 mt-1" />
+                  <p>{b}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <FaqSection faqs={PRODUCT_FAQS["mineral-water-project"] ?? []} />
+        <BuyerGuides product="mineral-water-project" />
+        <RelatedProducts current="mineral-water-project" />
+      </main>
+      <ContactUs />
+    </div>
+  )
+}

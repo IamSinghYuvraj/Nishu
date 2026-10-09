@@ -705,7 +705,7 @@ export const MORE_INDUSTRIES: Industry[] = [
           "No. FSSAI removed the mandatory BIS requirement in October 2024. You still need an FSSAI licence, and the category is subject to inspections, third-party audits and compulsory testing at FSSAI-notified laboratories. Check FSSAI's current notices before you rely on any summary.",
       },
     ],
-    relatedProducts: ["dosing-ozonation-uv", "amc-maintenance", "reverse-osmosis", "spares-consumables"],
+    relatedProducts: ["mineral-water-project", "dosing-ozonation-uv", "amc-maintenance", "reverse-osmosis"],
     relatedPosts: ["mineral-water-plant-machinery-list", "mineral-water-plant-setup-cost-india", "ro-plant-output-dropping", "industrial-ro-plant-amc-guide"],
   },
   {

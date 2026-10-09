@@ -44,6 +44,13 @@ const products = [
     href: "/products/fabricated-vessels",
   },
   {
+    title: "Complete Mineral Water Project",
+    description:
+      "End-to-end turnkey packaged drinking water plants, from raw water treatment to bottling and packaging.",
+    image: "/Complete-Mineral-Water-Project(5).webp",
+    href: "/products/mineral-water-project",
+  },
+  {
     title: "Dosing, Ozonation & UV Systems",
     description:
       "Disinfection, oxidation and precise chemical dosing systems for the highest water quality.",

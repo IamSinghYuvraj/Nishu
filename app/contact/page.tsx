@@ -358,8 +358,8 @@ export default function ContactPage() {
               Request a <span className="text-lime">Quotation</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Tell us what you need - an RO plant, DM plant, water softener or a
-              desalination plant - and we will size it against your water before quoting.
+              Tell us what you need - an RO plant, DM plant, water softener or a complete
+              mineral water project - and we will size it against your water before quoting.
               Designing and building water treatment plants since {BUSINESS.foundingYear}.
             </p>
 

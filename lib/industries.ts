@@ -213,6 +213,7 @@ const CORE_INDUSTRIES: Industry[] = [
           "Reverse osmosis sized on measured demand and feed TDS.",
           "Mineral dosing or controlled blending to the product recipe.",
           "Ozonation to a controlled residual at the storage tank, with UV sterilisation before filling.",
+          "Automatic rinsing, filling and capping matched to the line speed.",
         ],
       },
       { kind: "h2", text: "Ozonation and the residual that matters" },
@@ -224,10 +225,10 @@ const CORE_INDUSTRIES: Industry[] = [
         kind: "p",
         text: "We supply the ozone generators, contact systems and UV units as part of the line rather than as bought-in components, which means the disinfection stage is sized against your actual tank volume and turnover rather than fitted afterwards.",
       },
-      { kind: "h2", text: "New lines and upgrades" },
+      { kind: "h2", text: "Turnkey or staged" },
       {
         kind: "p",
-        text: "We supply the water treatment side of the line — filtration, softening, RO, mineral dosing, ozonation and UV — sized together so the stages agree with each other. For an existing plant, we more often add capacity or replace a stage. Either way, send us your feed water analysis, target output in litres per hour, bottle formats and line speed, and we will quote against the line rather than against a catalogue.",
+        text: "For a new facility we supply the complete mineral water project — treatment, storage, ozonation and bottling — as a single scope, which avoids the interface problems that come from splitting a line across suppliers. For an existing plant, we more often add capacity or replace a stage. Either way, send us your feed water analysis, target output in litres per hour, bottle formats and line speed, and we will quote against the line rather than against a catalogue.",
       },
     ],
     faqs: [
@@ -237,9 +238,9 @@ const CORE_INDUSTRIES: Industry[] = [
           "Size against measured consumption including rinse water, CIP and RO reject — not nominal line speed — then divide by 16 to 20 operating hours a day so maintenance fits inside the schedule. Send us your line speed, bottle formats and feed water analysis and we will size it precisely.",
       },
       {
-        question: "Which parts of a packaged drinking water plant do you supply?",
+        question: "Do you supply complete packaged drinking water plants?",
         answer:
-          "The water treatment train: raw water filtration, softening or antiscalant dosing, RO, mineral dosing, ozonation and UV, sized together and commissioned against your output.",
+          "Yes. We supply turnkey mineral water projects covering raw water treatment, RO, mineral dosing, ozonation, storage and the automatic rinsing-filling-capping machine, commissioned as one scope.",
       },
       {
         question: "Will the plant meet FSSAI requirements for packaged drinking water?",
@@ -257,7 +258,7 @@ const CORE_INDUSTRIES: Industry[] = [
           "Yes. Adding RO capacity or replacing an ozonation or UV stage on an existing line is a substantial part of what we do.",
       },
     ],
-    relatedProducts: ["reverse-osmosis", "dosing-ozonation-uv", "water-softening", "amc-maintenance"],
+    relatedProducts: ["reverse-osmosis", "mineral-water-project", "dosing-ozonation-uv", "amc-maintenance"],
   },
 
   {
@@ -557,7 +558,7 @@ const CORE_INDUSTRIES: Industry[] = [
       },
       {
         kind: "p",
-        text: "We supply the RO, remineralisation and ozonation stages for this, and for a resort running significant bottled water volume the payback is usually straightforward to calculate against current purchase cost.",
+        text: "We supply this as a complete unit, from RO to the filling machine, and for a resort running significant bottled water volume the payback is usually straightforward to calculate against current purchase cost.",
       },
       { kind: "h2", text: "Sizing around occupancy" },
       {
@@ -597,7 +598,7 @@ const CORE_INDUSTRIES: Industry[] = [
           "We fabricate vessels in-house, so the layout can be built around the space available. Send us the plant room dimensions along with the enquiry.",
       },
     ],
-    relatedProducts: ["water-softening", "reverse-osmosis", "dosing-ozonation-uv", "amc-maintenance"],
+    relatedProducts: ["water-softening", "reverse-osmosis", "mineral-water-project", "dosing-ozonation-uv"],
   },
 
   {
