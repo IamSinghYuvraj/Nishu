@@ -159,17 +159,6 @@ export const PRODUCTS: ProductSeo[] = [
     imageAlt: "Ozone generator for water treatment",
   },
   {
-    slug: "desalination",
-    name: "Desalination Plant",
-    heading: "Desalination Plants: Seawater & Brackish Water RO",
-    title: "Desalination Plant Manufacturer | Seawater & Brackish RO",
-    description:
-      "Seawater and brackish water desalination plants using reverse osmosis, with pre-treatment and remineralisation. Manufactured in Vasai, Mumbai since 1996.",
-    targetQuery: "desalination plant companies in india",
-    image: "/ro-img7.jpg",
-    imageAlt: "Multi-stage RO plant with stainless steel membrane housings in series",
-  },
-  {
     slug: "spares-consumables",
     name: "RO Spares & Consumables",
     heading: "RO Plant Spare Parts, Membranes, Resins & Chemicals",

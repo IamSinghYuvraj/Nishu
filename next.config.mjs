@@ -12,8 +12,13 @@ const nextConfig = {
     },
   },
   async redirects() {
-    // RFC machines are no longer offered as a separate product.
-    return [{ source: "/products/rfc", destination: "/products/mineral-water-project", permanent: true }]
+    // Products that are no longer offered; each old URL goes to the nearest live page.
+    return [
+      // RFC machines are no longer offered as a separate product.
+      { source: "/products/rfc", destination: "/products/mineral-water-project", permanent: true },
+      // Desalination plants are not offered; the closest live product is the RO plant.
+      { source: "/products/desalination", destination: "/products/reverse-osmosis", permanent: true },
+    ]
   },
   images: {
     // Served from Vercel, which runs Next.js image optimization: originals are

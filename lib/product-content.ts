@@ -191,29 +191,6 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
     },
   ],
 
-  desalination: [
-    {
-      question: "What is the difference between seawater and brackish water desalination?",
-      answer:
-        "Brackish water - typically from borewells - carries roughly 1,000 to 10,000 mg/L of dissolved solids, while seawater carries around 35,000 mg/L. Seawater RO needs much higher operating pressure, higher-rated housings and pumps, and runs at lower recovery.",
-    },
-    {
-      question: "What recovery does a desalination plant achieve?",
-      answer:
-        "Seawater RO plants commonly recover around 35-45% of the feed as product water; brackish water plants typically achieve considerably higher recovery. The rest leaves as concentrate, which has to be planned for on site.",
-    },
-    {
-      question: "Why is pre-treatment so important in desalination?",
-      answer:
-        "Membranes are the most expensive part of the plant and pre-treatment decides how long they last. Suspended solids, organics and biological fouling in the intake water have to be removed before the high-pressure stage.",
-    },
-    {
-      question: "Is desalinated water safe to drink directly?",
-      answer:
-        "RO permeate from desalination is very low in minerals and slightly aggressive, so drinking water plants add a remineralisation and pH correction stage, followed by disinfection, before supply.",
-    },
-  ],
-
   "spares-consumables": [
     {
       question: "Which RO membranes do you supply?",
@@ -271,77 +248,6 @@ export interface ProductPage {
 }
 
 export const PRODUCT_PAGES: Record<string, ProductPage> = {
-  desalination: {
-    intro:
-      "Desalination is reverse osmosis at its most demanding. Seawater and high-salinity borewell water need higher pressures, tougher materials and far more careful pre-treatment than ordinary RO, and the cost of getting it wrong is measured in membranes. We have designed and built RO plants since 1996, and we engineer desalination plants around the water you actually have to treat.",
-    highlights: [
-      {
-        title: "Seawater and brackish water",
-        text: "Plant design starts from the feed: seawater at around 35,000 mg/L and brackish borewell water are different engineering problems.",
-      },
-      {
-        title: "Pre-treatment built for the intake",
-        text: "Media filtration and cartridge protection sized for the turbidity and fouling load of your intake, not a standard skid.",
-      },
-      {
-        title: "High-pressure materials",
-        text: "Membrane housings, pumps and pipework rated for seawater operating pressures, with corrosion-resistant materials throughout.",
-      },
-      {
-        title: "Drinkable product water",
-        text: "Remineralisation, pH correction and disinfection so permeate is fit to drink and does not corrode the distribution network.",
-      },
-    ],
-    body: [
-      { kind: "h2", text: "Seawater or brackish: the first question" },
-      {
-        kind: "p",
-        text: "The salinity of the feed water decides almost everything else about a desalination plant: operating pressure, membrane type, housing and pump rating, recovery, and the volume of concentrate the site has to handle. Brackish borewell water on coastal sites is often far more saline than inland borewell water, and it can change with the season as the aquifer responds to pumping.",
-      },
-      {
-        kind: "table",
-        head: ["Feed water", "Typical dissolved solids", "Implication for the plant"],
-        rows: [
-          ["Brackish borewell", "Roughly 1,000-10,000 mg/L", "Brackish water membranes, moderate pressure, higher recovery"],
-          ["High-salinity borewell", "Above 10,000 mg/L", "Design approaches seawater practice; analysis over time matters"],
-          ["Seawater", "Around 35,000 mg/L", "Seawater membranes, high pressure, recovery commonly 35-45%"],
-        ],
-      },
-      { kind: "h2", text: "Why pre-treatment decides membrane life" },
-      {
-        kind: "p",
-        text: "In a desalination plant the membranes are the most expensive consumable and the most sensitive component. Every problem the pre-treatment fails to remove - suspended solids, organics, biological growth - ends up fouling them. A plant that saves on pre-treatment pays for it in cleaning frequency and early membrane replacement.",
-      },
-      {
-        kind: "ol",
-        items: [
-          "Intake and screening appropriate to the source - borewell, beach well or open intake.",
-          "Multigrade media filtration to remove suspended solids and reduce turbidity.",
-          "Antiscalant and, where needed, other conditioning chemicals dosed ahead of the membranes.",
-          "Micron cartridge filtration as final membrane protection.",
-          "High-pressure pump and RO membrane array rated for the feed salinity.",
-          "Remineralisation and pH correction of the permeate.",
-          "Disinfection and treated water storage.",
-        ],
-      },
-      {
-        kind: "callout",
-        text: "The most useful single number for a desalination enquiry is not the capacity - it is a full analysis of the intake water, ideally taken more than once.",
-      },
-      { kind: "h2", text: "Remineralisation and product water quality" },
-      {
-        kind: "p",
-        text: "Desalinated permeate is very low in minerals. It tastes flat and it is mildly aggressive to pipework, so water intended for drinking is remineralised and its pH corrected before it is distributed. For industrial duties the permeate may go on to a DM or polishing stage instead.",
-      },
-      { kind: "h2", text: "What we need to quote" },
-      {
-        kind: "p",
-        text: "A full analysis of the source water, the type of intake, the product water capacity you need and what it will be used for, the site location and power availability, and how concentrate can be disposed of on your site. Coastal borewell projects benefit from analyses taken at different times of year.",
-      },
-    ],
-    relatedIndustries: ["hospitality", "construction", "manufacturing"],
-  },
-
   "spares-consumables": {
     intro:
       "A water treatment plant is only as reliable as its consumables. We supply the membranes, resins, cartridges, filter media, instruments, fittings and chemicals that RO, DM and softening plants depend on - the same parts we have specified into our own plants since 1996.",

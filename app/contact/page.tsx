@@ -653,7 +653,7 @@ export default function ContactPage() {
                   <h2 className="mt-3 text-2xl text-foreground">What to send us</h2>
                   <ul className="mt-6 space-y-4">
                     {[
-                      ["Water source", "Borewell, municipal, tanker, river or seawater."],
+                      ["Water source", "Borewell, municipal, tanker or river."],
                       ["Water analysis", "A lab report with TDS, hardness and turbidity, if you have one."],
                       ["Daily demand", "Litres per hour or per day, and the hours the plant runs."],
                       ["End use", "Drinking, bottling, boiler feed, pharma or process water."],

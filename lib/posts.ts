@@ -778,7 +778,6 @@ export const POSTS: Post[] = [
           ["Pharmaceutical purified water", "SS316L for treated water contact parts, with sanitary fittings"],
           ["Boiler feed and industrial process water", "FRP pre-treatment vessels and membrane housings on a coated MS or SS frame"],
           ["Brackish or high-chloride borewell water", "FRP housings and vessels; SS316 or better on high-pressure piping"],
-          ["Seawater desalination", "High-pressure FRP membrane housings; high-grade alloy on the high-pressure side"],
           ["Humid coastal or chemical plant rooms", "FRP or stainless steel; avoid painted MS frames that will rust"],
         ],
       },

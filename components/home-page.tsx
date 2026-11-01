@@ -79,7 +79,7 @@ const FEATURED_SLUGS = [
   "water-softening",
   "mineral-water-project",
   "dosing-ozonation-uv",
-  "desalination",
+  "fabricated-vessels",
 ];
 const FEATURED_BLURBS: Record<string, string> = {
   "reverse-osmosis": "Advanced reverse osmosis systems, from commercial units to 10,000+ LPH industrial plants.",
@@ -87,7 +87,7 @@ const FEATURED_BLURBS: Record<string, string> = {
   "water-softening": "Industrial and commercial water softening systems.",
   "mineral-water-project": "Turnkey packaged drinking water plants, raw water to sealed bottle.",
   "dosing-ozonation-uv": "Ozone generators, UV sterilisers and chemical dosing.",
-  desalination: "Seawater and brackish water RO with pre-treatment and remineralisation.",
+  "fabricated-vessels": "Custom stainless-steel and mild-steel storage tanks, pressure vessels and filter vessels.",
 };
 
 const VIDEOS = [
@@ -384,7 +384,7 @@ const Home: React.FC<{ guides: React.ReactNode }> = ({ guides }) => {
               </p>
               <div className="mt-5 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, Desalination Plants, and complete Mineral Water Projects.
+                  Our offerings include modern Water Treatment Plants, Reverse Osmosis (RO) Units, Demineralized Water Plants, Water Softening Units, Ozonation Systems, and complete Mineral Water Projects.
                 </p>
                 <p>
                   We also provide comprehensive spare parts and equipment for Water Treatment Plants, such as all types of cartridges and filters, membranes (BW, SW, UF, NF), resins, filter media (sand and carbon), pressure gauges and switches, SS fittings, and essential water treatment chemicals including antiscalants, Gramacid, and citric acid.

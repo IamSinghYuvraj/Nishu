@@ -58,13 +58,6 @@ const products = [
     href: "/products/dosing-ozonation-uv",
   },
   {
-    title: "Desalination Plant",
-    description:
-      "Seawater and brackish water desalination plants using RO, with pre-treatment and remineralisation.",
-    image: "/ro-img7.jpg",
-    href: "/products/desalination",
-  },
-  {
     title: "RO Spares & Consumables",
     description:
       "RO membranes, ion exchange resins, cartridges, filter media, gauges, fittings and antiscalants.",
@@ -92,7 +85,7 @@ export function ProductsGrid() {
               Water Treatment Plants &amp; Equipment
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              RO plants, DM plants, water softeners, desalination plants, mineral water
+              RO plants, DM plants, water softeners, mineral water
               projects and bottling machinery, plus the spares and maintenance that keep them
               running. Manufactured in Vasai, Mumbai since 1996.
             </p>

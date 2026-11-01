@@ -15,7 +15,7 @@ export const organizationSchema = {
   image: `${SITE_URL}/nishu-logo.png`,
   foundingDate: BUSINESS.foundingYear,
   description:
-    "Manufacturer of water treatment plants and machinery since 1996: RO plants, DM plants, water softeners, desalination plants, mineral water projects, ozonation/UV systems, spares and AMC services.",
+    "Manufacturer of water treatment plants and machinery since 1996: RO plants, DM plants, water softeners, mineral water projects, ozonation/UV systems, spares and AMC services.",
   slogan: `Water treatment engineering since ${BUSINESS.foundingYear}`,
   // Topics the business is an authority on. Helps search engines connect the
   // organisation to the queries it should appear for.
@@ -27,7 +27,6 @@ export const organizationSchema = {
     "Boiler feed water treatment",
     "Packaged drinking water plants",
     "Mineral water plant setup",
-    "Desalination plants",
     "Ozone generators for water treatment",
     "UV water sterilisers",
     "Purified water systems for pharmaceutical industry",

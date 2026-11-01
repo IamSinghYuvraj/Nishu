@@ -47,7 +47,7 @@ export default function ROPage() {
     },
     {
       name: "Industrial RO Plant",
-      description: "Economical and efficient membrane desalination for brackish water.",
+      description: "Economical and efficient membrane treatment for brackish water.",
       features: "Produces water that is clear, pleasant to taste, and removes up to 95% of TDS/salinity. Ideal for reducing regeneration chemicals in DM plants."
     },
     {
