@@ -206,6 +206,23 @@ export default function AboutPage() {
                 </p>
               </div>
             </AnimatedSection>
+
+            <AnimatedSection delay={150} className="lg:col-span-2">
+              <figure className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-ink/10">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/nishu-enterprises-exhibition-stand.jpeg"
+                    alt="Nishu Enterprises exhibition stand with a stainless-steel RO skid and PLC control panels"
+                    fill
+                    sizes="(max-width: 896px) 100vw, 896px"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="px-6 py-4 text-sm text-muted-foreground">
+                  Our exhibition stand, with an RO skid and PLC control panels on display.
+                </figcaption>
+              </figure>
+            </AnimatedSection>
           </div>
         </section>
 

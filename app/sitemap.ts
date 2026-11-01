@@ -11,7 +11,7 @@ const SHARED = ["lib/site.ts", "app/layout.tsx"];
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     // No trailing slash: must match the homepage canonical exactly.
-    { url: SITE_URL, lastModified: lastModified("app/page.tsx", ...SHARED), changeFrequency: "weekly", priority: 1 },
+    { url: SITE_URL, lastModified: lastModified("app/page.tsx", "components/home-page.tsx", "components/home-guides.tsx", ...SHARED), changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/products`, lastModified: lastModified("app/products/page.tsx", ...SHARED), changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/about`, lastModified: lastModified("app/about/page.tsx", "app/about/layout.tsx"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/contact`, lastModified: lastModified("app/contact/page.tsx", "app/contact/layout.tsx"), changeFrequency: "monthly", priority: 0.8 },
