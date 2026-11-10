@@ -238,6 +238,58 @@ export const PRODUCT_FAQS: Record<string, Faq[]> = {
   ],
 };
 
+// "Do you work in <area>?" - one per product, appended last. Areas confirmed
+// as served by the user on 2026-11-10 (see the pattern note in lib/industries.ts).
+const AREA_FAQS: Record<string, Faq> = {
+  "reverse-osmosis": {
+    question: "Do you install RO plants in Thane, Palghar, Vasai-Virar and Bhiwandi?",
+    answer:
+      "Yes. Our works are in Vasai, so sites across Vasai-Virar, Mira-Bhayandar, Thane, Bhiwandi, Palghar, Tarapur and Boisar are close enough for a site visit and water test before we quote. We also install across India and abroad.",
+  },
+  demineralized: {
+    question: "Do you supply DM plants in Tarapur, Boisar, Taloja and Ambernath?",
+    answer:
+      "Yes. These industrial areas are within reach of our Vasai works, so we can survey the boiler house or process area, test the feed water including silica, and plan the regeneration effluent arrangement on site.",
+  },
+  "water-softening": {
+    question: "Do you install water softeners in Mira Road, Bhayandar, Thane and Palghar?",
+    answer:
+      "Yes. We are based in Vasai and install softeners for societies, hotels and factories across Vasai-Virar, Nalasopara, Mira Road, Bhayandar, Thane, Palghar and Mumbai. We test the water, including tanker water if you use it, before sizing.",
+  },
+  "membrane-housing": {
+    question: "Can you deliver membrane housings and pumps quickly in the Mumbai region?",
+    answer:
+      "Yes. We supply from Vasai, so plants in Mumbai, Thane, Vasai-Virar, Palghar and Bhiwandi can usually get housings and pumps without a long wait. Send the housing size, pressure rating and a photo of the label.",
+  },
+  "fabricated-vessels": {
+    question: "Do you deliver fabricated tanks to sites in Mumbai, Thane and Palghar?",
+    answer:
+      "Yes. Tanks and vessels are fabricated at our works in Vasai and delivered to sites across Mumbai, Thane, Palghar, Bhiwandi and beyond. Large vessels are sized with the transport route and site access in mind.",
+  },
+  "mineral-water-project": {
+    question: "Do you set up packaged drinking water plants in Vasai, Palghar and Thane?",
+    answer:
+      "Yes, and across India. Sites in Vasai-Virar, Palghar, Thane and Bhiwandi are close to our works, which makes site surveys, installation and after-sales service quicker.",
+  },
+  "dosing-ozonation-uv": {
+    question: "Do you supply ozone generators and UV systems in Mumbai and Thane?",
+    answer:
+      "Yes. We build them in Vasai and supply bottling plants, societies, hotels and factories across Mumbai, Thane, Vasai-Virar and Palghar. Send us the tank volume or flow rate and we will size the unit.",
+  },
+  "spares-consumables": {
+    question: "Can you supply RO spares quickly in Vasai, Mumbai and Thane?",
+    answer:
+      "Yes. We keep common membranes, cartridges, resins and chemicals in stock at Vasai, so plants across Vasai-Virar, Mira-Bhayandar, Mumbai, Thane and Palghar can usually be supplied quickly.",
+  },
+  "amc-maintenance": {
+    question: "Which areas does your AMC service cover?",
+    answer:
+      "Our technicians work out of Vasai and cover Vasai-Virar, Mira-Bhayandar, Mumbai, Thane, Bhiwandi, Palghar, Tarapur and Boisar. For plants further away, tell us the location and we will confirm what visit schedule is practical.",
+  },
+};
+
+for (const [slug, faq] of Object.entries(AREA_FAQS)) PRODUCT_FAQS[slug]?.push(faq);
+
 /** Body content for the product pages rendered by app/products/[slug]. */
 export interface ProductPage {
   intro: string;
@@ -250,7 +302,7 @@ export interface ProductPage {
 export const PRODUCT_PAGES: Record<string, ProductPage> = {
   "spares-consumables": {
     intro:
-      "A water treatment plant is only as reliable as its consumables. We supply the membranes, resins, cartridges, filter media, instruments, fittings and chemicals that RO, DM and softening plants depend on - the same parts we have specified into our own plants since 1996.",
+      "Cartridges that choke within days, membranes that no longer recover after cleaning, a softener that runs out between regenerations, a plant waiting on one part: a water treatment plant is only as reliable as its consumables. We supply the membranes, resins, cartridges, filter media, instruments, fittings and chemicals that RO, DM and softening plants depend on - the same parts we have specified into our own plants since 1996.",
     highlights: [
       {
         title: "RO, UF and NF membranes",
@@ -309,7 +361,7 @@ export const PRODUCT_PAGES: Record<string, ProductPage> = {
   },
 
   "amc-maintenance": {
-    intro: `Most water treatment plants that fail do not fail because of design - they fail because nobody was watching the numbers. Our annual maintenance contracts keep RO, DM and softening plants running to specification with scheduled service, cleaning based on real performance data, and genuine spares, backed by building the plants ourselves since ${BUSINESS.foundingYear}.`,
+    intro: `Output dropping a little every month, permeate TDS creeping up, cartridges choking within days, a plant nobody on site knows how to read: most water treatment plants that fail do not fail because of design - they fail because nobody was watching the numbers. Our annual maintenance contracts keep RO, DM and softening plants across Mumbai, Thane, Vasai-Virar and Palghar running to specification with scheduled service, cleaning based on real performance data, and genuine spares, backed by building the plants ourselves since ${BUSINESS.foundingYear}.`,
     highlights: [
       {
         title: "Scheduled service visits",

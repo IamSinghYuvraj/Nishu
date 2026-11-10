@@ -69,7 +69,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "Capacity is the first number anyone asks for and the one most often guessed. Get it wrong on the low side and the plant runs continuously without a maintenance window; too high and you have paid for membranes and pumps that idle. Both mistakes are avoidable with an afternoon of arithmetic before you request quotations.",
+        text: "A new RO plant that runs flat out all day and still cannot keep up, or one that sits idle half the shift: both started as a guess at capacity. Capacity is the first number anyone asks for and the one most often guessed. Get it wrong on the low side and the plant runs continuously without a maintenance window; too high and you have paid for membranes and pumps that idle. Both mistakes are avoidable with an afternoon of arithmetic before you request quotations.",
       },
       { kind: "h2", text: "Start with consumption, not with plant sizes" },
       {
@@ -155,7 +155,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "These two are regularly treated as interchangeable, and they are not. Reverse osmosis pushes water through a semi-permeable membrane under pressure, physically separating dissolved solids. Demineralisation passes water through ion exchange resin beds that swap dissolved mineral ions for hydrogen and hydroxyl ions. Different mechanisms, different outputs, different economics.",
+        text: "One supplier quotes an RO plant, another a DM plant, and a third says you need both, while your boiler keeps scaling or your lab cannot hold its conductivity limit. These two are regularly treated as interchangeable, and they are not. Reverse osmosis pushes water through a semi-permeable membrane under pressure, physically separating dissolved solids. Demineralisation passes water through ion exchange resin beds that swap dissolved mineral ions for hydrogen and hydroxyl ions. Different mechanisms, different outputs, different economics.",
       },
       { kind: "h2", text: "The practical difference" },
       {
@@ -241,7 +241,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "Anyone quoting a single figure for a packaged drinking water plant without asking questions first is guessing. The cost is driven by a handful of decisions, and understanding them is what lets you compare quotations that look wildly different on the surface.",
+        text: "One supplier gives you a price over the phone, another wants your water analysis first, and the two numbers are far apart. Anyone quoting a single figure for a packaged drinking water plant without asking questions first is guessing. The cost is driven by a handful of decisions, and understanding them is what lets you compare quotations that look wildly different on the surface.",
       },
       { kind: "h2", text: "The components you are actually buying" },
       {
@@ -335,7 +335,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "Hardness is dissolved calcium and magnesium. In a boiler, cooling tower or heat exchanger, those minerals come out of solution as the water heats and deposit on the hottest surfaces as scale. The damage is gradual, which is exactly why it is usually caught late.",
+        text: "Fuel bills creeping up, tubes failing early, a boiler that needs descaling at every shutdown: in a plant running on borewell water, the cause is usually hardness. Hardness is dissolved calcium and magnesium. In a boiler, cooling tower or heat exchanger, those minerals come out of solution as the water heats and deposit on the hottest surfaces as scale. The damage is gradual, which is exactly why it is usually caught late.",
       },
       { kind: "h2", text: "Scale is a fuel problem before it is a failure" },
       {
@@ -487,7 +487,7 @@ export const POSTS: Post[] = [
     title: "Industrial RO Plant AMC: What It Should Cover and How to Choose One",
     seoTitle: "Industrial RO Plant AMC: What It Should Cover",
     description:
-      "What an annual maintenance contract for an industrial RO plant should include: visit frequency, checks, cleaning triggers, exclusions and how the price is built.",
+      "What an industrial RO plant AMC should include: visit frequency, checks, cleaning triggers, exclusions and how the price is built, so you can compare offers.",
     targetQuery: "industrial ro plant amc",
     published: "2026-09-27",
     readingMinutes: 7,
@@ -604,7 +604,7 @@ export const POSTS: Post[] = [
     category: "industry-guides",
     cta: { label: "Water softeners for housing societies", href: "/industries/residential-societies" },
     products: ["water-softening"],
-    related: ["hard-water-industrial-boilers-softener", "compare-ro-plant-quotations"],
+    related: ["hard-water-vasai-virar-mira-bhayandar", "hard-water-industrial-boilers-softener", "compare-ro-plant-quotations"],
     body: [
       {
         kind: "p",
@@ -723,7 +723,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "\"FRP plant\" and \"SS plant\" sound like two different machines. In practice they describe the materials of four separate parts: the pre-treatment vessels, the membrane housings, the frame and the piping. A good RO plant often mixes materials, choosing each one for the job it does. Knowing which part is which lets you compare quotes properly and avoid paying for steel where it adds nothing.",
+        text: "One quotation says FRP, another says SS, and the SS one costs far more. \"FRP plant\" and \"SS plant\" sound like two different machines. In practice they describe the materials of four separate parts: the pre-treatment vessels, the membrane housings, the frame and the piping. A good RO plant often mixes materials, choosing each one for the job it does. Knowing which part is which lets you compare quotes properly and avoid paying for steel where it adds nothing.",
       },
       { kind: "h2", text: "The four parts that can be FRP or steel" },
       {
@@ -803,7 +803,7 @@ export const POSTS: Post[] = [
     title: "Boiler Feed Water: Softener, RO or DM Plant?",
     seoTitle: "Boiler Feed Water Treatment: Softener, RO or DM?",
     description:
-      "Which boiler feed water treatment you need, by boiler pressure and feed water quality: when a softener is enough, when RO pays for itself and when DM is required.",
+      "Boiler still scaling with a softener? Which feed water treatment you need by boiler pressure and water quality: softener, RO, or a DM plant.",
     targetQuery: "softener vs dm plant for boiler",
     published: "2026-09-27",
     readingMinutes: 7,
@@ -816,7 +816,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "Boiler feed water treatment has two jobs: stop scale forming on the heating surfaces, and keep dissolved solids low enough that the boiler does not need constant blowdown. How far you need to go depends mainly on the boiler's operating pressure and on how much dissolved solids your raw water carries.",
+        text: "A softener installed years ago, a boiler that still blows down constantly, and a supplier now proposing RO or a DM plant: which do you actually need? Boiler feed water treatment has two jobs: stop scale forming on the heating surfaces, and keep dissolved solids low enough that the boiler does not need constant blowdown. How far you need to go depends mainly on the boiler's operating pressure and on how much dissolved solids your raw water carries.",
       },
       { kind: "h2", text: "The three options in one line each" },
       {
@@ -889,7 +889,7 @@ export const POSTS: Post[] = [
     title: "RO Plant Output Dropping? Diagnose It From Your Own Readings",
     seoTitle: "RO Plant Output Reduced? Causes and How to Fix It",
     description:
-      "Why an industrial RO plant's output falls and how to find the cause from your own log sheet: temperature, pressure, pre-treatment, fouling, scaling or membrane damage.",
+      "RO output down from 1,000 to 700 LPH? Find the cause from your own log sheet: temperature, pressure, pre-treatment, fouling, scaling or membrane damage.",
     targetQuery: "ro plant output reduced",
     published: "2026-09-27",
     readingMinutes: 7,
@@ -1051,7 +1051,7 @@ export const POSTS: Post[] = [
     title: "How to Read a Water Test Report Before You Buy a Treatment Plant",
     seoTitle: "How to Read a Water Test Report (for Plant Buyers)",
     description:
-      "What each line of a water test report means for choosing a treatment plant: TDS, hardness, iron, silica, chloride, pH and bacteria, with Indian drinking water limits.",
+      "What each line of a water test report means for choosing a plant: TDS, hardness, iron, silica, chloride, pH and bacteria, with Indian drinking water limits.",
     targetQuery: "how to read water test report",
     published: "2026-09-27",
     readingMinutes: 7,
@@ -1064,7 +1064,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "A water test report decides which treatment plant you need. The same report that looks like a page of chemistry answers three practical questions: is there too much dissolved salt, is the water hard, and is there anything that will foul or damage the equipment? This guide explains each common line.",
+        text: "A lab report with twenty lines of numbers, and three suppliers each recommending a different plant. A water test report decides which treatment plant you need. The same report that looks like a page of chemistry answers three practical questions: is there too much dissolved salt, is the water hard, and is there anything that will foul or damage the equipment? This guide explains each common line.",
       },
       { kind: "h2", text: "Units first" },
       {
@@ -1154,7 +1154,7 @@ export const POSTS: Post[] = [
     body: [
       {
         kind: "p",
-        text: "A DM (demineralisation) plant removes dissolved salts by ion exchange. Its resins do not last forever between services: they fill up with the ions they remove and have to be regenerated with acid and caustic. Regeneration done well gives long, consistent runs; done carelessly, it gives short runs, poor water and wasted chemicals.",
+        text: "Runs getting shorter between regenerations, conductivity climbing before the end of a run, silica breaking through: on a DM plant, these usually start with how it is regenerated. A DM (demineralisation) plant removes dissolved salts by ion exchange. Its resins do not last forever between services: they fill up with the ions they remove and have to be regenerated with acid and caustic. Regeneration done well gives long, consistent runs; done carelessly, it gives short runs, poor water and wasted chemicals.",
       },
       { kind: "h2", text: "How a two-bed DM plant works" },
       {
@@ -1216,6 +1216,120 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "Resin loses capacity with age. When runs stay short even after correct regeneration, send a resin sample for testing; it will show whether cleaning or replacement is the answer.",
+      },
+    ],
+  },
+  {
+    // Written to the same pattern as /industries/residential-societies, the
+    // site's best page in Search Console: symptoms, places, then the fix.
+    slug: "hard-water-vasai-virar-mira-bhayandar",
+    title: "Hard Water in Vasai-Virar and Mira-Bhayandar: How to Tell, and What Actually Fixes It",
+    seoTitle: "Hard Water in Vasai-Virar & Mira-Bhayandar: What Fixes It",
+    description:
+      "White scale on taps, geysers failing, soap that will not lather? Why hard water is common in Vasai-Virar and Mira-Bhayandar, how to test it and what fixes it.",
+    targetQuery: "hard water problem in vasai virar",
+    published: "2026-11-10",
+    readingMinutes: 7,
+    image: "/residential-societies-industry.jpg",
+    imageAlt: "Residential towers in the Vasai-Virar and Mira-Bhayandar area",
+    category: "industry-guides",
+    cta: { label: "Water softeners for housing societies", href: "/industries/residential-societies" },
+    products: ["water-softening"],
+    related: ["water-softener-for-housing-society", "how-to-read-a-water-test-report"],
+    body: [
+      {
+        kind: "p",
+        text: "White crust on every tap and shower head. A geyser that lasted two years instead of ten. Soap that will not lather, glasses that come out of the rack spotted, and hair that feels like straw after a wash. If you live in Vasai, Virar, Nalasopara, Mira Road or Bhayandar, you have probably seen all of these, and you are not imagining it. The cause is hard water, and it can be fixed for a whole building at once.",
+      },
+      { kind: "h2", text: "Six signs your building has hard water" },
+      {
+        kind: "ul",
+        items: [
+          "White or chalky crust on taps, shower heads and the inside of kettles.",
+          "Geysers that fail early, make crackling noises, or take longer to heat.",
+          "Soap and shampoo that will not lather, and a sticky feel after bathing.",
+          "White spots on glass, utensils, tiles and shower screens that come back after cleaning.",
+          "Washing machines and dishwashers that need descaling, and clothes that turn stiff or grey.",
+          "Water pressure in old pipes falling year after year as scale narrows them.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "One sign on its own can have other causes. Three or more together almost always mean hardness: calcium and magnesium dissolved in the water, which come out as scale wherever the water is heated or left to dry.",
+      },
+      { kind: "h2", text: "Why it is so common here" },
+      {
+        kind: "p",
+        text: "Vasai-Virar and Mira-Bhayandar have grown faster than their municipal water supply. Many societies, especially newer buildings and those at the edges of the towns, top up with borewell water and tankers, and lean on them harder in summer. Groundwater picks up calcium and magnesium as it passes through rock, so borewell water is often hard. Tanker water is whatever the tanker filled up with that day, so its quality changes from one delivery to the next.",
+      },
+      {
+        kind: "p",
+        text: "That is why two buildings on the same road can have very different water, and why the same building can go from mild scale to heavy scale in a single dry season.",
+      },
+      {
+        kind: "callout",
+        text: "A TDS meter does not measure hardness. Water with a reassuring TDS reading can still be hard enough to scale every geyser in the building. Hardness has to be tested separately.",
+      },
+      { kind: "h2", text: "How to check your water" },
+      {
+        kind: "ol",
+        items: [
+          "The bottle test (free, rough). Half-fill a clear bottle with tap water, add a few drops of plain liquid soap and shake hard. Little foam and cloudy water suggest hard water; a thick lasting foam suggests soft water. It is only an indication.",
+          "A hardness test kit (cheap, useful). Drop-count kits and test strips sold for aquariums and water treatment give total hardness in mg/L or ppm in a few minutes.",
+          "A laboratory test (before buying anything). Ask for total hardness as CaCO3, TDS, iron and chloride. Test the water in the sump, and test tanker water separately if the society uses it.",
+        ],
+      },
+      { kind: "h2", text: "What the hardness number means" },
+      {
+        kind: "table",
+        head: ["Total hardness (mg/L as CaCO3)", "Usually described as", "What you will notice"],
+        rows: [
+          ["0 to 60", "Soft", "No scale problems"],
+          ["61 to 120", "Moderately hard", "Some scale in kettles and geysers over time"],
+          ["121 to 180", "Hard", "Visible scale on taps and tiles, geysers scaling"],
+          ["Above 180", "Very hard", "Heavy scale, appliances failing early, soap barely lathers"],
+        ],
+      },
+      {
+        kind: "p",
+        text: "The bands above are the widely used US Geological Survey scale. For drinking water, the Indian standard IS 10500 sets an acceptable limit of 200 mg/L for total hardness, rising to a permissible 600 mg/L where no alternative source exists. Water can be within the drinking water limit and still be hard enough to scale bathrooms and geysers.",
+      },
+      { kind: "h2", text: "What fixes it, and what does not" },
+      {
+        kind: "table",
+        head: ["Option", "What it actually does", "Verdict"],
+        rows: [
+          ["Central water softener for the building", "Removes calcium and magnesium from all the water pumped to the overhead tank", "The real fix for scale, for every flat at once"],
+          ["RO plant for the whole building", "Removes hardness and dissolved salts, but sends a large share of the water to drain as reject", "Only worth it if the TDS is also high; costly to run"],
+          ["RO purifier in each flat", "Makes drinking water safe and pleasant", "Fixes drinking water only; bathrooms and geysers still scale"],
+          ["Shower and tap filters", "Most remove chlorine and sediment", "Do not meaningfully soften the water"],
+          ["Magnetic or electronic conditioners", "Do not remove hardness; some claim to change how scale forms", "Results vary; ask for test data on water like yours"],
+          ["Vinegar and descaling chemicals", "Dissolve scale that has already formed", "Cleaning, not a fix; the scale comes back"],
+        ],
+      },
+      {
+        kind: "p",
+        text: "For a housing society, the usual answer is a softener on the pumping line between the underground sump and the overhead tank, so everything pumped up is softened on the way and every flat gets soft water without any change to the plumbing inside the building. Drinking water stays on RO purifiers in the flats or a common RO point, because a softener does not make water drinkable.",
+      },
+      { kind: "h2", text: "What a society softener costs to run" },
+      {
+        kind: "p",
+        text: "Salt is the main running cost, and it rises with both hardness and consumption. In our worked example for a 120-flat society on water at 400 mg/L hardness, the softener uses about 2.3 tonnes of salt a month. Your figure will differ, which is why the supplier should calculate it from your own water test and consumption and put it in the quotation. Softening only the bathroom and geyser lines, and leaving drinking water on a separate line, can cut it sharply.",
+      },
+      { kind: "h2", text: "What to bring to the committee meeting" },
+      {
+        kind: "ul",
+        items: [
+          "A laboratory test of the sump water, and of tanker water if you use it: hardness, TDS, iron and chloride.",
+          "Daily water use, from pump running hours, meter readings or tanker bills.",
+          "Underground and overhead tank capacities and the transfer pump details.",
+          "Photos and rough dimensions of the space near the sump.",
+          "Quotations that state the salt use per month, the regeneration method and the outlet hardness the supplier guarantees.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Our works are in Vasai, and we build softening plants for societies across Vasai, Virar, Nalasopara, Mira Road, Bhayandar, Thane and Mumbai's western suburbs. We test the water the building actually receives, size the plant on it, and give the committee the salt cost before the decision rather than after.",
       },
     ],
   },

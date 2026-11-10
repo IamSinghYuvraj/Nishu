@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
 import { BuyerGuides } from "@/components/buyer-guides"
@@ -66,7 +67,7 @@ const baseMedia: MediaItem[] = [
                   <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture stainless steel (SS) and mild steel (MS) storage tanks, pressure vessels and filter vessels in-house in Vasai, built to your capacity and site layout for water treatment and process industries by a water treatment manufacturer established in 1996.
+                    A catalogue tank that will not fit the plinth you have, a stock size that is too big or too small, a pressure vessel needed with proper material certificates: off-the-shelf storage rarely fits a real site. We manufacture stainless steel (SS) and mild steel (MS) storage tanks, pressure vessels and filter vessels in-house in Vasai, built to your capacity and site layout for water treatment and process industries by a water treatment manufacturer established in 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                   
@@ -80,6 +81,7 @@ const baseMedia: MediaItem[] = [
             </section>
 
         <TrustBar />
+        <ProductSymptoms product="fabricated-vessels" />
 <AnimatedSection><section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Product Range</h2>

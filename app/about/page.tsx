@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import {
   Beaker,
@@ -18,6 +16,7 @@ import { Navigation } from "@/components/navigation";
 import { BUSINESS } from "@/lib/site";
 import { TrustBar } from "@/components/trust-bar";
 import { GlobalPresence } from "@/components/global-presence";
+import { FeaturedArticle } from "@/components/featured-article";
 
 const industries = [
   {
@@ -164,8 +163,8 @@ export default function AboutPage() {
                 <div className="group relative">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/30">
                     <Image
-                      src={"/Ro-img6.jpg"}
-                      alt="Nishu Enterprises RO plant installation"
+                      src="/nishu-enterprises-exhibition-stand.jpeg"
+                      alt="Nishu Enterprises exhibition stand with a stainless-steel RO skid and PLC control panels"
                       fill
                       priority
                       sizes="(max-width: 1024px) 100vw, 50vw"
@@ -211,20 +210,26 @@ export default function AboutPage() {
               <figure className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-ink/10">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/nishu-enterprises-exhibition-stand.jpeg"
-                    alt="Nishu Enterprises exhibition stand with a stainless-steel RO skid and PLC control panels"
+                    src="/Ro-img6.jpg"
+                    alt="Industrial RO plant built and installed by Nishu Enterprises"
                     fill
                     sizes="(max-width: 896px) 100vw, 896px"
                     className="object-cover"
                   />
                 </div>
                 <figcaption className="px-6 py-4 text-sm text-muted-foreground">
-                  Our exhibition stand, with an RO skid and PLC control panels on display.
+                  One of our RO plants, built in Vasai and installed on site.
                 </figcaption>
               </figure>
             </AnimatedSection>
           </div>
         </section>
+
+        <FeaturedArticle
+          slug="hard-water-vasai-virar-mira-bhayandar"
+          eyebrow="From our engineers"
+          className="border-t border-border bg-mist"
+        />
 
         <GlobalPresence />
 

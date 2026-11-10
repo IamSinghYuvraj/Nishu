@@ -56,6 +56,11 @@ export const MORE_INDUSTRIES: Industry[] = [
           ["Stored water in tanks", "Hygiene between cleanings", "Regular tank cleaning; ozone or UV where needed"],
         ],
       },
+      { kind: "h2", text: "Why hard water is so common in Vasai-Virar and Mira-Bhayandar" },
+      {
+        kind: "p",
+        text: "These areas have grown faster than their municipal supply. Many societies, especially newer buildings and those at the edges of Vasai, Virar, Nalasopara, Mira Road and Bhayandar, top up with borewell and tanker water, and depend on it more in summer. Borewell water in the region is often hard, and tanker water changes from one delivery to the next, so a building can go from mild scale to heavy scale in a single season. That is why we test the water a society actually receives, including tanker water if it uses it, before sizing anything.",
+      },
       { kind: "h2", text: "Where the plant goes" },
       {
         kind: "p",
@@ -113,6 +118,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes. We offer annual maintenance contracts that cover periodic servicing, adjusting regeneration settings as the water changes, and resin and valve maintenance.",
       },
+      {
+        question: "Do you install society softeners in Vasai, Virar, Nalasopara, Mira Road and Bhayandar?",
+        answer:
+          "Yes. Our works are in Vasai, so societies in Vasai, Virar, Nalasopara, Mira Road, Bhayandar, Thane and Mumbai's western suburbs are close by. We visit, test the water, look at the sump and pump room, and then quote with the expected salt consumption.",
+      },
     ],
     relatedProducts: ["water-softening", "reverse-osmosis", "amc-maintenance", "fabricated-vessels"],
   },
@@ -121,16 +131,16 @@ export const MORE_INDUSTRIES: Industry[] = [
     slug: "hospitals",
     name: "Hospitals & Healthcare",
     heading: "RO Plants & Water Treatment Systems for Hospitals",
-    title: "RO Plant & Water Treatment System for Hospitals",
+    title: "RO Plant & Water Treatment for Hospitals | Mumbai & Thane",
     description:
-      "RO plants, water softeners and treated water for hospitals: drinking water, kitchens, laundry, CSSD sterilisers and boilers. Manufacturer in Mumbai since 1996.",
+      "Spotted instruments, scaled sterilisers and heaters, rising laundry costs? RO plants and softeners for hospitals in Mumbai, Thane and Vasai-Virar. Since 1996.",
     targetQuery: "ro plant for hospital",
     cardBlurb:
       "Treated water for drinking, kitchens, laundry, CSSD sterilisers and boilers.",
     image: "/hospitals-industry.jpg",
     imageAlt: "Hospital corridor with ward doors on either side",
     intro:
-      "A hospital uses water in more ways, and with less tolerance for failure, than almost any other building. Patients and staff drink it, kitchens cook with it, the laundry and CSSD depend on it, sterilisers and boilers run on it - and a failure anywhere in that chain is a clinical problem, not just a maintenance one. We design hospital water treatment around each of those duties separately, and we have built water treatment plants since 1996.",
+      "Instruments coming out of the steriliser spotted, water heaters and kitchen equipment scaling up, the laundry using more detergent every month, a storage tank nobody is sure was cleaned: for hospitals and nursing homes in Mumbai, Thane, Vasai-Virar and Palghar, these are water problems, and in a hospital a water problem is a clinical problem. Patients and staff drink the water, kitchens cook with it, the laundry and CSSD depend on it, and sterilisers and boilers run on it. We design hospital water treatment around each of those duties separately, and we have built water treatment plants since 1996.",
     challenges: [
       {
         title: "Many duties, different standards",
@@ -217,6 +227,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes, if it is designed for it. Treated water storage, standby pumps and isolation valving let each stage be maintained while the hospital keeps drawing water. We build that in as standard for hospital plants.",
       },
+      {
+        question: "Do you work with hospitals in Thane, Vasai-Virar and Palghar?",
+        answer:
+          "Yes. We are based in Vasai and work with hospitals and nursing homes across Mumbai, Thane, Vasai-Virar and Palghar. We survey the plant room and test the water before proposing anything, and offer AMC so servicing does not depend on in-house staff.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "water-softening", "dosing-ozonation-uv", "amc-maintenance"],
   },
@@ -225,15 +240,15 @@ export const MORE_INDUSTRIES: Industry[] = [
     slug: "schools-offices",
     name: "Schools, Colleges & Offices",
     heading: "RO Plants for Schools, Colleges and Offices",
-    title: "RO Plant for Schools, Colleges & Offices | Commercial RO",
+    title: "RO Plant for Schools, Colleges & Offices | Mumbai & Thane",
     description:
-      "Commercial RO drinking water plants for schools, colleges, offices and campuses, with stainless steel storage and UV. Built in Vasai, Mumbai since 1996.",
+      "Queues at the cooler, unchecked TDS, filters changed late? RO drinking water plants for schools, colleges and offices in Mumbai, Thane and Vasai. Since 1996.",
     targetQuery: "ro plant for school",
     cardBlurb: "Safe drinking water for students and staff, sized for break-time peaks.",
     image: "/schools-offices-industry.jpg",
     imageAlt: "Classroom with rows of student desks and chairs",
     intro:
-      "Drinking water in a school, college or office has two requirements that pull in different directions: it has to be safe every single day, and the people responsible for it are rarely water engineers. So the plant must be simple to run, easy to check, and built so that a missed filter change does not become a health problem. We have built RO plants since 1996, and we design institutional plants for the people who will actually operate them.",
+      "Queues at the water cooler every break, a TDS reading nobody has checked in months, filters changed only when someone remembers, parents asking whether the water is safe: drinking water in schools, colleges and offices across Vasai-Virar, Mira-Bhayandar, Thane and Mumbai has to be safe every single day, yet the people responsible for it are rarely water engineers. So the plant must be simple to run, easy to check, and built so that a missed filter change does not become a health problem. We have built RO plants since 1996, and we design institutional plants for the people who will actually operate them.",
     challenges: [
       {
         title: "Demand arrives all at once",
@@ -312,6 +327,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes. The coolers and dispensers are fed from the treated water storage, so existing coolers can usually stay in place.",
       },
+      {
+        question: "Do you install school RO plants in Vasai-Virar, Mira-Bhayandar and Thane?",
+        answer:
+          "Yes. Our works are in Vasai, so schools, colleges and offices in Vasai-Virar, Mira-Bhayandar, Thane and Mumbai are close by. We visit, check the water source and the space, and quote with the AMC cost shown alongside the plant price.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "dosing-ozonation-uv", "fabricated-vessels", "amc-maintenance"],
   },
@@ -328,7 +348,7 @@ export const MORE_INDUSTRIES: Industry[] = [
     image: "/laboratories-industry.jpg",
     imageAlt: "Laboratory glassware: beakers and flasks",
     intro:
-      "Laboratory water is graded, not just 'purified'. Analytical work, reagent preparation, glassware rinsing and instrument feed each need a defined grade, and the grade decides the treatment. Most laboratories are best served by a central system distributing Type II or Type III water to the benches, with small point-of-use polishers producing ultrapure water only where an instrument needs it. We build the central system that everything else depends on.",
+      "Conductivity drifting at the bench, point-of-use polisher cartridges running out early, blanks that do not come out blank, glassware spotting after the final rinse: in QC and research laboratories, from pharma QC labs in Tarapur and Taloja to research labs in Mumbai and Thane, these usually trace back to the water feeding the lab rather than the instrument. Laboratory water is graded, not just 'purified'. Analytical work, reagent preparation, glassware rinsing and instrument feed each need a defined grade, and the grade decides the treatment. Most laboratories are best served by a central system distributing Type II or Type III water to the benches, with small point-of-use polishers producing ultrapure water only where an instrument needs it. We build the central system that everything else depends on.",
     challenges: [
       {
         title: "Grades are defined by standards",
@@ -410,6 +430,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "Conductivity or resistivity is measured continuously at the outlet of the polishing stage, supported by periodic checks of other parameters the laboratory's methods require.",
       },
+      {
+        question: "Do you install lab water systems in Mumbai, Thane and the Tarapur and Taloja MIDCs?",
+        answer:
+          "Yes. We are based in Vasai and install central lab water systems across Mumbai, Thane, Tarapur, Boisar and Taloja. We survey the lab, list the outlets and grades, and test the feed water before designing the system.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "demineralized", "dosing-ozonation-uv", "spares-consumables"],
   },
@@ -420,13 +445,13 @@ export const MORE_INDUSTRIES: Industry[] = [
     heading: "Water Treatment Plants for the Chemical Industry",
     title: "Water Treatment Plant for Chemical Industry | DM & RO",
     description:
-      "DM plants, RO systems and water softeners for chemical and specialty chemical plants: process water, boiler feed and cooling. Manufacturer in Mumbai since 1996.",
+      "DM plants, RO systems and softeners for chemical plants in Tarapur, Taloja, Dombivli and Ambernath: process water, boiler feed and cooling. Since 1996.",
     targetQuery: "water treatment plant for chemical industry",
     cardBlurb: "DM and RO process water, boiler feed and cooling water for chemical plants.",
     image: "/chemical-industry.jpg",
     imageAlt: "Large chemical storage tanks in a process plant",
     intro:
-      "In a chemical plant, water is rarely just a utility. It is a reactant, a solvent, a heat-transfer medium and a cleaning agent, and the impurities it carries can end up in the product, interfere with a reaction, or scale a heat exchanger. The right treatment depends on which of those jobs the water is doing. We have built water treatment plants for process industries since 1996, together with the fabricated vessels and tanks that go with them.",
+      "Batches drifting off-spec when the borewell changes, heat exchangers scaling up, a DM plant eating acid and caustic faster than budgeted, regeneration effluent with nowhere to go: in chemical and speciality chemical plants across the Tarapur, Boisar, Taloja, Dombivli and Ambernath MIDCs, these are water problems. In a chemical plant, water is rarely just a utility. It is a reactant, a solvent, a heat-transfer medium and a cleaning agent, and the impurities it carries can end up in the product, interfere with a reaction, or scale a heat exchanger. The right treatment depends on which of those jobs the water is doing. We have built water treatment plants for process industries since 1996, together with the fabricated vessels and tanks that go with them.",
     challenges: [
       {
         title: "Water becomes part of the product",
@@ -504,6 +529,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes. We fabricate stainless steel and mild steel vessels and storage tanks in-house in Vasai, built to the capacities and layout your site needs.",
       },
+      {
+        question: "Do you supply chemical plants in Tarapur, Taloja and Dombivli MIDC?",
+        answer:
+          "Yes. Our works in Vasai are within reach of Tarapur, Boisar, Taloja, Dombivli and Ambernath, so we can survey the site, test the water and check the effluent arrangement before quoting.",
+      },
     ],
     relatedProducts: ["demineralized", "reverse-osmosis", "water-softening", "fabricated-vessels"],
   },
@@ -520,7 +550,7 @@ export const MORE_INDUSTRIES: Industry[] = [
     image: "/textile-industry.jpg",
     imageAlt: "Rolls of fabric stacked on racks in a textile factory",
     intro:
-      "Textile wet processing is unforgiving of bad water. Hardness reacts with dyes and soaps, iron stains fabric, and variation in the water shows up as variation in shade from one batch to the next. For dyeing and processing units in Bhiwandi - a short drive from our Vasai works - and across Maharashtra, treated water is one of the cheapest ways to protect quality and cut reprocessing. We have built water treatment plants since 1996.",
+      "Uneven shades from one batch to the next, spots and patches after dyeing, yellowing after bleaching, dyes and soaps running out faster than they should: in dyeing and processing units in Bhiwandi, Tarapur and across Maharashtra, the cause is usually hardness and iron in the water. Hardness reacts with dyes and soaps, iron stains fabric, and variation in the water shows up as variation in shade. Treated water is one of the cheapest ways to protect quality and cut reprocessing. Bhiwandi is a short drive from our Vasai works, and we have built water treatment plants since 1996.",
     challenges: [
       {
         title: "Hardness spoils dyeing",
@@ -612,7 +642,7 @@ export const MORE_INDUSTRIES: Industry[] = [
     image: "/packaged-drinking-water-industry.jpg",
     imageAlt: "Packaged water bottles moving along a conveyor on a filling line",
     intro:
-      "Running a packaged drinking water plant is a different job from setting one up. Output has to keep pace with orders, every batch has to pass its tests, and inspections and audits arrive on their own schedule. This page is for bottlers already in production. We have built packaged drinking water plants since 1996, including for Bisleri, Bailey and Campa, and we upgrade and service plants built by others as well as our own.",
+      "RO output down to two-thirds of what it was, a sample that failed at the lab, an ozone smell in the bottles, an inspection coming up: running a packaged drinking water plant is a different job from setting one up. Output has to keep pace with orders, every batch has to pass its tests, and inspections and audits arrive on their own schedule. This page is for bottlers already in production, in Vasai-Virar, Palghar, Thane, Bhiwandi and beyond. We have built packaged drinking water plants since 1996, including for Bisleri, Bailey and Campa, and we upgrade and service plants built by others as well as our own.",
     challenges: [
       {
         title: "Output has fallen",
@@ -704,6 +734,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "No. FSSAI removed the mandatory BIS requirement in October 2024. You still need an FSSAI licence, and the category is subject to inspections, third-party audits and compulsory testing at FSSAI-notified laboratories. Check FSSAI's current notices before you rely on any summary.",
       },
+      {
+        question: "Do you service packaged water plants in Vasai-Virar, Palghar and Thane?",
+        answer:
+          "Yes. Our works are in Vasai, so bottling plants in Vasai-Virar, Palghar, Thane and Bhiwandi are close enough for a plant audit, quick spares and scheduled AMC visits, whoever built the plant.",
+      },
     ],
     relatedProducts: ["mineral-water-project", "dosing-ozonation-uv", "amc-maintenance", "reverse-osmosis"],
     relatedPosts: ["mineral-water-plant-machinery-list", "mineral-water-plant-setup-cost-india", "ro-plant-output-dropping", "industrial-ro-plant-amc-guide"],
@@ -712,7 +747,7 @@ export const MORE_INDUSTRIES: Industry[] = [
     slug: "agriculture",
     name: "Agriculture & Agro-processing",
     heading: "Water Treatment for Agriculture, Hydroponics and Agro-processing",
-    title: "RO Plant & Water Treatment for Agriculture, Hydroponics & Agro-processing",
+    title: "RO Plant for Hydroponics, Agriculture & Agro-processing",
     description:
       "RO and softening for hydroponics, nurseries, dairy and agro-processing units: lower TDS irrigation water and clean process water. Mumbai, since 1996.",
     targetQuery: "ro plant for agriculture and hydroponics",
@@ -721,7 +756,7 @@ export const MORE_INDUSTRIES: Industry[] = [
     image: "/agriculture-industry.jpeg",
     imageAlt: "Tractor working in rows of green crops on a farm",
     intro:
-      "Most field irrigation does not need treated water, and we will say so. Treatment pays where the water itself limits the result: hydroponic and greenhouse crops fed on a nutrient recipe, nurseries and tissue culture, and agro-processing units such as dairies and food processors whose product touches the water. For those, the feed water has to be known, controlled and consistent, and that is an RO and softening job.",
+      "Drip lines and foggers choking with white scale, a nutrient recipe that never behaves the same way twice, leaf tips burning in the polyhouse, a borewell that turns saltier every summer: for growers in Palghar, Dahanu and Nashik, and for dairies and agro-processing units, those are water problems. Most field irrigation does not need treated water, and we will say so. Treatment pays where the water itself limits the result: hydroponic and greenhouse crops fed on a nutrient recipe, nurseries and tissue culture, and agro-processing units such as dairies and food processors whose product touches the water. For those, the feed water has to be known, controlled and consistent, and that is an RO and softening job.",
     challenges: [
       {
         title: "Salinity and sodium in borewell water",
@@ -811,6 +846,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         answer:
           "It can be sized to run from a suitable power source, but RO pumps draw real power, so the solar array would need sizing for that load. Tell us your power situation and we will work out what is practical.",
       },
+      {
+        question: "Do you supply farms and polyhouses in Palghar, Dahanu and Nashik?",
+        answer:
+          "Yes. We are based in Vasai, close to Palghar and Dahanu, and supply growers further afield such as in Nashik. Send us a water analysis, ideally one taken in the dry season, and we will tell you whether you need RO, a softener or just filtration.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "water-softening", "dosing-ozonation-uv", "fabricated-vessels"],
   },
@@ -818,16 +858,16 @@ export const MORE_INDUSTRIES: Industry[] = [
     slug: "warehousing",
     name: "Warehousing & Cold Storage",
     heading: "Water Treatment for Warehouses, Cold Storage and Logistics Parks",
-    title: "Water Treatment for Warehouses, Cold Storage & Logistics Parks",
+    title: "Water Treatment for Warehouses & Cold Storage | Bhiwandi",
     description:
-      "Drinking water, softening and storage tanks for warehouses, cold chain units and logistics parks with large workforces and no municipal guarantee. Since 1996.",
+      "Drinking water for large workforces, softened water for chillers and site storage tanks, for warehouses and cold storage in Bhiwandi, Vasai and Taloja.",
     targetQuery: "water treatment plant for warehouse",
     cardBlurb:
       "Drinking water for large workforces, softened water for chillers and cooling, and site storage tanks.",
     image: "/warehousing-industry.jpeg",
     imageAlt: "Warehouse aisle with racks of stacked cardboard boxes",
     intro:
-      "A warehouse is not a heavy water user by industry standards, which is exactly why its water is often an afterthought: a borewell, a tank on the roof and a few small purifiers. The problems arrive later. Hundreds of staff and drivers need safe drinking water across shifts, cold storage and chillers scale up on hard water, and a large site may depend on tanker supply. We plan the water side of a storage facility as a small utility rather than a collection of purifiers.",
+      "Hundreds of staff and drivers queuing at a few small purifiers, chiller condensers scaling up, tankers that arrive late or not at all, nobody on site who knows how the water system works: in warehouses, cold storage units and logistics parks in Bhiwandi, Vasai, Palghar and Taloja, the water side is usually an afterthought until it fails. A warehouse is not a heavy water user by industry standards, which is exactly why its water is often a borewell, a tank on the roof and a few small purifiers. We plan the water side of a storage facility as a small utility rather than a collection of purifiers.",
     challenges: [
       {
         title: "Drinking water for a large, changing workforce",
@@ -903,6 +943,11 @@ export const MORE_INDUSTRIES: Industry[] = [
         question: "Do you offer servicing, given we have no water technician?",
         answer:
           "Yes. We offer annual maintenance contracts with scheduled visits covering filters, membranes and dosing, so the plant does not depend on someone on site.",
+      },
+      {
+        question: "Do you work with warehouses in Bhiwandi?",
+        answer:
+          "Yes. Bhiwandi is a short drive from our works in Vasai, as are the warehousing belts in Vasai, Palghar and Taloja, so we can survey the site, test the borewell or tanker water and size storage before quoting.",
       },
     ],
     relatedProducts: ["reverse-osmosis", "fabricated-vessels", "water-softening", "amc-maintenance"],

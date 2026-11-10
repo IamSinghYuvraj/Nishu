@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -113,6 +114,7 @@ export default async function DataProductPage({
         </section>
 
         <TrustBar />
+        <ProductSymptoms product={product.slug} />
 
         <section className="py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

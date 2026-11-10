@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
 import { BuyerGuides } from "@/components/buyer-guides"
@@ -65,7 +66,7 @@ export default function WaterSofteningPage() {
                 <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture industrial and commercial water softening plants that remove the calcium and magnesium hardness behind scale in boilers, cooling towers, hotels, housing societies and process equipment. Automatic FRP and stainless steel softeners, built in Vasai, Mumbai since 1996.
+                    White scale on taps and tiles, geysers and boiler tubes failing early, a cooling tower on constant blowdown, soap that will not lather: that is hard water, and a softener removes it at the source. We manufacture automatic FRP and stainless steel water softening plants for boilers, cooling towers, hotels, housing societies and factories across Mumbai, Thane, Vasai-Virar and Palghar, built in Vasai since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                 
@@ -78,6 +79,7 @@ export default function WaterSofteningPage() {
         </section>
 
         <TrustBar />
+        <ProductSymptoms product="water-softening" />
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

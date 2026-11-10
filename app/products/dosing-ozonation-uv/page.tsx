@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import Link from "next/link"
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
@@ -79,7 +80,7 @@ export default function DosingOzonationUVPage() {
                   <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture ozone generators for water treatment, UV sterilisers and chemical dosing systems that provide disinfection, oxidation and precise chemical control for bottling plants, storage tanks, RO plants and process water. Built in Vasai, Mumbai since 1996.
+                    Bacteria growing in stored water, a failed microbiological test, an ozone smell in bottled water, membranes scaling for want of antiscalant: disinfection and dosing are small parts of a plant that decide whether the rest of it works. We manufacture ozone generators for water treatment, UV sterilisers and chemical dosing systems for bottling plants, storage tanks, RO plants and process water. Built in Vasai, Mumbai since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                   
@@ -93,6 +94,7 @@ export default function DosingOzonationUVPage() {
             </section>
 
         <TrustBar />
+        <ProductSymptoms product="dosing-ozonation-uv" />
         
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

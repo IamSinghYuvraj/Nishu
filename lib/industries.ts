@@ -5,6 +5,20 @@ import { MORE_INDUSTRIES } from "@/lib/industries-more";
 // that sector actually searches ("water treatment plant for pharmaceutical
 // industry") rather than the product name, and routes them to the product page
 // that fits. Keep the technical claims consistent with the product pages.
+//
+// Writing pattern (taken from /industries/residential-societies, the site's
+// best-performing page in Search Console as of Nov 2026). Every intro follows it:
+//   1. Symptoms first, in the buyer's own words: three or four things they have
+//      seen with their own eyes ("white scale on taps", "geysers that fail
+//      early"), not an abstract thesis about the sector.
+//   2. Where: the localities or industrial clusters the buyer is in, and the
+//      water source (borewell, tanker, municipal). Searchers type these words.
+//   3. The fix in one sentence, with its scope ("every flat at once").
+//   4. Proof: since 1996, Vasai works, sized on their water, not a catalogue.
+// Then: the first H2 honestly answers "what do I actually need" (often the
+// cheaper option); the title carries a place where buyers search locally; one
+// FAQ answers "do you work in <area>?"; a guide with worked numbers links back.
+// Only name places as where buyers are, never as installations we have not done.
 
 export interface Industry {
   slug: string;
@@ -39,14 +53,14 @@ const CORE_INDUSTRIES: Industry[] = [
     heading: "Purified Water Systems for the Pharmaceutical Industry",
     title: "Purified Water System for Pharmaceutical Industry | RO & DM",
     description:
-      "Purified water systems for pharmaceutical plants: RO with mixed-bed polishing and 316L distribution loops built to IP/USP limits. Mumbai, since 1996.",
+      "Purified water systems for pharma plants in Tarapur, Taloja, Thane and beyond: RO with mixed-bed polishing and 316L loops built to IP/USP limits. Since 1996.",
     targetQuery: "purified water system in pharmaceutical industry",
     cardBlurb:
       "Purified water systems built to hold IP/USP limits continuously, with validated distribution loops.",
     image: "/pharma-industry.jpg",
     imageAlt: "Pharmaceutical manufacturing facility water treatment system",
     intro:
-      "Pharmaceutical water is not a utility — it is an ingredient, and it is audited like one. A purified water system has to hold its specification continuously, prove it through validation, and keep proving it through every inspection that follows. We have built and commissioned water systems for pharmaceutical and formulation plants since 1996, designed around the specification the plant has to defend rather than the cheapest route to clear water.",
+      "Conductivity creeping over the limit between samples, microbial counts rising at the far user points, an auditor asking for weld records nobody can find: these are the purified water problems pharmaceutical and formulation plants run into, from Tarapur and Boisar to Taloja, Ambernath and Thane, and most of them start in the distribution loop rather than the RO. Pharmaceutical water is an ingredient, and it is audited like one: the system has to hold IP/USP limits continuously and prove it through every inspection. We have built and commissioned water systems for pharmaceutical plants since 1996, designed around the specification your QA team has to defend rather than the cheapest route to clear water.",
     challenges: [
       {
         title: "Specification is non-negotiable",
@@ -144,6 +158,11 @@ const CORE_INDUSTRIES: Industry[] = [
         answer:
           "Typically 4-8 weeks depending on system complexity and site readiness, with qualification activities running alongside commissioning.",
       },
+      {
+        question: "Do you supply pharma water systems in Tarapur, Boisar and Taloja?",
+        answer:
+          "Yes. Our fabrication works are in Vasai, within reach of the Tarapur, Boisar, Taloja and Ambernath pharma clusters, so the vessels and loop components are built close to site and we can survey the plant before quoting. We also supply and commission systems elsewhere in India.",
+      },
     ],
     relatedProducts: ["demineralized", "reverse-osmosis", "dosing-ozonation-uv", "fabricated-vessels"],
   },
@@ -161,7 +180,7 @@ const CORE_INDUSTRIES: Industry[] = [
     image: "/food-beverage-industry.jpeg",
     imageAlt: "Bottled water on a filling line at a food and beverage plant",
     intro:
-      "In food and beverage production, water is the largest ingredient by volume and the one that decides whether the product tastes the same in March as it did in October. It is also the input most exposed to seasonal variation in the borewell or municipal supply. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDowell's and Meru Spring, and we have been building them since 1996.",
+      "A product that tastes different in May from how it tasted in December, RO output that falls every summer as the borewell turns saltier, a faint ozone smell when a bottle is opened, a line stopped while the RO is in cleaning: in beverage, dairy and food factories, these are water problems before they are product problems. Water is the largest ingredient by volume, and the one most exposed to seasonal change in the borewell or municipal supply. A treatment line sized on measured consumption and corrected for the seasons keeps every batch on the same profile. Our plants run in beverage and packaged drinking water facilities for Bisleri, Bailey, Campa, McDowell's and Meru Spring, and we have been building them in Vasai since 1996.",
     challenges: [
       {
         title: "Taste consistency across seasons",
@@ -257,6 +276,11 @@ const CORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes. Adding RO capacity or replacing an ozonation or UV stage on an existing line is a substantial part of what we do.",
       },
+      {
+        question: "Do you supply beverage and food plants outside Mumbai?",
+        answer:
+          "Yes. We build in Vasai and supply plants across Maharashtra, India and abroad, with installation and commissioning planned as part of the quotation. Factories in Vasai, Palghar, Thane and Bhiwandi are close enough for a site survey before we quote.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "mineral-water-project", "dosing-ozonation-uv", "amc-maintenance"],
   },
@@ -274,7 +298,7 @@ const CORE_INDUSTRIES: Industry[] = [
     image: "/power-generation-industry.jpg",
     imageAlt: "Power plant boiler feed water demineralisation system",
     intro:
-      "Boiler feed water is the application where water treatment economics are easiest to prove. Scale on a boiler tube is an insulating layer: it forces the firing rate up, drives fuel consumption up with it, and ends in tube failure. Demineralised feed water is not a quality upgrade in a steam plant — it is the cheapest fuel saving available.",
+      "Fuel bills creeping up month after month, boiler tubes failing before they should, blowdown running almost continuously, turbine output falling between overhauls: in steam plants and captive power units from Tarapur and Boisar to Vasai and Bhiwandi, the cause is usually the feed water. Scale on a boiler tube is an insulating layer: it forces the firing rate up, drives fuel consumption up with it, and ends in tube failure. Correctly treated feed water is not a quality upgrade in a steam plant, it is the cheapest fuel saving available. We have built DM plants and softeners for boiler feed since 1996, sized on your boiler pressure and water analysis.",
     challenges: [
       {
         title: "Scale costs fuel every day",
@@ -373,6 +397,11 @@ const CORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes. We fabricate SS and MS vessels, pressure vessels and storage tanks in-house, so the complete plant including vessels comes from one supplier with one set of material certificates.",
       },
+      {
+        question: "Do you work on boiler plants in Tarapur, Boisar and Vasai?",
+        answer:
+          "Yes. Our works are in Vasai, so boiler houses in Vasai, Palghar, Tarapur, Boisar, Bhiwandi and Thane are within reach for a site survey and a feed water test before we quote. We also supply plants across India.",
+      },
     ],
     relatedProducts: ["demineralized", "water-softening", "fabricated-vessels", "reverse-osmosis"],
   },
@@ -381,16 +410,16 @@ const CORE_INDUSTRIES: Industry[] = [
     slug: "manufacturing",
     name: "Manufacturing",
     heading: "Process Water Treatment for Manufacturing Plants",
-    title: "Water Treatment Plant for Factories & Cooling Towers",
+    title: "Water Treatment Plant for Factories | Vasai, Palghar & Thane",
     description:
-      "Process, cooling tower and rinse water treatment for factories: RO plants, softeners, DM plants and SS vessels. Built in Vasai, Mumbai since 1996.",
+      "Scaled heat exchangers, cooling tower blowdown, spotty rinse water? Process and cooling water treatment for factories in Vasai, Palghar and Thane. Since 1996.",
     targetQuery: "water treatment plant for factory",
     cardBlurb:
       "Process, cooling and rinse water treated to the standard each duty actually needs.",
     image: "/manufacturing-industry.jpeg",
     imageAlt: "Labelled product rolls on a manufacturing line",
     intro:
-      "Manufacturing is the sector where \"water treatment\" means the widest range of things. A textile dyehouse, an engineering shop with a cooling tower and a chemical plant with a process requirement all need different water, and the only way to get the design right is to start from what the process actually demands rather than from a standard plant. We have built into all of these since 1996.",
+      "Heat exchangers scaling up within months, a cooling tower on constant blowdown, spots on plated parts after the final rinse, a borewell that changes every summer: in factories across Vasai East's industrial estates at Waliv, Sativali and Gauraipada, and in Palghar, Bhiwandi and Thane, these are all water problems, and each needs a different fix. A dyehouse, an engineering shop with a cooling tower and a chemical plant all need different water, so we start from what each process actually demands rather than from a standard plant. We have built into all of these since 1996, from our own works in Vasai.",
     challenges: [
       {
         title: "Every process wants different water",
@@ -485,6 +514,11 @@ const CORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes, and it is worth flagging at enquiry stage. Seasonal variation affects sizing, storage and in some cases the choice of treatment route, so we design against the range rather than a single analysis.",
       },
+      {
+        question: "Do you install plants in Vasai East, Palghar and Bhiwandi?",
+        answer:
+          "Yes. Our works are in Vasai, so the Waliv, Sativali and Gauraipada estates are next door, and Palghar, Bhiwandi and Thane are a short drive. We visit, test the water and look at the space before quoting.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "water-softening", "demineralized", "fabricated-vessels"],
   },
@@ -493,16 +527,16 @@ const CORE_INDUSTRIES: Industry[] = [
     slug: "hospitality",
     name: "Hotels & Hospitality",
     heading: "RO Plants & Water Softeners for Hotels, Resorts and Restaurants",
-    title: "RO Plant & Water Softener for Hotels and Resorts",
+    title: "RO Plant & Water Softener for Hotels & Resorts | Mumbai",
     description:
-      "Commercial RO plants and water softeners for hotels, resorts and restaurants: guest rooms, kitchens, laundry and boilers. Built in Vasai, Mumbai since 1996.",
+      "Scale on fittings, grey linen, coffee machines needing descaling? Water softeners and RO plants for hotels and resorts in Mumbai, Thane, Lonavala. Since 1996.",
     targetQuery: "ro plant for hotel",
     cardBlurb:
       "Softening across the property with RO where taste matters — guest rooms, laundry and kitchens.",
     image: "/hospitality-industry.jpg",
     imageAlt: "Hotel lobby with marble floors and lounge seating",
     intro:
-      "A hotel is several water applications in one building, and they conflict. Guests notice taste and they notice scale on a shower fitting. The laundry cares about hardness because it decides detergent consumption and linen life. The kitchen cares about taste and about scale in the equipment. The boiler and the cooling plant care about something else again. The systems we build for this sector are usually segregated by duty for exactly that reason.",
+      "Scale marks on bathroom fittings that housekeeping cannot keep up with, coffee machines and dishwashers that need descaling every few weeks, linen going grey early in the laundry, guests mentioning the water in their reviews: for hotels, resorts and restaurants on borewell or tanker water, from Mumbai's suburbs and Thane to Lonavala, Alibaug and the Konkan coast, that is hard water. A hotel is several water applications in one building and they conflict, so the systems we build are segregated by duty: softening across the property, and RO only where taste matters. We have built water treatment plants since 1996.",
     challenges: [
       {
         title: "Guests notice water quality directly",
@@ -597,6 +631,11 @@ const CORE_INDUSTRIES: Industry[] = [
         answer:
           "We fabricate vessels in-house, so the layout can be built around the space available. Send us the plant room dimensions along with the enquiry.",
       },
+      {
+        question: "Do you supply hotels and resorts outside Mumbai, such as in Lonavala or Alibaug?",
+        answer:
+          "Yes. We are based in Vasai and work across Mumbai, Thane and the resort belts beyond, including Lonavala, Alibaug and the Konkan coast, where many properties depend on borewells. We test the water before sizing anything.",
+      },
     ],
     relatedProducts: ["water-softening", "reverse-osmosis", "mineral-water-project", "dosing-ozonation-uv"],
   },
@@ -605,16 +644,16 @@ const CORE_INDUSTRIES: Industry[] = [
     slug: "construction",
     name: "Construction & Infrastructure",
     heading: "Water Treatment for Construction Sites and Infrastructure Projects",
-    title: "Water Treatment Plant for Construction Sites | Site RO",
+    title: "Water Treatment Plant for Construction Sites | Mumbai, Thane",
     description:
-      "Site drinking water, concrete mixing and curing water treatment, and relocatable RO plants for construction projects. Built in Vasai, Mumbai since 1996.",
+      "Untested tanker water in the mix, stained curing, no safe drinking water for the camp? Relocatable site RO plants for projects in Mumbai and Thane. Since 1996.",
     targetQuery: "water treatment plant for construction site",
     cardBlurb:
       "Relocatable plants for site drinking water, concrete mixing and curing water treatment.",
     image: "/construction-industry.jpeg",
     imageAlt: "Engineers on a construction site with a crane at sunset",
     intro:
-      "Construction water gets less attention than it deserves, on two fronts. Water used for mixing and curing concrete directly affects the strength the structure achieves, and it is governed by standards for good reason. Site drinking water is a welfare obligation on projects that often have no municipal supply at all. Both problems have to be solved with equipment that can be installed quickly and moved to the next project afterwards.",
+      "Tanker water of unknown quality going into the concrete mix, white or brown stains on freshly cured surfaces, a labour camp with no safe drinking water, a coastal borewell nobody has tested for chloride: on construction sites across Vasai-Virar, Mira-Bhayandar, Thane, Navi Mumbai and Panvel, water is the input nobody checks. Mixing and curing water directly affects the strength and durability the structure achieves, and site drinking water is a welfare obligation on projects with no municipal supply. We build relocatable treatment plants that go in quickly and move to the next project afterwards, from our works in Vasai, since 1996.",
     challenges: [
       {
         title: "Mixing and curing water affects strength",
@@ -707,6 +746,11 @@ const CORE_INDUSTRIES: Industry[] = [
         answer:
           "Yes. We fabricate SS and MS storage tanks and vessels in-house, which lets the installation be built around a constrained and changing site layout.",
       },
+      {
+        question: "Do you supply site plants in Vasai-Virar, Thane and Navi Mumbai?",
+        answer:
+          "Yes. Our works are in Vasai, so projects across Vasai-Virar, Mira-Bhayandar, Thane, Navi Mumbai and Panvel are within reach for a water test, quick installation and relocation when the project ends.",
+      },
     ],
     relatedProducts: ["reverse-osmosis", "fabricated-vessels", "water-softening", "dosing-ozonation-uv"],
   },
@@ -725,7 +769,7 @@ const RELATED_POSTS: Record<string, string[]> = {
   textile: ["hard-water-industrial-boilers-softener", "boiler-feed-water-softener-ro-dm", "ro-plant-capacity-for-your-factory"],
   laboratories: ["ro-vs-dm-plant", "dm-plant-regeneration-process", "how-to-read-a-water-test-report"],
   "schools-offices": ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
-  "residential-societies": ["water-softener-for-housing-society", "how-to-read-a-water-test-report", "compare-ro-plant-quotations"],
+  "residential-societies": ["hard-water-vasai-virar-mira-bhayandar", "water-softener-for-housing-society", "how-to-read-a-water-test-report", "compare-ro-plant-quotations"],
   agriculture: ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],
   warehousing: ["how-to-read-a-water-test-report", "compare-ro-plant-quotations", "industrial-ro-plant-amc-guide"],
   construction: ["how-to-read-a-water-test-report", "ro-plant-capacity-for-your-factory", "compare-ro-plant-quotations"],

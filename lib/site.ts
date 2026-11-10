@@ -97,7 +97,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "Industrial & Commercial RO Plant Manufacturer",
     title: "Industrial & Commercial RO Plant Manufacturer in Mumbai",
     description:
-      "Industrial and commercial RO plants up to 10,000+ LPH for factories, hotels, hospitals and housing societies. Built in Vasai, Mumbai since 1996.",
+      "Salty borewell water or high TDS? Industrial and commercial RO plants up to 10,000+ LPH for factories, hotels and societies in Mumbai and Thane. Since 1996.",
     targetQuery: "industrial ro plant manufacturer",
     image: "/ro-img11.jpeg",
     imageAlt: "Industrial reverse osmosis plant manufactured by Nishu Enterprises",
@@ -108,7 +108,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "DM Water Plant Manufacturer: Two-Bed & Mixed-Bed",
     title: "DM Water Plant Manufacturer in Mumbai | Two-Bed & Mixed-Bed",
     description:
-      `Two-bed and mixed-bed DM water plants for boiler feed, pharmaceutical and process water. Manufactured in Vasai, Mumbai since 1996, with plants in ${COUNTRIES_LINE}.`,
+      "Boiler scaling despite a softener, or RO not reaching your conductivity limit? Two-bed and mixed-bed DM plants for boilers, pharma and labs. Vasai, since 1996.",
     targetQuery: "dm water plant manufacturer in mumbai",
     image: "/DM image 1.jpg",
     imageAlt: "Demineralisation (DM) water plant with ion-exchange vessels",
@@ -119,7 +119,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "Industrial Water Softener Plant Manufacturer",
     title: "Industrial Water Softener Plant Manufacturer in Mumbai",
     description:
-      "Automatic water softening plants for boilers, cooling towers, hotels and housing societies. Removes hardness from borewell water. Made in Vasai since 1996.",
+      "White scale, failing geysers and boilers? Automatic water softening plants for societies, hotels and factories in Mumbai, Thane and Vasai-Virar. Since 1996.",
     targetQuery: "water softener plant manufacturer in mumbai",
     image: "/Water-Softening-Plant.jpg",
     imageAlt: "Industrial water softening plant with twin softener vessels",
@@ -130,7 +130,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "RO Membrane Housings: FRP & Stainless Steel",
     title: "RO Membrane Housing Supplier | FRP & SS Pressure Vessels",
     description:
-      "FRP and stainless-steel RO membrane housings and high-pressure pumps for industrial reverse osmosis plants. Supplied from Vasai, Mumbai since 1996.",
+      "Leaking end caps or a cracked RO housing? FRP and SS membrane housings and matched high-pressure pumps, supplied from Vasai, Mumbai since 1996.",
     targetQuery: "ro membrane housing",
     image: "/membrane-Housing(1).jpg",
     imageAlt: "Stainless steel RO membrane housing",
@@ -141,7 +141,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "SS & MS Storage Tanks and Pressure Vessels",
     title: "SS Storage Tank Manufacturer India | MS & Pressure Vessels",
     description:
-      "Custom stainless-steel and mild-steel storage tanks, pressure vessels and filter vessels, fabricated in-house in Vasai, Maharashtra since 1996.",
+      "Stock tanks that do not fit? Custom SS and MS storage tanks, pressure vessels and filter vessels, fabricated in-house in Vasai, Maharashtra since 1996.",
     targetQuery: "ss storage tank manufacturers in india",
     image: "/ss-storage-tank(5).png",
     imageAlt: "Fabricated stainless steel storage tank",
@@ -152,7 +152,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "Turnkey Mineral Water & Packaged Drinking Water Plants",
     title: "Mineral Water Plant Setup | Packaged Drinking Water Plant",
     description:
-      "Turnkey packaged drinking water plants: RO, ozonation and bottling, built for FSSAI requirements. Trusted by Bisleri, Bailey and Campa since 1996.",
+      "Quotes that list different machines? Turnkey packaged drinking water plants from RO to filling, built for FSSAI. Trusted by Bisleri, Bailey and Campa.",
     targetQuery: "packaged drinking water plant manufacturer",
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete mineral water and packaged drinking water plant",
@@ -163,7 +163,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "Ozone Generators, UV Sterilisers & Dosing Systems",
     title: "Ozone Generator for Water Treatment | UV & Dosing Systems",
     description:
-      "Ozone generators for water tanks and bottling plants, UV sterilisers and chemical dosing systems for water disinfection. Manufacturer in Mumbai since 1996.",
+      "Bacteria in stored water or ozone smell in bottles? Ozone generators, UV sterilisers and dosing systems, made in Vasai, Mumbai since 1996.",
     targetQuery: "ozone generator for water treatment",
     image: "/Ozone_system(3).jpg",
     imageAlt: "Ozone generator for water treatment",
@@ -174,7 +174,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "RO Plant Spare Parts, Membranes, Resins & Chemicals",
     title: "RO Plant Spare Parts, Membranes & Resins Supplier, Mumbai",
     description:
-      "RO membranes (BW, SW, UF, NF), ion exchange resins, cartridges, filter media, gauges, SS fittings and antiscalants for water treatment plants. Since 1996.",
+      "Cartridges choking, membranes that will not recover? RO membranes, resins, cartridges, media and antiscalants in stock in Vasai, Mumbai. Since 1996.",
     targetQuery: "ro plant spare parts",
     image: "/membrane-Housing(2).jpeg",
     imageAlt: "Stainless steel RO membrane housing, a replaceable plant component",
@@ -185,7 +185,7 @@ export const PRODUCTS: ProductSeo[] = [
     heading: "RO Plant AMC & Water Treatment Plant Maintenance",
     title: "RO Plant AMC & Water Treatment Plant Maintenance Services",
     description:
-      "Annual maintenance contracts for RO, DM and softening plants: scheduled servicing, membrane cleaning, resin checks and genuine spares. Vasai, Mumbai, Thane.",
+      "RO output dropping or TDS creeping up? AMC for RO, DM and softening plants: scheduled visits, data-led cleaning, genuine spares. Mumbai, Thane, Vasai.",
     targetQuery: "ro plant amc",
     image: "/Ro-img3.jpg",
     imageAlt: "Technician working on site beside an installed industrial RO plant",

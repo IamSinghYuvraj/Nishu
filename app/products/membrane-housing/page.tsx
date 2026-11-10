@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
 import { BuyerGuides } from "@/components/buyer-guides"
@@ -61,7 +62,7 @@ export default function MembraneHousingPage() {
                   <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We supply FRP and stainless steel RO membrane housings, together with high-pressure pumps matched to the membrane array, for industrial reverse osmosis plants - the same components we have specified into our own RO plants since 1996.
+                    A membrane housing that has cracked or weeps at the end cap, or a pump that cannot hold the feed pressure the array needs: on an RO plant, those are the failures that stop the water. We supply FRP and stainless steel RO membrane housings, together with high-pressure pumps matched to the membrane array, for industrial reverse osmosis plants - the same components we have specified into our own RO plants since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                   
@@ -75,6 +76,7 @@ export default function MembraneHousingPage() {
           </section>
 
         <TrustBar />
+        <ProductSymptoms product="membrane-housing" />
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

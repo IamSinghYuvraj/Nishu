@@ -114,8 +114,8 @@ const VIDEOS = [
   },
 ];
 
-// `guides` is the server-rendered guides section, passed in from app/page.tsx.
-const Home: React.FC<{ guides: React.ReactNode }> = ({ guides }) => {
+// `guides` and `featuredArticle` are server-rendered sections, passed in from app/page.tsx.
+const Home: React.FC<{ guides: React.ReactNode; featuredArticle?: React.ReactNode }> = ({ guides, featuredArticle }) => {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
@@ -227,6 +227,8 @@ const Home: React.FC<{ guides: React.ReactNode }> = ({ guides }) => {
       </section>
 
       <ClientLogos compact />
+
+      {featuredArticle}
 
       {/* How a plant works: the interactive treatment train */}
       <section className="bg-white py-20 md:py-28">

@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
 import { BuyerGuides } from "@/components/buyer-guides"
@@ -90,7 +91,7 @@ export default function DMPage() {
                   <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture two-bed and mixed-bed DM water plants that remove dissolved mineral salts to produce the high-purity water that boilers, pharmaceutical plants, laboratories and process industries depend on. Designed and built in Vasai, Mumbai since 1996.
+                    Boiler tubes scaling despite a softener, silica carrying over to the turbine, a conductivity limit your RO alone cannot hold: when the dissolved salts have to come out almost entirely, the answer is demineralisation. We manufacture two-bed and mixed-bed DM water plants for boilers, pharmaceutical plants, laboratories and process industries from Tarapur to Taloja, designed and built in Vasai, Mumbai since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                   
@@ -103,6 +104,7 @@ export default function DMPage() {
           </section>
 
         <TrustBar />
+        <ProductSymptoms product="demineralized" />
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

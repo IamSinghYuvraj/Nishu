@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
 import { BuyerGuides } from "@/components/buyer-guides"
@@ -90,7 +91,7 @@ export default function MineralWaterProjectPage() {
                 <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                 <p className="text-lg text-muted-foreground mb-8">
-                    We set up complete, turnkey mineral water and packaged drinking water plants, covering every stage from raw water treatment to bottling and packaging, designed for FSSAI and WHO requirements. Our plants run for Bisleri, Bailey and Campa, and we have been building them since 1996.
+                    Three quotes that each list different machines, no idea what an FSSAI inspector will check, and a supplier for every stage who blames the next one: that is how most first packaged water plants go wrong. We set up complete, turnkey mineral water and packaged drinking water plants, covering every stage from raw water treatment to bottling and packaging, designed for FSSAI and WHO requirements. Our plants run for Bisleri, Bailey and Campa, and we have been building them since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                 
@@ -104,6 +105,7 @@ export default function MineralWaterProjectPage() {
         </section>
 
         <TrustBar />
+        <ProductSymptoms product="mineral-water-project" />
 
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

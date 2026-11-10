@@ -1,3 +1,4 @@
+import { ProductSymptoms } from "@/components/product-symptoms";
 import { ProductHeroActions } from "@/components/product-hero-actions"
 import { RelatedProducts } from "@/components/related-products"
 import { BuyerGuides } from "@/components/buyer-guides"
@@ -83,7 +84,7 @@ export default function ROPage() {
                   <Link href="/products" className="eyebrow transition-opacity hover:opacity-80">All products</Link>
                   <h1 className="mt-4 text-4xl md:text-5xl text-balance mb-5 text-foreground">{seo.heading}</h1>
                   <p className="text-lg text-muted-foreground mb-8">
-                    We manufacture industrial and commercial RO plants in Vasai, Mumbai, reducing Total Dissolved Solids (TDS) in brackish and borewell water for factories, hotels, hospitals, housing societies and bottling plants. Every plant is sized on the customer's own water analysis and daily demand, backed by plant-building experience since 1996.
+                    Water that tastes salty, a TDS reading in the thousands, a borewell that gets worse every summer, or a process that needs cleaner water than the supply gives: that is a dissolved-solids problem, and reverse osmosis is the fix. We manufacture industrial and commercial RO plants in Vasai, Mumbai for factories, hotels, hospitals, housing societies and bottling plants across Mumbai, Thane, Palghar and beyond. Every plant is sized on the customer's own water analysis and daily demand, backed by plant-building experience since 1996.
                   </p>
                   <ProductHeroActions productName={seo.name} />
                   
@@ -97,6 +98,7 @@ export default function ROPage() {
             </section>
 
         <TrustBar />
+        <ProductSymptoms product="reverse-osmosis" />
 
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
