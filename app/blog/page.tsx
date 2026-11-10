@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { PostArt } from "@/components/post-art";
 import { Navigation } from "@/components/navigation";
 import ContactUs from "@/components/contactus";
 import { JsonLd } from "@/components/json-ld";
@@ -73,13 +73,7 @@ export default function BlogIndex() {
                     <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                       <article className="card-lift card-rule h-full flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
                         <div className="relative aspect-video overflow-hidden">
-                          <Image
-                            src={post.image}
-                            alt={post.imageAlt}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="zoom-img object-cover"
-                          />
+                          <PostArt kind={post.art} compact className="zoom-img" />
                         </div>
                         <div className="flex flex-col flex-1 p-6">
                           <p className="font-mono text-xs uppercase tracking-[0.12em] text-primary mb-3">

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import { PostArt } from "@/components/post-art"
 import { ArrowRight } from "lucide-react"
 import { postsForProduct } from "@/lib/posts"
 
@@ -30,13 +30,7 @@ export function BuyerGuides({ product }: { product: string }) {
                 className="group card-lift flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <span className="relative block aspect-video overflow-hidden bg-muted">
-                  <Image
-                    src={g.image}
-                    alt={g.imageAlt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="zoom-img object-cover"
-                  />
+                  <PostArt kind={g.art} compact className="zoom-img" />
                 </span>
                 <span className="flex flex-1 flex-col p-5">
                   <span className="font-semibold text-foreground transition-colors group-hover:text-primary">{g.title}</span>

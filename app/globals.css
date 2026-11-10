@@ -429,6 +429,227 @@
   }
 }
 
+/* Animated vector illustrations on blog posts (components/post-art.tsx).
+   Each pa-* class reads its distances and duration from CSS variables set on
+   the element. Resting frames (no animation) are drawn to look complete, so
+   reduced motion shows a still diagram. */
+.post-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(40rem 22rem at 85% -5%, rgb(56 182 232 / 0.26), transparent 60%),
+    radial-gradient(30rem 20rem at -5% 105%, rgb(204 10 110 / 0.2), transparent 60%),
+    linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--ink);
+}
+.post-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.post-art text {
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.post-art.compact text {
+  display: none;
+}
+.post-art.paused * {
+  animation-play-state: paused !important;
+}
+.post-art [class*="pa-"] {
+  transform-box: fill-box;
+}
+.pa-flow {
+  stroke-dasharray: 8 12;
+  animation: pa-dash 0.9s linear infinite;
+}
+.pa-flow-slow {
+  stroke-dasharray: 6 14;
+  animation: pa-dash 2.4s linear infinite;
+}
+@keyframes pa-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+.pa-spin {
+  transform-origin: center;
+  animation: pa-spin var(--t, 6s) linear infinite;
+}
+.pa-reverse {
+  animation-direction: reverse;
+}
+@keyframes pa-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.pa-move {
+  animation: pa-move var(--t, 3s) linear infinite;
+}
+.pa-ease-in {
+  animation-timing-function: cubic-bezier(0.5, 0, 1, 1);
+}
+@keyframes pa-move {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  12%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx, 0px), var(--dy, 0px));
+    opacity: 0;
+  }
+}
+.pa-puff {
+  transform-origin: center;
+  animation: pa-puff 4s ease-out infinite;
+}
+@keyframes pa-puff {
+  0% {
+    transform: translateY(0) scale(0.4);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-90px) scale(2);
+    opacity: 0;
+  }
+}
+.pa-bob {
+  animation: pa-bob var(--t, 3s) ease-in-out infinite;
+}
+@keyframes pa-bob {
+  50% {
+    transform: translateY(var(--by, -6px));
+  }
+}
+.pa-pulse {
+  animation: pa-pulse var(--t, 2.4s) ease-in-out infinite;
+}
+@keyframes pa-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+.pa-blink {
+  animation: pa-blink var(--t, 4s) steps(1) infinite;
+}
+@keyframes pa-blink {
+  0%,
+  55% {
+    opacity: 0.9;
+  }
+  56%,
+  100% {
+    opacity: 0.18;
+  }
+}
+.pa-flicker {
+  transform-origin: center bottom;
+  animation: pa-flicker var(--t, 0.6s) ease-in-out infinite alternate;
+}
+@keyframes pa-flicker {
+  to {
+    transform: scale(1.1, 0.72);
+  }
+}
+.pa-swing {
+  transform-origin: 50% 100%;
+  animation: pa-swing var(--t, 3s) ease-in-out infinite alternate;
+}
+@keyframes pa-swing {
+  from {
+    transform: rotate(var(--a0, -30deg));
+  }
+  to {
+    transform: rotate(var(--a1, 30deg));
+  }
+}
+.pa-grow {
+  transform-origin: left center;
+  animation: pa-grow var(--t, 3s) ease-in-out infinite alternate;
+}
+@keyframes pa-grow {
+  from {
+    transform: scaleX(var(--s0, 0.3));
+  }
+  to {
+    transform: scaleX(var(--s1, 1));
+  }
+}
+.pa-grow-y {
+  transform-origin: center bottom;
+  animation: pa-grow-y var(--t, 3s) ease-in-out infinite alternate;
+}
+@keyframes pa-grow-y {
+  from {
+    transform: scaleY(var(--s0, 0.3));
+  }
+  to {
+    transform: scaleY(var(--s1, 1));
+  }
+}
+.pa-ripple {
+  transform-origin: center;
+  animation: pa-ripple var(--t, 1.6s) ease-out infinite;
+}
+@keyframes pa-ripple {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+.pa-draw {
+  stroke-dasharray: 1;
+  animation: pa-draw var(--t, 5s) ease-in-out infinite;
+}
+@keyframes pa-draw {
+  0%,
+  10% {
+    stroke-dashoffset: 1;
+  }
+  35%,
+  88% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+  }
+}
+.pa-slide {
+  animation: pa-slide var(--t, 3s) linear infinite;
+}
+@keyframes pa-slide {
+  to {
+    transform: translateX(var(--dx, 100px));
+  }
+}
+.pa-scan {
+  animation: pa-scan var(--t, 6s) ease-in-out infinite;
+}
+@keyframes pa-scan {
+  50% {
+    transform: translateY(var(--dy, 100px));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

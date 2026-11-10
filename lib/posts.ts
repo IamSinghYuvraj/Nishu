@@ -22,6 +22,19 @@ export const POST_CATEGORIES = [
 
 export type PostCategory = (typeof POST_CATEGORIES)[number]["slug"];
 
+/** Animated illustration shown in place of the photo on the post and its cards (components/post-art.tsx). */
+export type PostArtKind =
+  | "ro"
+  | "dm"
+  | "softener"
+  | "hardwater"
+  | "boiler"
+  | "bottling"
+  | "checklist"
+  | "maintenance"
+  | "diagnose"
+  | "lab";
+
 export interface Post {
   slug: string;
   title: string;
@@ -35,8 +48,10 @@ export interface Post {
   /** Last substantive edit (ISO date). Shown on the post and used for dateModified and the sitemap. */
   updated?: string;
   readingMinutes: number;
+  /** Photo for social cards and structured data; pages show `art` instead. */
   image: string;
   imageAlt: string;
+  art: PostArtKind;
   /** Resources section the post is listed under and breadcrumbed to. */
   category: PostCategory;
   /**
@@ -62,6 +77,7 @@ export const POSTS: Post[] = [
     readingMinutes: 6,
     image: "/ro-img11.jpeg",
     imageAlt: "Industrial reverse osmosis plant installed at a factory",
+    art: "ro",
     category: "buying-and-cost",
     cta: { label: "See our RO plant range", href: "/products/reverse-osmosis" },
     products: ["reverse-osmosis"],
@@ -148,6 +164,7 @@ export const POSTS: Post[] = [
     readingMinutes: 5,
     image: "/DM image 1.jpg",
     imageAlt: "Demineralisation plant with two-bed ion exchange vessels",
+    art: "dm",
     category: "buying-and-cost",
     cta: { label: "Compare RO and DM plants", href: "/products/demineralized" },
     products: ["demineralized", "reverse-osmosis"],
@@ -231,6 +248,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/Complete-Mineral-Water-Project(5).webp",
     imageAlt: "Complete packaged drinking water plant with bottling line",
+    art: "bottling",
     category: "buying-and-cost",
     cta: {
       label: "Explore turnkey mineral water projects",
@@ -325,6 +343,7 @@ export const POSTS: Post[] = [
     readingMinutes: 5,
     image: "/Water-Softening-Plant.jpg",
     imageAlt: "Industrial water softening plant with resin vessels",
+    art: "boiler",
     category: "industry-guides",
     cta: {
       label: "See water softening plants",
@@ -396,6 +415,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/ro-img7.jpg",
     imageAlt: "Multi-stage RO plant with stainless steel membrane housings in series",
+    art: "checklist",
     category: "buying-and-cost",
     cta: { label: "Send us your quotes to review against this checklist", href: "/contact" },
     products: ["reverse-osmosis", "membrane-housing", "spares-consumables"],
@@ -493,6 +513,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/Ro-img3.jpg",
     imageAlt: "Technician working on site beside an installed industrial RO plant",
+    art: "maintenance",
     category: "operations",
     cta: { label: "See our AMC and plant maintenance service", href: "/products/amc-maintenance" },
     products: ["amc-maintenance", "reverse-osmosis", "spares-consumables"],
@@ -601,6 +622,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/water-softeners.webp",
     imageAlt: "Row of blue pressure vessels for an industrial water softening plant",
+    art: "softener",
     category: "industry-guides",
     cta: { label: "Water softeners for housing societies", href: "/industries/residential-societies" },
     products: ["water-softening"],
@@ -716,6 +738,7 @@ export const POSTS: Post[] = [
     readingMinutes: 6,
     image: "/FRP-RO-Plant.jpg",
     imageAlt: "RO plant with FRP filter vessels, stainless steel membrane housings and control panel",
+    art: "ro",
     category: "buying-and-cost",
     cta: { label: "See our RO plant range", href: "/products/reverse-osmosis" },
     products: ["reverse-osmosis", "membrane-housing", "fabricated-vessels"],
@@ -809,6 +832,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/DM image 3.jpeg",
     imageAlt: "Water treatment system with pressure filters, ion-exchange columns and control panel",
+    art: "boiler",
     category: "industry-guides",
     cta: { label: "Water treatment for boilers and power plants", href: "/industries/power-generation" },
     products: ["water-softening", "demineralized", "reverse-osmosis"],
@@ -895,6 +919,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/ro-img8.jpeg",
     imageAlt: "Stainless steel industrial RO plant with membrane housings and control panel",
+    art: "diagnose",
     category: "operations",
     cta: { label: "Book a service visit or AMC", href: "/products/amc-maintenance" },
     products: ["amc-maintenance", "reverse-osmosis", "spares-consumables"],
@@ -969,6 +994,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/Mineral-Drinking-Water-Plant(1).webp",
     imageAlt: "Mineral drinking water plant with stainless steel vessels and control panel",
+    art: "bottling",
     category: "buying-and-cost",
     cta: { label: "Explore turnkey mineral water projects", href: "/products/mineral-water-project" },
     products: ["mineral-water-project", "dosing-ozonation-uv"],
@@ -1057,6 +1083,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/Commercial-Water-Treatment-Plant.jpg",
     imageAlt: "Commercial water treatment plant with stainless steel tanks and RO skid",
+    art: "lab",
     category: "buying-and-cost",
     cta: { label: "Send us your water report for a recommendation", href: "/contact" },
     products: ["reverse-osmosis", "water-softening", "demineralized"],
@@ -1147,6 +1174,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/DM image 2.jpg",
     imageAlt: "Compact DM plant with FRP ion-exchange columns and PVC pipework",
+    art: "dm",
     category: "operations",
     cta: { label: "See our DM plant range", href: "/products/demineralized" },
     products: ["demineralized", "amc-maintenance"],
@@ -1232,6 +1260,7 @@ export const POSTS: Post[] = [
     readingMinutes: 7,
     image: "/residential-societies-industry.jpg",
     imageAlt: "Residential towers in the Vasai-Virar and Mira-Bhayandar area",
+    art: "hardwater",
     category: "industry-guides",
     cta: { label: "Water softeners for housing societies", href: "/industries/residential-societies" },
     products: ["water-softening"],

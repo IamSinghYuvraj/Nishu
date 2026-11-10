@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Navigation } from "@/components/navigation";
 import ContactUs from "@/components/contactus";
@@ -9,6 +8,7 @@ import { breadcrumbSchema, articleSchema } from "@/lib/schema";
 import { PostBody } from "@/components/post-body";
 import { POSTS, POST_AUTHOR, getCategory, getPost, postLastModified, relatedPosts } from "@/lib/posts";
 import { Button } from "@/components/ui/button";
+import { PostArt } from "@/components/post-art";
 
 // "22 Sep 2026"
 function formatDate(iso: string) {
@@ -112,13 +112,7 @@ export default async function PostPage({
 
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="relative -mt-24 mb-12 aspect-video overflow-hidden rounded-2xl border-4 border-white shadow-2xl shadow-ink/20 md:-mt-28">
-              <Image
-                src={post.image}
-                alt={post.imageAlt}
-                fill
-                className="object-cover"
-                priority
-              />
+              <PostArt kind={post.art} />
             </div>
 
             <PostBody blocks={post.body.slice(0, pillarAt)} />
@@ -163,7 +157,7 @@ export default async function PostPage({
                         className="group card-lift flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
                       >
                         <span className="relative block aspect-video overflow-hidden bg-muted">
-                          <Image src={r.image} alt={r.imageAlt} fill sizes="(max-width: 640px) 100vw, 360px" className="zoom-img object-cover" />
+                          <PostArt kind={r.art} compact className="zoom-img" />
                         </span>
                         <span className="flex flex-1 flex-col p-5">
                           <span className="font-semibold text-foreground transition-colors group-hover:text-primary">{r.title}</span>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { PostArt } from "@/components/post-art";
 import { getPost } from "@/lib/posts";
 
 // A single article promoted as a wide banner (homepage and About page). Server
@@ -25,13 +25,7 @@ export function FeaturedArticle({
           className="group card-lift grid overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-ink/10 md:grid-cols-[2fr_3fr]"
         >
           <span className="relative block aspect-video overflow-hidden bg-muted md:aspect-auto md:min-h-[18rem]">
-            <Image
-              src={post.image}
-              alt={post.imageAlt}
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="zoom-img object-cover"
-            />
+            <PostArt kind={post.art} compact className="zoom-img" />
           </span>
           <span className="flex flex-col justify-center p-7 md:p-10">
             <span className="eyebrow">
