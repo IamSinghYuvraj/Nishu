@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Phone, Mail } from "@/components/icons"
 import { Linkedin, Instagram, Facebook, Youtube } from "lucide-react"
-import { BUSINESS, PRODUCTS } from "@/lib/site"
+import { BUSINESS, PHONES, PRODUCTS } from "@/lib/site"
 import { COUNTRIES_LINE } from "@/lib/countries"
 import { trackLead } from "@/lib/track"
 
@@ -100,13 +100,18 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <a
-                  href={`tel:${BUSINESS.phoneE164}`}
-                  onClick={() => trackLead("phone")}
-                  className="font-semibold text-foreground transition-colors hover:text-lime"
-                >
-                  {BUSINESS.phone}
-                </a>
+                <div className="flex flex-col gap-1.5">
+                  {PHONES.map((p) => (
+                    <a
+                      key={p.e164}
+                      href={`tel:${p.e164}`}
+                      onClick={() => trackLead("phone", { phone_line: p.line })}
+                      className="font-semibold text-foreground transition-colors hover:text-lime"
+                    >
+                      {p.display}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

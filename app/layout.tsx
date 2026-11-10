@@ -48,14 +48,14 @@ export const metadata: Metadata = {
     siteName: "Nishu Enterprises",
     title: HOME_TITLE,
     description:
-      `RO, DM, water softening, mineral water projects and bottling machinery. Since ${BUSINESS.foundingYear}, plants in ${COUNTRIES_LINE}, trusted by Bisleri, Bailey, Campa and more.`,
+      `RO, DM, water softening and mineral water projects. Since ${BUSINESS.foundingYear}, plants in ${COUNTRIES_LINE}, trusted by Bisleri, Bailey, Campa and more.`,
     images: [{ url: "/Ro-img6.jpg", width: 1200, height: 630, alt: "Industrial RO plant built by Nishu Enterprises" }],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_TITLE,
     description:
-      `RO, DM, water softening, mineral water projects and bottling machinery. Since ${BUSINESS.foundingYear}, plants in ${COUNTRIES_LINE}.`,
+      `RO, DM, water softening and mineral water projects. Since ${BUSINESS.foundingYear}, plants in ${COUNTRIES_LINE}.`,
     images: ["/Ro-img6.jpg"],
   },
   robots: { index: true, follow: true },

@@ -1,4 +1,4 @@
-import { SITE_URL, BUSINESS, FAQS, type ProductSeo } from "@/lib/site";
+import { SITE_URL, BUSINESS, FAQS, PHONES, type ProductSeo } from "@/lib/site";
 import { POST_AUTHOR, postLastModified, type Post } from "@/lib/posts";
 import type { Industry } from "@/lib/industries";
 
@@ -34,7 +34,6 @@ export const organizationSchema = {
     "RO plant AMC and maintenance",
     "RO membranes and ion exchange resins",
     "Stainless steel storage tanks",
-    "Bottle rinsing filling capping machines",
   ],
   telephone: BUSINESS.phoneE164,
   email: BUSINESS.email,
@@ -56,12 +55,13 @@ export const organizationSchema = {
     { "@type": "State", name: "Maharashtra" },
     { "@type": "Country", name: "India" },
   ],
-  contactPoint: {
+  // `telephone` above is the primary number; both numbers get a contact point.
+  contactPoint: PHONES.map((p) => ({
     "@type": "ContactPoint",
-    telephone: BUSINESS.phoneE164,
+    telephone: p.e164,
     contactType: "sales",
     availableLanguage: ["en", "hi"],
-  },
+  })),
   ...(sameAs.length ? { sameAs } : {}),
 };
 

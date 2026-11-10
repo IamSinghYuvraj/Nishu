@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import AnimatedSection from "./animation";
-import { BUSINESS, DEFAULT_WHATSAPP_TEXT, whatsappUrl } from "@/lib/site";
+import { DEFAULT_WHATSAPP_TEXT, PHONES, whatsappUrl } from "@/lib/site";
 import { trackLead } from "@/lib/track";
 
 // Closing call to action shared by every page.
@@ -35,16 +35,19 @@ const ContactUs: React.FC = () => {
                   Request a quotation
                   <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </Link>
-                <a
-                  href={`tel:${BUSINESS.phoneE164}`}
-                  onClick={() => trackLead("phone")}
-                  className="group flex items-center justify-between rounded-xl border border-border px-6 py-4 font-semibold text-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-card"
-                >
-                  <span className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-primary" /> {BUSINESS.phone}
-                  </span>
-                  <span className="text-sm font-normal text-muted-foreground">Call</span>
-                </a>
+                {PHONES.map((p) => (
+                  <a
+                    key={p.e164}
+                    href={`tel:${p.e164}`}
+                    onClick={() => trackLead("phone", { phone_line: p.line })}
+                    className="group flex items-center justify-between rounded-xl border border-border px-6 py-4 font-semibold text-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-card"
+                  >
+                    <span className="flex items-center gap-3">
+                      <Phone className="h-5 w-5 text-primary" /> {p.display}
+                    </span>
+                    <span className="text-sm font-normal text-muted-foreground">Call</span>
+                  </a>
+                ))}
                 <a
                   href={whatsapp}
                   onClick={() => trackLead("whatsapp", { location: "cta-band" })}

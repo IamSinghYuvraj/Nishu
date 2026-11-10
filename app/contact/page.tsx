@@ -21,7 +21,7 @@ import {
   Send,
 } from "lucide-react";
 import { sendContactMessage } from "@/app/contact/actions";
-import { FAQS, BUSINESS, PRODUCTS } from "@/lib/site";
+import { FAQS, BUSINESS, PHONES, PRODUCTS } from "@/lib/site";
 import { trackLead } from "@/lib/track";
 
 interface FormData {
@@ -250,7 +250,7 @@ export default function ContactPage() {
         console.error("Contact form delivery failed:", greenApiResult.error);
         showNotification(
           "error",
-          `We couldn't send your enquiry just now. Please call us on ${BUSINESS.phone} or WhatsApp us, and your details below have been kept so you can try again.`
+          `We couldn't send your enquiry just now. Please call us on ${BUSINESS.phone} or ${BUSINESS.phoneSecondary}, or WhatsApp us, and your details below have been kept so you can try again.`
         );
         return;
       }
@@ -364,19 +364,24 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-12 grid gap-4 md:grid-cols-3">
-              <a
-                href={`tel:${BUSINESS.phoneE164}`}
-                onClick={() => trackLead("phone")}
-                className="group flex items-start gap-4 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-bright/60 hover:bg-card"
-              >
+              <div className="group flex items-start gap-4 rounded-2xl border border-border bg-card/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-bright/60 hover:bg-card">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/5 text-lime transition-all duration-300 group-hover:bg-lime group-hover:text-ink">
                   <Phone className="h-5 w-5" />
                 </span>
                 <span>
                   <span className="block font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">Phone</span>
-                  <span className="mt-1 block text-lg font-semibold text-foreground">{BUSINESS.phone}</span>
+                  {PHONES.map((p) => (
+                    <a
+                      key={p.e164}
+                      href={`tel:${p.e164}`}
+                      onClick={() => trackLead("phone", { phone_line: p.line })}
+                      className="mt-1 block text-lg font-semibold text-foreground transition-colors hover:text-lime"
+                    >
+                      {p.display}
+                    </a>
+                  ))}
                 </span>
-              </a>
+              </div>
               <a
                 href={`mailto:${BUSINESS.email}`}
                 onClick={() => trackLead("email")}

@@ -85,9 +85,8 @@ export function ProductsGrid() {
               Water Treatment Plants &amp; Equipment
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              RO plants, DM plants, water softeners, mineral water
-              projects and bottling machinery, plus the spares and maintenance that keep them
-              running. Manufactured in Vasai, Mumbai since 1996.
+              RO plants, DM plants, water softeners and mineral water projects, plus the spares
+              and maintenance that keep them running. Manufactured in Vasai, Mumbai since 1996.
             </p>
           </div>
         </section>

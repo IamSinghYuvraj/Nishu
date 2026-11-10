@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Menu, X, ChevronDown } from "@/components/icons"
 import { ArrowRight, Phone } from "lucide-react"
-import { BUSINESS, PRODUCTS } from "@/lib/site"
+import { BUSINESS, PHONES, PRODUCTS } from "@/lib/site"
 import { trackLead } from "@/lib/track"
 
 const LINKS = [
@@ -117,17 +117,31 @@ export function Navigation() {
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={`tel:${BUSINESS.phoneE164}`}
-              onClick={() => trackLead("phone")}
-              aria-label={`Call ${BUSINESS.phone}`}
-              className="flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
-            >
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-accent text-primary">
+            <div className="flex items-center gap-2 text-sm">
+              <a
+                href={`tel:${BUSINESS.phoneE164}`}
+                onClick={() => trackLead("phone", { phone_line: "primary" })}
+                aria-label={`Call ${BUSINESS.phone}`}
+                className="grid h-9 w-9 place-items-center rounded-full bg-accent text-primary"
+              >
                 <Phone className="h-4 w-4" />
-              </span>
-              <span className="hidden whitespace-nowrap xl:inline">{BUSINESS.phone}</span>
-            </a>
+              </a>
+              {/* Both numbers, stacked. Below xl there is only room for the icon, which dials the primary. */}
+              <div className="hidden flex-col leading-tight xl:flex">
+                {PHONES.map((p) => (
+                  <a
+                    key={p.e164}
+                    href={`tel:${p.e164}`}
+                    onClick={() => trackLead("phone", { phone_line: p.line })}
+                    className={`whitespace-nowrap font-semibold transition-colors hover:text-primary ${
+                      p.line === "primary" ? "text-foreground" : "text-foreground/75"
+                    }`}
+                  >
+                    {p.display}
+                  </a>
+                ))}
+              </div>
+            </div>
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-secondary/30"
@@ -186,14 +200,19 @@ export function Navigation() {
                 </Link>
               ),
             )}
-            <div className="mt-4 grid grid-cols-2 gap-3 px-3">
-              <a
-                href={`tel:${BUSINESS.phoneE164}`}
-                onClick={() => trackLead("phone")}
-                className="flex items-center justify-center gap-2 rounded-lg border border-border py-3 text-sm font-semibold text-foreground"
-              >
-                <Phone className="h-4 w-4" /> Call us
-              </a>
+            <div className="mt-4 space-y-3 px-3">
+              <div className="grid grid-cols-1 gap-3 min-[360px]:grid-cols-2">
+                {PHONES.map((p) => (
+                  <a
+                    key={p.e164}
+                    href={`tel:${p.e164}`}
+                    onClick={() => trackLead("phone", { phone_line: p.line })}
+                    className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-border py-3 text-sm font-semibold text-foreground"
+                  >
+                    <Phone className="h-4 w-4" /> {p.display}
+                  </a>
+                ))}
+              </div>
               <Link href="/contact" className="flex items-center justify-center rounded-lg bg-secondary py-3 text-sm font-semibold text-secondary-foreground">
                 Get a quote
               </Link>

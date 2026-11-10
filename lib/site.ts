@@ -8,8 +8,12 @@ export const BUSINESS = {
   name: "Nishu Enterprises",
   legalName: "Nishu Enterprises",
   foundingYear: String(FOUNDING_YEAR),
-  phone: "+91 98201 42424",
-  phoneE164: "+919820142424",
+  // Primary contact number: listed first everywhere and the one WhatsApp opens.
+  phone: "+91 93240 59587",
+  phoneE164: "+919324059587",
+  // Secondary number: listed beside the primary wherever a phone number appears.
+  phoneSecondary: "+91 98201 42424",
+  phoneSecondaryE164: "+919820142424",
   email: "nishudbj@gmail.com",
   // Single source of truth. Keep this identical to the Google Business
   // Profile and every directory listing - matching NAP text is a local
@@ -47,7 +51,13 @@ export const BUSINESS = {
   },
 };
 
-/** Click-to-chat link to the business WhatsApp, optionally with a prefilled message. */
+/** Both contact numbers, primary first. `line` is sent with phone-click events so analytics can tell them apart. */
+export const PHONES = [
+  { line: "primary", display: BUSINESS.phone, e164: BUSINESS.phoneE164 },
+  { line: "secondary", display: BUSINESS.phoneSecondary, e164: BUSINESS.phoneSecondaryE164 },
+] as const;
+
+/** Click-to-chat link to the business WhatsApp (the primary number), optionally with a prefilled message. */
 export function whatsappUrl(text?: string) {
   const base = `https://wa.me/${BUSINESS.phoneE164.replace("+", "")}`;
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;

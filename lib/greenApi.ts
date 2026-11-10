@@ -6,7 +6,7 @@ interface GreenApiConfig {
 }
 
 interface SendMessageRequest {
-  chatId: string; // Phone number with country code (e.g., "919820142424@c.us")
+  chatId: string; // Phone number with country code (e.g., "919324059587@c.us")
   message: string;
 }
 
